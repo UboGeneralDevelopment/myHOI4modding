@@ -1,4 +1,4 @@
 
 スコープとか、コマンドとか、その辺の定義とかを読み解く。
 
-edit tedt in local1
+editted from web browser
