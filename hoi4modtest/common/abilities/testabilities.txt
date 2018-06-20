@@ -1,7 +1,7 @@
 ability = {
 	artillery_barrage = {
-		name = ART_BAR
-		desc = ART_BAR_DESC
+		name = ARTILLERY_BARRAGE
+		desc = ARTILLERY_BARRAGE_DESC
 		sound_effect = command_power_ability_offensive
 		
 		type = army_leader
@@ -10,11 +10,12 @@ ability = {
 			is_leading_army_group = no
 			is_border_war = no
 			OWNER = {
-				if = {
-					limit = {
-						has_dlc = "Waking the Tiger"
-					}
-					NOT = { has_completed_focus = CHI_dare_to_die_corps }
+				OR = {
+					has_tech = mobile_warfare
+					has_tech = superior_firepower
+					has_tech = trench_warfare
+					has_tech = mass_assault					
+					# technology should be modified #
 				}
 			}
 		}
@@ -39,13 +40,14 @@ ability = {
 		cost = 0.01
 		duration = 168
 		
-		one_time_effect = {
-			add_temporary_buff_to_units = {
+		unit_modifiers = {
+		
+			army_artillery_attack_factor = 0.5
+			army_artillery_defence_factor = 0.5
+			army_speed_factor = -0.5
+
+			tooltip = ARTILLERY_BARRAGE_TOOLTIP
 			
-				
-				days = 7
-				tooltip = ART_BAR_TOOLTIP
-			}
 		}
 		
 		
