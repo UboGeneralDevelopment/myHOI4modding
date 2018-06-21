@@ -9,22 +9,37 @@ ability = {
 		allowed = {
 			is_leading_army_group = no
 			is_border_war = no
+			
+			check_variable = {
+			avg_unit_planning_ratio > 0.5 
+			}
+			
 			OWNER = {
 				OR = {
-					has_tech = mobile_warfare
-					has_tech = superior_firepower
-					has_tech = trench_warfare
-					has_tech = mass_assault					
-					# technology should be modified #
+					has_tech = kampfgruppe
+					has_tech = sup_delay
+					has_tech = grand_battle_plan
+					has_tech = large_front_operations					
 				}
+				
 			}
 		}
+		
+		cost = 0.05
+		duration = 168
+
+			unit_modifiers = {
+			army_artillery_attack_factor = 2
+			army_artillery_defence_factor = 3
+			supply_consumption_factor = 0.5
+			army_speed_factor = -0.4
+			}
+		
 		
 		ai_will_do = {
 			factor = -1
 			modifier = {
 				FROM = {
-					has_war_support > 0.1
 					command_power > 1.5
 				}
 				check_variable = { num_units_offensive_combats > 6 }
@@ -35,22 +50,7 @@ ability = {
 				
 				add = 2
 			}
-		}
-		
-		cost = 0.01
-		duration = 168
-		
-		unit_modifiers = {
-		
-			army_artillery_attack_factor = 0.5
-			army_artillery_defence_factor = 0.5
-			army_speed_factor = -0.5
-
-			tooltip = ARTILLERY_BARRAGE_TOOLTIP
-			
-		}
-		
-		
+		}	
 	}
 }
 
