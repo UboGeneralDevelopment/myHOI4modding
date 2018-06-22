@@ -21,6 +21,11 @@ ability = {
 					has_tech = grand_battle_plan
 					has_tech = large_front_operations					
 				}
+				OR ={
+					has_equipment = { artillery_equipment_1 > 1 }
+					has_equipment = { artillery_equipment_2 > 1 }
+					has_equipment = { artillery_equipment_3 > 1 }
+				}
 				
 			}
 		}
@@ -31,10 +36,39 @@ ability = {
 			unit_modifiers = {
 			army_artillery_attack_factor = 2
 			army_artillery_defence_factor = 3
-			supply_consumption_factor = 0.5
-			army_speed_factor = -0.4
+		
 			}
 		
+		one_time_effect = {
+			set_temp_variable = { art_consumption = num_artillery }
+			#set_temp_variable = { art_consumption = 0 }
+			#subtract_from_temp_variable = {art_consumption = art_temp }
+			#multiply_temp_variable = { art_temp = 1 }
+			
+			OWNER = {
+				if = { 
+					limit = {
+						has_equipment = { artillery_equipment_1 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = -100 }
+				break = yes
+				}
+				else_if = { 
+					limit = {
+						has_equipment = { artillery_equipment_2 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_2 amount = -100  }
+				break = yes
+				}
+				else_if = { 
+					limit = {
+						has_equipment = { artillery_equipment_3 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_3 amount = -100  }
+				break = yes
+				}
+			}
+        }
 		
 		ai_will_do = {
 			factor = -1
