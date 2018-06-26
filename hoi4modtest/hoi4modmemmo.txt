@@ -99,7 +99,38 @@ modの案
 ###民間工場資源消費mod
 
 国内資源から装備の資源消費を引き、あまりの資源が民間に供給されていると仮定し、民間工業の数とあまり資源の量に応じて効率を減らす。
+全体の建設速度ファクターから資源不足ファクターを引き、それをもとに資源不足ファクターを再計算する。再計算のタイミングをどうするか。
+民間工場の数に応じて必要資源量を各資源について計算、最低限度充足している資源割合が最終的な建設速度となる。
+資源あまりも計算しておく。
+国ごとの民間資源消費の違いは国民精神か政治顧問にて表現する。最終的にはダイナミックに表現したい。
+
+使えそうなゲーム内パラメタ
+resource   (usage resource@steel or other resources)
+resource_consumed (usage resource_consumed@steel or other resources)
+resource_exported (usage resource_exported@steel or other resources)
+resource_imported (usage resource_imported@steel or other resources)
+resource_produced (usage resource_produced@steel or other resources)
+
+num_of_available_civilian_factories
+num_of_available_military_factories
+num_of_available_naval_factories
+num_of_civilian_factories
+num_of_civilian_factories_available_for_projects
+num_of_controlled_states
+num_of_factories
+num_of_military_factories
+num_of_naval_factories
+
+モディファー
+production_speed_buildings_factor　建設速度全体へのボーナス　production_speed_buildings_factor = 0.1
+consumer_goods_factor　消費財の割合変化
+production_oil_factor　石油のみに適用される生産ボーナス。
 
 
 
+ゲーム内の建設速度ファクターはそれはそれとしてほっておく。国ごとの最低建設速度とみよう
 
+開発順。
+
+まず、ゲーム内変数を表示する。
+資源あまりに応じて建設速度が変化させられるかを検証する
