@@ -53,9 +53,10 @@ AI　ブックマーク　建物　コスメティックタグ　国　師団　
 
 
 モディファー
-あるスコープの中のあるパラメータに対して効果を及ぼす点ではエフェクトに似ているが、何かの実体に元づく修正。
-モディファーはそれ自体の効果の情報を保存しており、効果を修正したりすることができる。
-モディファーの種類もいっぱいある。
+あるスコープの中のあるパラメータに対して効果を及ぼす点ではエフェクトに似ているが、アイデアなどの実体に紐づけられている。
+モディファーはそれ自体の効果の情報を保存しており、効果を修正したりすることができる。エフェクトと範囲がかぶっている場合、エフェクトが基礎値を設定するとみなす
+モディファーの種類もいっぱいある。WIKIには情報が散逸しており、modifierの項目のほかには、/Hearts of Iron IV/common/opinion_modifiers/*.txt
+とか
 
 トリガー
 エフェクトやモディファーが適用される条件を指定する。スコープの中で条件が検討され、エフェクトが実行される。
@@ -101,36 +102,43 @@ modの案
 国内資源から装備の資源消費を引き、あまりの資源が民間に供給されていると仮定し、民間工業の数とあまり資源の量に応じて効率を減らす。
 全体の建設速度ファクターから資源不足ファクターを引き、それをもとに資源不足ファクターを再計算する。再計算のタイミングをどうするか。
 民間工場の数に応じて必要資源量を各資源について計算、最低限度充足している資源割合が最終的な建設速度となる。
+消費財消費量、スペシャルプロジェクトコストも増やしたいが、検討課題。消費財については何とかなりそう。スペシャルプロジェクトコストは厳しそう。
 資源あまりも計算しておく。
 国ごとの民間資源消費の違いは国民精神か政治顧問にて表現する。最終的にはダイナミックに表現したい。
 
 使えそうなゲーム内パラメタ
-resource   (usage resource@steel or other resources)
-resource_consumed (usage resource_consumed@steel or other resources)
-resource_exported (usage resource_exported@steel or other resources)
-resource_imported (usage resource_imported@steel or other resources)
-resource_produced (usage resource_produced@steel or other resources)
+resource@steel resource@alminium resource@...　余剰の資源量を示す。輸入分も含む。反映は少し遅れる
+resource_consumed 消費資源量
+resource_exported 輸出資源量。実際の輸出量ではなく、法律によるもの
+resource_imported 資源輸入量
+resource_produced 資源国内生産量
 
-num_of_available_civilian_factories
-num_of_available_military_factories
-num_of_available_naval_factories
-num_of_civilian_factories
-num_of_civilian_factories_available_for_projects
+num_of_available_civilian_factories 完全に余っている工場
+num_of_available_military_factories　
+num_of_available_naval_factories　
+num_of_civilian_factories　保有している工場全部。輸出、従属国による増加含む
+num_of_civilian_factories_available_for_projects　全民需工場から消費財と貿易財を抜いたもの
 num_of_controlled_states
-num_of_factories
+num_of_factories　保有している全工場数
 num_of_military_factories
 num_of_naval_factories
 
-モディファー
-production_speed_buildings_factor　建設速度全体へのボーナス　production_speed_buildings_factor = 0.1
-consumer_goods_factor　消費財の割合変化
+modifier@...でモディファー内容を参照可能。また、この値は直接的に変更可能
+production_speed_buildings_factor　建設速度全体へのボーナス。合計の値が最終的な値。
+consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。税金にたとえることができる。
 production_oil_factor　石油のみに適用される生産ボーナス。
+min_export
 
 
-
-ゲーム内の建設速度ファクターはそれはそれとしてほっておく。国ごとの最低建設速度とみよう
+ゲーム内の建設速度ファクターはそれはそれとしてほっておく。国ごとの最低建設速度とみよう。
 
 開発順。
 
-まず、ゲーム内変数を表示する。
-資源あまりに応じて建設速度が変化させられるかを検証する
+まず、ゲーム内変数を表示する。　クリア
+民需工場による資源消費と資源供給をもとに、資源不足効果を計算し、表示する
+資源不足効果を実際に建設速度に実装する。
+
+
+
+
+
