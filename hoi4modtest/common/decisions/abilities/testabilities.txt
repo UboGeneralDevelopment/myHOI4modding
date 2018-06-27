@@ -1,0 +1,90 @@
+ability = {
+	artillery_barrage = {
+		name = ARTILLERY_BARRAGE
+		desc = ARTILLERY_BARRAGE_DESC
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_leading_army_group = no
+			is_border_war = no
+			
+			check_variable = {
+			avg_unit_planning_ratio > 0.5 
+			}
+			
+			OWNER = {
+				OR = {
+					has_tech = kampfgruppe
+					has_tech = sup_delay
+					has_tech = grand_battle_plan
+					has_tech = large_front_operations					
+				}
+				OR ={
+					has_equipment = { artillery_equipment_1 > 1 }
+					has_equipment = { artillery_equipment_2 > 1 }
+					has_equipment = { artillery_equipment_3 > 1 }
+				}
+				
+			}
+		}
+		
+		cost = 0.05
+		duration = 168
+
+			unit_modifiers = {
+			army_artillery_attack_factor = 2
+			army_artillery_defence_factor = 3
+		
+			}
+		
+		one_time_effect = {
+			set_temp_variable = { art_consumption = num_artillery }
+			#set_temp_variable = { art_consumption = 0 }
+			#subtract_from_temp_variable = {art_consumption = art_temp }
+			#multiply_temp_variable = { art_temp = 1 }
+			
+			OWNER = {
+				if = { 
+					limit = {
+						has_equipment = { artillery_equipment_1 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = -100 }
+				break = yes
+				}
+				else_if = { 
+					limit = {
+						has_equipment = { artillery_equipment_2 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_2 amount = -100  }
+				break = yes
+				}
+				else_if = { 
+					limit = {
+						has_equipment = { artillery_equipment_3 > 1 }
+					}
+				add_equipment_to_stockpile = { type = artillery_equipment_3 amount = -100  }
+				break = yes
+				}
+			}
+        }
+		
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					command_power > 1.5
+				}
+				check_variable = { num_units_offensive_combats > 6 }
+				
+				set_temp_variable = { temp = avg_offensive_combat_status }
+				check_variable = { temp > 0.45 }
+				check_variable = { ai_random > temp }
+				
+				add = 2
+			}
+		}	
+	}
+}
+

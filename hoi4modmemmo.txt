@@ -56,12 +56,15 @@ MODで行われる操作は基本的には選択されたスコープ中で実�
 
 モディファー
 あるスコープの中のある変数に対して効果を及ぼす点ではエフェクトに似るが、アイデアなどの実体に紐づけられているか、それ自体が実体を持つ。
+モディファーはディシジョン、国家精神、国家方針などに結びついており、コマンドで直接いじることは基本的にできない。
 モディファーはそれ自体の効果の情報を保存しており、効果を修正したりすることができる。モディファーの存在する変数は変更履歴が残るということだ。
 コマンドによる効果は基本的に効果を記憶していないため、変数の基礎値を直接変更するものだといえる。
 モディファーの種類もいっぱいあるが、情報が散逸しており、wikiのmodifierの項目以外にもある。
 
 トリガー
 コマンドやモディファーが適用される条件を指定する。イベントや国家方針、ディシジョンなどのゲーム内システムとして多くが実装されている。
+wikiに書いてないトリガーとしてon_actionがある。
+このうち、on_startupは効果適用が初期開始にかぎられるため、ここで効果がある場合は基本的にMODを途中導入できない。
 
 以上が基本的な構成要素である。
 これらの働きをサポートするために、以下の要素が用意されている。
@@ -97,14 +100,15 @@ add temporaly buffもしくはunit_modifierをもちいる
 防御力は突破と防御双方に適用される。攻撃もハード、ソフト双方に適用。
 地形別に効果を与えることはでき、師団タイプごとに効果も与えられるが、装備には影響できない。
 効果を検証中
-
+num_infantry
+num_artillery などは師団の数を数える。重複して数えることもある。
 
 
 ###民間工場資源消費mod
 
 国内資源から装備の資源消費を引き、あまりの資源が民間に供給されていると仮定し、国内民間工業の数とあまり資源の量に応じて効率を減らす。
 全体の出力修正を資源修正とその他修正に分け、国内工場のみ出力に資源修正をかける。
-再計算および修正の実行を行うタイミングをどうするか？　毎日再計算
+再計算および修正の実行を行うタイミングをどうするか？　毎日出力修正はon_dailyで再計算し、ディシジョンか国民精神によって継続的にモディファーを与える。
 民間工場の数に応じて必要資源量を各資源について計算、最低限度充足している資源割合が最終的な建設速度に影響する。
 消費財消費量、スペシャルプロジェクトコストも増やしたいが、検討課題。消費財については何とかなりそう。スペシャルプロジェクトコストは厳しそう。
 資源あまりも計算しておく。
@@ -120,13 +124,13 @@ resource_produced 資源国内生産量
 num_of_available_civilian_factories 完全に余っている工場
 num_of_available_military_factories　
 num_of_available_naval_factories　
-num_of_civilian_factories　保有している工場全部。輸出、従属国による増加含む
-num_of_civilian_factories_available_for_projects　全民需工場から消費財と貿易財を抜いたもの
+num_of_civilian_factories　輸出、従属国による増加含む保有している工場から輸出した分を引いた数。
+num_of_civilian_factories_available_for_projects　建設に使用可能な工場数
 num_of_controlled_states
 num_of_factories　保有している全工場数 include imported and donated factories
 num_of_military_factories
 num_of_naval_factories
-<buildings> such as arms factory,industrial complex, represents sum of factories inside of your country.
+<buildings> arms factory,industrial complex, などで、国内の建築物の総量がわかる
 
 modifier@...でモディファー内容を参照可能。また、この値は直接的に変更可能
 production_speed_buildings_factor　建設速度全体へのボーナス。合計の値が最終的な値。
