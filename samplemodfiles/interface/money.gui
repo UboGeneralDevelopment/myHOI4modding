@@ -1,0 +1,537 @@
+
+guiTypes = {
+containerWindowType = {
+		name = "money_equipment_container"
+		position = {x=480 y=100}
+		size = { width=1108 height=720 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_browser_bg"
+		}
+
+		instantTextboxType = {
+			name = "money_headline"
+			position = {x=19 y=15}
+			font = "hoi_36header"
+			text = "Purchase Options"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		
+		iconType = {
+			name = "text_back" 
+			position = {x=29 y=64}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "infantry_headline"
+			position = {x=35 y=68}
+			font = "hoi_18mbs"
+			text = "Infantry Equipment 1.00K/100 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back" 
+			position = {x=30 y=88}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "infantry" 
+			position = {x=215 y=89}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "infantry_sell" 
+			position = {x=215 y=130}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "infantry_ico" 
+			position = {x=40 y=110}	
+			spriteType = "GFX_infantry_weapons_medium"
+		}
+		instantTextboxType = {
+			name = "infantry_stock"
+			position = {x=35 y=155}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.infantrystock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back2" 
+			position = {x=29 y=180}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		
+		instantTextboxType = {
+			name = "support_headline"
+			position = {x=35 y=185}
+			font = "hoi_18mbs"
+			text = "Support Equipment 1.00K/150 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back2" 
+			position = {x=30 y=205}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "support" 
+			position = {x=215 y=204}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "support_sell" 
+			position = {x=215 y=244}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "support_ico" 
+			position = {x=38 y=211}	
+			spriteType = "GFX_tech_support_medium"
+		}
+		instantTextboxType = {
+			name = "support_stock"
+			position = {x=35 y=270}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.supportstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back3" 
+			position = {x=29 y=296}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "artillery_headline"
+			position = {x=35 y=299}
+			font = "hoi_18mbs"
+			text = "Artillery Equipment 1.00K/200 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back3" 
+			position = {x=30 y=320}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "artillery" 
+			position = {x=215 y=321}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "artillery_sell" 
+			position = {x=215 y=361}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "artillery_ico" 
+			position = {x=38 y=329}	
+			spriteType = "GFX_gw_artillery_medium"
+		}
+		instantTextboxType = {
+			name = "artillery_stock"
+			position = {x=35 y=385}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.artillerystock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back4" 
+			position = {x=29 y=412}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "motorized_headline"
+			position = {x=35 y=415}
+			font = "hoi_18mbs"
+			text = "Motorized Equipment 500/250 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back4" 
+			position = {x=30 y=440}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "motorized" 
+			position = {x=215 y=435}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "motorized_sell" 
+			position = {x=215 y=476}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "motorized_ico" 
+			position = {x=54 y=452}	
+			spriteType = "GFX_motorised_infantry_medium"
+		}
+		instantTextboxType = {
+			name = "motorized_stock"
+			position = {x=35 y=503}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.motorizedstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back5" 
+			position = {x=29 y=528}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "anti_tank_headline"
+			position = {x=35 y=530}
+			font = "hoi_18mbs"
+			text = "Anti Tank Equipment 1.00K/200 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back5" 
+			position = {x=30 y=550}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "anti_tank" 
+			position = {x=215 y=549}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "anti_tank_sell" 
+			position = {x=215 y=588}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "anti_tank_ico" 
+			position = {x=44 y=562}	
+			spriteType = "GFX_interwar_antitank_medium"
+		}
+		instantTextboxType = {
+			name = "anti_tank_stock"
+			position = {x=35 y=615}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.antitankstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back6" 
+			position = {x=349 y=64}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "anti_air_headline"
+			position = {x=355 y=68}
+			font = "hoi_18mbs"
+			text = "Anti Air Equipment 1.00K/200 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back6" 
+			position = {x=350 y=90}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "anti_air" 
+			position = {x=534 y=90}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "anti_air_sell" 
+			position = {x=534 y=130}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "anti_air_ico" 
+			position = {x=364 y=98}	
+			spriteType = "GFX_interwar_antiair_medium"
+		}
+		instantTextboxType = {
+			name = "anti_air_stock"
+			position = {x=355 y=155}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.antiairstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back7" 
+			position = {x=349 y=180}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "light_tank_headline"
+			position = {x=355 y=180}
+			font = "hoi_18mbs"
+			text = "Light Tank 500/250 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back7" 
+			position = {x=350 y=200}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "light_tank" 
+			position = {x=534 y=202}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "light_tank_sell" 
+			position = {x=534 y=243}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "light_tank_ico" 
+			position = {x=383 y=210}	
+			spriteType = "GFX_GER_basic_light_tank_medium"
+		}
+		instantTextboxType = {
+			name = "light_tank_stock"
+			position = {x=355 y=268}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.lighttankstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+
+		iconType = {
+			name = "text_back8" 
+			position = {x=349 y=296}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "medium_tank_headline"
+			position = {x=355 y=296}
+			font = "hoi_18mbs"
+			text = "Medium Tank 500/300 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back8" 
+			position = {x=350 y=318}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "medium_tank" 
+			position = {x=534 y=319}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "medium_tank_sell" 
+			position = {x=534 y=360}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "medium_tank_ico" 
+			position = {x=380 y=332}	
+			spriteType = "GFX_GER_basic_medium_tank_medium"
+		}
+		instantTextboxType = {
+			name = "medium_tank_stock"
+			position = {x=355 y=385}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.mediumtankstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "text_back9" 
+			position = {x=349 y=412}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "heavy_tank_headline"
+			position = {x=355 y=412}
+			font = "hoi_18mbs"
+			text = "Heavy Tank 500/350 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back9" 
+			position = {x=350 y=439}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "heavy_tank" 
+			position = {x=534 y=434}	
+			spriteType = "GFX_buy"
+		}
+		buttonType = {
+			name = "heavy_tank_sell" 
+			position = {x=534 y=476}	
+			spriteType = "GFX_sell"
+		}
+		iconType = {
+			name = "heavy_tank_ico" 
+			position = {x=375 y=449}	
+			spriteType = "GFX_GER_basic_heavy_tank_medium"
+		}
+		instantTextboxType = {
+			name = "heavy_tank_stock"
+			position = {x=355 y=502}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.heavytankstock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+
+		iconType = {
+			name = "text_back10" 
+			position = {x=349 y=528}	
+			spriteType = "GFX_generic_bg_307x113"
+		}
+		instantTextboxType = {
+			name = "convoy_headline"
+			position = {x=355 y=528}
+			font = "hoi_18mbs"
+			text = "Convoy 50/200 Million"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		iconType = {
+			name = "equipment_back10" 
+			position = {x=350 y=549}	
+			spriteType = "GFX_equipment_item"
+		}
+		buttonType = {
+			name = "convoy" 
+			position = {x=534 y=566}	
+			spriteType = "GFX_buy"
+		}
+		iconType = {
+			name = "convoy_ico" 
+			position = {x=353 y=565}	
+			spriteType = "GFX_archetype_convoy_medium"
+		}
+		instantTextboxType = {
+			name = "convoy_stock"
+			position = {x=355 y=615}
+			font = "hoi_18mbs"
+			text = "Stock : [?global.convoystock]"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		buttonType = {
+			name = "exitbutton" 
+			position = {x=1065 y=15}	
+			spriteType = "GFX_closebutton"
+		}
+		instantTextboxType = {
+			name = "takedebt"
+			position = {x=585 y=18}
+			font = "hoi_24header"
+			text = "Take Debt (Limit is 200)"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+		buttonType = {
+			name = "plus10" 
+			position = {x=855 y=13}
+			spriteType = "GFX_btn_x10d"
+			pdx_tooltip = "MONEY_DEBT"
+		}
+		buttonType = {
+			name = "plus100" 
+			position = {x=895 y=13}
+			spriteType = "GFX_btn_x100"
+			pdx_tooltip = "MONEY_DEBT"
+		}
+
+		buttonType = {
+			name = "pay_debt" 
+			position = {x=935 y=13}
+			spriteType = "GFX_debt"
+			pdx_tooltip = "MONEY_DEBT"
+		}
+		#buttonType = { #for testing
+		#	name = "cheat" 
+		#	position = {x=1005 y=18}	
+		#	spriteType = "GFX_balance_icon"
+		#}
+		#buttonType = { #for testing
+		#	name = "cheatlower" 
+		#	position = {x=1035 y=18}	
+		#	spriteType = "GFX_balance_icon"
+		#}
+	}
+	containerWindowType = {
+		name = "money_container"
+		position = { x = 1400 y = 4 } #990
+		iconType ={
+			name ="money_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=0 y=0 }
+		}
+		
+		iconType = {
+			name ="money_icon"
+			spriteType = "GFX_money"
+			position = { x= 0 y = 6 }
+		}
+		buttonType = {
+			name ="buy_icon"
+			spriteType = "GFX_in_stock_icon"
+			position = { x= 105 y = 1 }
+			shortcut = "ctrl+g"
+		}
+		instantTextBoxType = {
+			name ="money_text"
+			position = { x= -22 y = 3 }
+			font = "hoi_18mbs"
+			text = "MONEY_MAIN"
+			format = center
+			maxWidth = 150
+			maxHeight = 24
+			fixedsize = yes
+			
+			pdx_tooltip = "MONEY_TOOLTIP"
+		}
+	}
+	
+	
+
+
+
+}

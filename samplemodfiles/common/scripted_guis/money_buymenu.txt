@@ -1,0 +1,726 @@
+scripted_gui = {
+
+	money_equipment = {
+		context_type = player_context
+		
+		window_name = "money_equipment_container"
+		visible={
+		check_variable = { show > 0.00 }
+		}
+		
+		effects = {
+			
+			infantry_click = {
+			if ={
+			limit={
+				check_variable = { dx > 99.99 }
+				check_variable = {  global.infantrystock > 999 }
+				has_tech=infantry_weapons
+				NOT={has_tech=infantry_weapons1}
+			}
+			subtract_from_variable = { var = dx value = 100 }
+			subtract_from_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 99.99 }
+				check_variable = {  global.infantrystock > 999 }
+				has_tech=infantry_weapons1
+				NOT={has_tech=improved_infantry_weapons}
+			}
+			subtract_from_variable = { var = dx value = 100 }
+			subtract_from_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 99.99 }
+				check_variable = {  global.infantrystock > 999 }
+				has_tech=improved_infantry_weapons
+				NOT={has_tech=advanced_infantry_weapons}
+			}
+			subtract_from_variable = { var = dx value = 100 }
+			subtract_from_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_2  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = {  global.infantrystock > 999 }
+				check_variable = { dx > 99.99 }
+				has_tech=advanced_infantry_weapons
+			}
+			subtract_from_variable = { var = global.infantrystock  value = 1000 }
+			subtract_from_variable = { var = dx value = 100 }
+			add_equipment_to_stockpile = { type = infantry_equipment_3  amount = 1000  }
+			}
+			}
+			}
+			}
+			}
+			} 
+			}
+			}
+			infantry_sell_click = {
+			if ={
+			limit={
+				has_equipment = { infantry_equipment_0 > 999 }
+				has_tech=infantry_weapons
+				NOT={has_tech=infantry_weapons1}
+			}
+			add_to_variable = { var = dx value = 100 }
+			add_to_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { infantry_equipment_1 > 999 }
+				has_tech=infantry_weapons1
+				NOT={has_tech=improved_infantry_weapons}
+			}
+			add_to_variable = { var = dx value = 100 }
+			add_to_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { infantry_equipment_2 > 999 }
+				has_tech=improved_infantry_weapons
+				NOT={has_tech=advanced_infantry_weapons}
+			}
+			add_to_variable = { var = dx value = 100 }
+			add_to_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_2  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { infantry_equipment_2 > 999 }
+				has_tech=advanced_infantry_weapons
+			}
+			add_to_variable = { var = dx value = 100 }
+			add_to_variable = { var = global.infantrystock  value = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment_3  amount = -1000  }
+			}
+			}
+			}
+			}
+			}
+			} 
+			}
+			}
+			support_click = {
+			if ={
+			limit={
+				check_variable = { dx > 149.99 }
+				check_variable = {  global.supportstock > 999 }
+				has_tech=tech_support
+			}
+			subtract_from_variable = { var = dx value = 150 }
+			subtract_from_variable = { var = global.supportstock value = 1000 }
+			add_equipment_to_stockpile = { type = support_equipment  amount = 1000  }
+			else={
+
+			}
+			}
+			}
+			support_sell_click = {
+			if ={
+			limit={
+				has_equipment = { support_equipment > 999 }
+				has_tech=tech_support
+			}
+			add_to_variable = { var = dx value = 150 }
+			add_to_variable = { var = global.supportstock value = 1000 }
+			add_equipment_to_stockpile = { type = support_equipment  amount = -1000  }
+			else={
+
+			}
+			}
+			}
+			artillery_click={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.artillerystock > 999 }
+				has_tech=gw_artillery
+				NOT={has_tech=artillery1}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.artillerystock > 999 }
+				has_tech=artillery1
+				NOT={has_tech=artillery4}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_2  amount = 1000  }
+			else={
+			if={
+			limit={
+			check_variable = { dx > 199.99 }
+			check_variable = {  global.artillerystock > 999 }
+			has_tech=artillery4
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_3  amount = 1000  }
+
+			}
+			}
+			}
+			}
+		    }
+			}
+			artillery_sell_click={
+			if ={
+			limit={
+				has_equipment = { artillery_equipment_1 > 999 }
+				has_tech=gw_artillery
+				NOT={has_tech=artillery1}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { artillery_equipment_2 > 999 }
+				has_tech=artillery1
+				NOT={has_tech=artillery4}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_2  amount = -1000  }
+			else={
+			if={
+			limit={
+			has_equipment = { artillery_equipment_3 > 999 }
+			has_tech=artillery4
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.artillerystock value = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_3  amount = -1000  }
+
+			}
+			}
+			}
+			}
+		    }
+			}
+			motorized_click={
+			if ={
+			limit={
+				check_variable = { dx > 249.99 }
+				check_variable = {  global.motorizedstock > 499 }
+				has_tech=motorised_infantry
+			}
+			subtract_from_variable = { var = dx value = 250 }
+			subtract_from_variable = { var = global.motorizedstock value = 500 }
+			add_equipment_to_stockpile = { type = motorized_equipment  amount = 500  }
+			else={
+			} 
+		}
+			}
+			motorized_sell_click={
+			if ={
+			limit={
+				has_equipment = { motorized_equipment > 499 }
+				has_tech=motorised_infantry
+			}
+			add_to_variable = { var = dx value = 250 }
+			add_to_variable = { var = global.motorizedstock value = 500 }
+			add_equipment_to_stockpile = { type = motorized_equipment  amount = -500  }
+			else={
+			} 
+		}
+			}
+			anti_tank_click={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.antitankstock > 999 }
+				has_tech=interwar_antitank
+				NOT={has_tech=antitank2}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				has_tech=antitank2
+				check_variable = {  global.antitankstock > 999 }
+				NOT={has_tech=antitank5}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_2  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.antitankstock > 999 }
+				has_tech=antitank5
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_3 amount = 1000  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			anti_tank_sell_click={
+			if ={
+			limit={
+				has_equipment = { anti_tank_equipment_1 > 999 }
+				has_tech=interwar_antitank
+				NOT={has_tech=antitank2}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { anti_tank_equipment_2 > 999 }
+				has_tech=antitank2
+				NOT={has_tech=antitank5}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_2  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { anti_tank_equipment_3 > 999 }
+				has_tech=antitank5
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antitankstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment_3  amount = -1000  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			anti_air_click={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.antiairstock > 999 }
+				has_tech=interwar_antiair
+				NOT={has_tech=antiair2}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_1  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.antiairstock > 999 }
+				has_tech=antiair2
+				NOT={has_tech=antiair5}
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_2  amount = 1000  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 199.99 }
+				check_variable = {  global.antiairstock > 999 }
+				has_tech=antiair5
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_3  amount = 1000  }
+			
+			}
+			}
+			}
+			}
+			}
+			}
+			anti_air_sell_click={
+			if ={
+			limit={
+				has_equipment = { anti_air_equipment_1 > 999 }
+				has_tech=interwar_antiair
+				NOT={has_tech=antiair2}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_1  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { anti_air_equipment_2 > 999 }
+				has_tech=antiair2
+				NOT={has_tech=antiair5}
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_2  amount = -1000  }
+			else={
+			if ={
+			limit={
+				has_equipment = { anti_air_equipment_3 > 999 }
+				has_tech=antiair5
+			}
+			add_to_variable = { var = dx value = 200 }
+			add_to_variable = { var = global.antiairstock value = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment_3  amount = -1000  }
+			
+			}
+			}
+			}
+			}
+			}
+			}
+			light_tank_click={
+			if ={
+			limit={
+				check_variable = { dx > 249.99 }
+				check_variable = {  global.lighttankstock > 499 }
+				has_tech=basic_light_tank
+				NOT={has_tech=improved_light_tank}
+			}
+			subtract_from_variable = { var = dx value = 250 }
+			subtract_from_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_1  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 249.99 }
+				check_variable = {  global.lighttankstock > 499 }
+				has_tech=improved_light_tank
+				NOT={has_tech=advanced_light_tank}
+			}
+			subtract_from_variable = { var = dx value = 250 }
+			subtract_from_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_2  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 249.99 }
+				check_variable = {  global.lighttankstock > 499 }
+				has_tech=advanced_light_tank
+			}
+			subtract_from_variable = { var = dx value = 250 }
+			subtract_from_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_3  amount = 500  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			light_tank_sell_click={
+			if ={
+			limit={
+				has_equipment = { light_tank_equipment_1 > 499 }
+				has_tech=basic_light_tank
+				NOT={has_tech=improved_light_tank}
+			}
+			add_to_variable = { var = dx value = 250 }
+			add_to_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_1  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { light_tank_equipment_2 > 499 }
+				has_tech=improved_light_tank
+				NOT={has_tech=advanced_light_tank}
+			}
+			add_to_variable = { var = dx value = 250 }
+			add_to_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_2  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { light_tank_equipment_3 > 499 }
+				has_tech=advanced_light_tank
+			}
+			add_to_variable = { var = dx value = 250 }
+			add_to_variable = { var = global.lighttankstock value = 500 }
+			add_equipment_to_stockpile = { type = light_tank_equipment_3  amount = -500  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			medium_tank_click={
+			if ={
+			limit={
+				check_variable = { dx > 299.99 }
+				check_variable = {  global.mediumtankstock > 499 }
+				has_tech=basic_medium_tank
+				NOT={has_tech=improved_medium_tank}
+			}
+			subtract_from_variable = { var = dx value = 300 }
+			subtract_from_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_1  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 299.99 }
+				check_variable = {  global.mediumtankstock > 499 }
+				has_tech=improved_medium_tank
+				NOT={has_tech=advanced_medium_tank}
+			}
+			subtract_from_variable = { var = dx value = 300 }
+			subtract_from_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_2  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 299.99 }
+				check_variable = {  global.mediumtankstock > 499 }
+				has_tech=advanced_medium_tank
+			}
+			subtract_from_variable = { var = dx value = 300 }
+			subtract_from_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_3  amount = 500  }
+			
+			}
+			}	
+			}
+			}
+			}
+			}
+			medium_tank_sell_click={
+			if ={
+			limit={
+				has_equipment = { medium_tank_equipment_1 > 499 }
+				has_tech=basic_medium_tank
+				NOT={has_tech=improved_medium_tank}
+			}
+			add_to_variable = { var = dx value = 300 }
+			add_to_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_1  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { medium_tank_equipment_2 > 499 }
+				has_tech=improved_medium_tank
+				NOT={has_tech=advanced_medium_tank}
+			}
+			add_to_variable = { var = dx value = 300 }
+			add_to_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_2  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { medium_tank_equipment_3 > 499 }
+				has_tech=advanced_medium_tank
+			}
+			add_to_variable = { var = dx value = 300 }
+			add_to_variable = { var = global.mediumtankstock value = 500 }
+			add_equipment_to_stockpile = { type = medium_tank_equipment_3  amount = -500  }
+			
+			}
+			}	
+			}
+			}
+			}
+			}
+			heavy_tank_click={
+			if ={
+			limit={
+				check_variable = { dx > 349.99 }
+				check_variable = {  global.heavytankstock > 499 }
+				has_tech=basic_heavy_tank
+				NOT={has_tech=improved_heavy_tank}
+			}
+			subtract_from_variable = { var = dx value = 350 }
+			subtract_from_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_1  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 349.99 }
+				check_variable = {  global.heavytankstock > 499 }
+				has_tech=improved_heavy_tank
+				NOT={has_tech=advanced_heavy_tank}
+			}
+			subtract_from_variable = { var = dx value = 350 }
+			subtract_from_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_2  amount = 500  }
+			else={
+			if ={
+			limit={
+				check_variable = { dx > 349.99 }
+				check_variable = {  global.heavytankstock > 499 }
+				has_tech=advanced_heavy_tank
+			}
+			subtract_from_variable = { var = dx value = 350 }
+			subtract_from_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_3  amount = 500  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			heavy_tank_sell_click={
+			if ={
+			limit={
+				has_equipment = { heavy_tank_equipment_1 > 499 }
+				has_tech=basic_heavy_tank
+				NOT={has_tech=improved_heavy_tank}
+			}
+			add_to_variable = { var = dx value = 350 }
+			add_to_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_1  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { heavy_tank_equipment_2 > 499 }
+				has_tech=improved_heavy_tank
+				NOT={has_tech=advanced_heavy_tank}
+			}
+			add_to_variable = { var = dx value = 350 }
+			add_to_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_2  amount = -500  }
+			else={
+			if ={
+			limit={
+				has_equipment = { heavy_tank_equipment_3 > 499 }
+				has_tech=advanced_heavy_tank
+			}
+			add_to_variable = { var = dx value = 350 }
+			add_to_variable = { var = global.heavytankstock value = 500 }
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_3  amount = -500  }
+
+			}
+			}
+			}
+			}
+			}
+			}
+			convoy_click={
+			if ={
+			limit={
+				check_variable = {  global.convoystock > 49 }
+				check_variable = { dx > 199.99 }
+			}
+			subtract_from_variable = { var = dx value = 200 }
+			subtract_from_variable = { var = global.convoystock value = 50 }
+			add_equipment_to_stockpile = { type = convoy_1  amount = 50  }
+			else={
+			}
+			}
+			}
+			plus10_click={
+				add_to_variable ={var = debttotal value = 10}
+				add_to_variable ={var = dx value = 10}
+			}
+			plus100_click={
+				add_to_variable ={var = debttotal value = 100}
+				add_to_variable ={var = dx value = 100}
+			}
+			pay_debt_click={
+			subtract_from_variable ={var = dx value = debttotal}
+			set_variable ={debttotal=0}
+			}
+			cheat_click={
+			add_to_variable = { var = dx value = 10 }
+			}
+			cheatlower_click={
+			add_to_variable = { var = dx value = -10 }
+			}
+			exitbutton_click = {
+				set_variable = { show = 0 }
+			}
+		}
+		
+		triggers = {
+			infantry_click_enabled = {
+				has_tech=infantry_weapons
+				check_variable = { dx > 99.99 }
+			}
+			support_click_enabled = {
+				has_tech=tech_support
+				check_variable = { dx > 149.99 }
+			}
+			artillery_click_enabled = {
+				has_tech=gw_artillery
+				check_variable = { dx > 199.99 }
+			}
+			motorized_click_enabled = {
+				has_tech=motorised_infantry
+				check_variable = { dx > 249.99 }
+			}
+			anti_tank_click_enabled = {
+				has_tech=interwar_antitank
+				check_variable = { dx > 199.99 }
+			}
+			anti_air_click_enabled = {
+				has_tech=interwar_antiair
+				check_variable = { dx > 199.99 }
+			}
+			light_tank_click_enabled = {
+				has_tech=basic_light_tank
+				check_variable = { dx > 249.99 }
+			}
+			medium_tank_click_enabled = {
+				has_tech=basic_medium_tank
+				check_variable = { dx > 299.99 }
+			}
+			heavy_tank_click_enabled = {
+				has_tech=basic_heavy_tank
+				check_variable = { dx > 349.99 }
+			}
+			convoy_click_enabled = {
+				check_variable = { dx > 199.99 }
+			}
+		}
+		triggers = {
+			infantry_sell_click_enabled = {
+				has_tech=infantry_weapons
+			}
+			support_sell_click_enabled = {
+				has_tech=tech_support
+			}
+			artillery_sell_click_enabled = {
+				has_tech=gw_artillery
+			}
+			motorized_sell_click_enabled = {
+				has_tech=motorised_infantry
+			}
+			anti_tank_sell_click_enabled = {
+				has_tech=interwar_antitank
+			}
+			anti_air_sell_click_enabled = {
+				has_tech=interwar_antiair
+			}
+			light_tank_sell_click_enabled = {
+				has_tech=basic_light_tank
+			}
+			medium_tank_sell_click_enabled = {
+				has_tech=basic_medium_tank
+			}
+			heavy_tank_sell_click_enabled = {
+				has_tech=basic_heavy_tank
+			}
+		}
+	}
+	
+}
+
