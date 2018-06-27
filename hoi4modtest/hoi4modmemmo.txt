@@ -68,7 +68,7 @@ AI　ブックマーク　建物　コスメティックタグ　国　師団　
 定義された数字を格納している。国に共通することなど、繰り返し用いられる数字などが定義づけられている。
 
 変数
-MODによって定義される。好きな数字や文字を格納できる。
+MODによって定義される。好きな数字や文字を格納できる。in game variables are essencial, and triggers are also used as variables  
 
 ローカライズ
 言語を変えて表示したいときに、置き換える部分をこれで置き換える。
@@ -119,9 +119,10 @@ num_of_available_naval_factories　
 num_of_civilian_factories　保有している工場全部。輸出、従属国による増加含む
 num_of_civilian_factories_available_for_projects　全民需工場から消費財と貿易財を抜いたもの
 num_of_controlled_states
-num_of_factories　保有している全工場数
+num_of_factories　保有している全工場数 include imported and donated factories
 num_of_military_factories
 num_of_naval_factories
+<buildings> such as arms factory,industrial complex, represents sum of factories inside of your country.
 
 modifier@...でモディファー内容を参照可能。また、この値は直接的に変更可能
 production_speed_buildings_factor　建設速度全体へのボーナス。合計の値が最終的な値。
