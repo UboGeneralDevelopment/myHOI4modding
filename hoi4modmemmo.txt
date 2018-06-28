@@ -39,7 +39,7 @@ MOD中のどこにスコープを記載するかは、MODシステムに依存�
 コマンドには実行（記載）可能なスコープが設定されている。また、通常は効果範囲、実行条件を一緒に記載する必要がある。
 scripted_effectsによって既存のコマンドを組み合わせて自作することもできる。
 コマンドを実行できるMODシステムをリスト化すると、
-dicisions,ideas,national_focuses,technologies,events,abilities,
+decisions,ideas,national_focuses,technologies,events,abilities,
 scripted GUI,on action　など
 
 トリガー（条件）
@@ -47,7 +47,7 @@ MODシステムの実行の可否を決める条件、あるいはMODシステ�
 トリガーの記載場所はMODシステムによって異なり、スコープによって利用可能なトリガーも異なる。
 scripted_triggersは自分自身で指定することができるトリガーで、ゲーム内のトリガーを組み合わせてyesかnoを返すトリガーを作れる。
 トリガーが使われるのは、
-dicisions,ideas,national_focuses,technologies,events,abilities,
+decisions,ideas,national_focuses,technologies,events,abilities,
 scripted GUI,on action
 
 モディファー
@@ -84,9 +84,31 @@ MOD定義の変数操作はコマンドの一種であり、スコープや条�
 
 modシステム
 mod用に用意されているシステム。modでは基本的にはここに用意されているシステムしか作れない。
-modシステム一覧
+以下にmodシステム一覧を示す。システム名は対応するフォルダ名をあて、複数フォルダにまたがる場合もまとめた。動的、静的の分別は主観。
+動的システム
+events
+abilities
+decisions
+continuous_focus
+ideasおよびidea_tags
+national_focus
+on_actions
+scripted_gui
 
-
+静的データ
+aces
+autonomous_states
+buildings
+ideologies
+modifiers
+names
+resources
+scripted_effects
+scripted_triggers
+state_category
+technologiesとtechnology_tags
+unit_leaderとtraits
+unitsとequipment
 
 
 
