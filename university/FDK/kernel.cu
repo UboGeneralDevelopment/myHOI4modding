@@ -298,7 +298,7 @@ int main(int argc, char** argv) {
 	fscanf(para, "%s", out_name);
 	fscanf(para, "%f %f", &s2d, &s2o);
 	fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);
-	fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);
+	fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);//ボリュームのｘｙのボクセル数、横と縦の再構成範囲（使用する投影像の範囲？）
 	fscanf(para, "%f %f %f", &shiftA, &shiftU, &shiftV);
 	fclose(para);
 

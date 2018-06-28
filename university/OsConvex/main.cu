@@ -1,8 +1,13 @@
+
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+
 #include <stdio.h>
+
 #include <math.h>
 #include <time.h>
 #include <float.h>
-#include <cuda.h>
+
 
 #define PI 3.1415926535897932384626433832795f
 #define EPSILON 0.000001
@@ -18,14 +23,14 @@
 __global__ void forward_GPU(int W, int H, float dW, float dH, float D,//ディテクタのピクセル数とサイズ
                             int subP, float *sum, //ray-sum 画像 (サイズは W x H x subP)
                             float sXY, float sZ, //装置とCT再構成領域の大きさ
-                            int N, int zS, int zE, float *F, float pitch, //CT画像の断面 (zS <= z < zE)
+                            int N, int zS, int zE, float *F, float pitch, //CT画像の断面、平面幅N、高さ (zS <= z < zE)。ファイルはF。普通の断面がtomoblock枚入っている
                             float *rotS, float *rotC, //回転変換のためのテーブル (長さは subP 個)
-                            float *ray, float dt //光線のデータ
+                            float *ray, float dt //光線のデータ。光線は角度と始点、終点がある。tはステップ幅
                             ){
   
   int id = blockIdx.x*blockDim.x + threadIdx.x;
   if(id < W*H){
-    int id5 = 5*id;
+    int id5 = 5*id;//光線ごとにスレッドを割り当てている。
     float dx1 = ray[id5++];
     float dy1 = ray[id5++];
     float dz = ray[id5++];
@@ -83,8 +88,8 @@ __global__ void forward_GPU(int W, int H, float dW, float dH, float D,//ディテク
           int y = (int)(sy + t*dy);
           int z = (int)(sz + t*dz);
           if(x >= 0 && y >= 0 && z >= zS &&
-             x < N && y < N && z < zE)
-            v += F[((z-zS)*N+y)*N+x];
+             x < N && y < N && z < zE)//光線上でマーチングする点の座標位置が0より大きく縦横幅のNより小さいとき、
+            v += F[((z-zS)*N+y)*N+x];//ｖにボクセルの値を加算していく。結局のところ、マーチングするステップをうまくボクセル換算して、その上の値を引っ張ってきている。
         }
         sum[i*W*H+id] += v;
       }
@@ -148,9 +153,9 @@ __global__ void backpro_GPU(int W, int H, float dW, float dH, float D, float d, 
   }
 }
 
-void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogram
-            int W, int H, int P, float **S, //sinogram
-            float d, float D, float shift,
+void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogram、平面横縦ボクセル数、高さボクセル数、トモグラムボリューム
+            int W, int H, int P, float **S, //sinogram、縦、横、枚数、ボリューム
+            float d, float D, float shift,//Dは物体と線源距離
             float *rotS, float *rotC){
   //(XY, XY, Z): CTボリュームのボクセル数．(sXY, sXY, sZ): ボリュームのサイズの半分
   
@@ -170,7 +175,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogram
   float *sum = (float*)malloc(sizeof(float)*W*H*subN);
   
   //光線の情報 単位方向ベクトル と 始点・終点のパラメータ
-  float *ray = (float*)malloc(sizeof(float)*W*H*5);
+  float *ray = (float*)malloc(sizeof(float)*W*H*5);//ベクトル3要素と始点と終点位置を格納し、ray一つにつき5要素、それがシノグラムの平面個分ある。
   for(int i=0; i<H; i++){
     for(int j=0; j<W; j++){
       float dx = (j+0.5f-shift)*d-dW;
@@ -253,7 +258,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogram
   cudaMalloc((void**)&d_F, sizeof(float)*tomoBlock*XY*XY);
   cudaMalloc((void**)&d_rotS, sizeof(float)*subN);
   cudaMalloc((void**)&d_rotC, sizeof(float)*subN);
-  cudaMalloc((void**)&d_ray, sizeof(float)*5*W*H); //forward の直前
+  cudaMalloc((void**)&d_ray, sizeof(float)*5*W*H); //forward の直前、rayをコピーして記憶
   cudaMemcpy(d_ray, ray, sizeof(float)*5*W*H, cudaMemcpyHostToDevice);
   cudaMalloc((void**)&d_pxy, sizeof(float)*XY*XY*2); //backの直前
   cudaMemcpy(d_pxy, pxy, sizeof(float)*XY*XY*2, cudaMemcpyHostToDevice);
@@ -292,9 +297,9 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogram
           if(i+j==Z)
             break;
           for(k=0; k<XY*XY; k++)
-            f_tmp[j*XY*XY+k] = F[i+j][k];
+            f_tmp[j*XY*XY+k] = F[i+j][k];//f_tempにはトモグラムの断面の層がtomoblock枚入っている
         }
-        cudaMemcpy(d_F, f_tmp, sizeof(float)*XY*XY*j, cudaMemcpyHostToDevice);
+        cudaMemcpy(d_F, f_tmp, sizeof(float)*XY*XY*j, cudaMemcpyHostToDevice);//d_Fにf_tempを送る
         int e = i + tomoBlock;
         if(e > Z)
           e = Z;
@@ -425,9 +430,9 @@ int main(int argc, char** argv){
   
   fscanf(para, "%s", in_path);
   fscanf(para, "%s", out_name);
-  fscanf(para, "%f %f", &s2d, &s2o);
-  fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);
-  fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);
+  fscanf(para, "%f %f", &s2d, &s2o);//デテクタ、物体、線源の距離など
+  fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);//ピクセルサイズ
+  fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);//ボリュームのｘｙのボクセル数、横と縦の再構成範囲（使用する投影像の範囲？）
   fscanf(para, "%f", &shift);
   if(fscanf(para, "%s", format) == EOF) //uint16, float, log
     sprintf(format, "uint16");
@@ -438,9 +443,9 @@ int main(int argc, char** argv){
   dW = detP*W;
   dH = detP*H;
   
-  //image size (cylinder)
-  sizeR = (float)(0.5f*s2o*dW/sqrt(s2d*s2d + 0.25f*dW*dW)); //radius
-  sizeH = 0.5f*(s2o)/s2d*dH; //height/2
+  //image size (cylinder)//再構成を行うボリュームのサイズ。円柱形
+  sizeR = (float)(0.5f*s2o*dW/sqrt(s2d*s2d + 0.25f*dW*dW)); //radius、円柱の半径
+  sizeH = 0.5f*(s2o)/s2d*dH; //height/2、円柱高さの半分
   sizeR *= scaleW;
   sizeH *= scaleH;
   
