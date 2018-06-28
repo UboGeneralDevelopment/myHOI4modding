@@ -48,7 +48,7 @@ dicisions,ideas,national focuses,scripted GUI,Technology,on action,abilities な
 モディファーはディシジョン、国家精神、国家方針などに結びついており、コマンドで直接いじることは基本的にできない。
 モディファーはそれ自体の情報を紐づけられた実体に保存しており、効果を修正することができる。モディファーの存在する変数は変更履歴が残る。
 コマンドによる効果は基本的に効果を記憶していないため、変数の基礎値を直接変更するものだといえる。
-モディファーの種類もいっぱいあるが、情報が散逸しており、wikiのmodifierの項目以外にもある。
+モディファーの種類もいっぱいあるが、情報が散逸しており、wikiのmodifierの項目以外にもありそう。
 modifierが使えるのは、ideads,decisions,national focuses,Technology, abilities　など
 
 トリガー（条件）
