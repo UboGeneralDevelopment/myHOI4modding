@@ -110,5 +110,5 @@ technologiesとtechnology_tags
 unit_leaderとtraits
 unitsとequipment
 
-
+これらのシステムの実装の詳細についてはそれぞれの説明を参照。
 
