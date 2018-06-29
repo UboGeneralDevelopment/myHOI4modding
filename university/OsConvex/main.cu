@@ -18,26 +18,26 @@
 #define tomoBlock 10 //foward-projection ‚Ì‚Æ‚«‚Éˆê“x‚É“]‘—‚·‚é’f–Ê”
 #define ITER 50 //10 //ŒJ‚è•Ô‚µ‰ñ”
 #define SUB 20 //OS–@‚Ì•ªŠ„”
-#define DT 0.5 //ray-marching ‚ÌƒXƒeƒbƒvƒTƒCƒY (ƒ{ƒNƒZƒ‹ƒTƒCƒY‚Æ‚Ì‘Š‘Î’l)
+#define DT 0.5 //ray-marching ‚ÌƒXƒeƒbƒvƒTƒCƒY (ƒ{ƒNƒZƒ‹ƒTƒCƒY‚Æ‚Ì‘Š‘Î’l)//—pŒê‚Ì“ˆêBƒsƒNƒZƒ‹ƒTƒCƒYAƒ{ƒNƒZƒ‹ƒTƒCƒY‚Æ‚¢‚¤‚Ì‚ÍAŒ»À‚Å‚ÌƒTƒCƒY‚Ì‚±‚Æ
 
-__global__ void forward_GPU(int W, int H, float dW, float dH, float D,//ƒfƒBƒeƒNƒ^‚ÌƒsƒNƒZƒ‹”‚ÆƒTƒCƒY
-                            int subP, float *sum, //ray-sum ‰æ‘œ (ƒTƒCƒY‚Í W x H x subP)
-                            float sXY, float sZ, //‘•’u‚ÆCTÄ\¬—Ìˆæ‚Ì‘å‚«‚³
-                            int N, int zS, int zE, float *F, float pitch, //CT‰æ‘œ‚Ì’f–ÊA•½–Ê•NA‚‚³ (zS <= z < zE)Bƒtƒ@ƒCƒ‹‚ÍFB•’Ê‚Ì’f–Ê‚ªtomoblock–‡“ü‚Á‚Ä‚¢‚é
+__global__ void forward_GPU(int W, int H, float dW, float dH, float D,//“Š‰e‚Ì‰¡‚Æc‚ÌƒsƒNƒZƒ‹”‚ÆƒTƒCƒYA•¨‘Ì‚Æ‚¹‚ñ‚°‚ñ‹——£
+                            int subP, float *sum, //ray-sum ‰æ‘œBŒõü‚Ì’l‚ÌûW‘•’u (ƒTƒCƒY‚Í W x H x subP)
+                            float sXY, float sZ, //Ä\¬‰~’Œ‚Ì”¼Œa‚ÆA‚‚³‚Ì”¼•ªB
+                            int N, int zS, int zE, float *F, float pitch, //CT‰æ‘œ‚Ì’f–ÊA•½–ÊxyƒsƒNƒZƒ‹”NA‚‚³ (zS <= z < zE)Bƒtƒ@ƒCƒ‹‚ÍFB•’Ê‚Ì’f–Ê‚ªtomoblock–‡“ü‚Á‚Ä‚¢‚éBpitch‚Íƒ{ƒNƒZƒ‹ƒTƒCƒY
                             float *rotS, float *rotC, //‰ñ“]•ÏŠ·‚Ì‚½‚ß‚Ìƒe[ƒuƒ‹ (’·‚³‚Í subP ŒÂ)
-                            float *ray, float dt //Œõü‚Ìƒf[ƒ^BŒõü‚ÍŠp“x‚Æn“_AI“_‚ª‚ ‚éBt‚ÍƒXƒeƒbƒv•
+                            float *ray, float dt //Œõü‚Ìƒf[ƒ^BŒõü‚ÍŠp“x‚Æn“_AI“_‚ª‚ ‚éBdt‚ÍƒXƒeƒbƒv•‚ÅAƒ{ƒNƒZƒ‹ƒTƒCƒY‚Ì”¼•ª‚Ì’·‚³
                             ){
   
-  int id = blockIdx.x*blockDim.x + threadIdx.x;
+  int id = blockIdx.x*blockDim.x + threadIdx.x;//Œõü‚²‚Æ‚ÉƒXƒŒƒbƒh‚ğŠ„‚è“–‚Ä
   if(id < W*H){
-    int id5 = 5*id;//Œõü‚²‚Æ‚ÉƒXƒŒƒbƒh‚ğŠ„‚è“–‚Ä‚Ä‚¢‚éB
+    int id5 = 5*id;//ƒXƒŒƒbƒh‚ÅÀs‚³‚ê‚éŒõü‚ğˆø‚Á’£‚Á‚Ä‚«‚Ä‚¢‚éBid‚Í0ƒXƒ^[ƒg‚Á‚Û‚¢B
     float dx1 = ray[id5++];
     float dy1 = ray[id5++];
     float dz = ray[id5++];
     float ts = ray[id5++];
     float te = ray[id5];
     
-    //‘ÎÛ‚Ì volume —Ìˆæ‚Ì‚İ marching ‚·‚é‚æ‚¤‚ÉŠJnEI—¹ˆÊ’u‚ğ’²®
+    //‘ÎÛ‚Ì volume —Ìˆæ‚Ì‚İ marching ‚·‚é‚æ‚¤‚ÉŠJnEI—¹ˆÊ’u‚ğ’²®Bƒgƒ‚ƒOƒ‰ƒt‚·‚×‚Ä‚ª“ü‚Á‚Ä‚­‚é‚í‚¯‚Å‚Í‚È‚¢‚½‚ßB
     if(dz != 0 && ts > 0){
       float t1 = ((zS)*pitch - sZ)/dz;
       float t2 = ((zE)*pitch - sZ)/dz;
@@ -60,15 +60,15 @@ __global__ void forward_GPU(int W, int H, float dW, float dH, float D,//ƒfƒBƒeƒN
     }
     
     if(ts > 0 && ts < te){
-      //üŒ¹‚©‚çdt~®”‚É‚È‚é‚æ‚¤‚É‚·‚é
+      //ƒXƒ^[ƒgˆÊ’u‚ªAüŒ¹‚©‚çdt‚Ì®””{‚Ì‹——£‚É‚È‚é‚æ‚¤‚É‚·‚éBƒXƒ^[ƒg‹——£‚É‚à‚Á‚Æ‹ß‚¢ƒXƒeƒbƒv‹——£‚ğƒXƒ^[ƒg‚Æ‚·‚éB
       ts = ((int)(ts/dt))*dt;
       
-      //ƒ{ƒNƒZƒ‹ƒTƒCƒYŠ·Z‚ÌƒXƒeƒbƒv—Ê z
+      //ƒ{ƒNƒZƒ‹ƒTƒCƒYŠ·Z‚ÌƒXƒeƒbƒv—Ê z@ƒ{ƒNƒZƒ‹ˆê‚Â‚É‚Â‚«Az‚ª‚Ç‚ê‚¾‚¯i‚Ş‚©B
       dz = dz/pitch;
-      //XüŒ¹‚Ìƒ{ƒNƒZƒ‹ˆÊ’u z
+      //XüŒ¹‚Ìƒ{ƒNƒZƒ‹ˆÊ’u z@À•W²’†S‚Í‚½‚Ô‚ñÄ\¬ƒ{ƒbƒNƒX‚Ì’[‚Á‚±
       float sz = sZ/pitch;
       
-      for(int i=0; i<subP/4; i++){
+      for(int i=0; i<subP/4; i++){//‘—‚ç‚ê‚Ä‚«‚½CT’f–Ê‚É‘Î‚µ‚ÄAì¬‚·‚é‡“Š‰e‚Ì”•ª‚¾‚¯‰ñ“]‚³‚¹‚éB
         float rS = -rotS[i];
         float rC = rotC[i];
         
@@ -80,21 +80,21 @@ __global__ void forward_GPU(int W, int H, float dW, float dH, float D,//ƒfƒBƒeƒN
         float dx = (dx1*rC - dy1*rS)/pitch;
         float dy = (dx1*rS + dy1*rC)/pitch;
         
-        float v = 0;
+        float v = 0;//’l‚ÌŠi”[ŒÉ
         
         //ƒŒƒCƒ}[ƒ`ƒ“ƒO
         for(float t=ts; t<te; t+=dt){
-          int x = (int)(sx + t*dx);
+          int x = (int)(sx + t*dx);//‚±‚±‚ÌˆêƒXƒeƒbƒv‚²‚Æ‚ÉAxyz•ûŒü‚É‰½ƒ{ƒNƒZƒ‹•ªi‚Ş‚©‚ğŒvZ‚µAint‚ÅŠÛ‚ß‚ç‚ê‚ÄÅI“I‚È“_À•W‚ğ“¾‚Ä‚¢‚éB
           int y = (int)(sy + t*dy);
           int z = (int)(sz + t*dz);
           if(x >= 0 && y >= 0 && z >= zS &&
-             x < N && y < N && z < zE)//Œõüã‚Åƒ}[ƒ`ƒ“ƒO‚·‚é“_‚ÌÀ•WˆÊ’u‚ª0‚æ‚è‘å‚«‚­c‰¡•‚ÌN‚æ‚è¬‚³‚¢‚Æ‚«A
-            v += F[((z-zS)*N+y)*N+x];//‚–‚Éƒ{ƒNƒZƒ‹‚Ì’l‚ğ‰ÁZ‚µ‚Ä‚¢‚­BŒ‹‹Ç‚Ì‚Æ‚±‚ëAƒ}[ƒ`ƒ“ƒO‚·‚éƒXƒeƒbƒv‚ğ‚¤‚Ü‚­ƒ{ƒNƒZƒ‹Š·Z‚µ‚ÄA‚»‚Ìã‚Ì’l‚ğˆø‚Á’£‚Á‚Ä‚«‚Ä‚¢‚éB
+             x < N && y < N && z < zE)//Œõüã‚Ì“_‚ªAÄ\¬‰~’Œ‚Ì’u‚¢‚Ä‚ ‚éƒ{ƒbƒNƒX‹óŠÔic‰¡ƒ{ƒNƒZƒ‹”NAzSƒ‚‚³ƒ{ƒNƒZƒ‹”ÍˆÍƒzEj‚É‚ ‚éA
+            v += F[((z-zS)*N+y)*N+x];//‚–‚É‚»‚ÌÀ•\î‚É‚ ‚éƒgƒ‚ƒOƒ‰ƒt‚Ìƒ{ƒNƒZƒ‹‚Ì’l‚ğ‰ÁZ‚µ‚Ä‚¢‚­B
         }
         sum[i*W*H+id] += v;
       }
     }
-  }
+  }//‚±‚Ìˆê˜A‚Ì‡“Š‰e‚É‚æ‚èAì¬‚·‚é‡“Š‰e‚·‚×‚Ä‚ÌzS<‚‚³<zE‚Ì”ÍˆÍ‚Ì‡“Š‰e‚ª‚Â‚­‚ç‚ê‚éB‚ ‚Æ‚Í‚±‚ê‚ğ‚‚³•ûŒü‚ÉŒJ‚è•Ô‚·B
 }
 
 __global__ void backpro_GPU(int W, int H, float dW, float dH, float D, float d, float shift,//ƒfƒBƒeƒNƒ^‚ÌƒsƒNƒZƒ‹”‚ÆƒTƒCƒY
@@ -153,36 +153,36 @@ __global__ void backpro_GPU(int W, int H, float dW, float dH, float D, float d, 
   }
 }
 
-void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ{ƒNƒZƒ‹”A‚‚³ƒ{ƒNƒZƒ‹”Aƒgƒ‚ƒOƒ‰ƒ€ƒ{ƒŠƒ…[ƒ€
-            int W, int H, int P, float **S, //sinogramAcA‰¡A–‡”Aƒ{ƒŠƒ…[ƒ€
-            float d, float D, float shift,//D‚Í•¨‘Ì‚ÆüŒ¹‹——£
+void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ{ƒNƒZƒ‹”A‚‚³ƒ{ƒNƒZƒ‹”Aƒgƒ‚ƒOƒ‰ƒ€ƒ{ƒŠƒ…[ƒ€AÄ\¬’f–Ê‰¡ƒTƒCƒY‚Ì”¼•ªi‰~’Œ”¼ŒajA’f–ÊcƒTƒCƒY‚Ì”¼•ª
+            int W, int H, int P, float **S, //sinogramAcƒsƒNƒZƒ‹”A‰¡ƒsƒNƒZƒ‹”A–‡”Aƒ{ƒŠƒ…[ƒ€
+            float d, float D, float shift,//d‚Í“Š‰e‚ğƒIƒuƒWƒFƒNƒgÀ•W‚É’u‚¢‚½‚ÌƒsƒNƒZƒ‹ƒTƒCƒY,D‚Í•¨‘Ì‚ÆüŒ¹‹——£,shit‚Í‚¸‚ê
             float *rotS, float *rotC){
   //(XY, XY, Z): CTƒ{ƒŠƒ…[ƒ€‚Ìƒ{ƒNƒZƒ‹”D(sXY, sXY, sZ): ƒ{ƒŠƒ…[ƒ€‚ÌƒTƒCƒY‚Ì”¼•ª
   
   int i, j, k;
   
-  float s2 = sXY*sXY;
-  float dW = 0.5f*d*W;
-  float dH = 0.5f*d*H;
+  float s2 = sXY*sXY;//Ä\¬”¼Œa‚Ì“ñæ
+  float dW = 0.5f*d*W;//“Š‰e‚Ì‰¡ƒTƒCƒY/2
+  float dH = 0.5f*d*H;//“Š‰e‚ÌcƒTƒCƒY/2
   
   float pitch = 2.0f*sXY/XY; //ƒ{ƒNƒZƒ‹‚ÌƒTƒCƒY
   
-  int subN = P/SUB;
+  int subN = P/SUB;//ˆê“x‚ÌŒvZ‚Åì¬‚·‚é‡“Š‰e‚Ì–‡”
   
   float *rot_tmp = (float*)malloc(sizeof(float)*subN);
   
   //ray-sum ‚Ì’l. backprojection ‚É‚Í•â³—Ê‚É‘‚«Š·‚í‚é
-  float *sum = (float*)malloc(sizeof(float)*W*H*subN);
+  float *sum = (float*)malloc(sizeof(float)*W*H*subN);//“Š‰e’l‚Ì—eŠí
   
-  //Œõü‚Ìî•ñ ’PˆÊ•ûŒüƒxƒNƒgƒ‹ ‚Æ n“_EI“_‚Ìƒpƒ‰ƒ[ƒ^
+  //Œõü‚Ìî•ñ üŒ¹‚æ‚èƒfƒeƒNƒ^[‚Ö‚Ì’PˆÊ•ûŒüƒxƒNƒgƒ‹i•½–Ê‚ğxyA‚‚³z‚Æ‚·‚éj‚Æn“_EI“_‚Ìƒpƒ‰ƒ[ƒ^
   float *ray = (float*)malloc(sizeof(float)*W*H*5);//ƒxƒNƒgƒ‹3—v‘f‚Æn“_‚ÆI“_ˆÊ’u‚ğŠi”[‚µArayˆê‚Â‚É‚Â‚«5—v‘fA‚»‚ê‚ªƒVƒmƒOƒ‰ƒ€‚Ì•½–ÊŒÂ•ª‚ ‚éB
   for(int i=0; i<H; i++){
     for(int j=0; j<W; j++){
-      float dx = (j+0.5f-shift)*d-dW;
-      float dy = D;
-      float dz = (i+0.5f)*d-dH;
-      float l = sqrt(dx*dx+dy*dy+dz*dz);
-      dx /= l;
+      float dx = (j+0.5f-shift)*d-dW;//üŒ¹‚©‚çŒ©‚½“Š‰eã‚Ì“_‚ÌxÀ•WBƒfƒeƒNƒ^‚ÆüŒ¹‚Ì’†S“_‚Ì‰¡‚¸‚ê•â³•t‚«B
+      float dy = D;//üŒ¹‚©‚çŒ©‚½“Š‰eã‚Ì“_‚ÌyÀ•WA‰œsB
+      float dz = (i+0.5f)*d-dH;//éŒ¾‚©‚çŒ©‚½“Š‰eã‚Ì“_‚ÌzÀ•W
+      float l = sqrt(dx*dx+dy*dy+dz*dz);//ƒxƒNƒgƒ‹’·‚³
+      dx /= l;//³‹K‰»
       dy /= l;
       dz /= l;
       
@@ -190,7 +190,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ
       ray[5*(i*W+j)+1] = dy;
       ray[5*(i*W+j)+2] = dz;
       
-      float A = dx*dx + dy*dy;
+      float A = dx*dx + dy*dy;//‚±‚±‚©‚ç‚³‚«‚Ån“_‚ÆI“_‚ÌŒvZ‚ğs‚Á‚Ä‚¢‚é‚ªA‚¨‚»‚ç‚­‚Í‰~’Œó‚ğŠÑ’Ê‚·‚éÅ‰‚Ì’·‚³‚ÆI‚í‚è‚Ì’·‚³‚ğ‚»‚ê‚¼‚êts‚Æte‚Æ‚µ‚Ä‚¢‚é
       float B = -dy*D;
       float C = D*D - s2;
       float Det = B*B - A*C;
@@ -245,7 +245,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ
         else
           F[i][j*XY+k] = 0;
   
-  float dt = DT*pitch;
+  float dt = DT*pitch;//ƒ{ƒNƒZƒ‹ƒTƒCƒY‚Ì”¼•ªB‚±‚Ì•‚ÅƒXƒeƒbƒv‚ªi‚ñ‚Å‚¢‚­B
   
   float* d_sum;
   float* d_F;
@@ -285,7 +285,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ
       
       //‰ñ“]‚Ì‚½‚ß‚Ìƒe[ƒuƒ‹‚ğ‘—‚é
       for(i=0; i<subN; i++)
-        rot_tmp[i] = rotS[sub+i*SUB];
+        rot_tmp[i] = rotS[sub+i*SUB];//ì¬‚·‚é‡“Š‰e‚Ì”‚É‚R‚U‚O“x‚ğ“™•ªŠ„‚·‚éB
       cudaMemcpy(d_rotS, rot_tmp, sizeof(float)*subN, cudaMemcpyHostToDevice);
       for(i=0; i<subN; i++)
         rot_tmp[i] = rotC[sub+i*SUB];
@@ -303,7 +303,7 @@ void convex(int XY, int Z, float **F, float sXY, float sZ, //tomogramA•½–Ê‰¡cƒ
         int e = i + tomoBlock;
         if(e > Z)
           e = Z;
-        int blockN = (H*W+threadN-1)/threadN;
+        int blockN = (H*W+threadN-1)/threadN;//ƒuƒƒbƒN”‚ğ“Š‰e‚ÌƒsƒNƒZƒ‹”‚ğƒuƒƒbƒN“–‚½‚èƒXƒŒƒbƒh”‚ÅŠ„‚Á‚½”‚æ‚è‚à‚·‚±‚µ‘½‚ß‚Éİ’èB
         
         forward_GPU<<< blockN, threadN >>>(W, H, dW, dH, D,
                                            subN, d_sum,
@@ -431,9 +431,9 @@ int main(int argc, char** argv){
   fscanf(para, "%s", in_path);
   fscanf(para, "%s", out_name);
   fscanf(para, "%f %f", &s2d, &s2o);//ƒfƒeƒNƒ^A•¨‘ÌAüŒ¹‚Ì‹——£‚È‚Ç
-  fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);//ƒsƒNƒZƒ‹ƒTƒCƒY
-  fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);//ƒ{ƒŠƒ…[ƒ€‚Ì‚˜‚™‚Ìƒ{ƒNƒZƒ‹”A‰¡‚Æc‚ÌÄ\¬”ÍˆÍig—p‚·‚é“Š‰e‘œ‚Ì”ÍˆÍHj
-  fscanf(para, "%f", &shift);
+  fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);//“Š‰e‘œ‚Ì‰¡ƒsƒNƒZƒ‹AcƒsƒNƒZƒ‹”A–‡”AƒsƒNƒZƒ‹ƒTƒCƒY
+  fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);//ƒ{ƒŠƒ…[ƒ€‚Ì‚˜‚™‚Ìƒ{ƒNƒZƒ‹”A‰¡‚Æc‚ÌÄ\¬”ÍˆÍiÄ\¬‘œ‚Ì‚¤‚¿‰½Š„‚ğì‚é‚©Œˆ‚ß‚éj
+  fscanf(para, "%f", &shift);//ƒfƒeƒNƒ^[’†S‚ÆüŒ¹‚Ì‰¡‚¸‚ê•â³
   if(fscanf(para, "%s", format) == EOF) //uint16, float, log
     sprintf(format, "uint16");
   
@@ -444,13 +444,13 @@ int main(int argc, char** argv){
   dH = detP*H;
   
   //image size (cylinder)//Ä\¬‚ğs‚¤ƒ{ƒŠƒ…[ƒ€‚ÌƒTƒCƒYB‰~’ŒŒ`
-  sizeR = (float)(0.5f*s2o*dW/sqrt(s2d*s2d + 0.25f*dW*dW)); //radiusA‰~’Œ‚Ì”¼Œa
+  sizeR = (float)(0.5f*s2o*dW/sqrt(s2d*s2d + 0.25f*dW*dW)); //radiusAÄ\¬‚ğs‚¤”ÍˆÍ‚Ì‰~’Œ‚Ì”¼Œa
   sizeH = 0.5f*(s2o)/s2d*dH; //height/2A‰~’Œ‚‚³‚Ì”¼•ª
   sizeR *= scaleW;
   sizeH *= scaleH;
   
   //#volxels in z-axis
-  zN = (int)(sizeH*N/sizeR);
+  zN = (int)(sizeH*N/sizeR);//‰~’Œ‚Ì’f–Ê‚Ì‚‚³‚Æ•‚Ì”ä‚Åƒ{ƒNƒZƒ‹”‚ğŒˆ’èB
   
   printf("Volume Size = %f x %f x %f\n", 2*sizeR, 2*sizeR, 2*sizeH);
   printf("#voxels = %d x %d x %d\n", N, N, zN);
@@ -506,7 +506,7 @@ int main(int argc, char** argv){
   
   fclose(in);
   
-  delta = (float)(detP*s2o/s2d); //scaled detector pitch
+  delta = (float)(detP*s2o/s2d); //scaled detector pitch“Š‰eƒsƒNƒZƒ‹ƒTƒCƒY‚ğƒIƒuƒWƒFƒNƒgãÀ•W‚Å‚ÌƒTƒCƒY‚É•ÏŠ·‚µ‚½B
   
   /* “Š‰eŠp“xİ’è */
   float *rotS = (float*)malloc(sizeof(float)*P);
