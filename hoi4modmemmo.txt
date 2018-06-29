@@ -39,7 +39,7 @@ MOD中のどこにスコープを記載するかは、MODシステムに依存�
 コマンドには実行（記載）可能なスコープが設定されている。また、通常は効果範囲、実行条件を一緒に記載する必要がある。
 scripted_effectsによって既存のコマンドを組み合わせて自作することもできる。
 コマンドを実行できるMODシステムをリスト化すると、
-dicisions,ideas,national_focuses,technologies,events,abilities,
+decisions,ideas,national_focuses,technologies,events,abilities,
 scripted GUI,on action　など
 
 トリガー（条件）
@@ -47,7 +47,7 @@ MODシステムの実行の可否を決める条件、あるいはMODシステ�
 トリガーの記載場所はMODシステムによって異なり、スコープによって利用可能なトリガーも異なる。
 scripted_triggersは自分自身で指定することができるトリガーで、ゲーム内のトリガーを組み合わせてyesかnoを返すトリガーを作れる。
 トリガーが使われるのは、
-dicisions,ideas,national_focuses,technologies,events,abilities,
+decisions,ideas,national_focuses,technologies,events,abilities,
 scripted GUI,on action
 
 モディファー
@@ -57,7 +57,7 @@ scripted GUI,on action
 モディファーは紐づけられた実体がある限りその効果が続く。紐づけられた実体そのものへの変更がなされない限り、モディファーは変更できない。
 モディファーの種類もいっぱいあるが、情報が散逸しており、wikiのmodifierの項目以外にもある。また、特定のMODシステムに結びつけられた特殊なモディファーもある。
 modifierが使えるリストは、
-ideas,decisions,national_focuses,Technologies, abilities,traits　など
+ideas,decisions,national_focuses,Technologies, abilities,traits,　など
 
 以上が基本的な構成要素である。
 これらの働きをサポートするために、以下の要素が用意されている。
@@ -84,70 +84,31 @@ MOD定義の変数操作はコマンドの一種であり、スコープや条�
 
 modシステム
 mod用に用意されているシステム。modでは基本的にはここに用意されているシステムしか作れない。
-modシステム一覧
+以下にmodシステム一覧を示す。システム名は対応するフォルダ名をあて、複数フォルダにまたがる場合もまとめた。動的、静的の分別は主観。
+動的システム
+events
+abilities
+decisions
+continuous_focus
+ideasおよびidea_tags
+national_focus
+on_actions
+scripted_gui
 
-
-
-
-
-modの案
-###砲撃、パンツァーカイルなどの能力MOD
-ドクトリン研究によってアンロックされる。
-準備砲撃　計画が必要。砲兵師団の防御、攻撃up、砲兵を消費
-戦車攻撃?　平地での速度および攻撃up、戦車師団の攻撃防御up
-戦闘修正メモ
-add temporaly buffもしくはunit_modifierをもちいる
-特定師団タイプに影響する効果は、師団タイプにより、構成大隊によらない
-防御力は突破と防御双方に適用される。攻撃もハード、ソフト双方に適用。
-地形別に効果を与えることはでき、師団タイプごとに効果も与えられるが、装備には影響できない。
-効果を検証中
-num_infantry
-num_artillery などは師団の数を数える。重複して数えることもある。
-
-
-###民間工場資源消費mod
-
-国内資源から装備の資源消費を引き、あまりの資源が民間に供給されていると仮定し、国内民間工業の数とあまり資源の量に応じて効率を減らす。
-全体の出力修正を資源修正とその他修正に分け、国内工場のみ出力に資源修正をかける。
-再計算および修正の実行を行うタイミングをどうするか？　毎日出力修正はon_dailyで再計算し、ディシジョンか国民精神によって継続的にモディファーを与える。
-民間工場の数に応じて必要資源量を各資源について計算、最低限度充足している資源割合が最終的な建設速度に影響する。
-消費財消費量、スペシャルプロジェクトコストも増やしたいが、検討課題。消費財については何とかなりそう。スペシャルプロジェクトコストは厳しそう。
-資源あまりも計算しておく。
-国ごとの民間資源消費の違いは国民精神か政治顧問にて表現する。最終的にはダイナミックに表現したい。
-
-使えそうなゲーム内パラメタ
-resource@steel resource@alminium resource@...　余剰の資源量を示す。輸入分も含む。反映は少し遅れる
-resource_consumed 消費資源量
-resource_exported 輸出資源量。実際の輸出量ではなく、法律によるもの
-resource_imported 資源輸入量
-resource_produced 資源国内生産量
-
-num_of_available_civilian_factories 完全に余っている工場
-num_of_available_military_factories　
-num_of_available_naval_factories　
-num_of_civilian_factories　輸出、従属国による増加含む保有している工場から輸出した分を引いた数。
-num_of_civilian_factories_available_for_projects　建設に使用可能な工場数
-num_of_controlled_states
-num_of_factories　保有している全工場数 include imported and donated factories
-num_of_military_factories
-num_of_naval_factories
-<buildings> arms factory,industrial complex, などで、国内の建築物の総量がわかる
-
-modifier@...でモディファー内容を参照可能。また、この値は直接的に変更可能
-production_speed_buildings_factor　建設速度全体へのボーナス。合計の値が最終的な値。
-consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。税金にたとえることができる。
-production_oil_factor　石油のみに適用される生産ボーナス。
-min_export
-
-
-ゲーム内の建設速度ファクターはそれはそれとしてほっておく。国ごとの最低建設速度とみよう。
-
-開発順。
-
-まず、ゲーム内変数を表示する。　クリア
-
-
-
+静的データ
+aces
+autonomous_states
+buildings
+ideologies
+modifiers
+names
+resources
+scripted_effects
+scripted_triggers
+state_category
+technologiesとtechnology_tags
+unit_leaderとtraits
+unitsとequipment
 
 
 
