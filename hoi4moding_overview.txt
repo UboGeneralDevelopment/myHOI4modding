@@ -84,16 +84,18 @@ MOD定義の変数操作はコマンドの一種であり、スコープや条�
 
 modシステム
 mod用に用意されているシステム。modでは基本的にはここに用意されているシステムしか作れない。
-以下にmodシステム一覧を示す。システム名は対応するフォルダ名をあて、複数フォルダにまたがる場合もまとめた。動的、静的の分別は主観。
+以下にmodシステム一覧を示す。システム名は対応するフォルダ名をあて、複数フォルダにまたがる場合もまとめた。分別は主観。
 動的システム
-events
-abilities
-decisions
-continuous_focus
-ideasおよびidea_tags
-national_focus
-on_actions
-scripted_gui
+events コマンドによる実行あるいは勝手に発生する コマンドを実行できる
+abilities 将軍の能力 コマンドを実行できる 時間制限付きモディファーをつけられる。
+decisions 条件によって出現し、手動実行 コマンドを実行できる 時間制限付きモディファーをつけられる
+missions　decisionシステムを使う。基本的には条件が満たされればコマンドが実行される。
+continuous_focus 手動実行 使用用途はアイデアを持たせる以外には不明
+national_focus 手動実行 コマンドを実行する
+on_actions 条件によって自動実行 条件は決まっている。リスト化が必要。
+scripted_gui 自分でいろいろ作れる。基本的にはコマンドを実行する
+ideasおよびidea_tags コマンドによって呼び出される エフェクトのほか、モディファーを実装できる
+technologiesとtechnology_tags 研究、エフェクトとモディファーを実装できる。ドクトリンには特殊なモディファーが多い。
 
 静的データ
 aces
@@ -106,7 +108,7 @@ resources
 scripted_effects
 scripted_triggers
 state_category
-technologiesとtechnology_tags
+
 unit_leaderとtraits
 unitsとequipment
 
