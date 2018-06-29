@@ -110,3 +110,5 @@ technologiesとtechnology_tags
 unit_leaderとtraits
 unitsとequipment
 
+
+
