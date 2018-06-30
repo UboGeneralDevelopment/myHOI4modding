@@ -12,7 +12,7 @@ focus_tree = {
 	shared_focus = GEN_test_shared_focus_parallel
 	
 	focus = {
-		id = test_army_effort
+		id = test_focus_0
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 1
 		y = 0
@@ -28,6 +28,125 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
+		}
+	}
+	
+	focus = {
+		id = test_focus_1
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = test_focus_0 }
+#		mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = test_focus_0
+		cost = 10
+		available = {
+		}
+		bypass = {
+		}
+    	cancel = {
+		}
+#		will_lead_to_war_with = <tag>
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+#		historical_ai = {
+#		}    
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = test_focus_2
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = test_focus_1 }
+#		mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = test_focus_1
+		cost = 10
+		available = {
+		}
+		bypass = {
+		}
+    	cancel = {
+		}
+#		will_lead_to_war_with = <tag>
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+#		historical_ai = {
+#		}    
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		focus = {
+		id = test_focus_3
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = test_focus_2 }
+#		mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = test_focus_2
+		cost = 10
+		available = {
+		}
+		bypass = {
+		}
+    	cancel = {
+		}
+#		will_lead_to_war_with = <tag>
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+#		historical_ai = {
+#		}    
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = test_focus_4
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = test_focus_3 }
+#		mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = test_focus_3
+		cost = 10
+		available = {
+		}
+		bypass = {
+		}
+    	cancel = {
+		}
+#		will_lead_to_war_with = <tag>
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+#		historical_ai = {
+#		}    
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
