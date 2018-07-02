@@ -1,0 +1,57 @@
+﻿
+エラー詳細。
+
+
+ゲームスタートまでに423エラー
+
+たいした問題でないエラー　合計330
+
+アイデアと閣僚の複製エラー　１５３
+国家方針の複製エラー　60
+フォントエラー、無印日本語MODのみでもでる　２０
+建物の配置エラー　９７
+
+中程度のエラー　約９０こ
+
+Invalid subunit special forces エラー　３
+そのほかのIdea関連エラー　３
+日本の国家方針invalid　エラー　２
+events malformed token エラー　５８
+unexpected token エラー　４
+
+[19:37:43][effect.cpp:319]: Invalid effect 'add_national_unity' in events/youjosenki.txt line : 127
+[19:37:43][persistent.cpp:42]: Error: "Unknown effect-type: add_national_unity, near line: 127
+" in file: "events/youjosenki.txt" near line: 127
+
+Wrong ideology　３つ
+
+[19:38:33][country.cpp:4531]: Attempting to set captial state #284 for ニュージーランド, they dont own it!
+[19:38:33][country.cpp:4531]: Attempting to set captial state #327 for フィリピン, they dont own it!
+[19:38:33][country.cpp:4531]: Attempting to set captial state #328 for 満州共和国, they dont own it!
+
+[19:38:33][id.cpp:85]: Failed to create id 410 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 402 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 407 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 408 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 404 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 405 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 401 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 412 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 411 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 406 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
+[19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
+[19:38:39][persistent.cpp:42]: Error: "State has no air base 284: {, near line: 74
+" in file: "history/units/NZL_1936.txt" near line: 76
+[19:38:39][persistent.cpp:42]: Error: "Unexpected token: =, near line: 76
+" in file: "history/units/NZL_1936.txt" near line: 79
+[19:38:39][persistent.cpp:42]: Error: "State has no air base 327: {, near line: 40
+" in file: "history/units/PHI_1936.txt" near line: 42
+[19:38:39][persistent.cpp:42]: Error: "Unexpected token: =, near line: 42
+" in file: "history/units/PHI_1936.txt" near line: 46
+
+
+
+将軍のスキルが適当。
+
+
