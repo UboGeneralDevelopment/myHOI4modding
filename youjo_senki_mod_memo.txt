@@ -2,21 +2,25 @@
 エラー詳細。
 
 
-ゲームスタートまでに423エラー
+ゲームスタートまでに400エラーほど
 
 たいした問題でないエラー　合計330
 
 アイデアと閣僚の複製エラー　１５３
 国家方針の複製エラー　60
 フォントエラー、無印日本語MODのみでもでる　２０
-建物の配置エラー　９７
 
-中程度のエラー　約９０こ
+
+早急に対策すべきエラー　１８０こほど
+
+建物の配置エラー　９７　ステートへのプロ美配分の見直しにより発生。
+
+OrderOfBattleによる兵士と艦隊配置エラーがいくつか
 
 Invalid subunit special forces エラー　３
 そのほかのIdea関連エラー　３
 日本の国家方針invalid　エラー　２
-events malformed token エラー　５８
+events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー
 unexpected token エラー　４
 
 [19:37:43][effect.cpp:319]: Invalid effect 'add_national_unity' in events/youjosenki.txt line : 127
@@ -25,9 +29,6 @@ unexpected token エラー　４
 
 Wrong ideology　３つ
 
-[19:38:33][country.cpp:4531]: Attempting to set captial state #284 for ニュージーランド, they dont own it!
-[19:38:33][country.cpp:4531]: Attempting to set captial state #327 for フィリピン, they dont own it!
-[19:38:33][country.cpp:4531]: Attempting to set captial state #328 for 満州共和国, they dont own it!
 
 [19:38:33][id.cpp:85]: Failed to create id 410 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 402 55. Already exists in game.
@@ -41,17 +42,8 @@ Wrong ideology　３つ
 [19:38:33][id.cpp:85]: Failed to create id 406 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
-[19:38:39][persistent.cpp:42]: Error: "State has no air base 284: {, near line: 74
-" in file: "history/units/NZL_1936.txt" near line: 76
-[19:38:39][persistent.cpp:42]: Error: "Unexpected token: =, near line: 76
-" in file: "history/units/NZL_1936.txt" near line: 79
-[19:38:39][persistent.cpp:42]: Error: "State has no air base 327: {, near line: 40
-" in file: "history/units/PHI_1936.txt" near line: 42
-[19:38:39][persistent.cpp:42]: Error: "Unexpected token: =, near line: 42
-" in file: "history/units/PHI_1936.txt" near line: 46
+id複製エラー
+たぶんリーダーのID
 
-
-
-将軍のスキルが適当。
 
 
