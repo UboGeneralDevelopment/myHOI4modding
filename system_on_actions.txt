@@ -2,8 +2,10 @@
 on_action解説
 
 on_actionは単純で、ある行動(action)が行われたときに自動でコマンドなどが行われる。もちろん、条件指定はできる。
+基本的にイベントの発生などで使われる。
+on_dailyなどは継続的にコマンドを実行するため、modiferの代わりとしても使える可能性がある。
 
-actionリストは以下の通り
+actionリストと主な使われ方は以下の通り
 
 on_new_term_election # country 
 
