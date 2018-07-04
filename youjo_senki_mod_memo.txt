@@ -3,12 +3,13 @@
 
 ゲームスタートまでに400エラーほど
 
-たいした問題でないエラー　合計330
+たいした問題でないエラー
 
-アイデアと閣僚の複製エラー　１５３
-どうしようかこれ。元のものを無効化するのが一番手っ取り早いか。
+アイデアと閣僚の複製エラー
+
 新規アイデアにすべて国家タグ付きの名前を付けることによってid重複を避ける
-
+また、すべてにpicture指定を行う。
+localization keyが変わるので、そこの指定は別個に行う。
 
 国家方針の複製エラー　60
 フォントエラー、無印日本語MODのみでもでる　２０
@@ -16,19 +17,13 @@
 
 早急に対策すべきエラー　１８０こほど
 
-建物の配置エラー　９７　ステートへのプロ美配分の見直しにより発生。
 
 OrderOfBattleによる兵士と艦隊配置エラーがいくつか
 
-Invalid subunit special forces エラー　３
 そのほかのIdea関連エラー　３
 日本の国家方針invalid　エラー　２
-events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー
+events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。そこの問題はいったん放棄、
 unexpected token エラー　４
-
-[19:37:43][effect.cpp:319]: Invalid effect 'add_national_unity' in events/youjosenki.txt line : 127
-[19:37:43][persistent.cpp:42]: Error: "Unknown effect-type: add_national_unity, near line: 127
-" in file: "events/youjosenki.txt" near line: 127
 
 Wrong ideology　３つ
 
@@ -46,7 +41,7 @@ Wrong ideology　３つ
 [19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
 id複製エラー
-たぶんリーダーのID
+たぶんリーダーのID　やっぱり不明
 
 
 
@@ -57,9 +52,11 @@ id複製エラー
 
 #最優先
 国家配置関連
-　国家タグと国家の対応・・・アメリカ、日本、ヒルトリアは新規国家タグを配置する。そのほかの国家は既存の国家タグを流用。
+ 昼とリアは新規国家として作成
+そのほか国家、アメリカ、日本は対処を考える。いったん放置
+　国家タグと国家の対応・・・アメリカ、日本、ヒルトリアは新規国家タグを配置する。malformed token errorはこれでそれなりに改善するはず。
 　従属国の配置・・・帝国領ノルド、帝国領オストラント、帝国領ローラント、帝国領ダキア（ここまで統合傀儡）、帝国領ヒルトリア（帝国自治領）　
-　ルメーリの自治領、バルカン自治領
+　ルメーリの自治領、バルカン自治領、この辺りは議論の中で決める。
 　
 #優先度２
 ステート、プロビンス関連
@@ -68,11 +65,11 @@ id複製エラー
 　マンパワー配置
 　資源配置
 　（VP、補給量？）
- ORDEROFBATTLEの編集
+ ORDEROFBATTLEの編集　いったん放置
 
 #優先度3 
 国家ステータス関連
-　リーダー枠の再割り当て
+　将軍などのリーダー枠の再割り当て
 　イデオロギールールの変更
 　国家リーダーの再編
 　Historyの国家ステータス(技術、ナショナルフォーカス)の再編集
@@ -86,7 +83,7 @@ VATのディシジョン
 国境紛争
 
 汎用共通フォーカスの作成
-
+イベントの再編
 
 ###将来作業アイデア###
 
