@@ -2,10 +2,10 @@ ideas = {
 	country = {
 
 	}
-		
+		### IRU_
 	political_advisor = {
-		amadeo_bordiga = {
-			
+		IRU_amadeo_bordiga = {
+			picture = amadeo_bordiga
 			
 			allowed = {
 				original_tag = "IRU"
@@ -30,9 +30,9 @@ ideas = {
 			}
 		}	
 			
-		ivanoe_bonomi = {
+		IRU_ivanoe_bonomi = {
 			
-			
+			picture = ivanoe_bonomi
 			allowed = {
 				original_tag = "IRU"
 			}
@@ -56,9 +56,9 @@ ideas = {
 			}
 		}
 		
-		carlo_scorza = {
+		IRU_carlo_scorza = {
 			
-			
+			picture = carlo_scorza
 			allowed = {
 				original_tag = "IRU"
 			}
@@ -83,12 +83,12 @@ ideas = {
 		}
 
 		IRU_giovanni_marinelli = {
+			picture = generic_political_advisor_europe_5
 						
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_political_advisor_europe_5
 						
 			traits = { prince_of_terror }
 	
@@ -101,13 +101,13 @@ ideas = {
 		}
 
 		IRU_gian_galeazzo_ciano = {
+			picture = generic_political_advisor_europe_6
 			
 			
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_political_advisor_europe_6
 						
 			traits = { compassionate_gentleman }
 	
@@ -121,13 +121,13 @@ ideas = {
 	
 		IRU_roberto_farinacci = {
 			
-			
+			picture = generic_army_europe_1
+						
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_army_europe_1
-						
+			
 			traits = { backroom_backstabber }
 
 			ai_will_do = {
@@ -136,14 +136,14 @@ ideas = {
 		}
 		
 		IRU_dino_grandi = {
-			
+			picture = generic_political_advisor_europe_3
+						
 			
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_political_advisor_europe_3
-						
+			
 			traits = { smooth_talking_charmer }
 	
 			on_add = {				
@@ -155,13 +155,13 @@ ideas = {
 		}
 			
 		IRU_serafino_mazzolini = {
+			picture = generic_political_advisor_europe_1
 			
 			
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_political_advisor_europe_1
 						
 			traits = { ideological_crusader }
 	
@@ -175,12 +175,12 @@ ideas = {
 					
 		IRU_giacomo_acerbo = {
 			
+			picture = generic_political_advisor_europe_2
 			
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_political_advisor_europe_2
 						
 			traits = { war_industrialist }
 	
@@ -194,13 +194,13 @@ ideas = {
 					
 		IRU_junio_valerio_borghese = {
 			
+			picture = generic_army_europe_2
+			
 			
 			allowed = {
 				original_tag = "IRU"
 			}
-
-			picture = generic_army_europe_2
-						
+			
 			traits = { armaments_organizer }
 	
 			on_add = {				
@@ -213,13 +213,13 @@ ideas = {
 					
 		IRU_luigi_einaudi = {
 			
-			
+		
+			picture = generic_political_advisor_europe_1
+				
 			allowed = {
 				original_tag = "IRU"
 			}
-
-			picture = generic_political_advisor_europe_1
-						
+			
 			traits = { captain_of_industry }
 	
 			on_add = {				
@@ -232,13 +232,13 @@ ideas = {
 					
 		IRU_paolo_thaon_di_revel = {
 			
-			
+			picture = generic_navy_europe_3
+				
 			allowed = {
 				original_tag = "IRU"
 			}
 
-			picture = generic_navy_europe_3
-						
+					
 			traits = { quartermaster_general }
 	
 			on_add = {				
@@ -254,8 +254,8 @@ ideas = {
 	army_chief = {
 		
 		
-		pietro_badoglio = {
-			
+		IRU_pietro_badoglio = {
+			picture = pietro_badoglio
 			
 			allowed = {
 				original_tag = IRU
@@ -270,9 +270,9 @@ ideas = {
 			}
 		}
 		
-		ugo_cavallero = {
+		IRU_ugo_cavallero = {
 			
-			
+			picture = ugo_cavallero
 			allowed = {
 				original_tag = IRU
 			}
@@ -286,9 +286,9 @@ ideas = {
 			}
 		}
 		
-		emilio_de_bono = {
+		IRU_emilio_de_bono = {
 			
-			
+			picture = emilio_de_bono
 			allowed = {
 				original_tag = IRU
 			}
@@ -304,9 +304,9 @@ ideas = {
 	}
 	navy_chief = {
 		
-		domenico_cavagnari = {
+		IRU_domenico_cavagnari = {
 			
-			
+			picture = domenico_cavagnari
 			allowed = {
 				original_tag = IRU
 			}
@@ -321,9 +321,9 @@ ideas = {
 			}
 		}
 		
-		arturo_riccardi = {
+		IRU_arturo_riccardi = {
 			
-			
+			picture = arturo_riccardi
 			allowed = {
 				original_tag = IRU
 			}
@@ -337,8 +337,8 @@ ideas = {
 			}
 		}
 		
-		inigo_campioni = {
-			
+		IRU_inigo_campioni = {
+			picture = inigo_campioni
 			
 			allowed = {
 				original_tag = IRU
@@ -356,9 +356,9 @@ ideas = {
 	air_chief = {
 		
 		
-		italo_balbo = {
+		IRU_italo_balbo = {
 			
-			
+			picture = italo_balbo
 			allowed = {
 				original_tag = IRU
 			}
@@ -372,9 +372,9 @@ ideas = {
 			}
 		}
 		
-		rino_corso_fougier = {
+		IRU_rino_corso_fougier = {
 			
-			
+			picture = rino_corso_fougier
 			allowed = {
 				original_tag = IRU
 			}
@@ -388,9 +388,9 @@ ideas = {
 			}
 		}
 		
-		francesco_pricolo = {
+		IRU_francesco_pricolo = {
 			
-			
+			picture = francesco_pricolo
 			allowed = {
 				original_tag = IRU
 			}
@@ -407,9 +407,9 @@ ideas = {
 	
 	high_command = {
 	
-		mario_roatta = {
+		IRU_mario_roatta = {
 			
-			
+			picture = mario_roatta
 			allowed = {
 				original_tag = IRU
 			}
@@ -423,9 +423,9 @@ ideas = {
 			}
 		}
 		
-		vittorio_ambrosio = {
+		IRU_vittorio_ambrosio = {
 			
-			
+			picture = vittorio_ambrosio
 			allowed = {
 				original_tag = IRU
 			}
@@ -439,8 +439,8 @@ ideas = {
 			}
 		}
 		
-		alfredo_guzzoni = {
-			
+		IRU_alfredo_guzzoni = {
+			picture = alfredo_guzzoni
 			
 			allowed = {
 				original_tag = IRU
@@ -455,8 +455,8 @@ ideas = {
 			}
 		}	
 		
-		ettore_muti = {
-			
+		IRU_ettore_muti = {
+			picture = ettore_muti
 			
 			allowed = {
 				original_tag = IRU
@@ -471,9 +471,9 @@ ideas = {
 			}
 		}
 		
-		marziale_cerutti = {
+		IRU_marziale_cerutti = {
 			
-			
+			picture = marziale_cerutti
 			allowed = {
 				original_tag = IRU
 			}
@@ -487,9 +487,9 @@ ideas = {
 			}
 		}
 		
-		silvio_scaroni = {
+		IRU_silvio_scaroni = {
 			
-			
+			picture = silvio_scaroni
 			allowed = {
 				original_tag = IRU
 			}
@@ -503,9 +503,9 @@ ideas = {
 			}
 		}
 		
-		alberto_da_zara = {
+		IRU_alberto_da_zara = {
 			
-			
+			picture = alberto_da_zara
 			allowed = {
 				original_tag = IRU
 			}
@@ -519,9 +519,9 @@ ideas = {
 			}
 		}
 		
-		carlo_bergamini = {
+		IRU_carlo_bergamini = {
 			
-			
+			picture = carlo_bergamini
 			allowed = {
 				original_tag = IRU
 			}
@@ -535,9 +535,9 @@ ideas = {
 			}
 		}
 		
-		luigi_mascherpa = {
+		IRU_luigi_mascherpa = {
 			
-			
+			picture = luigi_mascherpa
 			allowed = {
 				original_tag = IRU
 			}
@@ -557,8 +557,8 @@ ideas = {
 	
 		designer = yes
 	
-		fiat = {
-			
+		IRU_fiat = {
+			picture = fiat
 			
 			allowed = {
 				original_tag = IRU
@@ -579,9 +579,9 @@ ideas = {
 			
 		designer = yes
 		
-		beretta = {
+		IRU_beretta = {
 			
-			
+			picture = beretta
 			allowed = {
 				original_tag = IRU
 			}
@@ -595,8 +595,8 @@ ideas = {
 			traits = { infantry_equipment_manufacturer }
 		}
 		
-		lancia = {
-			
+		IRU_lancia = {
+			picture = lancia
 			
 			allowed = {
 				original_tag = IRU
@@ -610,9 +610,9 @@ ideas = {
 			traits = { motorized_equipment_manufacturer }
 		}
 		
-		breda = {
+		IRU_breda = {
 			
-			
+			picture = breda
 			allowed = {
 				original_tag = IRU
 			}
@@ -632,9 +632,9 @@ ideas = {
 		
 		designer = yes
 		
-		macchi = {
+		IRU_macchi = {
 			
-			
+			picture = macchi
 			allowed = {
 				original_tag = IRU
 			}
@@ -646,8 +646,8 @@ ideas = {
 			traits = { light_aircraft_manufacturer }
 		}
 		
-		savoia_marchetti = {
-			
+		IRU_savoia_marchetti = {
+			picture = savoia_marchetti
 			
 			allowed = {
 				original_tag = IRU
@@ -660,8 +660,8 @@ ideas = {
 			traits = { medium_aircraft_manufacturer }
 		}
 		
-		caproni = {
-						
+		IRU_caproni = {
+			picture = caproni			
 			allowed = {
 				original_tag = IRU
 			}
@@ -673,8 +673,8 @@ ideas = {
 			traits = { naval_aircraft_manufacturer }
 		}
 		
-		piaggio = {
-						
+		IRU_piaggio = {
+			picture = piaggio			
 			allowed = {
 				original_tag = IRU
 			}
@@ -689,8 +689,8 @@ ideas = {
 	
 	industrial_concern = {
 	
-		danieli = {
-			
+		IRU_danieli = {
+			picture = danieli
 			allowed = {
 				original_tag = IRU
 			}
@@ -709,8 +709,8 @@ ideas = {
 	
 		designer = yes
 		
-		crda = {
-						
+		IRU_crda = {
+			picture =  crda			
 			allowed = {
 				original_tag = IRU
 			}
@@ -724,8 +724,8 @@ ideas = {
 	}
 	
 	theorist = {	
-		giovanni_messe = {
-						
+		IRU_giovanni_messe = {
+			picture = giovanni_messe			
 			allowed = {
 				original_tag = IRU
 			}
@@ -739,8 +739,8 @@ ideas = {
 			traits = { mobile_warfare_expert }
 		}
 		
-		rodolfo_graziani = {
-						
+		IRU_rodolfo_graziani = {
+			picture = rodolfo_graziani			
 			allowed = {
 				original_tag = IRU
 			}
@@ -758,8 +758,8 @@ ideas = {
 			}
 		}
 		
-		guiseppe_fioravanzo = {
-						
+		IRU_guiseppe_fioravanzo = {
+			picture = 			
 			allowed = {
 				original_tag = IRU
 			}
@@ -773,8 +773,8 @@ ideas = {
 			traits = { grand_fleet_proponent }
 		}
 		
-		angelo_iachino = {
-						
+		IRU_angelo_iachino = {
+			picture =  angelo_iachino			
 			allowed = {
 				original_tag = IRU
 			}
@@ -786,8 +786,8 @@ ideas = {
 			traits = { naval_theorist }
 		}
 		
-		amedeo_mecozzi = {
-			
+		IRU_amedeo_mecozzi = {
+			picture =  amedeo_mecozzi
 			allowed = {
 				original_tag = IRU
 			}
@@ -801,9 +801,9 @@ ideas = {
 			traits = { assault_avaition }
 		}
 		
-		renato_sandalli = {
+		IRU_renato_sandalli = {
 			
-			
+			picture = renato_sandalli
 			allowed = {
 				original_tag = IRU
 			}
@@ -815,9 +815,9 @@ ideas = {
 			traits = { air_warfare_theorist }
 		}
 		
-		gaetano_crocco = {
+		IRU_gaetano_crocco = {
 			
-			
+			picture = gaetano_crocco
 			allowed = {
 				original_tag = IRU
 			}
