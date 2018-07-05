@@ -115,9 +115,9 @@ ideas = {
 			}
 		}
 
-		ernst_thalmann = {
+		VAT_ernst_thalmann = {
 
-			
+			picture = ernst_thalmann
 			allowed = {
 				original_tag = VAT
 			}
@@ -139,9 +139,9 @@ ideas = {
 			}
 		}	
 			
-		kurt_schumacher = {
+		VAT_kurt_schumacher = {
 
-			
+			picture = kurt_schumacher		
 			allowed = {
 				original_tag = VAT
 			}
@@ -163,9 +163,9 @@ ideas = {
 			}
 		}
 		
-		joseph_goebbels = {
+		VAT_joseph_goebbels = {
 
-			
+			picture = joseph_goebbels
 			allowed = {
 				original_tag = VAT
 			}
@@ -187,9 +187,9 @@ ideas = {
 			}
 		}
 		
-		rudolf_hess = {
+		VAT_rudolf_hess = {
 
-			
+			picture = rudolf_hess
 			allowed = {
 				original_tag = VAT
 			}
@@ -200,9 +200,9 @@ ideas = {
 			traits = { silent_workhorse }
 		}
 		
-		heinrich_himmler = {
+		VAT_heinrich_himmler = {
 
-			
+			picture = heinrich_himmler
 			allowed = {
 				original_tag = VAT
 			}
@@ -210,9 +210,9 @@ ideas = {
 			traits = { prince_of_terror }
 		}
 		
-		martin_bormann = {
+		VAT_martin_bormann = {
 
-			
+			picture = martin_bormann
 			allowed = {
 				original_tag = VAT
 			}
@@ -220,9 +220,9 @@ ideas = {
 			traits = { silent_workhorse }
 		}
 		
-		joachim_von_ribbentrop = {
+		VAT_joachim_von_ribbentrop = {
 
-			
+			picture = joachim_von_ribbentrop
 			allowed = {
 				original_tag = VAT
 			}
@@ -234,9 +234,9 @@ ideas = {
 			}
 		}
 		
-		konstantin_von_neurath = {
+		VAT_konstantin_von_neurath = {
 
-			
+			picture = konstantin_von_neurath
 			allowed = {
 				original_tag = VAT
 			}
@@ -981,9 +981,5 @@ ideas = {
 			}
 		}
 	}
-
-
-
-
 
 }
