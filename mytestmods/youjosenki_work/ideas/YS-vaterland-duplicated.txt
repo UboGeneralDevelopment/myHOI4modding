@@ -2,7 +2,7 @@ ideas = {
 
 	country = {
 		hegemony_country = {
-			
+			picture = hegemony_country
 			allowed = {
 				always = no
 			}
@@ -22,7 +22,7 @@ ideas = {
 		}
 		
 		plan315 = {
-			
+			picture = plan315
 			allowed = {
 				original_tag = VAT
 			}
@@ -41,7 +41,7 @@ ideas = {
 		}
 		
 		broken_plan315 = {
-			
+			picture = broken_plan315
 			allowed = {
 				always = no
 			}
@@ -61,8 +61,8 @@ ideas = {
 	}
 	
 	political_advisor = {
-		todt = {
-
+		VAT_todt = {
+			picture = todt
 			
 			allowed = {
 				original_tag = VAT
@@ -78,9 +78,9 @@ ideas = {
 			}
 		}
 		
-		speer = {
+		VAT_speer = {
 
-			
+			picture = speer
 			allowed = {
 				original_tag = VAT
 			}
@@ -88,8 +88,8 @@ ideas = {
 			traits = { armaments_organizer }
 		}
 		
-		hjalmar_schacht = {
-
+		VAT_hjalmar_schacht = {
+			picture = hjalmar_schacht
 			
 			allowed = {
 				original_tag = VAT
@@ -101,9 +101,9 @@ ideas = {
 			}
 		}
 		
-		walther_funk = {
+		VAT_walther_funk = {
 
-			
+			picture = walther_funk
 			allowed = {
 				original_tag = VAT
 			}
