@@ -3,7 +3,7 @@ ideas = {
 		
 		RAT_home_of_revolution = {
 			removal_cost = -1
-			
+			picture = RAT_home_of_revolution
 			allowed = {
 				always = no # Added via focus
 			}
@@ -24,11 +24,11 @@ ideas = {
 
 
 	political_advisor = {
-		mikhail_kalinin = {
+		RAT_mikhail_kalinin = {
 			
-			
+			picture = mikhail_kalinin
 			allowed = {
-				original_tag = "SOV"
+				original_tag = "RAT"
 			}
 			available = 
 			{
@@ -41,7 +41,7 @@ ideas = {
 			traits = { popular_figurehead }
 		}
 
-		SOV_lavrentiy_beria = {
+		RAT_lavrentiy_beria = {
 			
 			picture = generic_army_europe_4
 			
@@ -63,7 +63,7 @@ ideas = {
 			traits = { ideological_crusader }
 		}
 
-		SOV_vyacheslav_molotov = {
+		RAT_vyacheslav_molotov = {
 			
 			picture = generic_political_advisor_europe_1
 			
@@ -74,7 +74,7 @@ ideas = {
 			traits = { smooth_talking_charmer }
 		}
 
-		SOV_nikolai_voznesensky = {
+		RAT_nikolai_voznesensky = {
 			
 			picture = generic_political_advisor_europe_2
 			
@@ -85,7 +85,7 @@ ideas = {
 			traits = { captain_of_industry }
 		}
 
-		SOV_nikolai_yezhov = {
+		RAT_nikolai_yezhov = {
 			
 			picture = generic_army_europe_2
 			
@@ -104,11 +104,11 @@ ideas = {
 
 		
 		
-		nikita_khrushchev = {
+		RAT_nikita_khrushchev = {
 			
-			
+			picture = nikita_khrushchev
 			allowed = {
-				original_tag = "SOV"
+				original_tag = "RAT"
 			}
 			available = 
 			{
@@ -135,11 +135,11 @@ ideas = {
 			}
 		}	
 			
-		alexander_kerensky = {
+		RAT_alexander_kerensky = {
 			
-			
+			picture = alexander_kerensky
 			allowed = {
-				original_tag = "SOV"
+				original_tag = "RAT"
 			}
 			
 
@@ -161,11 +161,11 @@ ideas = {
 			}
 		}
 		
-		konstantin_rodzaevsky = {
+		RAT_konstantin_rodzaevsky = {
 			
-			
+			picture = konstantin_rodzaevsky
 			allowed = {
-				original_tag = "SOV"
+				original_tag = "RAT"
 			}
 			available = 
 			{
@@ -195,23 +195,16 @@ ideas = {
 	army_chief = {
 		
 		
-		semyon_timoshenko = {
+		RAT_semyon_timoshenko = {
 			#Also unit leader: 404
-			
+			picture = semyon_timoshenko
 			allowed = {
 				original_tag = RAT
 			}
 			available = 
 			{
 				NOT = { has_country_flag = purge_1_group_b }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 404
-						} 
-					}
+
 				}
 			}
 			
@@ -224,24 +217,16 @@ ideas = {
 			}
 		}
 		
-		kliment_voroshilov = {
+		RAT_kliment_voroshilov = {
 			#Also unit leader: 405
-			
+			picture = kliment_voroshilov
 			allowed = {
 				original_tag = RAT
 			}
 			available = 
 			{
 				NOT = { has_country_flag = purge_1_group_b }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 405
-						} 
-					}
-				}
+				
 			}
 			
 
@@ -253,9 +238,9 @@ ideas = {
 			}
 		}
 		
-		alexander_yegorov = {
+		RAT_alexander_yegorov = {
 			
-			
+			picture = alexander_yegorov
 			allowed = {
 				original_tag = RAT
 			}
@@ -274,8 +259,8 @@ ideas = {
 			}
 		}
 		
-		vasily_blucher = {
-			
+		RAT_vasily_blucher = {
+			picture = vasily_blucher
 			
 			allowed = {
 				original_tag = RAT
@@ -298,9 +283,9 @@ ideas = {
 	}
 	navy_chief = {
 		
-		pyotr_smirnov = {
+		RAT_pyotr_smirnov = {
 			
-			
+			picture = pyotr_smirnov
 			allowed = {
 				original_tag = RAT
 
@@ -320,8 +305,8 @@ ideas = {
 			}
 		}
 		
-		mikhail_frinovsky = {
-			
+		RAT_mikhail_frinovsky = {
+			picture = mikhail_frinovsky
 			
 			allowed = {
 				original_tag = RAT
@@ -342,8 +327,8 @@ ideas = {
 			}
 		}
 		
-		nikolay_kuznetsov = {
-			
+		RAT_nikolay_kuznetsov = {
+			picture = nikolay_kuznetsov
 			
 			allowed = {
 				original_tag = RAT
@@ -364,9 +349,9 @@ ideas = {
 			}
 		}
 		
-		ivan_yumashev = {
+		RAT_ivan_yumashev = {
 			
-			
+			picture = ivan_yumashev
 			allowed = {
 				original_tag = RAT
 
@@ -389,8 +374,8 @@ ideas = {
 	air_chief = {
 		
 		
-		alexander_novikov = {
-						
+		RAT_alexander_novikov = {
+			picture = alexander_novikov		
 			allowed = {
 				original_tag = RAT
 
@@ -410,8 +395,8 @@ ideas = {
 			}
 		}
 		
-		konstantin_vershinin = {
-			
+		RAT_konstantin_vershinin = {
+			picture = konstantin_vershinin
 			
 			allowed = {
 				original_tag = RAT
@@ -431,9 +416,9 @@ ideas = {
 			}
 		}
 		
-		yakov_smushkevich = {
+		RAT_yakov_smushkevich = {
 			
-			
+			picture = yakov_smushkevich
 			allowed = {
 				original_tag = RAT
 
@@ -453,8 +438,8 @@ ideas = {
 			}
 		}
 		
-		pavel_rychagov = {
-			
+		RAT_pavel_rychagov = {
+			picture = pavel_rychagov
 			
 			allowed = {
 				original_tag = RAT
@@ -479,25 +464,16 @@ ideas = {
 	
 	high_command = {
 	
-		ivan_konev = {
+		RAT_ivan_konev = {
 			#Also unit leader: 408
-			
+			picture = ivan_konev
 			allowed = {
 				original_tag = RAT
 			}
 			available = 
 			{
 				NOT = { has_country_flag = counter_purge }
-				custom_trigger_tooltip = {
-				tooltip = SOV_konev_civil_war
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 408
-						}
-					}
-				}
+				
 			}
 			
 
@@ -510,9 +486,9 @@ ideas = {
 			}
 		}
 		
-		aleksandr_vasilevsky = {
+		RAT_aleksandr_vasilevsky = {
 			#Also unit leader: 407
-			
+			picture = aleksandr_vasilevsky
 			allowed = {
 				original_tag = RAT
 
@@ -520,15 +496,7 @@ ideas = {
 			available = 
 			{
 				NOT = { has_country_flag = purge_2_group_b }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 407
-						} 
-					}
-				}
+
 			}
 			
 
@@ -540,20 +508,12 @@ ideas = {
 			}
 		}
 		
-		konstantin_rokossovsky = {
+		RAT_konstantin_rokossovsky = {
 			#Also unit leader: 402
-			
+			picture = konstantin_rokossovsky
 			allowed = {
 				original_tag = RAT # Unlocked via focus
-				hidden_trigger = {
-					NOT = {
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 403
-						} 
-					}
-				}
+
 			}
 			available = 
 			{
@@ -571,8 +531,8 @@ ideas = {
 			}
 		}	
 		
-		pavel_zhigarev = {
-			
+		RAT_pavel_zhigarev = {
+			picture = pavel_zhigarev
 			
 			allowed = {
 				original_tag = RAT
@@ -592,9 +552,9 @@ ideas = {
 			}
 		}
 		
-		sergei_khudyakov = {
+		RAT_sergei_khudyakov = {
 			
-			
+			picture = sergei_khudyakov
 			allowed = {
 				original_tag = RAT
 
@@ -614,8 +574,8 @@ ideas = {
 			}
 		}
 		
-		stepan_krasovsky = {
-			
+		RAT_stepan_krasovsky = {
+			picture = stepan_krasovsky
 			
 			allowed = {
 				original_tag = RAT
@@ -635,9 +595,9 @@ ideas = {
 			}
 		}	
 		
-		vladimir_kasatonov = {
+		RAT_vladimir_kasatonov = {
 			#Also unit leader: 403
-			
+			picture = vladimir_kasatonov
 			allowed = {
 				original_tag = RAT
 
@@ -645,15 +605,7 @@ ideas = {
 			available = 
 			{
 				NOT = { has_country_flag = purge_1_group_b }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 403
-						} 
-					}
-				}
+				
 			}
 			
 
@@ -665,9 +617,9 @@ ideas = {
 			}
 		}
 		
-		gordey_levchenko = {
+		RAT_gordey_levchenko = {
 			#Also unit leader: 406
-			
+			picture = gordey_levchenko
 			allowed = {
 				original_tag = RAT
 
@@ -675,15 +627,7 @@ ideas = {
 			available = 
 			{
 				NOT = { has_country_flag = purge_2_group_a }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 406
-						} 
-					}
-				}
+		
 			}
 			
 
@@ -696,9 +640,9 @@ ideas = {
 			}
 		}
 		
-		arseniy_golovko = {
+		RAT_arseniy_golovko = {
 			#Also unit leader: 409
-			
+			picture = arseniy_golovko
 			allowed = {
 				original_tag = RAT
 
@@ -706,15 +650,7 @@ ideas = {
 			available = 
 			{
 				NOT = { has_country_flag = counter_purge }
-				hidden_trigger = {
-					NOT = { 
-						any_other_country = {
-							has_war_with = SOV
-							original_tag = RAT
-							has_unit_leader = 409
-						} 
-					}
-				}
+				
 			}
 			
 
@@ -731,9 +667,9 @@ ideas = {
 		
 		designer = yes
 		
-		morozov_design_bureau = {
+		RAT_morozov_design_bureau = {
 			
-			
+			picture = morozov_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -750,9 +686,9 @@ ideas = {
 			}
 		}
 		
-		astrov_design_bureau = {
+		RAT_astrov_design_bureau = {
 			
-			
+			picture = astrov_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -769,9 +705,9 @@ ideas = {
 			}
 		}
 		
-		okmo = {
+		RAT_okmo = {
 			
-			
+			picture = okmo
 			allowed = {
 				original_tag = RAT
 			}
@@ -793,9 +729,9 @@ ideas = {
 		
 		designer = yes
 		
-		mig_design_bureau = {
+		RAT_mig_design_bureau = {
 			
-			
+			picture = mig_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -812,9 +748,9 @@ ideas = {
 			}
 		}
 		
-		ilyushin_design_bureau = {
+		RAT_ilyushin_design_bureau = {
 			
-			
+			picture = ilyushin_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -831,8 +767,8 @@ ideas = {
 			}
 		}
 		
-		tupolev_design_bureau = {
-			
+		RAT_tupolev_design_bureau = {
+			picture = tupolev_design_bureau
 			
 			allowed = {
 				original_tag = RAT
@@ -850,9 +786,9 @@ ideas = {
 			}
 		}
 		
-		yakovlev_design_bureau = {
+		RAT_yakovlev_design_bureau = {
 			
-			
+			picture = yakovlev_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -873,9 +809,9 @@ ideas = {
 	
 	industrial_concern = {
 				
-		stalingrad_tractor_factory = {
+		RAT_stalingrad_tractor_factory = {
 		
-			
+			picture = stalingrad_tractor_factory
 			allowed = {
 				original_tag = RAT
 			}
@@ -892,9 +828,9 @@ ideas = {
 			}
 		}
 		
-		leningrad_polytechnical_institute = {
+		RAT_leningrad_polytechnical_institute = {
 			
-			
+			picture = leningrad_polytechnical_institute
 			allowed = {
 				original_tag = RAT
 			}
@@ -916,9 +852,9 @@ ideas = {
 			
 		designer = yes
 		
-		grabin_design_bureau = {
+		RAT_grabin_design_bureau = {
 			
-			
+			picture = grabin_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -937,9 +873,9 @@ ideas = {
 		
 	
 		
-		tula_arms_plant = {
+		RAT_tula_arms_plant = {
 			
-			
+			picture = tula_arms_plant
 			allowed = {
 				original_tag = RAT
 			}
@@ -956,14 +892,11 @@ ideas = {
 			}
 		}
 		
-		gaz = {
-			
-			
+		RAT_gaz = {
+			picture = gaz
 			allowed = {
 				original_tag = RAT
 			}
-			
-
 			
 			research_bonus = {
 				motorized_equipment = 0.10
@@ -981,9 +914,9 @@ ideas = {
 	
 		designer = yes
 		
-		nevskoye_design_bureau = {
+		RAT_nevskoye_design_bureau = {
 			
-			
+			picture = nevskoye_design_bureau
 			allowed = {
 				original_tag = RAT
 			}
@@ -1004,9 +937,9 @@ ideas = {
 	theorist = {	
 	
 			
-		mikhail_tukhachevsky = {
+		RAT_mikhail_tukhachevsky = {
 			
-			
+			picture = mikhail_tukhachevsky
 			allowed = {
 				original_tag = RAT
 
@@ -1026,9 +959,9 @@ ideas = {
 			traits = { mass_assault_expert }
 		}
 		
-		boris_shaposhnikov = {
+		RAT_boris_shaposhnikov = {
 			
-			
+			picture = boris_shaposhnikov
 			allowed = {
 				original_tag = RAT
 			}
@@ -1042,9 +975,9 @@ ideas = {
 			traits = { military_theorist }
 		}
 		
-		georgy_zhukov = {
+		RAT_georgy_zhukov = {
 			
-			
+			picture = georgy_zhukov
 			allowed = {
 				original_tag = RAT # Unlocked via focus
 
@@ -1066,9 +999,9 @@ ideas = {
 			traits = { mass_assault_expert }
 		}
 		
-		sergey_gorshkov = {
+		RAT_sergey_gorshkov = {
 			
-			
+			picture = sergey_gorshkov
 			allowed = {
 				original_tag = RAT
 
@@ -1087,9 +1020,9 @@ ideas = {
 			traits = { naval_theorist }
 		}
 		
-		vladimir_tributs = {
+		RAT_vladimir_tributs = {
 			
-			
+			picture = vladimir_tributs
 			allowed = {
 				original_tag = RAT
 			}
@@ -1103,9 +1036,9 @@ ideas = {
 			traits = { grand_fleet_proponent}
 		}
 		
-		sergei_rudenko = {
+		RAT_sergei_rudenko = {
 			
-			
+			picture = sergei_rudenko
 			allowed = {
 				original_tag = RAT
 
@@ -1124,9 +1057,9 @@ ideas = {
 			traits = { close_air_support_proponent }
 		}
 		
-		alexander_golovanov = {
+		RAT_alexander_golovanov = {
 			
-			
+			picture = alexander_golovanov
 			allowed = {
 				original_tag = RAT
 			}
@@ -1140,9 +1073,9 @@ ideas = {
 			traits = { air_warfare_theorist }
 		}
 		
-		igor_kurchatov = {
+		RAT_igor_kurchatov = {
 			
-			
+			picture = igor_kurchatov
 			allowed = {
 				original_tag = RAT
 			}
@@ -1156,9 +1089,9 @@ ideas = {
 			traits = { nuclear_scientist }
 		}
 		
-		sergei_korolev = {
+		RAT_sergei_korolev = {
 			
-			
+			picture = sergei_khudyakov
 			allowed = {
 				original_tag = RAT
 			}

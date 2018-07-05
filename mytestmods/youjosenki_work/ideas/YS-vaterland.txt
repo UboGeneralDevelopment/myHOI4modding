@@ -251,9 +251,9 @@ ideas = {
 		
 		designer = yes
 		
-		porsche = {
+		VAT_porsche = {
 
-			
+			picture = porsche
 			allowed = {
 				original_tag = VAT
 			}
@@ -266,9 +266,9 @@ ideas = {
 
 		}
 		
-		henschel = {
+		VAT_henschel = {
 
-			
+			picture = henschel
 			allowed = {
 				original_tag = VAT
 			}
@@ -308,9 +308,9 @@ ideas = {
 		
 		designer = yes
 		
-		germaniawerft = {
+		VAT_germaniawerft = {
 
-			
+			picture = germaniawerft
 			allowed = {
 				original_tag = VAT
 			}
@@ -327,9 +327,9 @@ ideas = {
 			
 		}
 		
-		blohm_und_voss = {
+		VAT_blohm_und_voss = {
 
-			
+			picture = blohm_und_voss
 			allowed = {
 				original_tag = VAT
 			}
@@ -351,8 +351,8 @@ ideas = {
 			
 		designer = yes
 		
-		messerschmitt = {
-			
+		VAT_messerschmitt = {
+			picture = messerschmitt
 			allowed = {
 				original_tag = VAT
 			}
@@ -372,7 +372,8 @@ ideas = {
 			}
 		}
 		
-		junkers = { 
+		VAT_junkers = { 
+			picture = junkers
 			allowed = {
 				original_tag = VAT
 			}
@@ -393,9 +394,9 @@ ideas = {
 		}	
 		
 
-		focke_wulf = { 
+		VAT_focke_wulf = { 
 
-			
+			picture = focke_wulf
 			allowed = {
 				original_tag = VAT
 			}
@@ -412,9 +413,9 @@ ideas = {
 			}
 		}
 		
-		heinkel = {
+		VAT_heinkel = {
 
-			
+			picture = heinkel
 			allowed = {
 				original_tag = VAT
 			}
@@ -431,8 +432,8 @@ ideas = {
 			}
 		}
 		
-		dornier = {
-
+		VAT_dornier = {
+			picture = dornier
 			allowed = {
 				original_tag = VAT
 			}
@@ -454,8 +455,8 @@ ideas = {
 	
 	industrial_concern = {
 		
-		ig_faben = {
-			
+		VAT_ig_faben = {
+			picture = ig_faben
 			allowed = {
 				original_tag = VAT
 			}
@@ -472,8 +473,8 @@ ideas = {
 			}
 		}
 		
-		krupp = {
-			
+		VAT_krupp = {
+			picture = krupp
 			allowed = {
 				original_tag = VAT
 			}
@@ -486,8 +487,8 @@ ideas = {
 			traits = { industrial_concern }
 		}
 
-		siemens = {
-			
+		VAT_siemens = {
+			picture = siemens
 			allowed = {
 				original_tag = VAT
 			}
@@ -504,8 +505,8 @@ ideas = {
 		
 		designer = yes
 		
-		rheinmetall = {
-			
+		VAT_rheinmetall = {
+			picture = rheinmetall
 			allowed = {
 				original_tag = VAT
 			}
@@ -521,9 +522,9 @@ ideas = {
 			}
 		}
 		
-		mauser = {
+		VAT_mauser = {
 
-			
+			picture = mauser
 			allowed = {
 				original_tag = VAT
 			}
@@ -542,8 +543,8 @@ ideas = {
 		
 
 		
-		opel = {
-			
+		VAT_opel = {
+			picture = opel
 			allowed = {
 				original_tag = VAT
 			}
@@ -557,8 +558,8 @@ ideas = {
 	}
 	
 	theorist = {
-		von_braun = {
-			
+		VAT_von_braun = {
+			picture = von_braun
 			allowed = {
 				original_tag = VAT
 			}
@@ -570,9 +571,9 @@ ideas = {
 			traits = { rocket_scientist }
 		}
 		
-		heisenberg = {
+		VAT_heisenberg = {
 
-			
+			picture = heisenberg
 			allowed = {
 				original_tag = VAT
 			}
@@ -584,9 +585,9 @@ ideas = {
 			traits = { nuclear_scientist }
 		}
 		
-		heinz_guderian = {
+		VAT_heinz_guderian = {
 
-			
+			picture = heinz_guderian
 			allowed = {
 				original_tag = VAT
 			}
@@ -599,9 +600,9 @@ ideas = {
 			traits = { blitzkrieg_theorist }
 		}
 		
-		manstein = {
+		VAT_manstein = {
 
-			
+			picture = manstein
 			allowed = {
 				original_tag = VAT
 			}
@@ -616,9 +617,9 @@ ideas = {
 			traits = { mobile_warfare_expert }
 		}
 		
-		wolfram_von_richthofen = {
+		VAT_wolfram_von_richthofen = {
 
-			
+			picture = wolfram_von_richthofen
 			allowed = {
 				original_tag = VAT
 			}
@@ -632,9 +633,9 @@ ideas = {
 			traits = { close_air_support_proponent }
 		}
 		
-		walther_wever = {
+		VAT_walther_wever = {
 
-			
+			picture = walther_wever
 			allowed = {
 				original_tag = VAT
 			}
@@ -646,9 +647,9 @@ ideas = {
 			traits = { air_warfare_theorist }
 		}
 		
-		ernst_udet = {
+		VAT_ernst_udet = {
 
-			
+			picture = ernst_udet
 			allowed = {
 				original_tag = VAT
 			}
@@ -660,9 +661,9 @@ ideas = {
 			traits = { dive_bomber }
 		}
 		
-		alfred_saalwachter = {
+		VAT_alfred_saalwachter = {
 
-			
+			picture = alfred_saalwachter
 			allowed = {
 				original_tag = VAT
 			}
@@ -676,9 +677,9 @@ ideas = {
 			traits = { submarine_specialist }
 		}
 		
-		otto_ciliax = {
+		VAT_otto_ciliax = {
 
-			
+			picture = otto_ciliax
 			allowed = {
 				original_tag = VAT
 			}
@@ -694,9 +695,9 @@ ideas = {
 	# MILITARY
 	army_chief = {
 
-		ludwig_beck = {
+		VAT_ludwig_beck = {
 
-			
+			picture = ludwig_beck
 			allowed = {
 				original_tag = VAT
 			}
@@ -707,9 +708,9 @@ ideas = {
 			}
 		}
 
-		wilhelm_keitel  = {
+		VAT_wilhelm_keitel  = {
 
-			
+			picture = wilhelm_keitel
 			allowed = {
 				original_tag = VAT
 			}
@@ -721,9 +722,9 @@ ideas = {
 			}
 		}
 	
-		franz_halder = {
+		VAT_franz_halder = {
 
-			
+			picture = franz_halder
 			allowed = {
 				original_tag = VAT
 			}
@@ -735,9 +736,9 @@ ideas = {
 			}
 		}
 	
-		walther_von_brauchitsch = {
+		VAT_walther_von_brauchitsch = {
 
-			
+			picture = walther_von_brauchitsch
 			allowed = {
 				original_tag = VAT
 			}
@@ -756,9 +757,9 @@ ideas = {
 	
 	air_chief = {
 		
-		goering = {
+		VAT_goering = {
 
-			
+			picture = goering
 			allowed = {
 				original_tag = VAT
 			}
@@ -770,9 +771,9 @@ ideas = {
 			}
 		}
 		
-		ritter_von_greim = {
+		VAT_ritter_von_greim = {
 
-			
+			picture = ritter_von_greim
 			allowed = {
 				original_tag = VAT
 			}
@@ -787,9 +788,9 @@ ideas = {
 			}
 		}
 		
-		albert_kesselring = {
+		VAT_albert_kesselring = {
 
-			
+			picture = albert_kesselring
 			allowed = {
 				original_tag = VAT
 			}
@@ -804,9 +805,9 @@ ideas = {
 	
 	navy_chief = { #CHIEF OF NAVY
 		
-		raeder = {
+		VAT_raeder = {
 
-			
+			picture = raeder
 			allowed = {
 				original_tag = VAT
 			}
@@ -818,9 +819,9 @@ ideas = {
 			}
 		}
 		
-		donitz = {
+		VAT_donitz = {
 
-			
+			picture = donitz
 			allowed = {
 				original_tag = VAT
 			}
@@ -835,9 +836,9 @@ ideas = {
 
 	high_command = {
 
-		ferdinand_schorner = {
+		VAT_ferdinand_schorner = {
 
-			
+			picture = ferdinand_schorner
 			allowed = {
 				original_tag = VAT
 			}
@@ -849,9 +850,9 @@ ideas = {
 			}
 		}
 		
-		erwin_rommel = {
+		VAT_erwin_rommel = {
 
-			
+			picture = erwin_rommel
 			allowed = {
 				original_tag = VAT
 			}
@@ -866,9 +867,9 @@ ideas = {
 			}
 		}
 		
-		gerd_von_rundstedt = {
+		VAT_gerd_von_rundstedt = {
 
-			
+			picture = gerd_von_rundstedt
 			allowed = {
 				original_tag = VAT
 			}
@@ -880,9 +881,9 @@ ideas = {
 			}
 		}
 		
-		werner_von_fritsch = {
+		VAT_werner_von_fritsch = {
 
-			
+			picture = werner_von_fritsch
 			allowed = {
 				original_tag = VAT
 			}
@@ -894,9 +895,9 @@ ideas = {
 			}
 		}
 		
-		hugo_sperrle = {
+		VAT_hugo_sperrle = {
 
-			
+			picture = hugo_sperrle
 			allowed = {
 				original_tag = VAT
 			}
@@ -911,9 +912,9 @@ ideas = {
 			}
 		}
 		
-		erhard_milch = {
+		VAT_erhard_milch = {
 
-			
+			picture = erhard_milch
 			allowed = {
 				original_tag = VAT
 			}
@@ -925,9 +926,9 @@ ideas = {
 			}
 		}
 		
-		kurt_student = {
+		VAT_kurt_student = {
 
-			
+			picture = kurt_student
 			allowed = {
 				original_tag = VAT
 			}
@@ -939,9 +940,9 @@ ideas = {
 			}
 		}	
 		
-		erich_bey = {
+		VAT_erich_bey = {
 
-			
+			picture = erich_bey
 			allowed = {
 				original_tag = VAT
 			}
@@ -953,9 +954,9 @@ ideas = {
 			}
 		}
 		
-		gunther_lutjens = {
+		VAT_gunther_lutjens = {
 
-			
+			picture = gunther_lutjens
 			allowed = {
 				original_tag = VAT
 			}
@@ -967,9 +968,9 @@ ideas = {
 			}
 		}
 		 
-		viktor_schutze = {
+		VAT_viktor_schutze = {
 
-			
+			picture = viktor_schutze
 			allowed = {
 				original_tag = VAT
 			}
