@@ -22,7 +22,7 @@ OrderOfBattleによる兵士と艦隊配置エラーがいくつか
 
 そのほかのIdea関連エラー　３
 日本の国家方針invalid　エラー　２
-events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。そこの問題はいったん放棄、
+events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。
 unexpected token エラー　４
 
 Wrong ideology　３つ
@@ -41,7 +41,7 @@ Wrong ideology　３つ
 [19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
 id複製エラー
-たぶんリーダーのID　やっぱり不明
+たぶんリーダーのID　アイデアにあったものは修正した
 
 
 
@@ -55,7 +55,8 @@ id複製エラー
 　国家タグと国家の対応・・・アメリカ=>UNS(Unified States)、日本=>AKI(akitsusima)、ヒルトリア=>HIL(hiltoria)は新規国家タグを配置する。そのほかの国家は既存の国家タグを流用。
 　従属国の配置・・・帝国領ノルド、帝国領オストラント(POL)、帝国領ローラント(HOL)、帝国領ダキア(HUN)（ここまで統合傀儡）、帝国領ヒルトリア（帝国自治領）　
 　ルメーリの自治領、バルカン自治領(BUL) malformed token errorはこれでそれなりに改善するはず。
-　そのほか国家、アメリカ、日本は対処を考える。いったん放置
+　ヒルトリアにはコスメティックタグを設定。
+ そのほか国家、アメリカ、日本は対処を考える。いったん放置
 　
 #優先度２
 ステート、プロビンス関連
