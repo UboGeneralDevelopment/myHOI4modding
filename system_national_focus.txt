@@ -25,13 +25,13 @@ X座標は左端のアイコンの絶対座標がX=0になるように考えて�
 #	shared_focus = CHI_invite_foreign_investors
 #	focus = {
 #		id = PRC_
-#		icon = GFX_
+#		icon = GFX_ ###通常はgoals.gfxに指定されている。
 #		prerequisite = { focus = }
 #		mutually_exclusive = { focus =  }
 #		x = -3
 #		y = 0
 #		relative_position_id = 
-#		cost = 10 ここがコストとなる。コスト1につき7日、小数は無理。さらに1日1政治力を消費する。これを詳しく変更することはできない。
+#		cost = 10 #ここがコストとなる。コスト1につき7日、小数は無理。さらに1日1政治力を消費する。これを詳しく変更することはできない。
 #		ai_will_do = {
 #			factor = 1
 #		}
