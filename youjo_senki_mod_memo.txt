@@ -1,29 +1,15 @@
 ﻿
 ###エラー情報###
 
-ゲームスタートまでに400エラーほど
 
 たいした問題でないエラー
 
 アイデアと閣僚の複製エラー
-
 新規アイデアにすべて国家タグ付きの名前を付けることによってid重複を避ける
 また、すべてにpicture指定を行う。
 localization keyが変わるので、そこの指定は別個に行う。
 
-国家方針の複製エラー　60
 フォントエラー、無印日本語MODのみでもでる　２０
-
-
-早急に対策すべきエラー　１８０こほど
-
-
-OrderOfBattleによる兵士と艦隊配置エラーがいくつか
-
-そのほかのIdea関連エラー　３
-日本の国家方針invalid　エラー　２
-events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。だいたいはopinionmodiferが原因。解決。
-unexpected token エラー　４
 
 Wrong ideology　３つ
 [20:44:13][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'loadscreen_header'
@@ -59,6 +45,7 @@ Wrong ideology　３つ
 [19:38:33][id.cpp:85]: Failed to create id 406 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
+
 id複製エラー
 たぶんリーダーのID　アイデアにあったものは修正した
 
