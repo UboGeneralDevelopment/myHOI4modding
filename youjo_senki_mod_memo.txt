@@ -26,7 +26,26 @@ events malformed token エラー　５８　国家方針とイベントでのmal
 unexpected token エラー　４
 
 Wrong ideology　３つ
-
+[20:44:13][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'loadscreen_header'
+[20:44:13][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'loadscreen_tip'
+[20:44:18][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_16mbs'
+[20:44:18][bitmapfont.cpp:558]: base (15) in 'gfx/fonts/hoi_18mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_18mbs'
+[20:44:18][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20b_cryllic.fnt' does not match previous fontfiles in font 'hoi_20b'
+[20:44:18][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_20bs'
+[20:44:19][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter16'
+[20:44:19][bitmapfont.cpp:558]: base (18) in 'gfx/fonts/hoi_22typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter22'
+[20:44:19][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_24header'
+[20:44:19][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_30header'
+[20:44:19][bitmapfont.cpp:558]: base (21) in 'gfx/fonts/hoi_26mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_36header'
+[20:44:24][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_16mbs'
+[20:44:24][bitmapfont.cpp:558]: base (15) in 'gfx/fonts/hoi_18mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_18mbs'
+[20:44:24][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20b_cryllic.fnt' does not match previous fontfiles in font 'hoi_20b'
+[20:44:24][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_20bs'
+[20:44:24][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter16'
+[20:44:25][bitmapfont.cpp:558]: base (18) in 'gfx/fonts/hoi_22typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter22'
+[20:44:25][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_24header'
+[20:44:25][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_30header'
+[20:44:25][bitmapfont.cpp:558]: base (21) in 'gfx/fonts/hoi_26mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_36header'
 
 [19:38:33][id.cpp:85]: Failed to create id 410 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 402 55. Already exists in game.
