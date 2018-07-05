@@ -22,7 +22,7 @@ OrderOfBattleによる兵士と艦隊配置エラーがいくつか
 
 そのほかのIdea関連エラー　３
 日本の国家方針invalid　エラー　２
-events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。
+events malformed token エラー　５８　国家方針とイベントでのmalformed tokenエラー、日本と中国で大量発生。だいたいはopinionmodiferが原因。解決。
 unexpected token エラー　４
 
 Wrong ideology　３つ
