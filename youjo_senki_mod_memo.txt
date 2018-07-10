@@ -12,26 +12,7 @@ localization keyが変わるので、そこの指定は別個に行う。
 フォントエラー、無印日本語MODのみでもでる　２０
 
 Wrong ideology　３つ
-[20:44:13][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'loadscreen_header'
-[20:44:13][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'loadscreen_tip'
-[20:44:18][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_16mbs'
-[20:44:18][bitmapfont.cpp:558]: base (15) in 'gfx/fonts/hoi_18mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_18mbs'
-[20:44:18][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20b_cryllic.fnt' does not match previous fontfiles in font 'hoi_20b'
-[20:44:18][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_20bs'
-[20:44:19][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter16'
-[20:44:19][bitmapfont.cpp:558]: base (18) in 'gfx/fonts/hoi_22typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter22'
-[20:44:19][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_24header'
-[20:44:19][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_30header'
-[20:44:19][bitmapfont.cpp:558]: base (21) in 'gfx/fonts/hoi_26mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_36header'
-[20:44:24][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_16mbs'
-[20:44:24][bitmapfont.cpp:558]: base (15) in 'gfx/fonts/hoi_18mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_18mbs'
-[20:44:24][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20b_cryllic.fnt' does not match previous fontfiles in font 'hoi_20b'
-[20:44:24][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_20bs'
-[20:44:24][bitmapfont.cpp:558]: base (13) in 'gfx/fonts/hoi_16typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter16'
-[20:44:25][bitmapfont.cpp:558]: base (18) in 'gfx/fonts/hoi_22typewriter_cryllic.fnt' does not match previous fontfiles in font 'hoi4_typewriter22'
-[20:44:25][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_24header'
-[20:44:25][bitmapfont.cpp:558]: base (16) in 'gfx/fonts/hoi_20bs_cryllic.fnt' does not match previous fontfiles in font 'hoi_30header'
-[20:44:25][bitmapfont.cpp:558]: base (21) in 'gfx/fonts/hoi_26mbs_cryllic.fnt' does not match previous fontfiles in font 'hoi_36header'
+
 
 [19:38:33][id.cpp:85]: Failed to create id 410 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 402 55. Already exists in game.
@@ -57,14 +38,19 @@ id複製エラー
 初期設定１９２０年のバランスとり
 
 #最優先
+　イデオロギールールの変更
+　国家リーダーの再編
+　Historyの国家ステータス(技術、ナショナルフォーカス)の再編集
+
+
+優先順位1
 国家配置関連
-　国家タグと国家の対応・・・アメリカ=>UNS(Unified States)、日本=>AKI(akitsusima)、ヒルトリア=>HIL(hiltoria)は新規国家タグを配置する。そのほかの国家は既存の国家タグを流用。
-　従属国の配置・・・帝国領ノルド、帝国領オストラント(POL)、帝国領ローラント(HOL)、帝国領ダキア(HUN)（ここまで統合傀儡）、帝国領ヒルトリア（帝国自治領）　
-　ルメーリの自治領、バルカン自治領(BUL) malformed token errorはこれでそれなりに改善するはず。
-　ヒルトリアにはコスメティックタグを設定。
- そのほか国家、アメリカ、日本は対処を考える。いったん放置
+　従属国の配置・・・帝国領ノルド、帝国領オストラント(POL)、帝国領ローラント(HOL)、帝国領ダキア(HUN)（ここまで統合傀儡）、帝国領ヒルトリア
+　ルメーリの自治領、バルカン自治領(BUL)
+　ヒルトリアには最終的にはコスメティックタグを設定。
+ 　アメリカ、日本は対処を考える。いったん放置
 　
-#優先度２
+#優先順位2
 ステート、プロビンス関連
 　建造物配置(USA/27/23/172)(COM/15/19/36)(HIS/9/6/25)(FRN/25/8/40)(sws/4/0/7)(IRU/19/11/20)
 (VAT/71/16/89)(DAC/7/2/11)(RAT/40/7/55)(RUM/11/2/30)(JAP/21/15/25)
@@ -73,13 +59,10 @@ id複製エラー
 　（VP、補給量？）
  ORDEROFBATTLEの編集　いったん放置
 
-#優先度3 
+#優先順位3
 国家ステータス関連
 　将軍などのリーダー枠の再割り当て
-　イデオロギールールの変更
-　国家リーダーの再編
-　Historyの国家ステータス(技術、ナショナルフォーカス)の再編集
- 国家別特別ナショナルフォーカスのテンプレの作成(とりあえずはgenericの一部を改造してコピー)
+　 国家別特別ナショナルフォーカスのテンプレの作成(とりあえずはgenericの一部を改造してコピー)
 
 ###直近作業アイデア###
 VATとその関連国にフォーカスしたNF、イベント及びディシジョンの作成
