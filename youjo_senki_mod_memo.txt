@@ -1,38 +1,19 @@
 ﻿
 ###エラー情報###
 
-
-たいした問題でないエラー
-
-アイデアと閣僚の複製エラー
-新規アイデアにすべて国家タグ付きの名前を付けることによってid重複を避ける
-また、すべてにpicture指定を行う。
-localization keyが変わるので、そこの指定は別個に行う。
-
-フォントエラー、無印日本語MODのみでもでる　２０
+フォントエラー、無印日本語MODのみでもでる
 
 Wrong ideology　３つ
 
-
 [19:38:33][id.cpp:85]: Failed to create id 410 55. Already exists in game.
 [19:38:33][id.cpp:85]: Failed to create id 402 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 407 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 408 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 404 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 405 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 401 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 412 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 411 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 406 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 409 55. Already exists in game.
-[19:38:33][id.cpp:85]: Failed to create id 403 55. Already exists in game.
-
 id複製エラー
 たぶんリーダーのID　アイデアにあったものは修正した
 
 
 
 ###直近の作業###
+
 ##未解決だが、常に考慮すべき
 エラーつぶし。
 初期設定１９２０年のバランスとり
@@ -43,7 +24,7 @@ id複製エラー
 　Historyの国家ステータス(技術、ナショナルフォーカス)の再編集
 
 
-優先順位1
+#優先順位1
 国家配置関連
 　従属国の配置・・・帝国領ノルド、帝国領オストラント(POL)、帝国領ローラント(HOL)、帝国領ダキア(HUN)（ここまで統合傀儡）、帝国領ヒルトリア
 　ルメーリの自治領、バルカン自治領(BUL)
