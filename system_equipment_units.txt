@@ -3,32 +3,60 @@
 
 
 
-ユニットの基本的なステータスは装備とユニットの種類によって決まる。
+ユニットの基本的なステータスは装備とユニットの組み合わせによって決まる。
+ユニットと装備のstatsは実に多彩であり、通常はそれぞれのファイルに必要なものだけ記載する。
+最終的にはユニットのstatsおよびユニット補正のかけられた装備のstatsの合計がユニットの最終statsになる。
+この最終statsのうち、装備に由来するものは充足率に比例する。ユニットに由来するstatsは充足率関係ない。
+つまり充足がくそだろうと士気の高いユニットは意外に粘れるということである。
 
-装備によって決まるステータス
+陸軍ユニット
+
+主に装備によって決まるステータス
 build_cost_ic = <float> #生産コスト
 lend_lease_cost = <float> #設計図レンドリースコスト
 reliability = <float> #信頼性
 maximum_speed = <float> #最高速度
+
 #以下の値は装備充足率がダイレクトにユニットステータスに影響する
 defense = <float> #防御値
 breakthrough = <float> #突破値
-hardness = <float> #装甲化率
-armor_value = <float> #装甲値
 soft_attack = <float> #対人攻撃
 hard_attack = <float> #対装甲攻撃
+armor_value = <float> #装甲値
 ap_attack = <float> #貫通
 air_attack = <float> #対空
+hardness = <float> #装甲化率、充足の影響を受けるか不明
 
-ユニットによって決まるステータス。必要装備が同じでも、ユニット種類によって変化するステータス。
-manpower = <int> #必要人的資源
-max_strength = <int> #最大耐久値
-training_time = <int> #訓練時間
-weight = <float> #重量
-default_morale = <float> #基本組織率回復率
-max_organisation = <int> #最大組織率
-combat_width = <int> #戦闘幅
-supply_consumption = <float> #補給消費
+
+主にユニットによって決まるステータス。最終的な師団statの決め方はモノによる。充足の影響を受けるstatもある。
+default_morale = <float> #基本組織率回復率　平均
+max_organisation = <int> #最大組織率　平均
+combat_width = <int> #戦闘幅　合計
+max_strength = <int> #最大耐久値　合計
+manpower = <int> #必要人的資源　合計
+training_time = <int> #訓練時間　最大値
+weight = <float> #重量　合計
+supply_consumption = <float> #補給消費　合計　
+suppression = <float> #レジスタンス制圧力　合計
+entrenchment　＃塹壕　最大値
+recon = 1                       # 偵察値　最大値
+
+師団statに直接乗る補正
+movement = 0.1                  # 速度補正
+experience_loss_factor = 0.1    # 経験値消耗
+casualty_trickleback = 0.2      # 負傷者復活
+suppression_factor = 0.1        # レジスタンス制圧力補正
+reliability_factor = 0.05       # 装備品信頼性補正
+initiative = 0.2                # 増援確率及び立案速度
+
+ユニットによる装備補正
+装備のstatに掛け算で適用可能。補正は掛け算でかかる。特殊なものとしてattackやdefenceはsoft,hard,defence,breakthroughの両方にかかる
+どのmodifierが適用可能なのかはものによるため注意が必要。おそらく技術による補正はここにかかっているので技術補正がかかっているものならここで使える。
+
+ユニットによる地形補正
+特定地形におけるユニットおよび装備のstatを変更可能。補正は掛け算でかかる。
+バニラではattack,defence,movementしか使っていない。
+
 
 ユニット、技術、アイデアによって与えることができるモディファー
 
@@ -47,7 +75,7 @@ supply_consumption = <float> #補給消費
 単一のグループにしか所属不可能。師団編成画面でのグループ選択に用いられ、種類は支援、歩兵、機動、装甲のみ
 
 カテゴリー
-ユニットの分類。技術による補正を与える際に用いる。複数カテゴリーに所属可能、技術補正はorで適用される。modで増やせる。
-基本的に技術補正は装備ではなくてユニットに乗る形となっている。
+ユニットの分類。技術による補正を与える際に用いる。複数カテゴリーに所属可能、技術補正はorで適用される。カテゴリーはmodで増やせる。
+基本的に技術による補正は、直接装備statを補正するではなく、ユニットによる装備補正と、ユニットそのものへの補正を行う形となっている。
 
 
