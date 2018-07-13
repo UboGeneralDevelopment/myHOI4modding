@@ -1,0 +1,177 @@
+this_league_of_nations_member_was_saved = {
+	OR = {
+		has_country_flag = league_of_nations_member_1
+		has_country_flag = league_of_nations_member_2
+		has_country_flag = league_of_nations_member_3
+		has_country_flag = league_of_nations_member_4
+		has_country_flag = league_of_nations_member_5
+		has_country_flag = league_of_nations_member_6
+		has_country_flag = league_of_nations_member_7
+		has_country_flag = league_of_nations_member_8
+		has_country_flag = league_of_nations_member_9
+		has_country_flag = league_of_nations_member_10
+		has_country_flag = league_of_nations_member_11
+		has_country_flag = league_of_nations_member_12
+		has_country_flag = league_of_nations_member_13
+		has_country_flag = league_of_nations_member_14
+		has_country_flag = league_of_nations_member_15
+		has_country_flag = league_of_nations_member_16
+		has_country_flag = league_of_nations_member_17
+		has_country_flag = league_of_nations_member_18
+		has_country_flag = league_of_nations_member_19
+		has_country_flag = league_of_nations_member_20
+		has_country_flag = league_of_nations_member_21
+		has_country_flag = league_of_nations_member_22
+		has_country_flag = league_of_nations_member_23
+		has_country_flag = league_of_nations_member_24
+		has_country_flag = league_of_nations_member_25
+		has_country_flag = league_of_nations_member_26
+		has_country_flag = league_of_nations_member_27
+		has_country_flag = league_of_nations_member_28
+		has_country_flag = league_of_nations_member_29
+		has_country_flag = league_of_nations_member_30
+		has_country_flag = league_of_nations_member_31
+		has_country_flag = league_of_nations_member_32
+		has_country_flag = league_of_nations_member_33
+		has_country_flag = league_of_nations_member_34
+		has_country_flag = league_of_nations_member_35
+		has_country_flag = league_of_nations_member_36
+		has_country_flag = league_of_nations_member_37
+		has_country_flag = league_of_nations_member_38
+		has_country_flag = league_of_nations_member_39
+		has_country_flag = league_of_nations_member_40
+		has_country_flag = league_of_nations_member_41
+		has_country_flag = league_of_nations_member_42
+		has_country_flag = league_of_nations_member_43
+		has_country_flag = league_of_nations_member_44
+		has_country_flag = league_of_nations_member_45
+		has_country_flag = league_of_nations_member_46
+		has_country_flag = league_of_nations_member_47
+		has_country_flag = league_of_nations_member_48
+		has_country_flag = league_of_nations_member_49
+		has_country_flag = league_of_nations_member_50
+		has_country_flag = league_of_nations_member_51
+		has_country_flag = league_of_nations_member_52
+		has_country_flag = league_of_nations_member_53
+		has_country_flag = league_of_nations_member_54
+		has_country_flag = league_of_nations_member_55
+		has_country_flag = league_of_nations_member_56
+		has_country_flag = league_of_nations_member_57
+		has_country_flag = league_of_nations_member_58
+		has_country_flag = league_of_nations_member_59
+		has_country_flag = league_of_nations_member_60
+	}
+}
+
+AI_wants_to_leave_league_of_nations = {
+	is_ai = yes
+	# Historical Leavings:
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				AND = {
+					original_tag = COS
+					date > 1925.01.01
+				}
+				AND = {
+					original_tag = BRA
+					date > 1926.06.11
+				}
+				AND = {
+					original_tag = JAP
+					has_government = fascism
+					date > 1933.03.01
+				}
+				AND = {
+					original_tag = GER
+					has_government = fascism
+					date > 1933.10.13
+				}
+				AND = {
+					original_tag = PAR
+					has_government = communism
+					date > 1935.01.01
+				}
+				AND = {
+					original_tag = NIC
+					date > 1936.01.01
+				}
+				AND = {
+					original_tag = GUA
+					date > 1936.05.01
+				}
+				AND = {
+					original_tag = HON
+					date > 1936.07.01
+				}
+				AND = {
+					original_tag = ELS
+					date > 1937.01.01
+				}
+				AND = {
+					original_tag = ITA
+					has_government = fascism
+					date > 1937.12.10
+				}
+				AND = {
+					original_tag = CHL
+					date > 1938.01.01
+				}
+				AND = {
+					original_tag = VEN
+					has_government = fascism
+					date > 1938.01.01
+				}
+				AND = {
+					original_tag = SPR
+					has_government = fascism
+					date > 1938.01.01
+				}
+				AND = {
+					original_tag = PRU
+					has_government = fascism
+					date > 1939.04.01
+				}
+			}
+		}
+		any_country = {
+			has_country_flag = leader_of_league_of_nations
+			ROOT = {
+				has_opinion = {
+					target = PREV
+					value < -15
+				}
+			}
+			NOT = { has_government = ROOT }
+			ROOT = { NOT = { has_government = neutrality } }
+		}
+		any_country = {
+			has_country_flag = leader_of_league_of_nations
+			ROOT = {
+				has_opinion = {
+					target = PREV
+					value < -30
+				}
+			}
+			OR = {
+				has_government = ROOT
+				ROOT = { has_government = neutrality }
+			}
+		}
+		any_country = {
+			has_country_flag = leader_of_league_of_nations
+			has_war_with = ROOT
+		}
+		AND = {
+			NOT = { has_government = democratic }
+			NOT = { has_government = neutrality }
+			NOT = { check_variable = { league_of_nations_generated_threat < 50 } }
+		}
+		AND = {
+			has_idea = scraping_the_barrel
+			NOT = { has_manpower > 0 }
+			has_war = yes
+		}
+	}
+}

@@ -1,0 +1,312 @@
+﻿l_german:
+ # Events:
+ league_of_nations_events.EVTNAME4: "Abstimmung beendet"
+ league_of_nations_events.EVTDESC4: "Die Abstimmung im Rat des Völkerbundes ist beendet."
+ league_of_nations_events4.EVTOPT1: "Abstimmung erfolgreich!"
+ league_of_nations_events4.EVTOPT2: "Abstimmung gescheitert!"
+ 
+ league_of_nations_events.EVTNAME7: "Wahl im Völkerbund"
+ league_of_nations_events.EVTDESC7: "Die Amtsperiode des derzeiten Leiters des Völkerbundes ([league_of_nations_leader.GetName]) ist zu Ende. Es ist nun an der Zeit, einen neuen Leiter zu wählen."
+ league_of_nations_events7.EVTOPT1: "Für [league_of_nations_election_target_1.GetFlag] §Y[league_of_nations_election_target_1.GetName]§! stimmen."
+ league_of_nations_events7.EVTOPT2: "Für [league_of_nations_election_target_2.GetFlag] §Y[league_of_nations_election_target_2.GetName]§! stimmen."
+ league_of_nations_events7.EVTOPT3: "Für [league_of_nations_election_target_3.GetFlag] §Y[league_of_nations_election_target_3.GetName]§! stimmen."
+ league_of_nations_events7.EVTOPT4: "Für [league_of_nations_election_target_4.GetFlag] §Y[league_of_nations_election_target_4.GetName]§! stimmen."
+ league_of_nations_events7.EVTOPT5: "Für ein anderes Land stimmen."
+ league_of_nations_events7.EVTOPT6: "Enthalten."
+ 
+ league_of_nations_events.EVTNAME9: "Wahl abgeschlossen"
+ league_of_nations_events.EVTDESC9: "Die Wahl des neuen Leiters des Völkerbundes ist zu Ende und alle Stimmen wurden ausgezählt."
+ league_of_nations_events9.EVTOPT1: "Gut."
+ 
+ league_of_nations_events.EVTNAME10: "Leiter des Völkerbundes"
+ league_of_nations_events.EVTDESC10: "Wir wurden zum Leiter des Völkerbundes gewählt. Wir werden nun bis zur nächsten Wahl den Vorsitz führen."
+ league_of_nations_events10.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_events.EVTNAME11: "Einladung in den Völkerbund"
+ league_of_nations_events.EVTDESC11: "[From.GetName] hat uns in den Völkerbund eingeladen. Wollt Ihr annehmen?"
+ league_of_nations_events11.EVTOPT1: "Nehmt die Einladung an."
+ league_of_nations_events11.EVTOPT2: "Lehnt die Einladung ab."
+ 
+ league_of_nations_events.EVTNAME12: "Beitrittsgesuch in den Völkerbund"
+ league_of_nations_events.EVTDESC12: "[From.GetName] möchte dem Völkerbund beitreten. Wollt Ihr annehmen?"
+ league_of_nations_events12.EVTOPT1: "Nehmt die Anfrage an."
+ league_of_nations_events12.EVTOPT2: "Lehnt die Anfrage ab."
+ 
+ league_of_nations_events.EVTNAME18: "Völkerrechtswidrige Annektierung Österreichs"
+ league_of_nations_events.EVTDESC18: "Der Rat des Völkerbundes hat unseren Anschluss Österreichs als \"völkerrechtswidrige Annektierung\" deklariert. Sie drohen uns damit, Sanktionen zu verhängen, wenn wir Österreich nicht wieder als freie Nation entlassen."
+ league_of_nations_events18.EVTOPT1: "Österreich gehört zu Deutschland!"
+ league_of_nations_events18.EVTOPT2: "Vielleicht sollten wir dieses Mal nachgeben..."
+ 
+ league_of_nations_events.EVTNAME20: "Handelssanktionen aufheben?"
+ league_of_nations_events.EVTDESC20: "Wir sind nicht mehr Mitglied des Völkerbundes. Sollen wir die vom Rat des Völkerbundes verhängten Handelssanktionen gegen [?num_of_countries_we_have_trade_sanctions_against] Länder aufheben?"
+ league_of_nations_events20.EVTOPT1: "Handelssanktionen aufheben."
+ league_of_nations_events20.EVTOPT2: "Handelssanktionen beibehalten."
+ 
+ league_of_nations_events.EVTNAME21: "Ultimatum des Völkerbundes"
+ league_of_nations_events.EVTDESC21: "Der Rat des Völkerbundes hat uns ein Ultimatum gestellt. Sie drohen uns damit, Sanktionen zu verhängen, wenn wir das zuletzt annektiert Land nicht wieder in die Freiheit entlassen bzw. die zuletzt annektierten Gebiete nicht zurückgeben."
+ league_of_nations_events21.EVTOPT1: "Wir werden uns niemals dem Völkerbund beugen!"
+ league_of_nations_events21.EVTOPT2: "Entlasst das Land in die Freiheit..."
+ league_of_nations_events21.EVTOPT3: "Gebt die Gebiete zurück..."
+ 
+ league_of_nations_events.EVTNAME23: "Völkerrechtswidriger Krieg gegen Äthiopien"
+ league_of_nations_events.EVTDESC23: "Der Rat des Völkerbundes hat unseren Krieg gegen Äthiopien als \"völkerrechtswidrig\" deklariert. Sie drohen uns damit, Sanktionen zu verhängen, wenn wir keinen Friedensvertrag unterzeichnen."
+ league_of_nations_events23.EVTOPT1: "Dieser Krieg ist völlig berechtigt!"
+ league_of_nations_events23.EVTOPT2: "Vielleicht sollten wir dieses Mal nachgeben..."
+ 
+ league_of_nations_events.EVTNAME24: "Völkerbund wird zu den Waffen gerufen"
+ league_of_nations_events.EVTDESC24: "Alle Mitglieder des Völkerbundes können dem Krieg beitreten."
+ league_of_nations_events24.EVTOPT1: "In Ordnung."
+ 
+ league_of_nations_events.EVTNAME25: "Ruf zu den Waffen"
+ league_of_nations_events.EVTDESC25: "Ein Mitglied des Völkerbundes wurde von [From.From.GetName] angegriffen. Da eine Koalition gegen dieses Land gegründet wurde, können wir nun auf der Seite von [From.GetName] in den Krieg eintreten."
+ league_of_nations_events25.EVTOPT1: "Ehrt unser Versprechen!"
+ league_of_nations_events25.EVTOPT2: "Sie schaffen das auch ohne uns..."
+ 
+ league_of_nations_events.EVTNAME26: "Stimmenverteilung bei der Wahl des Völkerbundes"
+ league_of_nations_events.EVTDESC26: "Die Wahl des Leiters des Völkerbundes ist nun beendet und der neue Leiter wurde gewählt. \nDieses Event zeigt nun die Stimmenverteilung für jedes Mitglied an."
+ league_of_nations_events26.EVTOPT1: "Ergebnis"
+ 
+ league_of_nations_focuses_events.EVTNAME1: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle1]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC1: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle1]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events1.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME2: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle2]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC2: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle2]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events2.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME3: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle3]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC3: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle3]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events3.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME4: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle4]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC4: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle4]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events4.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME5: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle5]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC5: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle5]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events5.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME6: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle6]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC6: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle6]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events6.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME7: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle7]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC7: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle7]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events7.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME8: "Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle8]\" abgeschlossen"
+ league_of_nations_focuses_events.EVTDESC8: "Wir haben den Schwerpunkt \"[This.GetLeagueOfNationsFocusTitle8]\" des Völkerbundes abgeschlossen. Dies hat die folgenden Auswirkungen:"
+ league_of_nations_focuses_events8.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_focuses_events.EVTNAME9: "Völkerbund-Allianz beitreten?"
+ league_of_nations_focuses_events.EVTDESC9: "Der Leiter des Völkerbundes hat ihn zur einem Verteidigungsbündnis umgeformt. Wollt Ihr diesem beitreten?"
+ league_of_nations_focuses_events9.EVTOPT1: "Bündnis beitreten."
+ league_of_nations_focuses_events9.EVTOPT2: "Anfrage ablehnen."
+ 
+ league_of_nations_focuses_events.EVTNAME10: "Völkerbund-Staat beitreten?"
+ league_of_nations_focuses_events.EVTDESC10: "Der Leiter des Völkerbundes hat ihn zur einem Nationalstaat umgeformt. Wollt Ihr diesem beitreten? \n\nEin Beitritt wird dazu führen, dass unser Land annektiert wird!"
+ league_of_nations_focuses_events10.EVTOPT1: "Anfrage annehmen."
+ league_of_nations_focuses_events10.EVTOPT2: "Anfrage ablehnen."
+ 
+ league_of_nations_focuses_events.EVTNAME11: "Schwerpunkt abgebrochen"
+ league_of_nations_focuses_events.EVTDESC11: "Der ausgewählte Schwerpunkt des Völkerbundes wurde abgebrochen, da wir sind mehr alle Bedingungen erfüllen."
+ league_of_nations_focuses_events11.EVTOPT1: "In Ordnung."
+ 
+ # Tooltips:
+ ALL_LEAGUE_OF_NATIONS_GAIN_WARGOAL_AGAINST_TARGET: "Alle Mitglieder des §YVölkerbundes§! erhalten einen "§YBefreien§!"-Kriegsgrund gegen [target_of_league_of_nations_voting.GetFlag] §Y[target_of_league_of_nations_voting.GetName]§!.\n"
+ TARGET_IS_KICKED_OUT_OF_LEAGUE_OF_NATIONS: "[target_of_league_of_nations_voting.GetFlag] §Y[target_of_league_of_nations_voting.GetName]§! wird aus dem §YVölkerbund§! ausgeschlossen.\n"
+ ALL_LEAGUE_OF_NATIONS_MAKE_TRADE_SANCTIONS_AGAINST_TARGET: "Alle Mitglieder des §YVölkerbundes§! verhängen Handelssanktionen gegen [target_of_league_of_nations_voting.GetFlag] §Y[target_of_league_of_nations_voting.GetName]§!.\n"
+ LEAGUE_OF_NATIONS_VOTING_WAS_UNSUCCESSFUL: "Die Abstimmung im Rat des §YVölkerbundes§! ist gescheitert.\n"
+ 
+ WE_VOTE_FOR_THIS_AS_NEXT_LEADER_OF_LEAGUE_OF_NATIONS: "§Y[This.GetName]§! erhält unsere Stimme bei der Wahl des nächsten Leiters des §YVölkerbundes§!.\n"
+ VOTE_FOR_A_NOT_LISTED_COUNTRY_AS_NEW_LEADER_OF_LEAGUE_OF_NATIONS: "Aktualisiert die Liste mit §Y4§! neuen Mitgliedern des §YVölkerbundes§!.\n"
+ WE_DO_NOT_VOTE_IN_LEAGUE_OF_NATIONS_ELECTIONS: "Wir enthalten uns bei der Wahl des nächsten Leiters des §YVölkerbundes§!.\n"
+ 
+ THIS_IS_NEW_LEADER_OF_LEAGUE_OF_NATIONS: "[This.GetFlag] §Y[This.GetName]§! wurde zum neuen Leiter des §YVölkerbundes§! gewählt.\n"
+ WE_ARE_NEW_LEADER_OF_LEAGUE_OF_NATIONS: "Wir sind nun der Leiter des §YVölkerbundes§!.\n"
+ 
+ THIS_JOIN_LEAGUE_OF_NATIONS: "§Y[This.GetName]§! tritt dem §YVölkerbund§! bei.\n"
+ THIS_DOES_NOT_JOIN_LEAGUE_OF_NATIONS: "§Y[This.GetName]§! darf dem §YVölkerbund§! innerhalb der nächsten §Y365 Tage§! NICHT beitreten.\n"
+ 
+ THIS_IS_KICKED_FROM_LEAGUE_OF_NATIONS: "§Y[This.GetName]§! wird aus dem §YVölkerbund§! ausgeschlossen.\n"
+ 
+ LEAGUE_OF_NATIONS_FOCUS_WAS_CANCELED: "Der ausgewählte Schwerpunkt des §YVölkerbundes§! wurde abgebrochen, da nicht mehr alle Voraussetzungen erfüllt sind.\n"
+ 
+ THIS_LOOSES_7_AGGRESSIVENESS: "Die Aggressivitätsstufe von [This.GetFlag] §Y[This.GetName]§! verringert sich um §G-7.0%§!.\n"
+ THIS_GAINS_14_AGGRESSIVENESS: "Die Aggressivitätsstufe von [This.GetFlag] §Y[This.GetName]§! erhöht sich um §R+14.0%§!.\n"
+ 
+ ALL_LEAGUE_OF_NATIONS_FORM_COALITION_AGAINST_THIS: "Alle Mitglieder des §YVölkerbundes§! schließen eine Koalition gegen [This.GetFlag] §Y[This.GetName]§!, die es ihnen ermöglicht, sich gegenseiting bei einem Angriffsfall von [This.GetName] zu den den Waffen zu rufen. \nDiese Koalition wird für §Y182 Tage§! aktiv sein.\n"
+ 
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES: "Die Stimmenverteilung dieser Wahl sieht wie folgt aus:\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_1: "§Y[league_of_nations_member_1.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_1]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_2: "§Y[league_of_nations_member_2.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_2]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_3: "§Y[league_of_nations_member_3.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_3]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_4: "§Y[league_of_nations_member_4.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_4]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_5: "§Y[league_of_nations_member_5.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_5]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_6: "§Y[league_of_nations_member_6.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_6]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_7: "§Y[league_of_nations_member_7.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_7]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_8: "§Y[league_of_nations_member_8.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_8]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_9: "§Y[league_of_nations_member_9.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_9]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_10: "§Y[league_of_nations_member_10.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_10]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_11: "§Y[league_of_nations_member_11.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_11]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_12: "§Y[league_of_nations_member_12.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_12]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_13: "§Y[league_of_nations_member_13.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_13]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_14: "§Y[league_of_nations_member_14.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_14]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_15: "§Y[league_of_nations_member_15.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_15]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_16: "§Y[league_of_nations_member_16.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_16]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_17: "§Y[league_of_nations_member_17.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_17]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_18: "§Y[league_of_nations_member_18.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_18]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_19: "§Y[league_of_nations_member_19.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_19]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_20: "§Y[league_of_nations_member_20.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_20]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_21: "§Y[league_of_nations_member_21.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_21]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_22: "§Y[league_of_nations_member_22.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_22]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_23: "§Y[league_of_nations_member_23.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_23]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_24: "§Y[league_of_nations_member_24.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_24]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_25: "§Y[league_of_nations_member_25.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_25]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_26: "§Y[league_of_nations_member_26.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_26]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_27: "§Y[league_of_nations_member_27.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_27]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_28: "§Y[league_of_nations_member_28.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_28]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_29: "§Y[league_of_nations_member_29.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_29]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_30: "§Y[league_of_nations_member_30.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_30]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_31: "§Y[league_of_nations_member_31.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_31]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_32: "§Y[league_of_nations_member_32.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_32]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_33: "§Y[league_of_nations_member_33.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_33]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_34: "§Y[league_of_nations_member_34.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_34]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_35: "§Y[league_of_nations_member_35.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_35]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_36: "§Y[league_of_nations_member_36.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_36]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_37: "§Y[league_of_nations_member_37.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_37]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_38: "§Y[league_of_nations_member_38.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_38]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_39: "§Y[league_of_nations_member_39.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_39]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_40: "§Y[league_of_nations_member_40.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_40]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_41: "§Y[league_of_nations_member_41.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_41]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_42: "§Y[league_of_nations_member_42.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_42]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_43: "§Y[league_of_nations_member_43.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_43]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_44: "§Y[league_of_nations_member_44.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_44]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_45: "§Y[league_of_nations_member_45.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_45]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_46: "§Y[league_of_nations_member_46.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_46]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_47: "§Y[league_of_nations_member_47.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_47]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_48: "§Y[league_of_nations_member_48.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_48]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_49: "§Y[league_of_nations_member_49.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_49]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_50: "§Y[league_of_nations_member_50.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_50]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_51: "§Y[league_of_nations_member_51.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_51]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_52: "§Y[league_of_nations_member_52.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_52]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_53: "§Y[league_of_nations_member_53.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_53]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_54: "§Y[league_of_nations_member_54.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_54]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_55: "§Y[league_of_nations_member_55.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_55]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_56: "§Y[league_of_nations_member_56.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_56]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_57: "§Y[league_of_nations_member_57.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_57]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_58: "§Y[league_of_nations_member_58.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_58]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_59: "§Y[league_of_nations_member_59.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_59]§! Stimmen.\n"
+ LEAGUE_OF_NATIONS_ELECTION_DISTRIBUTION_OF_VOTES_FOR_60: "§Y[league_of_nations_member_60.GetNameWithFlag]§!: §G[?global.num_of_election_votes_for_member_60]§! Stimmen.\n"
+ 
+ # News Events:
+ league_of_nations_news_events.EVTNAME1: "Völkerbund stimmt für Krieg"
+ league_of_nations_news_events.EVTDESC1: "Der Rat des Völkerbundes hat eine Abstimmung aufgrund des aggressiven Verhaltens von [Root.GetName] abgehalten. Das Ergebnis der Abstimmung ist, dass der Völkerbund beschlossen hat, [Root.GetName] durch Krieg in ihre Schranken zu weisen."
+ league_of_nations_news_events1.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME2: "Völkerbund stimmt für Ausschluss"
+ league_of_nations_news_events.EVTDESC2: "Der Rat des Völkerbundes hat eine Abstimmung aufgrund des aggressiven Verhaltens von [Root.GetName] abgehalten. Das Ergebnis der Abstimmung ist, dass der Völkerbund beschlossen hat, [Root.GetName] aus dem Völkerbund auszuschließen."
+ league_of_nations_news_events2.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME3: "Völkerbund stimmt für Handelssanktionen"
+ league_of_nations_news_events.EVTDESC3: "Der Rat des Völkerbundes hat eine Abstimmung aufgrund des aggressiven Verhaltens von [Root.GetName] abgehalten. Das Ergebnis der Abstimmung ist, dass der Völkerbund beschlossen hat, [Root.GetName] durch Handelssanktionen in ihre Schranken zu weisen. \nDiese Handelssanktionen werden nun für 3 Jahre in Kraft bleiben."
+ league_of_nations_news_events3.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME4: "Völkerbund-Abstimmung gescheitert"
+ league_of_nations_news_events.EVTDESC4: "Der Rat des Völkerbundes hat eine Abstimmung aufgrund des aggressiven Verhaltens von [Root.GetName] abgehalten. Es konnte allerdings keine ausreichende Mehrheit für Sanktionen erreicht werden."
+ league_of_nations_news_events4.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME5: "Austritt aus dem Völkerbund"
+ league_of_nations_news_events.EVTDESC5: "[Root.GetName] hat den Völkerbund verlassen. Ob das einen Einfluss auf die angespannte Lage in der Welt haben wird?"
+ league_of_nations_news_events5.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME6: "Neuer Leiter des Völkerbundes"
+ league_of_nations_news_events.EVTDESC6: "Der Rat des Völkerbundes hat [Root.GetName] als neuen Leiter bestimmt."
+ league_of_nations_news_events6.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME7: "Abstimmung im Rat des Völkerbundes"
+ league_of_nations_news_events.EVTDESC7: "[From.GetName] hat eine Abstimmung im Rat des Völkerbundes gestartet, um Sanktionen gegen uns zu verhängen. Sie rechtfertigen dies mit unserem angeblich aggressiven Verhalten..."
+ league_of_nations_news_events7.EVTOPT1: "So ein Schwachsinn..."
+ 
+ league_of_nations_news_events.EVTNAME8: "Einladung akzeptiert"
+ league_of_nations_news_events.EVTDESC8: "[From.GetName] hat die Einladung in den Völkerbund akzeptiert."
+ league_of_nations_news_events8.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_news_events.EVTNAME9: "Einladung abgelehnt"
+ league_of_nations_news_events.EVTDESC9: "[From.GetName] hat die Einladung in den Völkerbund abgelehnt."
+ league_of_nations_news_events9.EVTOPT1: "Schade."
+ 
+ league_of_nations_news_events.EVTNAME10: "Anfrage akzeptiert"
+ league_of_nations_news_events.EVTDESC10: "[From.GetName] hat unsere Anfrage, dem Völkerbund betreten zu dürfen, akzeptiert."
+ league_of_nations_news_events10.EVTOPT1: "Wundervoll."
+ 
+ league_of_nations_news_events.EVTNAME11: "Anfrage abgelehnt"
+ league_of_nations_news_events.EVTDESC11: "[From.GetName] hat unsere Anfrage, dem Völkerbund betreten zu dürfen, abgelehnt."
+ league_of_nations_news_events11.EVTOPT1: "Schade."
+ 
+ league_of_nations_news_events.EVTNAME12: "[Root.GetName] aktzeptiert Ultimatum des Völkerbundes"
+ league_of_nations_news_events.EVTDESC12: "\n\nNach dem Anschluss Österreichs hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat nun dem Druck nachgegeben und beschlossen, Österreichs Status als souveräne Nation anzuerkennen. \n\nDie angedrohten Sanktionen treten nicht in Kraft."
+ league_of_nations_news_events12.EVTOPT1: "Das letzte Wort ist noch nicht gesprochen..."
+ league_of_nations_news_events12.EVTOPT2: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME13: "[Root.GetName] lehnt Ultimatum des Völkerbundes ab"
+ league_of_nations_news_events.EVTDESC13: "\n\nNach der völkerrechtswidrigen Annektion Österreichs hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat es abgelehnt, Österreichs Status als souveräne Nation anzuerkennen. \n\nDie angedrohten Sanktionen treten nun in Kraft."
+ league_of_nations_news_events13.EVTOPT1: "Völkerrechtswidrig, dass ich nicht lache..."
+ league_of_nations_news_events13.EVTOPT2: "Beunruhigend..."
+ 
+ league_of_nations_news_events.EVTNAME14: "Misstrauensvotum"
+ league_of_nations_news_events.EVTDESC14: "Die Mehrheit der Mitglieder des Völkerbundes haben dem Leiter das Misstrauen ausgesprochen. Bald wird eine Wahl anberaumt."
+ league_of_nations_news_events14.EVTOPT1: "Was soll das denn?"
+ league_of_nations_news_events14.EVTOPT2: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME15: "Völkerbund-Allianz"
+ league_of_nations_news_events.EVTDESC15: "Der Leiter des Völkerbundes hat den Völkerbund, so wie wir ihn kennen, aufgelöst und zu einem Bündnis umgeformt. Alle derzeitigen Mitglieder wurden eingeladen, diesem Bündnis beizutreten und so für Sicherheit und Frieden in Europa zu sorgen."
+ league_of_nations_news_events15.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME16: "Völkerbund-Staat"
+ league_of_nations_news_events.EVTDESC16: "Der Leiter des Völkerbundes hat den Völkerbund, so wie wir ihn kennen, aufgelöst und zu einem Nationalstaat umgeformt. Alle derzeitigen Mitglieder wurden eingeladen, sich diesem Staat anzuschließen und so für Sicherheit und Frieden in Europa zu sorgen."
+ league_of_nations_news_events16.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME17: "Völkerbund vernichtet"
+ league_of_nations_news_events.EVTDESC17: "Das letzte Mitglied des Völkerbundes wurde annektiert oder hat in einem Krieg kapituliert! Damit ist der Völkerbund nun endgültig Geschichte..."
+ league_of_nations_news_events17.EVTOPT1: "Endlich!"
+ league_of_nations_news_events17.EVTOPT2: "Beunruhigend..."
+ 
+ league_of_nations_news_events.EVTNAME18: "Völkerbund: Wahlen abgeschafft"
+ league_of_nations_news_events.EVTDESC18: "Der Leiter des Völkerbundes ([league_of_nations_leader.GetName]) hat die Wahlen für den Leiterposten abgeschafft. Sie begründen dies damit, dass dies die Arbeit des Völkerbundes effektiver machen würde."
+ league_of_nations_news_events18.EVTOPT1: "Das wird dem Völkerbund helfen."
+ league_of_nations_news_events18.EVTOPT2: "Irgendwie undemokratisch..."
+ 
+ league_of_nations_news_events.EVTNAME19: "Eintritt in den Völkerbund"
+ league_of_nations_news_events.EVTDESC19: "[Root.GetName] ist in den Völkerbund eingetreten. Ob dies die angespannte Lage in der Welt beruhigen kann?"
+ league_of_nations_news_events19.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME20: "[Root.GetName] lehnt Ultimatum des Völkerbundes ab"
+ league_of_nations_news_events.EVTDESC20: "\n\nNach der völkerrechtswidrigen Kriegserklärung an Äthiopien hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat es abgelehnt, einen Friedensvertrag mit Äthiopien zu schließen. \n\nDie angedrohten Sanktionen treten nun in Kraft."
+ league_of_nations_news_events20.EVTOPT1: "Völkerrechtswidrig, dass ich nicht lache..."
+ league_of_nations_news_events20.EVTOPT2: "Beunruhigend..."
+ 
+ league_of_nations_news_events.EVTNAME21: "[Root.GetName] aktzeptiert Ultimatum des Völkerbundes"
+ league_of_nations_news_events.EVTDESC21: "\n\nNach der Kriegserklärung an Äthiopien hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat nun dem Druck nachgegeben und beschlossen, einen Friedensvertrag mit Äthiopien zu unterzeichnen. \n\nDie angedrohten Sanktionen treten nicht in Kraft."
+ league_of_nations_news_events21.EVTOPT1: "Das letzte Wort ist noch nicht gesprochen..."
+ league_of_nations_news_events21.EVTOPT2: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME22: "Völkerbund stimmt für Koalition"
+ league_of_nations_news_events.EVTDESC22: "Der Rat des Völkerbundes hat eine Abstimmung aufgrund des aggressiven Verhaltens von [Root.GetName] abgehalten. Das Ergebnis der Abstimmung ist, dass der Völkerbund beschlossen hat, [Root.GetName] durch die Gründung einer Koalition an einem Krieg in Europa zu hindern."
+ league_of_nations_news_events22.EVTOPT1: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME23: "[Root.GetName] lehnt Ultimatum des Völkerbundes ab"
+ league_of_nations_news_events.EVTDESC23: "\n\nNach der Annexion eines Landes bzw. einiger Gebiete hat der Völkerbund [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat es abgelehnt, die Bedingungen dieses Ultimatums zu erfüllen. \n\nDie angedrohten Sanktionen treten nun in Kraft."
+ league_of_nations_news_events23.EVTOPT1: "Die Forderungen waren einfach unverschämt..."
+ league_of_nations_news_events23.EVTOPT2: "Beunruhigend..."
+ 
+ league_of_nations_news_events.EVTNAME24: "[Root.GetName] aktzeptiert Ultimatum des Völkerbundes"
+ league_of_nations_news_events.EVTDESC24: "\n\nNach der Annexion eines Landes hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat nun dem Druck nachgegeben und beschlossen, das annektierte Land wieder in die Freiheit zu entlassen. \n\nDie angedrohten Sanktionen treten nicht in Kraft."
+ league_of_nations_news_events24.EVTOPT1: "Das letzte Wort ist noch nicht gesprochen..."
+ league_of_nations_news_events24.EVTOPT2: "Interessant..."
+ 
+ league_of_nations_news_events.EVTNAME25: "[Root.GetName] aktzeptiert Ultimatum des Völkerbundes"
+ league_of_nations_news_events.EVTDESC25: "\n\nNach der Annexion einiger Gebiete hat der Rat des Völkerbundes [Root.GetName] ein Ultimatum gestellt. [Root.GetLeader] hat nun dem Druck nachgegeben und beschlossen, die annektierten Gebiete zurück zu geben. \n\nDie angedrohten Sanktionen treten nicht in Kraft."
+ league_of_nations_news_events25.EVTOPT1: "Das letzte Wort ist noch nicht gesprochen..."
+ league_of_nations_news_events25.EVTOPT2: "Interessant..."
+ 

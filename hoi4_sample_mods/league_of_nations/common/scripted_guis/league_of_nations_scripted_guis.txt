@@ -1,0 +1,3476 @@
+scripted_gui = {
+	open_league_of_nations_window = {
+		context_type = player_context
+		
+		window_name = "open_league_of_nations_window"
+		
+		visible = {
+			is_ai = no
+			any_country = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			open_league_of_nations_window_button_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_league_of_nations }
+				set_variable = { show_league_of_nations = show }
+			}
+			open_league_of_nations_window_button_control_right_click = {
+				set_variable = { dont_show_league_of_nations_map_mode_legend = 0 }
+				if = {
+					limit = {
+						NOT = { has_global_flag = league_of_nations_map_mode_active }
+					}
+					every_country = {
+						limit = {
+							has_country_flag = leader_of_league_of_nations
+						}
+						save_cosmetic_tag_before_league_of_nations_map_mode = yes
+						set_cosmetic_tag = LEAGUE_OF_NATIONS_LEADER
+					}
+					every_country = {
+						limit = {
+							NOT = { has_country_flag = leader_of_league_of_nations }
+							has_country_flag = member_of_league_of_nations
+						}
+						save_cosmetic_tag_before_league_of_nations_map_mode = yes
+						set_cosmetic_tag = LEAGUE_OF_NATIONS_MEMBER
+					}
+					every_country = {
+						limit = {
+							NOT = { has_country_flag = member_of_league_of_nations }
+						}
+						save_cosmetic_tag_before_league_of_nations_map_mode = yes
+						set_cosmetic_tag = NOT_LEAGUE_OF_NATIONS_MEMBER
+					}
+					every_country = {
+						limit = {
+							has_country_flag = started_league_of_nations_voting
+						}
+						save_cosmetic_tag_before_league_of_nations_map_mode = yes
+						set_cosmetic_tag = LEAGUE_OF_NATIONS_STARTER_OF_VOTING
+					}
+					every_country = {
+						limit = {
+							has_country_flag = target_of_league_of_nations_voting
+						}
+						save_cosmetic_tag_before_league_of_nations_map_mode = yes
+						if = {
+							limit = {
+								has_country_flag = member_of_league_of_nations
+							}
+							set_cosmetic_tag = LEAGUE_OF_NATIONS_TARGET_OF_VOTING_MEMBER
+							else = {
+								set_cosmetic_tag = LEAGUE_OF_NATIONS_TARGET_OF_VOTING
+							}
+						}
+					}
+					set_global_flag = league_of_nations_map_mode_active
+					set_variable = { y_position_of_leave_league_of_nations_map_mode_button = 200 }
+				}
+				else_if = {
+					limit = {
+						has_global_flag = league_of_nations_map_mode_active
+					}
+					every_country = {
+						remove_league_of_nations_map_mode_tags = yes
+					}
+					clr_global_flag = league_of_nations_map_mode_active
+				}
+			}
+		}
+		
+		triggers = {
+			open_league_of_nations_window_icon_glow_visible = {
+				has_global_flag = league_of_nations_voting
+			}
+			open_league_of_nations_window_icon_glow_frame_visible = {
+				has_country_flag = leader_of_league_of_nations
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				OR = {
+					AND = {
+						NOT = { has_global_flag = league_of_nations_focus_1_selected }
+						NOT = { has_global_flag = league_of_nations_focus_1_completed }
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_2_completed
+						NOT = { has_global_flag = league_of_nations_focus_4_selected }
+						NOT = { has_global_flag = league_of_nations_focus_4_completed }
+						date > 1939.09.17
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_3_completed
+						NOT = { has_global_flag = league_of_nations_focus_5_selected }
+						NOT = { has_global_flag = league_of_nations_focus_5_completed }
+						date > 1939.09.17
+					}
+					AND = {
+						OR = {
+							has_global_flag = league_of_nations_focus_4_completed
+							has_global_flag = league_of_nations_focus_5_completed
+						}
+						NOT = { has_global_flag = league_of_nations_focus_6_selected }
+						NOT = { has_global_flag = league_of_nations_focus_6_completed }
+						date > 1942.09.17
+						check_variable = { num_of_won_league_of_nations_elections > 2 }
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_4_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_7_selected }
+						NOT = { has_global_flag = league_of_nations_focus_7_completed }
+						date > 1945.09.17
+						has_war = no
+					}
+					AND = {
+						has_global_flag = league_of_nations_focus_5_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_8_selected }
+						NOT = { has_global_flag = league_of_nations_focus_8_completed }
+						date > 1945.09.17
+						has_war = no
+					}
+				}
+			}
+		}
+	}
+	
+	league_of_nations_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_window"
+		
+		visible = {
+			OR = {
+				AND = {
+					is_ai = yes
+					has_country_flag = member_of_league_of_nations
+				}
+				check_variable = { show_league_of_nations > 0 }
+			}
+			any_country = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			league_of_nations_voting_yes_click = {
+				set_country_flag = league_of_nations_voted_yes
+				add_to_variable = { global.num_of_yes_votes_in_league_of_nations_voting = 1 }
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					add_to_variable = { global.num_of_yes_votes_in_league_of_nations_voting = 2 }
+				}
+				if = {
+					limit = {
+						has_government = neutrality
+					}
+					set_temp_variable = { random_chance_var = random }
+					if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.125 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 1 } # YES factor +5
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.25 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 2 } # YES factor +10
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.375 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 3 } # YES factor +20
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.5 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 4 } # NO factor +5
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.625 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 5 } # NO factor +10
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { random_chance_var > 0.75 } }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 6 } # NO factor +20
+					}
+					else_if = {
+						limit = {
+							check_variable = { random_chance_var > 0.875 }
+						}
+						set_variable = { league_of_nations_neutrality_random_chance_in_voting = 0 } # No additional factor
+					}
+				}
+			}
+			league_of_nations_voting_no_click = {
+				set_country_flag = league_of_nations_voted_no
+				add_to_variable = { global.num_of_no_votes_in_league_of_nations_voting = 1 }
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					add_to_variable = { global.num_of_no_votes_in_league_of_nations_voting = 2 }
+				}
+			}
+			league_of_nations_close_button_click = {
+				set_variable = { show_league_of_nations = 0 }
+			}
+			league_of_nations_leave_button_click = {
+				country_event = { id = league_of_nations_events.3 }
+				news_event = { id = league_of_nations_news_events.5 }
+			}
+			league_of_nations_noconfidence_vote_button_click = {
+				set_country_flag = voted_in_noconfidence_vote
+				add_to_variable = { global.num_of_league_of_nations_noconfidence_votes = 1 }
+			}
+			league_of_nations_noconfidence_vote_button_selected_click = {
+				clr_country_flag = voted_in_noconfidence_vote
+				subtract_from_variable = { global.num_of_league_of_nations_noconfidence_votes = 1 }
+			}
+			league_of_nations_button_1_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_league_of_nations_focuses }
+				set_variable = { show_league_of_nations_focuses = show }
+			}
+			league_of_nations_button_2_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_league_of_nations_focuses }
+				set_variable = { show_league_of_nations_focuses = show }
+			}
+		}
+		
+		triggers = {
+			league_of_nations_voting_yes_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = started_league_of_nations_voting }
+				NOT = { has_country_flag = target_of_league_of_nations_voting }
+				NOT = { has_country_flag = league_of_nations_voted_yes }
+				NOT = { has_country_flag = league_of_nations_voted_no }
+				has_country_flag = member_of_league_of_nations
+			}
+			league_of_nations_voting_no_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = started_league_of_nations_voting }
+				NOT = { has_country_flag = target_of_league_of_nations_voting }
+				NOT = { has_country_flag = league_of_nations_voted_yes }
+				NOT = { has_country_flag = league_of_nations_voted_no }
+				has_country_flag = member_of_league_of_nations
+			}
+			league_of_nations_voting_yes_visible = {
+				has_global_flag = league_of_nations_voting
+			}
+			league_of_nations_voting_no_visible = {
+				has_global_flag = league_of_nations_voting
+			}
+			league_of_nations_leave_button_click_enabled = {
+				has_country_flag = member_of_league_of_nations
+				NOT = { has_country_flag = leader_of_league_of_nations }
+				NOT = { has_global_flag = league_of_nations_voting }
+				check_variable = { global.days_til_next_league_of_nations_election > 10 }
+				NOT = { has_global_flag = league_of_nations_election }
+			}
+			league_of_nations_voting_yes_glow_visible = {
+				has_global_flag = league_of_nations_voting
+				has_country_flag = league_of_nations_voted_yes
+			}
+			league_of_nations_voting_no_glow_visible = {
+				has_global_flag = league_of_nations_voting
+				has_country_flag = league_of_nations_voted_no
+			}
+			league_of_nations_noconfidence_vote_button_click_enabled = {
+				check_variable = { global.days_til_next_league_of_nations_election > 10 }
+				NOT = { has_country_flag = leader_of_league_of_nations }
+				NOT = { has_global_flag = league_of_nations_election }
+			}
+			league_of_nations_noconfidence_vote_button_selected_click_enabled = {
+				check_variable = { global.days_til_next_league_of_nations_election > 10 }
+				NOT = { has_country_flag = leader_of_league_of_nations }
+				NOT = { has_global_flag = league_of_nations_election }
+			}
+			league_of_nations_noconfidence_vote_button_visible = {
+				has_country_flag = member_of_league_of_nations
+				NOT = { has_global_flag = league_of_nations_voting }
+				NOT = { has_country_flag = voted_in_noconfidence_vote }
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+			league_of_nations_noconfidence_vote_button_selected_visible = {
+				has_country_flag = member_of_league_of_nations
+				NOT = { has_global_flag = league_of_nations_voting }
+				has_country_flag = voted_in_noconfidence_vote
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+			league_of_nations_noconfidence_vote_button_text_visible = {
+				has_country_flag = member_of_league_of_nations
+				NOT = { has_global_flag = league_of_nations_voting }
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 168
+		ai_test_variance = 0.1
+		
+		ai_check = {
+			OR = {
+				has_global_flag = league_of_nations_voting
+				AI_wants_to_leave_league_of_nations = yes
+				AND = {
+					NOT = { has_country_flag = voted_in_noconfidence_vote }
+					check_variable = { global.days_til_next_league_of_nations_election > 70 }
+					check_variable = { global.days_til_next_league_of_nations_election < 320 }
+					any_country = {
+						has_country_flag = leader_of_league_of_nations
+						OR = {
+							AND = {
+								OR = {
+									has_government = fascism
+									has_government = communism
+								}
+								ROOT = {
+									NOT = { has_government = fascism }
+									NOT = { has_government = communism }
+								}
+							}
+							AND = {
+								ROOT = {
+									OR = {
+										has_government = fascism
+										has_government = communism
+									}
+								}
+								NOT = { has_government = fascism }
+								NOT = { has_government = communism }
+							}
+							ROOT = {
+								has_opinion = {
+									target = PREV
+									value < -30
+								}
+							}
+							AND = {
+								ROOT = { has_government = democratic }
+								check_variable = { league_of_nations_generated_threat > 20 }
+							}
+							check_variable = { league_of_nations_generated_threat > 40 }
+						}
+					}
+				}
+				AND = {
+					has_country_flag = voted_in_noconfidence_vote
+					check_variable = { global.days_til_next_league_of_nations_election > 70 }
+					check_variable = { global.days_til_next_league_of_nations_election < 320 }
+					any_country = {
+						has_country_flag = leader_of_league_of_nations
+						NOT = {
+							OR = {
+								AND = {
+									OR = {
+										has_government = fascism
+										has_government = communism
+									}
+									ROOT = {
+										NOT = { has_government = fascism }
+										NOT = { has_government = communism }
+									}
+								}
+								AND = {
+									ROOT = {
+										OR = {
+											has_government = fascism
+											has_government = communism
+										}
+									}
+									NOT = { has_government = fascism }
+									NOT = { has_government = communism }
+								}
+								ROOT = {
+									has_opinion = {
+										target = PREV
+										value < -30
+									}
+								}
+								AND = {
+									ROOT = { has_government = democratic }
+									check_variable = { league_of_nations_generated_threat > 20 }
+								}
+								check_variable = { league_of_nations_generated_threat > 40 }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		ai_weights = {
+			league_of_nations_button_1_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_button_2_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_voting_yes_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 1 }
+						add = 5
+					}
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 2 }
+						add = 10
+					}
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 3 }
+						add = 20
+					}
+					
+					modifier = {
+						any_neighbor_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { check_variable = { league_of_nations_generated_threat < 40 } }
+						}
+						add = 10
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { is_neighbor_of = ROOT }
+							NOT = { check_variable = { league_of_nations_generated_threat < 40 } }
+						}
+						add = 5
+					}
+					
+					modifier = {
+						any_neighbor_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							OR = {
+								has_war_with = ROOT
+								NOT = { check_variable = { league_of_nations_generated_threat < 20 } }
+								ROOT = {
+									has_opinion = {
+										target = PREV
+										value < 0
+									}
+								}
+							}
+						}
+						add = 10
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { is_neighbor_of = ROOT }
+							OR = {
+								has_war_with = ROOT
+								NOT = { check_variable = { league_of_nations_generated_threat < 20 } }
+								ROOT = {
+									has_opinion = {
+										target = PREV
+										value < 0
+									}
+								}
+							}
+						}
+						add = 5
+					}
+					
+					modifier = {
+						has_global_flag = ITA_ETH_voting
+						add = 4
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							has_country_flag = last_league_of_nations_threat_static_change
+							has_country_flag = {
+								flag = last_league_of_nations_threat_static_change
+								days < 40
+							}
+							OR = {
+								check_variable = { last_league_of_nations_threat_static_change = 1 }
+								check_variable = { last_league_of_nations_threat_static_change = 2 }
+							}
+						}
+						add = 3
+					}
+					
+					modifier = {
+						has_global_flag = league_of_nations_always_vote_yes_cheat_flag
+						add = 10000
+					}
+				}
+			}
+			league_of_nations_voting_no_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 4 }
+						add = 5
+					}
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 5 }
+						add = 10
+					}
+					
+					modifier = {
+						check_variable = { league_of_nations_neutrality_random_chance_in_voting = 6 }
+						add = 20
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { is_neighbor_of = ROOT }
+							OR = {
+								has_war_with = ROOT
+								NOT = { check_variable = { league_of_nations_generated_threat < 20 } }
+								ROOT = {
+									has_opinion = {
+										target = PREV
+										value < 0
+									}
+								}
+							}
+						}
+						add = 5
+					}
+					
+					modifier = {
+						any_neighbor_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = {
+								OR = {
+									has_war_with = ROOT
+									NOT = { check_variable = { league_of_nations_generated_threat < 20 } }
+									ROOT = {
+										has_opinion = {
+											target = PREV
+											value < 0
+										}
+									}
+								}
+							}
+						}
+						add = 5
+					}
+					
+					modifier = {
+						NOT = { has_global_flag = GER_anschluss_voting }
+						NOT = { has_global_flag = ITA_ETH_voting }
+						NOT = { has_global_flag = SOV_FIN_voting }
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { is_neighbor_of = ROOT }
+							NOT = {
+								OR = {
+									has_war_with = ROOT
+									NOT = { check_variable = { league_of_nations_generated_threat < 20 } }
+									ROOT = {
+										has_opinion = {
+											target = PREV
+											value < 0
+										}
+									}
+								}
+							}
+						}
+						add = 15
+					}
+					
+					modifier = {
+						has_global_flag = GER_anschluss_voting
+						add = 5
+					}
+					
+					modifier = {
+						any_neighbor_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 0 }
+						}
+						add = 2
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 1 }
+						}
+						add = 2
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 2 }
+						}
+						add = 2
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 3 }
+						}
+						add = 3
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 4 }
+						}
+						add = 3
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 5 }
+						}
+						add = 5
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 6 }
+						}
+						add = 5
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 7 }
+						}
+						add = 5
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							check_variable = { num_of_active_league_of_nations_trade_sanctions > 8 }
+						}
+						add = 5
+					}
+					
+					modifier = {
+						is_subject = yes
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							ROOT = { is_subject_of = PREV }
+						}
+						add = 1000
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							has_capitulated = yes
+						}
+						add = 10
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							has_government = ROOT
+						}
+						add = 10
+					}
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							is_in_faction_with = ROOT
+						}
+						add = 100
+					}
+					
+					modifier = {
+						has_global_flag = league_of_nations_always_vote_no_cheat_flag
+						add = 10000
+					}
+				}
+			}
+			league_of_nations_close_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_leave_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						AI_wants_to_leave_league_of_nations = yes
+						add = 100
+					}
+				}
+			}
+			league_of_nations_noconfidence_vote_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						check_variable = { global.days_til_next_league_of_nations_election > 70 }
+						check_variable = { global.days_til_next_league_of_nations_election < 320 }
+						any_country = {
+							has_country_flag = leader_of_league_of_nations
+							OR = {
+								AND = {
+									OR = {
+										has_government = fascism
+										has_government = communism
+									}
+									ROOT = {
+										NOT = { has_government = fascism }
+										NOT = { has_government = communism }
+									}
+								}
+								AND = {
+									ROOT = {
+										OR = {
+											has_government = fascism
+											has_government = communism
+										}
+									}
+									NOT = { has_government = fascism }
+									NOT = { has_government = communism }
+								}
+								ROOT = {
+									has_opinion = {
+										target = PREV
+										value < -30
+									}
+								}
+								AND = {
+									ROOT = { has_government = democratic }
+									check_variable = { league_of_nations_generated_threat > 30 }
+									any_country = {
+										has_country_flag = member_of_league_of_nations
+										ROOT = {
+											has_opinion = {
+												target = PREV
+												value > 0
+											}
+											check_variable = { league_of_nations_generated_threat < 30 }
+										}
+									}
+								}
+								AND = {
+									check_variable = { league_of_nations_generated_threat > 60 }
+									any_country = {
+										has_country_flag = member_of_league_of_nations
+										ROOT = {
+											has_opinion = {
+												target = PREV
+												value > 0
+											}
+											check_variable = { league_of_nations_generated_threat < 60 }
+										}
+									}
+								}
+							}
+						}
+						add = 10
+					}
+				}
+			}
+			league_of_nations_noconfidence_vote_button_selected_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						any_country = {
+							has_country_flag = leader_of_league_of_nations
+							NOT = {
+								OR = {
+									AND = {
+										OR = {
+											has_government = fascism
+											has_government = communism
+										}
+										ROOT = {
+											NOT = { has_government = fascism }
+											NOT = { has_government = communism }
+										}
+									}
+									AND = {
+										ROOT = {
+											OR = {
+												has_government = fascism
+												has_government = communism
+											}
+										}
+										NOT = { has_government = fascism }
+										NOT = { has_government = communism }
+									}
+									ROOT = {
+										has_opinion = {
+											target = PREV
+											value < -30
+										}
+									}
+									AND = {
+										ROOT = { has_government = democratic }
+										check_variable = { league_of_nations_generated_threat > 30 }
+										any_country = {
+											has_country_flag = member_of_league_of_nations
+											ROOT = {
+												has_opinion = {
+													target = PREV
+													value > 0
+												}
+												check_variable = { league_of_nations_generated_threat < 30 }
+											}
+										}
+									}
+									AND = {
+										check_variable = { league_of_nations_generated_threat > 60 }
+										any_country = {
+											has_country_flag = member_of_league_of_nations
+											ROOT = {
+												has_opinion = {
+													target = PREV
+													value > 0
+												}
+												check_variable = { league_of_nations_generated_threat < 60 }
+											}
+										}
+									}
+								}
+							}
+						}
+						add = 10
+					}
+				}
+			}
+		}
+	}
+	
+	league_of_nations_sanctions_types_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_sanctions_types_window"
+		parent_window_name = "league_of_nations_window"
+		
+		visible = {
+			OR = {
+				is_ai = yes
+				check_variable = { show_league_of_nations > 0 }
+			}
+			has_country_flag = league_of_nations_voted_yes
+		}
+		
+		effects = {
+			league_of_nations_vote_sanction_type_trade_sanctions_click = {
+				set_country_flag = league_of_nations_voted_sanction_type_trade
+				add_to_variable = { global.num_of_trade_sanction_votes_in_league_of_nations_voting = 1 }
+			}
+			league_of_nations_vote_sanction_type_war_click = {
+				set_country_flag = league_of_nations_voted_sanction_type_war
+				add_to_variable = { global.num_of_war_votes_in_league_of_nations_voting = 1 }
+			}
+			league_of_nations_vote_sanction_type_kick_out_of_league_of_nations_click = {
+				set_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations
+				add_to_variable = { global.num_of_kick_out_of_league_of_nations_votes_in_league_of_nations_voting = 1 }
+			}
+			league_of_nations_vote_sanction_type_form_coalition_click = {
+				set_country_flag = league_of_nations_voted_sanction_type_form_coalition
+				add_to_variable = { global.num_of_form_coalition_votes_in_league_of_nations_voting = 1 }
+			}
+		}
+		
+		triggers = {
+			league_of_nations_vote_sanction_type_trade_sanctions_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_trade }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_war }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_form_coalition }
+				has_country_flag = member_of_league_of_nations
+			}
+			league_of_nations_vote_sanction_type_war_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_trade }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_war }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_form_coalition }
+				has_country_flag = member_of_league_of_nations
+			}
+			league_of_nations_vote_sanction_type_kick_out_of_league_of_nations_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_trade }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_war }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_form_coalition }
+				has_country_flag = member_of_league_of_nations
+			}
+			league_of_nations_vote_sanction_type_form_coalition_click_enabled = {
+				check_variable = { global.league_of_nations_voting_time > 0 }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_trade }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_war }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations }
+				NOT = { has_country_flag = league_of_nations_voted_sanction_type_form_coalition }
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_2_completed
+			}
+			league_of_nations_vote_sanction_type_kick_out_of_league_of_nations_visible = {
+				any_country = {
+					has_country_flag = target_of_league_of_nations_voting
+					has_country_flag = member_of_league_of_nations
+				}
+			}
+			league_of_nations_vote_sanction_type_form_coalition_visible = {
+				any_country = {
+					has_country_flag = target_of_league_of_nations_voting
+					NOT = { has_country_flag = member_of_league_of_nations }
+					NOT = { check_variable = { league_of_nations_generated_threat < 50 } }
+					NOT = { has_idea = league_of_nations_defense_pact_target }
+				}
+			}
+			league_of_nations_vote_sanction_type_trade_sanctions_glow_visible = {
+				has_global_flag = league_of_nations_voting
+				has_country_flag = league_of_nations_voted_sanction_type_trade
+			}
+			league_of_nations_vote_sanction_type_war_glow_visible = {
+				has_global_flag = league_of_nations_voting
+				has_country_flag = league_of_nations_voted_sanction_type_war
+			}
+			league_of_nations_vote_sanction_type_kick_out_of_league_of_nations_glow_visible = {
+				has_global_flag = league_of_nations_voting
+				OR = {
+					has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations
+					has_country_flag = league_of_nations_voted_sanction_type_form_coalition
+				}
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		
+		ai_check = {
+			has_global_flag = league_of_nations_voting
+			NOT = { has_country_flag = league_of_nations_voted_sanction_type_trade }
+			NOT = { has_country_flag = league_of_nations_voted_sanction_type_war }
+			NOT = { has_country_flag = league_of_nations_voted_sanction_type_kick_out_of_league_of_nations }
+			NOT = { has_country_flag = league_of_nations_voted_sanction_type_form_coalition }
+		}
+		
+		ai_weights = {
+			league_of_nations_vote_sanction_type_trade_sanctions_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							OR = {
+								AND = {
+									NOT = { has_country_flag = member_of_league_of_nations }
+									NOT = { has_global_flag = SOV_FIN_voting }
+								}
+								has_global_flag = ITA_ETH_voting
+								check_variable = { league_of_nations_generated_threat < 25 }
+							}
+							OR = {
+								ROOT = {
+									NOT = { has_government = fascism }
+									NOT = { has_government = communism }
+								}
+								is_in_faction_with = ROOT
+							}
+						}
+						add = 15
+					}
+				}
+			}
+			league_of_nations_vote_sanction_type_war_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							ROOT = {
+								OR = {
+									has_government = fascism
+									has_government = communism
+								}
+							}
+							NOT = { is_in_faction_with = ROOT }
+						}
+						add = 5
+					}
+				}
+			}
+			league_of_nations_vote_sanction_type_kick_out_of_league_of_nations_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = ITA_ETH_voting }
+						any_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							has_country_flag = member_of_league_of_nations
+							OR = {
+								AND = {
+									is_historical_focus_on = yes
+									tag = SOV
+									has_war_with = FIN
+								}
+								NOT = { check_variable = { league_of_nations_generated_threat < 25 } }
+								has_global_flag = SOV_FIN_voting
+							}
+							OR = {
+								ROOT = {
+									NOT = { has_government = fascism }
+									NOT = { has_government = communism }
+								}
+								is_in_faction_with = ROOT
+							}
+						}
+						add = 10
+					}
+				}
+			}
+			
+			league_of_nations_vote_sanction_type_form_coalition_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						any_neighbor_country = {
+							has_country_flag = target_of_league_of_nations_voting
+							NOT = { is_in_faction_with = ROOT }
+							NOT = { check_variable = { league_of_nations_generated_threat < 50 } }
+						}
+						add = 100
+					}
+					
+					modifier = {
+						any_neighbor_country = {
+							any_neighbor_country = {
+								has_country_flag = target_of_league_of_nations_voting
+								NOT = { is_in_faction_with = ROOT }
+								NOT = { check_variable = { league_of_nations_generated_threat < 50 } }
+							}
+						}
+						add = 10
+					}
+				}
+			}
+		}
+	}
+	
+	start_league_of_nations_voting_window = {
+		context_type = selected_country_context
+		
+		window_name = "start_league_of_nations_voting_window"
+		parent_window_token = selected_country_view
+		
+		visible = {
+			NOT = { tag = ROOT }
+			ROOT = {
+				has_country_flag = member_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			start_league_of_nations_voting_button_click = {
+				country_event = { id = league_of_nations_events.2 }
+				news_event = { id = league_of_nations_news_events.7 }
+				ROOT = { set_country_flag = started_league_of_nations_voting }
+			}
+		}
+		
+		triggers = {
+			start_league_of_nations_voting_button_click_enabled = {
+				check_variable = { global.time_til_next_possible_league_of_nations_voting < 1 }
+				check_variable = { num_of_active_league_of_nations_trade_sanctions < 9 }
+				NOT = { has_global_flag = GER_anschluss_voting_in_queue }
+				NOT = { has_global_flag = SOV_FIN_voting_triggered }
+				NOT = { has_country_flag = leader_of_league_of_nations }
+				NOT = { has_global_flag = league_of_nations_voting }
+				check_variable = { cooldown_for_league_of_nations_voting < 1 }
+				check_variable = { war_lost_cooldown_for_start_league_of_nations_voting < 1 }
+				NOT = { check_variable = { league_of_nations_generated_threat < 10 } }
+				NOT = { has_global_flag = league_of_nations_election }
+				OR = {
+					check_variable = { global.days_til_next_league_of_nations_election > 70 }
+					has_global_flag = league_of_nations_focus_6_completed
+				}
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 720
+		ai_test_variance = 0.1
+		
+		ai_check = {
+			is_subject = no
+			NOT = { has_global_flag = league_of_nations_voting }
+			any_neighbor_country = {
+				NOT = { has_country_flag = leader_of_league_of_nations }
+				check_variable = { cooldown_for_league_of_nations_voting < 1 }
+				OR = {
+					NOT = { check_variable = { league_of_nations_generated_threat < 15 } }
+					AND = {
+						NOT = { check_variable = { league_of_nations_generated_threat < 10 } }
+						has_war_with = ROOT
+					}
+				}
+				NOT = { has_global_flag = league_of_nations_election }
+				OR = {
+					check_variable = { global.days_til_next_league_of_nations_election > 70 }
+					has_global_flag = league_of_nations_focus_6_completed
+				}
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_government = ROOT }
+				NOT = { check_variable = { num_of_failed_league_of_nations_votings_against_us > 2 } }
+			}
+		}
+		
+		ai_test_scopes = test_neighbouring_countries
+		
+		ai_check_scope = {
+			NOT = { has_country_flag = leader_of_league_of_nations }
+			check_variable = { cooldown_for_league_of_nations_voting < 1 }
+			OR = {
+				NOT = { check_variable = { league_of_nations_generated_threat < 15 } }
+				AND = {
+					NOT = { check_variable = { league_of_nations_generated_threat < 10 } }
+					has_war_with = ROOT
+				}
+			}
+			NOT = { is_in_faction_with = ROOT }
+			NOT = { has_government = ROOT }
+			NOT = { check_variable = { num_of_failed_league_of_nations_votings_against_us > 2 } }
+		}
+		
+		ai_weights = {
+			start_league_of_nations_voting_button_click = {
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+	}
+	
+	league_of_nations_new_voting_alert_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_new_voting_alert_window"
+		
+		visible = {
+			is_ai = no
+			has_global_flag = league_of_nations_voting
+			has_country_flag = member_of_league_of_nations
+			NOT = { has_country_flag = started_league_of_nations_voting }
+			NOT = { has_country_flag = target_of_league_of_nations_voting }
+			NOT = { has_country_flag = league_of_nations_voted_yes }
+			NOT = { has_country_flag = league_of_nations_voted_no }
+			check_variable = { show_league_of_nations_new_voting_alert > 0 }
+		}
+		
+		effects = {
+			league_of_nations_alert_close_button_click = {
+				set_variable = { show_league_of_nations_new_voting_alert = 0 }
+			}
+			league_of_nations_alert_goto_button_click = {
+				set_variable = { show_league_of_nations_new_voting_alert = 0 }
+				set_variable = { show_league_of_nations = 1 }
+			}
+		}
+	}
+	
+	league_of_nations_trade_view_alert_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_trade_view_alert_window"
+		parent_window_token = trade_tab
+		
+		visible = {
+			is_ai = no
+			check_variable = { num_of_active_league_of_nations_trade_sanctions > 0 }
+		}
+	}
+	
+	invite_into_league_of_nations_window = {
+		context_type = selected_country_context
+		
+		window_name = "invite_into_league_of_nations_window"
+		parent_window_token = selected_country_view
+		
+		visible = {
+			NOT = { tag = ROOT }
+			NOT = { has_country_flag = member_of_league_of_nations }
+			ROOT = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			invite_into_league_of_nations_button_click = {
+				set_global_flag = league_of_nations_country_may_join
+				country_event = { id = league_of_nations_events.11 hours = 1 }
+			}
+		}
+		
+		triggers = {
+			invite_into_league_of_nations_button_click_enabled = {
+				has_war = no
+				NOT = { has_global_flag = league_of_nations_election }
+				NOT = { has_global_flag = league_of_nations_voting }
+				NOT = { has_global_flag = league_of_nations_country_may_join }
+				check_variable = { cooldown_join_league_of_nations < 1 }
+				ROOT = {
+					has_war = no
+				}
+				check_variable = { global.num_of_league_of_nations_members < 60 }
+				NOT = { has_idea = league_of_nations_defense_pact_target }
+				OR = {
+					NOT = { has_dlc = "Together for Victory" }
+					is_subject = no
+					AND = {
+						is_subject = yes
+						NOT = { compare_autonomy_state < autonomy_dominion }
+					}
+				}
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 720
+		ai_test_variance = 0.1
+		
+		ai_check = {
+			ROOT = {
+				has_war = no
+			}
+			NOT = { has_global_flag = league_of_nations_election }
+			NOT = { has_global_flag = league_of_nations_voting }
+			NOT = { has_global_flag = league_of_nations_country_may_join }
+			check_variable = { global.num_of_league_of_nations_members < 60 }
+		}
+		
+		ai_test_scopes = test_ally_countries
+		
+		ai_check_scope = {
+			has_war = no
+			check_variable = { cooldown_join_league_of_nations < 1 }
+			NOT = { has_country_flag = member_of_league_of_nations }
+			NOT = { AI_wants_to_leave_league_of_nations = yes }
+			OR = {
+				has_government = ROOT
+				AND = {
+					has_government = neutrality
+					ROOT = {
+						has_opinion = {
+							target = PREV
+							value > 0
+						}
+					}
+				}
+			}
+			OR = {
+				is_historical_focus_on = no
+				NOT = { original_tag = USA }
+			}
+			OR = {
+				is_historical_focus_on = no
+				AND = {
+					NOT = { original_tag = GER }
+					has_government = fascism
+				}
+			}
+			NOT = { has_idea = league_of_nations_defense_pact_target }
+		}
+		
+		ai_weights = {
+			invite_into_league_of_nations_button_click = {
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+	}
+	
+	join_league_of_nations_window = {
+		context_type = selected_country_context
+		
+		window_name = "join_league_of_nations_window"
+		parent_window_token = selected_country_view
+		
+		visible = {
+			NOT = { tag = ROOT }
+			has_country_flag = leader_of_league_of_nations
+			ROOT = {
+				NOT = { has_country_flag = member_of_league_of_nations }
+			}
+		}
+		
+		effects = {
+			join_league_of_nations_button_click = {
+				set_global_flag = league_of_nations_country_may_join
+				country_event = { id = league_of_nations_events.12 hours = 1 }
+			}
+		}
+		
+		triggers = {
+			join_league_of_nations_button_click_enabled = {
+				has_war = no
+				NOT = { has_global_flag = league_of_nations_election }
+				NOT = { has_global_flag = league_of_nations_voting }
+				NOT = { has_global_flag = league_of_nations_country_may_join }
+				ROOT = {
+					has_war = no
+					check_variable = { cooldown_join_league_of_nations < 1 }
+					NOT = { has_idea = league_of_nations_defense_pact_target }
+					OR = {
+						NOT = { has_dlc = "Together for Victory" }
+						is_subject = no
+						AND = {
+							is_subject = yes
+							NOT = { compare_autonomy_state < autonomy_dominion }
+						}
+					}
+				}
+				check_variable = { global.num_of_league_of_nations_members < 60 }
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 2160
+		ai_test_variance = 0.1
+		
+		ai_check = {
+			ROOT = {
+				OR = {
+					is_historical_focus_on = no
+					NOT = { original_tag = USA }
+				}
+				OR = {
+					is_historical_focus_on = no
+					AND = {
+						NOT = { original_tag = GER }
+						has_government = fascism
+					}
+				}
+				has_war = no
+				check_variable = { cooldown_join_league_of_nations < 1 }
+			}
+			NOT = { has_global_flag = league_of_nations_election }
+			NOT = { has_global_flag = league_of_nations_voting }
+			NOT = { has_global_flag = league_of_nations_country_may_join }
+			check_variable = { global.num_of_league_of_nations_members < 60 }
+			NOT = { AI_wants_to_leave_league_of_nations = yes }
+		}
+		
+	#	ai_test_scopes = test_ally_countries
+		
+		ai_check_scope = {
+			has_country_flag = leader_of_league_of_nations
+			has_war = no
+			OR = {
+				has_government = ROOT
+				ROOT = {
+					has_government = neutrality
+					has_opinion = {
+						target = PREV
+						value > 0
+					}
+				}
+			}
+		}
+		
+		ai_weights = {
+			join_league_of_nations_button_click = {
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+	}
+	
+	league_of_nations_map_mode_legend_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_map_mode_legend_window"
+		
+		visible = {
+			is_ai = no
+			has_global_flag = league_of_nations_map_mode_active
+		}
+		
+		effects = {
+			legend_icon_league_of_nations_leader_click = {
+				random_country = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					capital_scope = {
+						ROOT = { goto_state = PREV }
+					}
+				}
+			}
+			legend_icon_league_of_nations_starter_of_voting_click = {
+				random_country = {
+					limit = {
+						has_country_flag = started_league_of_nations_voting
+					}
+					capital_scope = {
+						ROOT = { goto_state = PREV }
+					}
+				}
+			}
+			legend_icon_league_of_nations_target_of_voting_click = {
+				random_country = {
+					limit = {
+						has_country_flag = target_of_league_of_nations_voting
+					}
+					capital_scope = {
+						ROOT = { goto_state = PREV }
+					}
+				}
+			}
+			legend_icon_league_of_nations_target_member_of_voting_click = {
+				random_country = {
+					limit = {
+						has_country_flag = target_of_league_of_nations_voting
+					}
+					capital_scope = {
+						ROOT = { goto_state = PREV }
+					}
+				}
+			}
+			leave_league_of_nations_map_mode_button_click = {
+				every_country = {
+					remove_league_of_nations_map_mode_tags = yes
+				}
+				clr_global_flag = league_of_nations_map_mode_active
+				set_variable = { dont_show_league_of_nations_map_mode_legend = 0 }
+				set_variable = { y_position_of_leave_league_of_nations_map_mode_button = 200 }
+			}
+			collapse_league_of_nations_map_mode_button_click = {
+				set_variable = { dont_show_league_of_nations_map_mode_legend = 1 }
+				set_variable = { y_position_of_leave_league_of_nations_map_mode_button = 45 }
+			}
+			expand_league_of_nations_map_mode_button_click = {
+				set_variable = { dont_show_league_of_nations_map_mode_legend = 0 }
+				set_variable = { y_position_of_leave_league_of_nations_map_mode_button = 200 }
+			}
+		}
+		
+		triggers = {
+			league_of_nations_map_mode_legend_window_background_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			collapse_league_of_nations_map_mode_button_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			expand_league_of_nations_map_mode_button_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend > 0 }
+			}
+			legend_icon_league_of_nations_leader_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_leader_legend_title_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			legend_icon_league_of_nations_member_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_member_legend_title_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			legend_icon_league_of_nations_non_member_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_non_member_legend_title_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			legend_icon_league_of_nations_starter_of_voting_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_starter_of_voting_legend_title_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			legend_icon_league_of_nations_target_of_voting_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_target_of_voting_slash_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			legend_icon_league_of_nations_target_member_of_voting_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}
+			league_of_nations_target_of_voting_legend_title_visible = {
+				check_variable = { dont_show_league_of_nations_map_mode_legend < 1 }
+			}			
+		}
+		
+		properties = {
+			leave_league_of_nations_map_mode_button = {
+				y = y_position_of_leave_league_of_nations_map_mode_button
+			}
+		}
+	}
+	
+	league_of_nations_focuses_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_focuses_window"
+		
+		visible = {
+			OR = {
+				AND = {
+					is_ai = no
+					check_variable = { show_league_of_nations_focuses > 0 }
+				}
+				AND = {
+					is_ai = yes
+					has_country_flag = leader_of_league_of_nations
+				}
+			}
+			any_country = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			close_league_of_nations_focuses_window_button_click = {
+				set_variable = { show_league_of_nations_focuses = 0 }
+				set_variable = { show_selected_league_of_nations_focus = 0 }
+			}
+			league_of_nations_focus_1_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 1 }
+				}
+			}
+			league_of_nations_focus_1_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 1 }
+				}
+			}
+			league_of_nations_focus_2_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 0 }
+					set_variable = { show_selected_league_of_nations_focus = 2 }
+				}
+			}
+			league_of_nations_focus_2_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 0 }
+					set_variable = { show_selected_league_of_nations_focus = 2 }
+				}
+			}
+			league_of_nations_focus_3_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 0 }
+					set_variable = { show_selected_league_of_nations_focus = 3 }
+				}
+			}
+			league_of_nations_focus_3_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 0 }
+					set_variable = { show_selected_league_of_nations_focus = 3 }
+				}
+			}
+			league_of_nations_focus_4_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 4 }
+				}
+			}
+			league_of_nations_focus_4_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 4 }
+				}
+			}
+			league_of_nations_focus_5_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 5 }
+				}
+			}
+			league_of_nations_focus_5_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 5 }
+				}
+			}
+			league_of_nations_focus_6_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 6 }
+				}
+			}
+			league_of_nations_focus_6_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 6 }
+				}
+			}
+			league_of_nations_focus_7_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 7 }
+				}
+			}
+			league_of_nations_focus_7_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 7 }
+				}
+			}
+			league_of_nations_focus_8_title_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 8 }
+				}
+			}
+			league_of_nations_focus_8_icon_button_click = {
+				if = {
+					limit = {
+						has_country_flag = leader_of_league_of_nations
+					}
+					set_variable = { show_selected_league_of_nations_focus = 8 }
+				}
+			}
+		}
+		
+		triggers = {
+			league_of_nations_focus_1_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_1_selected
+				NOT = { has_global_flag = league_of_nations_focus_1_completed }
+			}
+			league_of_nations_focus_2_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_2_selected
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+			}
+			league_of_nations_focus_3_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_3_selected
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+			}
+			league_of_nations_focus_4_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_4_selected
+				NOT = { has_global_flag = league_of_nations_focus_4_completed }
+			}
+			league_of_nations_focus_5_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_5_selected
+				NOT = { has_global_flag = league_of_nations_focus_5_completed }
+			}
+			league_of_nations_focus_6_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_6_selected
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+			league_of_nations_focus_7_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_7_selected
+				NOT = { has_global_flag = league_of_nations_focus_7_completed }
+			}
+			league_of_nations_focus_8_icon_button_active_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_8_selected
+				NOT = { has_global_flag = league_of_nations_focus_8_completed }
+			}
+			league_of_nations_focus_1_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_1_selected
+				NOT = { has_global_flag = league_of_nations_focus_1_completed }
+			}
+			league_of_nations_focus_1_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_1_selected }
+				NOT = { has_global_flag = league_of_nations_focus_1_completed }
+			}
+			league_of_nations_focus_1_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_1_completed
+			}
+			league_of_nations_focus_1_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_1_selected
+				NOT = { has_global_flag = league_of_nations_focus_1_completed }
+			}
+			league_of_nations_focus_2_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_2_selected
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+			}
+			league_of_nations_focus_2_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_1_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_2_selected }
+				NOT = { has_global_flag = league_of_nations_focus_3_selected }
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+				check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+			}
+			league_of_nations_focus_2_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_2_completed
+			}
+			league_of_nations_focus_2_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_2_selected
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+			}
+			league_of_nations_focus_3_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_3_selected
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+			}
+			league_of_nations_focus_3_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_1_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_3_selected }
+				NOT = { has_global_flag = league_of_nations_focus_2_selected }
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+				check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+			}
+			league_of_nations_focus_3_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_3_completed
+			}
+			league_of_nations_focus_3_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_3_selected
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+			}
+			league_of_nations_focus_4_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_4_selected
+				NOT = { has_global_flag = league_of_nations_focus_4_completed }
+			}
+			league_of_nations_focus_4_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_2_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_4_selected }
+				NOT = { has_global_flag = league_of_nations_focus_4_completed }
+				date > 1939.09.17
+			}
+			league_of_nations_focus_4_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_4_completed
+			}
+			league_of_nations_focus_4_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_4_selected
+				NOT = { has_global_flag = league_of_nations_focus_4_completed }
+			}
+			league_of_nations_focus_5_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_5_selected
+				NOT = { has_global_flag = league_of_nations_focus_5_completed }
+			}
+			league_of_nations_focus_5_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_3_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_5_selected }
+				NOT = { has_global_flag = league_of_nations_focus_5_completed }
+				date > 1939.09.17
+			}
+			league_of_nations_focus_5_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_5_completed
+			}
+			league_of_nations_focus_5_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_5_selected
+				NOT = { has_global_flag = league_of_nations_focus_5_completed }
+			}
+			league_of_nations_focus_6_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_6_selected
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+			league_of_nations_focus_6_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				OR = {
+					has_global_flag = league_of_nations_focus_4_completed
+					has_global_flag = league_of_nations_focus_5_completed
+				}
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_6_selected }
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+				date > 1942.09.17
+				check_variable = { num_of_won_league_of_nations_elections > 2 }
+			}
+			league_of_nations_focus_6_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_6_completed
+			}
+			league_of_nations_focus_6_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_6_selected
+				NOT = { has_global_flag = league_of_nations_focus_6_completed }
+			}
+			league_of_nations_focus_7_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_7_selected
+				NOT = { has_global_flag = league_of_nations_focus_7_completed }
+			}
+			league_of_nations_focus_7_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_4_completed
+				has_global_flag = league_of_nations_focus_6_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_7_selected }
+				NOT = { has_global_flag = league_of_nations_focus_7_completed }
+				date > 1945.09.17
+				has_war = no
+			}
+			league_of_nations_focus_7_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_7_completed
+			}
+			league_of_nations_focus_7_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_7_selected
+				NOT = { has_global_flag = league_of_nations_focus_7_completed }
+			}
+			league_of_nations_focus_8_active_glow_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_8_selected
+				NOT = { has_global_flag = league_of_nations_focus_8_completed }
+			}
+			league_of_nations_focus_8_title_can_start_visible = {
+				has_country_flag = leader_of_league_of_nations
+				has_global_flag = league_of_nations_focus_5_completed
+				has_global_flag = league_of_nations_focus_6_completed
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				NOT = { has_global_flag = league_of_nations_focus_8_selected }
+				NOT = { has_global_flag = league_of_nations_focus_8_completed }
+				date > 1945.09.17
+				has_war = no
+			}
+			league_of_nations_focus_8_title_completed_visible = {
+				has_global_flag = league_of_nations_focus_8_completed
+			}
+			league_of_nations_focus_8_title_current_visible = {
+				has_country_flag = member_of_league_of_nations
+				has_global_flag = league_of_nations_focus_active
+				has_global_flag = league_of_nations_focus_8_selected
+				NOT = { has_global_flag = league_of_nations_focus_8_completed }
+			}
+			league_of_nations_focus_2_exlusive_link_visible = {
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+			}
+			league_of_nations_focus_3_exlusive_link_visible = {
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+			}
+			league_of_nations_focus_2_3_exlusive_link_visible = {
+				NOT = { has_global_flag = league_of_nations_focus_2_completed }
+				NOT = { has_global_flag = league_of_nations_focus_3_completed }
+			}
+		}
+		
+		properties = {
+			league_of_nations_focus_1_link_down = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_down_left_right = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_1 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_2 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_3 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_4 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_5 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_6 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_7 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_8 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_9 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_10 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_11 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_left_12 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_down_left = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_1 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_2 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_3 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_4 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_5 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_6 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_7 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_8 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_9 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_10 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_11 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_12 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_right_13 = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_1_link_down_right = {
+				frame = global.frame_of_focus_links_1
+			}
+			league_of_nations_focus_2_3_exlusive_link_line = {
+				frame = global.frame_of_exclisive_link_line
+			}
+			league_of_nations_focus_2_link_down_1 = {
+				frame = global.frame_of_focus_links_2
+			}
+			league_of_nations_focus_2_link_down_2 = {
+				frame = global.frame_of_focus_links_2
+			}
+			league_of_nations_focus_3_link_down_1 = {
+				frame = global.frame_of_focus_links_3
+			}
+			league_of_nations_focus_3_link_down_2 = {
+				frame = global.frame_of_focus_links_3
+			}
+			league_of_nations_focus_4_link_down = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_right = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_1 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_2 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_3 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_4 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_5 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_6 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_7 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_down_8 = {
+				frame = global.frame_of_focus_links_4
+			}
+			league_of_nations_focus_4_link_right_1 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_2 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_3 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_4 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_5 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_6 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_7 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_8 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_9 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_10 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_11 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_4_link_right_12 = {
+				frame = global.frame_of_focus_links_4_pointed
+			}
+			league_of_nations_focus_5_link_down = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_left = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_1 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_2 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_3 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_4 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_5 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_6 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_7 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_down_8 = {
+				frame = global.frame_of_focus_links_5
+			}
+			league_of_nations_focus_5_link_left_1 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_2 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_3 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_4 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_5 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_6 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_7 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_8 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_9 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_10 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_11 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_5_link_left_12 = {
+				frame = global.frame_of_focus_links_5_pointed
+			}
+			league_of_nations_focus_4_5_link_down_left_right = {
+				frame = global.frame_of_focus_links_4_5_pointed
+			}
+			league_of_nations_focus_6_link_down = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_down_left_right = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_1 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_2 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_3 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_4 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_5 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_6 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_7 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_8 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_9 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_10 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_11 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_left_12 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_up_down_right = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_1 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_2 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_3 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_4 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_5 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_6 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_7 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_8 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_9 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_10 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_11 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_12 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_right_13 = {
+				frame = global.frame_of_focus_links_6
+			}
+			league_of_nations_focus_6_link_up_down_left = {
+				frame = global.frame_of_focus_links_6
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		
+		ai_check = {
+			has_country_flag = leader_of_league_of_nations
+			NOT = { has_global_flag = league_of_nations_focus_active }
+			NOT = { has_global_flag = league_of_nations_focus_7_completed }
+			NOT = { has_global_flag = league_of_nations_focus_8_completed }
+		}
+		
+		ai_weights = {
+			close_league_of_nations_focuses_window_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_1_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_2_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_3_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_4_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_5_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_6_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_7_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_8_icon_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			league_of_nations_focus_1_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						NOT = { has_global_flag = league_of_nations_focus_1_selected }
+						NOT = { has_global_flag = league_of_nations_focus_1_completed }
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_2_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+						NOT = { has_government = fascism }
+						NOT = { has_government = communism }
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_3_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+						OR = {
+							has_government = fascism
+							has_government = communism
+						}
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_4_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_2_completed
+						NOT = { has_global_flag = league_of_nations_focus_4_selected }
+						NOT = { has_global_flag = league_of_nations_focus_4_completed }
+						date > 1939.09.17
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_5_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_3_completed
+						NOT = { has_global_flag = league_of_nations_focus_5_selected }
+						NOT = { has_global_flag = league_of_nations_focus_5_completed }
+						date > 1939.09.17
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_6_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						OR = {
+							has_global_flag = league_of_nations_focus_4_completed
+							has_global_flag = league_of_nations_focus_5_completed
+						}
+						NOT = { has_global_flag = league_of_nations_focus_6_selected }
+						NOT = { has_global_flag = league_of_nations_focus_6_completed }
+						date > 1942.09.17
+						check_variable = { num_of_won_league_of_nations_elections > 2 }
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_7_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_4_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_7_selected }
+						NOT = { has_global_flag = league_of_nations_focus_7_completed }
+						date > 1945.09.17
+						has_war = no
+						add = 1
+					}
+				}
+			}
+			league_of_nations_focus_8_title_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						NOT = { has_global_flag = league_of_nations_focus_active }
+						has_global_flag = league_of_nations_focus_5_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_8_selected }
+						NOT = { has_global_flag = league_of_nations_focus_8_completed }
+						date > 1945.09.17
+						has_war = no
+						add = 1
+					}
+				}
+			}
+		}
+	}
+	
+	league_of_nations_focus_detail_view = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_focus_detail_view"
+		
+		visible = {
+			OR = {
+				is_ai = yes
+				check_variable = { show_league_of_nations_focuses > 0 }
+			}
+			check_variable = { show_selected_league_of_nations_focus > 0 }
+		}
+		
+		effects = {
+			league_of_nations_focus_detail_view_close_button_click = {
+				set_variable = { show_selected_league_of_nations_focus = 0 }
+			}
+			league_of_nations_focus_detail_view_start_button_click = {
+				if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 1 }
+					}
+					set_global_flag = league_of_nations_focus_1_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 2 }
+					}
+					set_global_flag = league_of_nations_focus_2_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 3 }
+					}
+					set_global_flag = league_of_nations_focus_3_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 4 }
+					}
+					set_global_flag = league_of_nations_focus_4_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 5 }
+					}
+					set_global_flag = league_of_nations_focus_5_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 6 }
+					}
+					set_global_flag = league_of_nations_focus_6_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 7 }
+					}
+					set_global_flag = league_of_nations_focus_7_selected
+				}
+				else_if = {
+					limit = {
+						check_variable = { show_selected_league_of_nations_focus = 8 }
+					}
+					set_global_flag = league_of_nations_focus_8_selected
+				}
+				set_global_flag = league_of_nations_focus_active
+				set_variable = { global.time_til_league_of_nations_focus_is_completed = 210 }
+				set_variable = { global.league_of_nations_focus_progress = 0 }
+				set_variable = { show_selected_league_of_nations_focus = 0 }
+			}
+		}
+		
+		triggers = {
+			league_of_nations_focus_detail_view_start_button_click_enabled = {
+				NOT = { has_global_flag = league_of_nations_focus_active }
+				OR = {
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 1 }
+						NOT = { has_global_flag = league_of_nations_focus_1_selected }
+						NOT = { has_global_flag = league_of_nations_focus_1_completed }
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 2 }
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 3 }
+						has_global_flag = league_of_nations_focus_1_completed
+						NOT = { has_global_flag = league_of_nations_focus_2_selected }
+						NOT = { has_global_flag = league_of_nations_focus_2_completed }
+						NOT = { has_global_flag = league_of_nations_focus_3_selected }
+						NOT = { has_global_flag = league_of_nations_focus_3_completed }
+						check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 4 }
+						has_global_flag = league_of_nations_focus_2_completed
+						NOT = { has_global_flag = league_of_nations_focus_4_selected }
+						NOT = { has_global_flag = league_of_nations_focus_4_completed }
+						date > 1939.09.17
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 5 }
+						has_global_flag = league_of_nations_focus_3_completed
+						NOT = { has_global_flag = league_of_nations_focus_5_selected }
+						NOT = { has_global_flag = league_of_nations_focus_5_completed }
+						date > 1939.09.17
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 6 }
+						OR = {
+							has_global_flag = league_of_nations_focus_4_completed
+							has_global_flag = league_of_nations_focus_5_completed
+						}
+						NOT = { has_global_flag = league_of_nations_focus_6_selected }
+						NOT = { has_global_flag = league_of_nations_focus_6_completed }
+						date > 1942.09.17
+						check_variable = { num_of_won_league_of_nations_elections > 2 }
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 7 }
+						has_global_flag = league_of_nations_focus_4_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_7_selected }
+						NOT = { has_global_flag = league_of_nations_focus_7_completed }
+						date > 1945.09.17
+						has_war = no
+					}
+					AND = {
+						check_variable = { show_selected_league_of_nations_focus = 8 }
+						has_global_flag = league_of_nations_focus_5_completed
+						has_global_flag = league_of_nations_focus_6_completed
+						NOT = { has_global_flag = league_of_nations_focus_8_selected }
+						NOT = { has_global_flag = league_of_nations_focus_8_completed }
+						date > 1945.09.17
+						has_war = no
+					}
+				}
+			}
+		}
+		
+		properties = {
+			league_of_nations_focus_detail_view_research_progressbar = {
+				image = [This.GetLeagueOfNationsFocusProgressIconFrame]
+			}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		
+		ai_check = {
+			always = yes
+		}
+		
+		ai_weights = {
+			league_of_nations_focus_detail_view_start_button_click = {
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			league_of_nations_focus_detail_view_close_button_click = {
+				ai_will_do = {
+					factor = 0
+					
+					modifier = {
+						OR = {
+							NOT = { has_country_flag = member_of_league_of_nations }
+							NOT = { has_country_flag = leader_of_league_of_nations }
+							has_global_flag = league_of_nations_focus_active
+							NOT = {
+								OR = {
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 1 }
+										NOT = { has_global_flag = league_of_nations_focus_1_selected }
+										NOT = { has_global_flag = league_of_nations_focus_1_completed }
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 2 }
+										has_global_flag = league_of_nations_focus_1_completed
+										NOT = { has_global_flag = league_of_nations_focus_2_selected }
+										NOT = { has_global_flag = league_of_nations_focus_2_completed }
+										NOT = { has_global_flag = league_of_nations_focus_3_selected }
+										NOT = { has_global_flag = league_of_nations_focus_3_completed }
+										check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 3 }
+										has_global_flag = league_of_nations_focus_1_completed
+										NOT = { has_global_flag = league_of_nations_focus_2_selected }
+										NOT = { has_global_flag = league_of_nations_focus_2_completed }
+										NOT = { has_global_flag = league_of_nations_focus_3_selected }
+										NOT = { has_global_flag = league_of_nations_focus_3_completed }
+										check_variable = { global.num_of_total_successful_league_of_nations_votings > 2 }
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 4 }
+										has_global_flag = league_of_nations_focus_2_completed
+										NOT = { has_global_flag = league_of_nations_focus_4_selected }
+										NOT = { has_global_flag = league_of_nations_focus_4_completed }
+										date > 1939.09.17
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 5 }
+										has_global_flag = league_of_nations_focus_3_completed
+										NOT = { has_global_flag = league_of_nations_focus_5_selected }
+										NOT = { has_global_flag = league_of_nations_focus_5_completed }
+										date > 1939.09.17
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 6 }
+										OR = {
+											has_global_flag = league_of_nations_focus_4_completed
+											has_global_flag = league_of_nations_focus_5_completed
+										}
+										NOT = { has_global_flag = league_of_nations_focus_6_selected }
+										NOT = { has_global_flag = league_of_nations_focus_6_completed }
+										date > 1942.09.17
+										check_variable = { num_of_won_league_of_nations_elections > 2 }
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 7 }
+										has_global_flag = league_of_nations_focus_4_completed
+										has_global_flag = league_of_nations_focus_6_completed
+										NOT = { has_global_flag = league_of_nations_focus_7_selected }
+										NOT = { has_global_flag = league_of_nations_focus_7_completed }
+										date > 1945.09.17
+										has_war = no
+									}
+									AND = {
+										check_variable = { show_selected_league_of_nations_focus = 8 }
+										has_global_flag = league_of_nations_focus_5_completed
+										has_global_flag = league_of_nations_focus_6_completed
+										NOT = { has_global_flag = league_of_nations_focus_8_selected }
+										NOT = { has_global_flag = league_of_nations_focus_8_completed }
+										date > 1945.09.17
+										has_war = no
+									}
+								}
+							}
+						}
+						add = 100
+					}
+				}
+			}
+		}
+	}
+	
+	league_of_nations_threat_window = {
+		context_type = selected_country_context
+		
+		window_name = "league_of_nations_threat_window"
+		parent_window_token = selected_country_view_info
+		
+		visible = {
+			ROOT = { is_ai = no }
+			any_country = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+	}
+	
+	league_of_nations_threat_own_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_threat_own_window"
+		
+		visible = {
+			is_ai = no
+			any_country = {
+				has_country_flag = leader_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			league_of_nations_threat_icon_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_league_of_nations_threat_list }
+				set_variable = { show_league_of_nations_threat_list = show }
+				if = {
+					limit = {
+						check_variable = { show_league_of_nations_threat_list > 0 }
+					}
+					country_event = { id = league_of_nations_threat_list_events.1 }
+				}
+			}
+		}
+		
+		triggers = {
+			league_of_nations_threat_text_bg_high_threat_visible = {
+				NOT = { check_variable = { league_of_nations_generated_threat < 50 } }
+			}
+		}
+	}
+	
+	league_of_nations_threat_list_window = {
+		context_type = player_context
+		
+		window_name = "league_of_nations_threat_list_window"
+		
+		visible = {
+			check_variable = { show_league_of_nations_threat_list > 0 }
+		}
+		
+		effects = {
+			league_of_nations_threat_list_close_button_click = {
+				set_variable = { show_league_of_nations_threat_list = 0 }
+			}
+			league_of_nations_threat_list_refresh_button_click = {
+				country_event = { id = league_of_nations_threat_list_events.1 }
+			}
+			league_of_nations_threat_list_show_flags_button_click = {
+				set_variable = { dont_show_league_of_nations_threat_list_flags = 0 }
+			}
+			league_of_nations_threat_list_dont_show_flags_button_click = {
+				set_variable = { dont_show_league_of_nations_threat_list_flags = 1 }
+			}
+			threat_country_1_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_1 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_2_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_2 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_3_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_3 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_4_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_4 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_5_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_5 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_6_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_6 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_7_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_7 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_8_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_8 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_9_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_9 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+			threat_country_10_flag_overlay_click = {
+				var:global.league_of_nations_threat_country_10 = {
+					capital_scope = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			league_of_nations_threat_list_show_flags_button_visible = {
+				check_variable = { dont_show_league_of_nations_threat_list_flags > 0 }
+			}
+			league_of_nations_threat_list_dont_show_flags_button_visible = {
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+			}
+			no_threats_info_visible = {
+				NOT = {
+					any_country = {
+						OR = {
+							has_country_flag = league_of_nations_threat_country_1
+							has_country_flag = league_of_nations_threat_country_2
+							has_country_flag = league_of_nations_threat_country_3
+							has_country_flag = league_of_nations_threat_country_4
+							has_country_flag = league_of_nations_threat_country_5
+							has_country_flag = league_of_nations_threat_country_6
+							has_country_flag = league_of_nations_threat_country_7
+							has_country_flag = league_of_nations_threat_country_8
+							has_country_flag = league_of_nations_threat_country_9
+							has_country_flag = league_of_nations_threat_country_10
+						}
+					}
+				}
+			}
+			threat_country_1_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_1_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_1_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_2_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_2_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_2_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_3_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_3_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_3_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_4_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_4_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_4_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_5_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_5_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_5_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_6_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_6_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_6_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_7_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_7_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_7_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_8_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_8_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_8_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_9_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_9_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_9_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_10_bg_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_10_entry_name_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_10_entry_threat_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_1_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_2_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_3_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_4_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_5_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_6_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_7_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_8_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_9_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_10_entry_threat_icon_visible = {
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_1_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_1_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_1_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_1
+				}
+			}
+			threat_country_2_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_2_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_2_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_2
+				}
+			}
+			threat_country_3_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_3_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_3_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_3
+				}
+			}
+			threat_country_4_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_4_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_4_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_4
+				}
+			}
+			threat_country_5_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_5_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_5_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_5
+				}
+			}
+			threat_country_6_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_6_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_6_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_6
+				}
+			}
+			threat_country_7_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_7_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_7_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_7
+				}
+			}
+			threat_country_8_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_8_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_8_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_8
+				}
+			}
+			threat_country_9_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_9_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_9_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_9
+				}
+			}
+			threat_country_10_flag_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_10_flag_overlay_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+			threat_country_10_flag_border_visible = {
+				#always = no # How to get actual flag?
+				check_variable = { dont_show_league_of_nations_threat_list_flags < 1 }
+				any_country = {
+					has_country_flag = league_of_nations_threat_country_10
+				}
+			}
+		}
+		
+		properties = {
+			threat_country_1_flag = {
+				image = [global.league_of_nations_threat_country_1.GetLeagueOfNationsThreatListFlagIcon1]
+			}
+			threat_country_2_flag = {
+				image = [global.league_of_nations_threat_country_2.GetLeagueOfNationsThreatListFlagIcon2]
+			}
+			threat_country_3_flag = {
+				image = [global.league_of_nations_threat_country_3.GetLeagueOfNationsThreatListFlagIcon3]
+			}
+			threat_country_4_flag = {
+				image = [global.league_of_nations_threat_country_4.GetLeagueOfNationsThreatListFlagIcon4]
+			}
+			threat_country_5_flag = {
+				image = [global.league_of_nations_threat_country_5.GetLeagueOfNationsThreatListFlagIcon5]
+			}
+			threat_country_6_flag = {
+				image = [global.league_of_nations_threat_country_6.GetLeagueOfNationsThreatListFlagIcon6]
+			}
+			threat_country_7_flag = {
+				image = [global.league_of_nations_threat_country_7.GetLeagueOfNationsThreatListFlagIcon7]
+			}
+			threat_country_8_flag = {
+				image = [global.league_of_nations_threat_country_8.GetLeagueOfNationsThreatListFlagIcon8]
+			}
+			threat_country_9_flag = {
+				image = [global.league_of_nations_threat_country_9.GetLeagueOfNationsThreatListFlagIcon9]
+			}
+			threat_country_10_flag = {
+				image = [global.league_of_nations_threat_country_10.GetLeagueOfNationsThreatListFlagIcon10]
+			}
+		}
+	}
+	
+	player_elect_league_of_nations_member_window = {
+		context_type = selected_country_context
+		
+		window_name = "player_elect_league_of_nations_member_window"
+		parent_window_token = selected_country_view
+		
+		visible = {
+			has_country_flag = member_of_league_of_nations
+			ROOT = {
+				is_ai = no
+				has_country_flag = member_of_league_of_nations
+			}
+		}
+		
+		effects = {
+			player_elect_league_of_nations_member_button_click = {
+				if = {
+					limit = {
+						ROOT = {
+							has_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election
+						}
+					}
+					ROOT = {
+						clr_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election
+					}
+					if = {
+						limit = {
+							has_country_flag = elected_by_player_league_of_nations_member_@ROOT
+						}
+						clr_country_flag = elected_by_player_league_of_nations_member_@ROOT
+						else = {
+							if = {
+								limit = {
+									any_other_country = {
+										has_country_flag = elected_by_player_league_of_nations_member_@ROOT
+									}
+								}
+								every_other_country = {
+									limit = {
+										has_country_flag = elected_by_player_league_of_nations_member_@ROOT
+									}
+									clr_country_flag = elected_by_player_league_of_nations_member_@ROOT
+								}
+							}
+							set_country_flag = elected_by_player_league_of_nations_member_@ROOT
+							ROOT = {
+								set_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							NOT = { has_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election }
+						}
+					}
+					set_country_flag = elected_by_player_league_of_nations_member_@ROOT
+					ROOT = {
+						set_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			player_elect_league_of_nations_member_button_click_enabled = {
+				NOT = { check_variable = { global.days_til_next_league_of_nations_election < 5 } }
+			}
+			player_elect_league_of_nations_member_voted_icon_visible = {
+				has_country_flag = elected_by_player_league_of_nations_member_@ROOT
+				ROOT = {
+					has_country_flag = player_selected_country_to_vote_for_before_league_of_nations_election
+				}
+			}
+		}
+	}
+}

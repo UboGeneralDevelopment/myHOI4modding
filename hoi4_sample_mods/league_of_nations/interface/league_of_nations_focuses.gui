@@ -1,0 +1,1322 @@
+guiTypes = {
+	containerWindowType = {
+		name = "league_of_nations_focuses_window"
+		position = { x = -80% y = 20% }
+	#	position = { x = -1571 y = 200 } # upper_right
+	#	position = { x = -1571 y = -881 } # lower_right
+	#	position = { x = 350 y = 200 }
+		size = { width = 1189 height = 714 }
+		orientation = upper_right
+	#	orientation = lower_right
+		
+		fade_time = 500
+		fade_type = linear
+		moveable = yes
+		click_to_front = yes
+		
+		background = {
+			name = "league_of_nations_focuses_window_background"
+			spriteType ="GFX_league_of_nations_focuses_bg"
+		}
+		
+		instantTextBoxType = {
+			name = "league_of_nations_focus_tree_title"
+			position = { x = 30 y = 2 }
+			font = "hoi_24header"
+			maxWidth = 500
+			maxHeight = 20
+			text = "LEAGUE_OF_NATIONS_FOCUS_TREE_TITLE"	
+			format = left
+			pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_TREE_TITLE_TT"
+		}
+		
+		containerWindowType = {
+			name = "league_of_nations_focuses_list_window"
+			position = { x = 0 y = -10 }
+			size = { width = 1181 height = 714 }
+			margin = { top = 50 left = 50 bottom = 15 right = 50}					
+			verticalScrollbar = "right_vertical_slider"
+	
+			background = {
+				name = "league_of_nations_focuses_list_window_background"
+				spriteType ="GFX_league_of_nations_focuses_mask"
+				position = { x = 1161 y = 0 }
+			}
+			
+			# Focus Links:
+			iconType = {
+				name = "league_of_nations_focus_1_link_down"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 535 y = 114 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_down_left_right"
+				spriteType = "GFX_focus_link_up_left_right"
+				frame = 3
+				position = { x = 535 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 520 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 505 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 490 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 475 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 460 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 445 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 430 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 415 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 400 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 385 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 369 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_left_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 353 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_down_left"
+				spriteType = "GFX_focus_link_down_right"
+				frame = 3
+				position = { x = 337 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 550 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 565 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 580 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 595 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 610 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 625 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 640 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 655 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 670 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 685 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 700 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 715 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_right_13"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 720 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_link_down_right"
+				spriteType = "GFX_focus_link_down_left"
+				frame = 3
+				position = { x = 736 y = 130 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_exlusive_link"
+				spriteType = "GFX_focus_link_exclusive"
+				frame = 2
+				position = { x = 422 y = 212 }
+				pdx_tooltip = "NATIONAL_FOCUS_MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_exlusive_link"
+				spriteType = "GFX_focus_link_exclusive"
+				frame = 3
+				position = { x = 630 y = 212 }
+				pdx_tooltip = "NATIONAL_FOCUS_MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_3_exlusive_link_line"
+				spriteType = "GFX_league_of_nations_focus_exclusive_line"
+				frame = 1
+				position = { x = 438 y = 225 }
+				pdx_tooltip = "NATIONAL_FOCUS_MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_3_exlusive_link"
+				spriteType = "GFX_focus_link_exclusive"
+				frame = 1
+				position = { x = 527 y = 212 }
+				pdx_tooltip = "NATIONAL_FOCUS_MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_link_down_1"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 249 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_link_down_2"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 264 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_link_down_1"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 249 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_link_down_2"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 264 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 384 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_right"
+				spriteType = "GFX_focus_link_up_down_right"
+				frame = 3
+				position = { x = 337 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_1"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 414 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_2"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 430 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_3"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 445 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_4"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 460 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_5"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 475 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_6"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 490 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_7"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 505 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_down_8"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 337 y = 520 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 352 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 367 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 382 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 397 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 412 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 427 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 442 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 457 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 472 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 487 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 503 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_link_right_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 519 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_5_link_down_left_right"
+				spriteType = "GFX_focus_link_down_left_right"
+				frame = 4
+				position = { x = 535 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 384 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_left"
+				spriteType = "GFX_focus_link_up_down_left"
+				frame = 3
+				position = { x = 736 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_1"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 414 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_2"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 430 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_3"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 445 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_4"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 460 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_5"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 475 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_6"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 490 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_7"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 505 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_down_8"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 736 y = 520 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 721 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 706 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 691 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 676 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 661 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 646 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 631 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 616 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 601 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 586 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 571 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_link_left_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 4
+				position = { x = 556 y = 399 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_down"
+				spriteType = "GFX_focus_link_up_down"
+				frame = 3
+				position = { x = 535 y = 519 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_down_left_right"
+				spriteType = "GFX_focus_link_up_left_right"
+				frame = 3
+				position = { x = 535 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 520 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 505 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 490 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 475 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 460 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 445 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 430 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 415 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 400 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 385 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 369 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_left_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 353 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_up_down_right"
+				spriteType = "GFX_focus_link_up_down_right"
+				frame = 3
+				position = { x = 337 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_1"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 550 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_2"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 565 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_3"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 580 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_4"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 595 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_5"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 610 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_6"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 625 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_7"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 640 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_8"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 655 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_9"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 670 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_10"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 685 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_11"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 700 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_12"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 715 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_right_13"
+				spriteType = "GFX_focus_link_left_right"
+				frame = 3
+				position = { x = 720 y = 534 }
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_link_up_down_left"
+				spriteType = "GFX_focus_link_up_down_left"
+				frame = 3
+				position = { x = 736 y = 534 }
+			}
+			
+			# 1st Focus:
+			iconType = {
+				name = "league_of_nations_focus_1_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 474 y = -15 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_1_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 461 y = 65 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_1_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_1_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 490 y = 0 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_1_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 490 y = 0 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 461 y = 65 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 461 y = 65 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_1_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 461 y = 65 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_1_title"
+				position = { x = 479 y = 74 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_1_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 2nd Focus:
+			iconType = {
+				name = "league_of_nations_focus_2_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 274 y = 120 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_2_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 261 y = 200 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_2_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_2_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 290 y = 135 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_2_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 290 y = 135 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 261 y = 200 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 261 y = 200 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_2_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 261 y = 200 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_2_title"
+				position = { x = 279 y = 216 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_2_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 3rd Focus:
+			iconType = {
+				name = "league_of_nations_focus_3_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 674 y = 120 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_3_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 661 y = 200 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_3_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_3_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 690 y = 135 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_3_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 690 y = 135 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 661 y = 200 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 661 y = 200 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_3_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 661 y = 200 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_3_title"
+				position = { x = 679 y = 216 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_3_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 4th Focus:
+			iconType = {
+				name = "league_of_nations_focus_4_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 274 y = 255 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_4_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 261 y = 335 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_4_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_4_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 290 y = 270 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_4_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 290 y = 270 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 261 y = 335 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 261 y = 335 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_4_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 261 y = 335 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_4_title"
+				position = { x = 279 y = 351 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_4_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 5th Focus:
+			iconType = {
+				name = "league_of_nations_focus_5_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 674 y = 255 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_5_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 661 y = 335 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_5_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_5_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 690 y = 270 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_5_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 690 y = 270 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 661 y = 335 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 661 y = 335 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_5_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 661 y = 335 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_5_title"
+				position = { x = 679 y = 344 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_5_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 6th Focus:
+			iconType = {
+				name = "league_of_nations_focus_6_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 474 y = 390 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_6_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 461 y = 470 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_6_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_6_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 490 y = 405 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_6_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 490 y = 405 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 461 y = 470 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 461 y = 470 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_6_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 461 y = 470 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_6_title"
+				position = { x = 479 y = 486 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_6_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 7th Focus:
+			iconType = {
+				name = "league_of_nations_focus_7_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 274 y = 525 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_7_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 261 y = 605 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_7_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_7_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 290 y = 540 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_7_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_7_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 290 y = 540 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_7_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 261 y = 605 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_7_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 261 y = 605 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_7_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 261 y = 605 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_7_title"
+				position = { x = 279 y = 621 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_7_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+			
+			# 8th Focus:
+			iconType = {
+				name = "league_of_nations_focus_8_active_glow"
+				spriteType = "GFX_ongoing_focus_goal"
+				position = { x = 674 y = 525 }
+			}
+			buttonType = {
+				name = "league_of_nations_focus_8_title_button"
+				spriteType = "GFX_focus_unavailable"
+				position = { x = 661 y = 605 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_8_TT"
+			}
+			buttonType = {
+				name = "league_of_nations_focus_8_icon_button"
+				spriteType = "GFX_league_of_nations_icon"
+				position = { x = 690 y = 540 }
+				pdx_tooltip = "LEAGUE_OF_NATIONS_FOCUS_8_TT"
+			}
+			iconType = {
+				name = "league_of_nations_focus_8_icon_button_active"
+				spriteType = "GFX_league_of_nations_icon_shine"
+				position = { x = 690 y = 540 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_8_title_can_start"
+				spriteType = "GFX_focus_can_start"
+				position = { x = 661 y = 605 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_8_title_completed"
+				spriteType = "GFX_league_of_nations_focus_completed"
+				position = { x = 661 y = 605 }
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "league_of_nations_focus_8_title_current"
+				spriteType = "GFX_league_of_nations_focus_current"
+				position = { x = 661 y = 605 }
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "league_of_nations_focus_8_title"
+				position = { x = 679 y = 621 }
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 20
+				text = "LEAGUE_OF_NATIONS_FOCUS_8_TITLE"
+				format = center
+				alwaystransparent = yes
+			}
+		}
+		
+		buttonType = {
+			name = "close_league_of_nations_focuses_window_button"
+			spriteType = "GFX_closebutton"
+			position = { x = 1150 y = 1 }
+			scale = 0.9
+			pdx_tooltip = "DIPLOMACY_CLOSE"
+			shortcut = "ESCAPE"
+		}
+	}
+	
+	containerWindowType = {
+		name = "league_of_nations_focus_detail_view"
+	#	position = { x=-1421 y=-981 }
+		position = { x=500 y=100 }
+		size = { width = 550 height = 550 }
+		orientation = upper_left
+		
+		fade_time = 500
+		fade_type = linear
+		moveable = yes
+		click_to_front = yes
+		clipping = no
+		
+		show_sound = pop_up
+
+		background = {
+			name = "league_of_nations_focus_detail_view_background"
+			SpriteType = "GFX_tiled_window_thin_border2"
+		}
+		
+		iconType ={
+			name ="info_top_win"
+			spriteType = "GFX_tech_info_top_win"
+			position = { x= 1 y = 1 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "league_of_nations_focus_detail_view_close_button"
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "vic_18"
+			position = { x=-43 y=9 }
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			pdx_tooltip = "CLOSE"
+			clicksound = click_close
+		}
+
+
+		instantTextboxType = {
+			name = "league_of_nations_focus_detail_view_name"
+			position = { x = 30 y = 12 }
+			textureFile = ""
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_TITLE"
+			maxWidth = 450
+			maxHeight = 30
+			format = center		
+		}
+		iconType = {
+			name = "league_of_nations_focus_detail_view_symbol"
+			position = { x = 42 y = 88 }
+			spriteType = "GFX_league_of_nations_icon"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "league_of_nations_focus_detail_view_prerequisites_bg"
+			position = { x = 205 y = 92 }
+			spriteType = "GFX_generic_bg_307x113"
+			alwaystransparent = yes
+		}		
+		instantTextboxType = {
+			name = "league_of_nations_focus_detail_view_prerequisites"
+			position = { x = 215 y = 100 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 0 y = 0}
+			text = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_REQUIREMENTS"
+			maxWidth = 287
+			maxHeight = 100
+			scrollbarType = standardtext_slider
+		}
+
+
+		containerWindowType = {
+			name = "league_of_nations_focus_detail_view_statsarea"
+			position = { x=20 y=220 }
+			size = { width = 97%% height = 98%% }
+			horizontalScrollbar = "bottom_horizontal_slider"
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 4 left = 13 bottom = 0 right = 5}
+			clipping = yes
+			
+			background = {
+				name = "league_of_nations_focus_detail_view_statsarea_background"
+				quadTextureSprite ="GFX_tiled_paper_bg2"
+			}
+			
+		}
+		instantTextboxType = {
+			name = "league_of_nations_focus_detail_view_desc"
+			position = { x = 34 y = 250 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 5 y = 0}
+			text = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_DESC"
+			maxWidth = 485
+			maxHeight = 70
+			format = center
+		}
+
+		iconType = {
+			name = "league_of_nations_focus_detail_view_reward_bg"
+			position = { x = 84 y = 363 }
+			spriteType = "GFX_unit_list_header"
+		}		
+		
+		instantTextboxType = {
+			name = "league_of_nations_focus_detail_view_reward_label"
+			position = { x = 34 y = 370 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "FOCUS_REWARD"
+			maxWidth = 485
+			maxHeight = 70
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "league_of_nations_focus_detail_view_reward"
+			position = { x = 50 y = 397 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 0 y = 0}
+			text = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_REWARD"
+			maxWidth = 455
+			maxHeight = 138
+			scrollbarType = standardtext_slider
+#			format = center
+		}
+		
+		buttonType = {
+			name = "league_of_nations_focus_detail_view_start_button"
+			quadTextureSprite = "GFX_button_123x34"
+			buttonText = "START_FOCUS"
+			buttonFont = "hoi_20b"
+			position = { x=390 y=53 }
+			clicksound = select_focus
+			shortcut = "RETURN"
+			pdx_tooltip = "LEAUGE_OF_NATIONS_START_SELECTED_FOCUS_TT"
+		}
+		
+		iconType = {
+			name = "league_of_nations_focus_detail_view_research_progressbar"
+			spriteType = "GFX_league_of_nations_selected_focus_progress_bar_1"
+			position = { x=209 y=59 }
+		}
+
+		iconType = {
+			name = "league_of_nations_focus_detail_view_research_progressbar_frame"
+			spriteType = "GFX_production_progressbar_frame2"
+			position = { x=205 y=57 }
+		}		
+		
+		instantTextboxType = {
+			name = "status"
+			position = { x = 208 y = 60 }
+			font = "hoi_20b"
+			borderSize = {x = 0 y = 0}
+			text = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_STATUS"
+			maxWidth = 170
+			maxHeight = 13
+			format = center
+			pdx_tooltip = "LEAGUE_OF_NATIONS_SELECTED_FOCUS_STATUS_TT"
+		}
+	}
+}

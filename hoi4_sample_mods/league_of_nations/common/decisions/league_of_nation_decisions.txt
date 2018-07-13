@@ -1,0 +1,73 @@
+league_of_nations_category = {
+	
+	form_league_of_nation = {
+
+		icon = generic_nationalism
+		
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_global_flag = league_of_nations_dissolved }
+			NOT = {
+				any_country = {
+					has_country_flag = leader_of_league_of_nations
+				}
+			}
+		}
+		cost = 100
+		available = {
+			has_government = democratic
+			has_war = no
+			date > 1920.01.09
+			if = {
+				limit = {
+					is_historical_focus_on = yes
+				}
+				date < 1946.04.18
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = CREATE_LEAGUE_OF_NATIONS_TT
+			custom_effect_tooltip = WE_ARE_NEW_LEADER_OF_LEAGUE_OF_NATIONS
+			custom_effect_tooltip = ALL_NEIGHBORS_ARE_INVITED_TO_THE_LEAGUE_OF_NATIONS
+			hidden_effect = {
+				set_global_flag = league_of_nations_created
+				set_variable = { global.num_of_league_of_nations_members = 0 }
+				join_league_of_nations_effect = yes
+				set_country_flag = leader_of_league_of_nations
+				save_global_event_target_as = league_of_nations_leader
+				add_ideas = league_of_nations_leader_idea
+				if = {
+					limit = {
+						has_global_flag = league_of_nations_map_mode_active
+					}
+					save_cosmetic_tag_before_league_of_nations_map_mode = yes
+					set_cosmetic_tag = LEAGUE_OF_NATIONS_LEADER
+				}
+				set_variable = { global.days_til_next_league_of_nations_election = 365 }
+				every_neighbor_country = {
+					limit = {
+						NOT = { has_country_flag = member_of_league_of_nations }
+					}
+					country_event = { id = league_of_nations_events.11 hours = 3 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = league_of_nations_created }
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				NOT = { original_tag = IRE }
+				NOT = { original_tag = FRA }
+				NOT = { original_tag = ENG }
+			}
+		}
+	}
+}

@@ -1,0 +1,3025 @@
+spriteTypes = {
+	# Flags:
+	# Flag for unknown country:
+	spriteType = {
+		name = "GFX_REB_flag"
+		texturefile = "gfx/flags/medium/REB.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_REB_communism_flag"
+		texturefile = "gfx/flags/medium/REB.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_REB_democratic_flag"
+		texturefile = "gfx/flags/medium/REB.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_REB_fascism_flag"
+		texturefile = "gfx/flags/medium/REB.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_REB_neutrality_flag"
+		texturefile = "gfx/flags/medium/REB.tga"
+		legacy_lazy_load = no
+	}
+	
+	# Vanilla Cosmetic Tags:
+	spriteType = {
+		name = "GFX_ARA_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/ara_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARA_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/ara_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARA_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/ara_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARA_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/ara_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BAL_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/bal_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BAL_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/bal_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BAL_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/bal_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BAL_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/bal_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BEL_reichskommissariat_fascism_flag"
+		texturefile = "gfx/flags/medium/BEL_reichskommissariat_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_GER_flag"
+		texturefile = "gfx/flags/medium/BLR_GER.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_reichskommissariat_fascism_flag"
+		texturefile = "gfx/flags/medium/BLR_reichskommissariat_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BYZ_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/byz_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BYZ_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/byz_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BYZ_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/byz_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BYZ_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/byz_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_ALY_flag"
+		texturefile = "gfx/flags/medium/CAN_ALY.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_ALY_democratic_flag"
+		texturefile = "gfx/flags/medium/CAN_ALY_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_UK_flag"
+		texturefile = "gfx/flags/medium/CAN_UK.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_UK_democratic_flag"
+		texturefile = "gfx/flags/medium/CAN_UK_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_warlord_PRC_communism_flag"
+		texturefile = "gfx/flags/medium/CHI_warlord_PRC_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_warlord_PRC_democratic_flag"
+		texturefile = "gfx/flags/medium/CHI_warlord_PRC_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_warlord_PRC_fascism_flag"
+		texturefile = "gfx/flags/medium/CHI_warlord_PRC_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_warlord_PRC_neutrality_flag"
+		texturefile = "gfx/flags/medium/CHI_warlord_PRC_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EUR_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/eur_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EUR_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/eur_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EUR_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/eur_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EUR_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/eur_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FRA_FREE_flag"
+		texturefile = "gfx/flags/medium/FRA_FREE.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GCO_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/gco_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GCO_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/gco_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GCO_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/gco_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GCO_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/gco_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HOL_reichskommissariat_fascism_flag"
+		texturefile = "gfx/flags/medium/HOL_reichskommissariat_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HRE_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/hre_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HRE_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/hre_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HRE_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/hre_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HRE_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/hre_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_EMPIRE_communism_flag"
+		texturefile = "gfx/flags/medium/HUN_EMPIRE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_EMPIRE_democratic_flag"
+		texturefile = "gfx/flags/medium/HUN_EMPIRE.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_EMPIRE_fascism_flag"
+		texturefile = "gfx/flags/medium/HUN_EMPIRE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_EMPIRE_neutrality_flag"
+		texturefile = "gfx/flags/medium/HUN_EMPIRE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_INS_HOL_democratic_flag"
+		texturefile = "gfx/flags/medium/INS_HOL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAJ_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/maj_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAJ_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/maj_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAJ_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/maj_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAJ_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/maj_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAL_UK_democratic_flag"
+		texturefile = "gfx/flags/medium/MAL_UK_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAN_restored_flag"
+		texturefile = "gfx/flags/medium/man_restored.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MUT_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/mut_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MUT_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/mut_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MUT_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/mut_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MUT_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/mut_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NDC_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/ndc_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NDC_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/ndc_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NDC_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/ndc_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NDC_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/ndc_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NOR_reichskommissariat_fascism_flag"
+		texturefile = "gfx/flags/medium/NOR_reichskommissariat_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OTT_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/ott_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OTT_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/ott_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OTT_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/ott_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OTT_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/ott_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/per_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/per_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/per_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/per_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PLC_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/plc_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PLC_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/plc_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PLC_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/plc_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PLC_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/plc_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRC_proclaimed_communism_flag"
+		texturefile = "gfx/flags/medium/PRC_proclaimed_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAT_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/rat_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAT_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/rat_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAT_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/rat_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAT_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/rat_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SCA_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/sca_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SCA_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/sca_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SCA_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/sca_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SCA_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/sca_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPQR_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/spqr_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPQR_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/spqr_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPQR_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/spqr_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPQR_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/spqr_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_GER_fascism_flag"
+		texturefile = "gfx/flags/medium/UKR_GER_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_reichskommissariat_fascism_flag"
+		texturefile = "gfx/flags/medium/UKR_reichskommissariat_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UNL_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/unl_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UNL_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/unl_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UNL_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/unl_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UNL_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/unl_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USC_UNIFIED_communism_flag"
+		texturefile = "gfx/flags/medium/usc_unified_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USC_UNIFIED_democratic_flag"
+		texturefile = "gfx/flags/medium/usc_unified_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USC_UNIFIED_fascism_flag"
+		texturefile = "gfx/flags/medium/usc_unified_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USC_UNIFIED_neutrality_flag"
+		texturefile = "gfx/flags/medium/usc_unified_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	
+	# Vanilla Countries:
+	spriteType = {
+		name = "GFX_AFG_communism_flag"
+		texturefile = "gfx/flags/medium/AFG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AFG_democratic_flag"
+		texturefile = "gfx/flags/medium/AFG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AFG_fascism_flag"
+		texturefile = "gfx/flags/medium/AFG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AFG_neutrality_flag"
+		texturefile = "gfx/flags/medium/AFG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ALB_communism_flag"
+		texturefile = "gfx/flags/medium/ALB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ALB_democratic_flag"
+		texturefile = "gfx/flags/medium/ALB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ALB_fascism_flag"
+		texturefile = "gfx/flags/medium/ALB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ALB_neutrality_flag"
+		texturefile = "gfx/flags/medium/ALB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ANG_communism_flag"
+		texturefile = "gfx/flags/medium/ANG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ANG_democratic_flag"
+		texturefile = "gfx/flags/medium/ANG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ANG_fascism_flag"
+		texturefile = "gfx/flags/medium/ANG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ANG_neutrality_flag"
+		texturefile = "gfx/flags/medium/ANG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARG_communism_flag"
+		texturefile = "gfx/flags/medium/ARG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARG_democratic_flag"
+		texturefile = "gfx/flags/medium/ARG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARG_fascism_flag"
+		texturefile = "gfx/flags/medium/ARG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARG_neutrality_flag"
+		texturefile = "gfx/flags/medium/ARG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARM_communism_flag"
+		texturefile = "gfx/flags/medium/ARM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARM_democratic_flag"
+		texturefile = "gfx/flags/medium/ARM.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARM_fascism_flag"
+		texturefile = "gfx/flags/medium/ARM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ARM_neutrality_flag"
+		texturefile = "gfx/flags/medium/ARM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AST_communism_flag"
+		texturefile = "gfx/flags/medium/AST_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AST_democratic_flag"
+		texturefile = "gfx/flags/medium/AST_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AST_fascism_flag"
+		texturefile = "gfx/flags/medium/AST_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AST_neutrality_flag"
+		texturefile = "gfx/flags/medium/AST_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AUS_communism_flag"
+		texturefile = "gfx/flags/medium/AUS_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AUS_democratic_flag"
+		texturefile = "gfx/flags/medium/AUS_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AUS_fascism_flag"
+		texturefile = "gfx/flags/medium/AUS_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AUS_neutrality_flag"
+		texturefile = "gfx/flags/medium/AUS_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AZR_communism_flag"
+		texturefile = "gfx/flags/medium/AZR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AZR_democratic_flag"
+		texturefile = "gfx/flags/medium/AZR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AZR_fascism_flag"
+		texturefile = "gfx/flags/medium/AZR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_AZR_neutrality_flag"
+		texturefile = "gfx/flags/medium/AZR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BEL_communism_flag"
+		texturefile = "gfx/flags/medium/BEL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BEL_democratic_flag"
+		texturefile = "gfx/flags/medium/BEL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BEL_fascism_flag"
+		texturefile = "gfx/flags/medium/BEL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BEL_neutrality_flag"
+		texturefile = "gfx/flags/medium/BEL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BHU_communism_flag"
+		texturefile = "gfx/flags/medium/BHU_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BHU_democratic_flag"
+		texturefile = "gfx/flags/medium/BHU_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BHU_fascism_flag"
+		texturefile = "gfx/flags/medium/BHU_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BHU_neutrality_flag"
+		texturefile = "gfx/flags/medium/BHU_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BIH_communism_flag"
+		texturefile = "gfx/flags/medium/BIH_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BIH_democratic_flag"
+		texturefile = "gfx/flags/medium/BIH_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BIH_fascism_flag"
+		texturefile = "gfx/flags/medium/BIH_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BIH_neutrality_flag"
+		texturefile = "gfx/flags/medium/BIH_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_communism_flag"
+		texturefile = "gfx/flags/medium/BLR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_democratic_flag"
+		texturefile = "gfx/flags/medium/BLR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_fascism_flag"
+		texturefile = "gfx/flags/medium/BLR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BLR_neutrality_flag"
+		texturefile = "gfx/flags/medium/BLR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOL_communism_flag"
+		texturefile = "gfx/flags/medium/BOL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOL_democratic_flag"
+		texturefile = "gfx/flags/medium/BOL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOL_fascism_flag"
+		texturefile = "gfx/flags/medium/BOL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOL_neutrality_flag"
+		texturefile = "gfx/flags/medium/BOL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOT_communism_flag"
+		texturefile = "gfx/flags/medium/BOT_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOT_democratic_flag"
+		texturefile = "gfx/flags/medium/BOT_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOT_fascism_flag"
+		texturefile = "gfx/flags/medium/BOT_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BOT_neutrality_flag"
+		texturefile = "gfx/flags/medium/BOT_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_communism_flag"
+		texturefile = "gfx/flags/medium/BRA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_democratic_flag"
+		texturefile = "gfx/flags/medium/BRA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_fascism_flag"
+		texturefile = "gfx/flags/medium/BRA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_neutrality_flag"
+		texturefile = "gfx/flags/medium/BRA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUL_communism_flag"
+		texturefile = "gfx/flags/medium/BUL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUL_democratic_flag"
+		texturefile = "gfx/flags/medium/BUL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUL_fascism_flag"
+		texturefile = "gfx/flags/medium/BUL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUL_neutrality_flag"
+		texturefile = "gfx/flags/medium/BUL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUR_communism_flag"
+		texturefile = "gfx/flags/medium/BUR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUR_democratic_flag"
+		texturefile = "gfx/flags/medium/BUR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUR_fascism_flag"
+		texturefile = "gfx/flags/medium/BUR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BUR_neutrality_flag"
+		texturefile = "gfx/flags/medium/BUR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAM_communism_flag"
+		texturefile = "gfx/flags/medium/CAM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAM_democratic_flag"
+		texturefile = "gfx/flags/medium/CAM.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAM_fascism_flag"
+		texturefile = "gfx/flags/medium/CAM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAM_neutrality_flag"
+		texturefile = "gfx/flags/medium/CAM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_communism_flag"
+		texturefile = "gfx/flags/medium/CAN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_democratic_flag"
+		texturefile = "gfx/flags/medium/CAN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_fascism_flag"
+		texturefile = "gfx/flags/medium/CAN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CAN_neutrality_flag"
+		texturefile = "gfx/flags/medium/CAN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_communism_flag"
+		texturefile = "gfx/flags/medium/CHI_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_democratic_flag"
+		texturefile = "gfx/flags/medium/CHI_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_fascism_flag"
+		texturefile = "gfx/flags/medium/CHI_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHI_neutrality_flag"
+		texturefile = "gfx/flags/medium/CHI_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHL_communism_flag"
+		texturefile = "gfx/flags/medium/CHL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHL_democratic_flag"
+		texturefile = "gfx/flags/medium/CHL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHL_fascism_flag"
+		texturefile = "gfx/flags/medium/CHL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CHL_neutrality_flag"
+		texturefile = "gfx/flags/medium/CHL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COG_communism_flag"
+		texturefile = "gfx/flags/medium/COG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COG_democratic_flag"
+		texturefile = "gfx/flags/medium/COG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COG_fascism_flag"
+		texturefile = "gfx/flags/medium/COG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COG_neutrality_flag"
+		texturefile = "gfx/flags/medium/COG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COL_communism_flag"
+		texturefile = "gfx/flags/medium/COL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COL_democratic_flag"
+		texturefile = "gfx/flags/medium/COL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COL_fascism_flag"
+		texturefile = "gfx/flags/medium/COL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COL_neutrality_flag"
+		texturefile = "gfx/flags/medium/COL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COS_communism_flag"
+		texturefile = "gfx/flags/medium/COS_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COS_democratic_flag"
+		texturefile = "gfx/flags/medium/COS_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COS_fascism_flag"
+		texturefile = "gfx/flags/medium/COS_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_COS_neutrality_flag"
+		texturefile = "gfx/flags/medium/COS_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CRO_communism_flag"
+		texturefile = "gfx/flags/medium/CRO_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CRO_democratic_flag"
+		texturefile = "gfx/flags/medium/CRO_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CRO_fascism_flag"
+		texturefile = "gfx/flags/medium/CRO_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CRO_neutrality_flag"
+		texturefile = "gfx/flags/medium/CRO_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CUB_communism_flag"
+		texturefile = "gfx/flags/medium/CUB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CUB_democratic_flag"
+		texturefile = "gfx/flags/medium/CUB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CUB_fascism_flag"
+		texturefile = "gfx/flags/medium/CUB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CUB_neutrality_flag"
+		texturefile = "gfx/flags/medium/CUB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CZE_communism_flag"
+		texturefile = "gfx/flags/medium/CZE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CZE_democratic_flag"
+		texturefile = "gfx/flags/medium/CZE_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CZE_fascism_flag"
+		texturefile = "gfx/flags/medium/CZE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CZE_neutrality_flag"
+		texturefile = "gfx/flags/medium/CZE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DDR_communism_flag"
+		texturefile = "gfx/flags/medium/DDR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DDR_democratic_flag"
+		texturefile = "gfx/flags/medium/DDR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DDR_fascism_flag"
+		texturefile = "gfx/flags/medium/DDR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DDR_neutrality_flag"
+		texturefile = "gfx/flags/medium/DDR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DEN_communism_flag"
+		texturefile = "gfx/flags/medium/DEN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DEN_democratic_flag"
+		texturefile = "gfx/flags/medium/DEN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DEN_fascism_flag"
+		texturefile = "gfx/flags/medium/DEN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DEN_neutrality_flag"
+		texturefile = "gfx/flags/medium/DEN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOM_communism_flag"
+		texturefile = "gfx/flags/medium/DOM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOM_democratic_flag"
+		texturefile = "gfx/flags/medium/DOM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOM_fascism_flag"
+		texturefile = "gfx/flags/medium/DOM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOM_neutrality_flag"
+		texturefile = "gfx/flags/medium/DOM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ECU_communism_flag"
+		texturefile = "gfx/flags/medium/ECU_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ECU_democratic_flag"
+		texturefile = "gfx/flags/medium/ECU_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ECU_fascism_flag"
+		texturefile = "gfx/flags/medium/ECU_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ECU_neutrality_flag"
+		texturefile = "gfx/flags/medium/ECU_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EGY_communism_flag"
+		texturefile = "gfx/flags/medium/EGY_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EGY_democratic_flag"
+		texturefile = "gfx/flags/medium/EGY_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EGY_fascism_flag"
+		texturefile = "gfx/flags/medium/EGY_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EGY_neutrality_flag"
+		texturefile = "gfx/flags/medium/EGY_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ELS_communism_flag"
+		texturefile = "gfx/flags/medium/ELS_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ELS_democratic_flag"
+		texturefile = "gfx/flags/medium/ELS_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ELS_fascism_flag"
+		texturefile = "gfx/flags/medium/ELS_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ELS_neutrality_flag"
+		texturefile = "gfx/flags/medium/ELS_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ENG_communism_flag"
+		texturefile = "gfx/flags/medium/ENG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ENG_democratic_flag"
+		texturefile = "gfx/flags/medium/ENG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ENG_fascism_flag"
+		texturefile = "gfx/flags/medium/ENG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ENG_neutrality_flag"
+		texturefile = "gfx/flags/medium/ENG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EST_communism_flag"
+		texturefile = "gfx/flags/medium/EST_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EST_democratic_flag"
+		texturefile = "gfx/flags/medium/EST_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EST_fascism_flag"
+		texturefile = "gfx/flags/medium/EST_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_EST_neutrality_flag"
+		texturefile = "gfx/flags/medium/EST_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ETH_communism_flag"
+		texturefile = "gfx/flags/medium/ETH_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ETH_democratic_flag"
+		texturefile = "gfx/flags/medium/ETH_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ETH_fascism_flag"
+		texturefile = "gfx/flags/medium/ETH_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ETH_neutrality_flag"
+		texturefile = "gfx/flags/medium/ETH_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FIN_communism_flag"
+		texturefile = "gfx/flags/medium/FIN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FIN_democratic_flag"
+		texturefile = "gfx/flags/medium/FIN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FIN_fascism_flag"
+		texturefile = "gfx/flags/medium/FIN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FIN_neutrality_flag"
+		texturefile = "gfx/flags/medium/FIN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FRA_communism_flag"
+		texturefile = "gfx/flags/medium/FRA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FRA_democratic_flag"
+		texturefile = "gfx/flags/medium/FRA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FRA_fascism_flag"
+		texturefile = "gfx/flags/medium/FRA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_FRA_neutrality_flag"
+		texturefile = "gfx/flags/medium/FRA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GEO_communism_flag"
+		texturefile = "gfx/flags/medium/GEO_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GEO_democratic_flag"
+		texturefile = "gfx/flags/medium/GEO_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GEO_fascism_flag"
+		texturefile = "gfx/flags/medium/GEO_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GEO_neutrality_flag"
+		texturefile = "gfx/flags/medium/GEO.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GER_communism_flag"
+		texturefile = "gfx/flags/medium/GER_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GER_democratic_flag"
+		texturefile = "gfx/flags/medium/GER_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GER_fascism_flag"
+		texturefile = "gfx/flags/medium/GER_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GER_neutrality_flag"
+		texturefile = "gfx/flags/medium/GER_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GRE_communism_flag"
+		texturefile = "gfx/flags/medium/GRE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GRE_democratic_flag"
+		texturefile = "gfx/flags/medium/GRE_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GRE_fascism_flag"
+		texturefile = "gfx/flags/medium/GRE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GRE_neutrality_flag"
+		texturefile = "gfx/flags/medium/GRE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GUA_communism_flag"
+		texturefile = "gfx/flags/medium/GUA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GUA_democratic_flag"
+		texturefile = "gfx/flags/medium/GUA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GUA_fascism_flag"
+		texturefile = "gfx/flags/medium/GUA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GUA_neutrality_flag"
+		texturefile = "gfx/flags/medium/GUA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GXC_communism_flag"
+		texturefile = "gfx/flags/medium/GXC_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GXC_democratic_flag"
+		texturefile = "gfx/flags/medium/GXC_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GXC_fascism_flag"
+		texturefile = "gfx/flags/medium/GXC_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_GXC_neutrality_flag"
+		texturefile = "gfx/flags/medium/GXC_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAI_communism_flag"
+		texturefile = "gfx/flags/medium/HAI_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAI_democratic_flag"
+		texturefile = "gfx/flags/medium/HAI_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAI_fascism_flag"
+		texturefile = "gfx/flags/medium/HAI_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HAI_neutrality_flag"
+		texturefile = "gfx/flags/medium/HAI_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HOL_communism_flag"
+		texturefile = "gfx/flags/medium/HOL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HOL_democratic_flag"
+		texturefile = "gfx/flags/medium/HOL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HOL_fascism_flag"
+		texturefile = "gfx/flags/medium/HOL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HOL_neutrality_flag"
+		texturefile = "gfx/flags/medium/HOL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HON_communism_flag"
+		texturefile = "gfx/flags/medium/HON_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HON_democratic_flag"
+		texturefile = "gfx/flags/medium/HON_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HON_fascism_flag"
+		texturefile = "gfx/flags/medium/HON_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HON_neutrality_flag"
+		texturefile = "gfx/flags/medium/HON_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_communism_flag"
+		texturefile = "gfx/flags/medium/HUN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_democratic_flag"
+		texturefile = "gfx/flags/medium/HUN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_fascism_flag"
+		texturefile = "gfx/flags/medium/HUN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HUN_neutrality_flag"
+		texturefile = "gfx/flags/medium/HUN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ICE_communism_flag"
+		texturefile = "gfx/flags/medium/ICE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ICE_democratic_flag"
+		texturefile = "gfx/flags/medium/ICE_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ICE_fascism_flag"
+		texturefile = "gfx/flags/medium/ICE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ICE_neutrality_flag"
+		texturefile = "gfx/flags/medium/ICE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_INS_communism_flag"
+		texturefile = "gfx/flags/medium/INS_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_INS_democratic_flag"
+		texturefile = "gfx/flags/medium/INS.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_INS_fascism_flag"
+		texturefile = "gfx/flags/medium/INS_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_INS_neutrality_flag"
+		texturefile = "gfx/flags/medium/INS_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRE_communism_flag"
+		texturefile = "gfx/flags/medium/IRE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRE_democratic_flag"
+		texturefile = "gfx/flags/medium/IRE_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRE_fascism_flag"
+		texturefile = "gfx/flags/medium/IRE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRE_neutrality_flag"
+		texturefile = "gfx/flags/medium/IRE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRQ_communism_flag"
+		texturefile = "gfx/flags/medium/IRQ_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRQ_democratic_flag"
+		texturefile = "gfx/flags/medium/IRQ_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRQ_fascism_flag"
+		texturefile = "gfx/flags/medium/IRQ_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_IRQ_neutrality_flag"
+		texturefile = "gfx/flags/medium/IRQ_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ISR_communism_flag"
+		texturefile = "gfx/flags/medium/ISR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ISR_democratic_flag"
+		texturefile = "gfx/flags/medium/ISR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ISR_fascism_flag"
+		texturefile = "gfx/flags/medium/ISR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ISR_neutrality_flag"
+		texturefile = "gfx/flags/medium/ISR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ITA_communism_flag"
+		texturefile = "gfx/flags/medium/ITA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ITA_democratic_flag"
+		texturefile = "gfx/flags/medium/ITA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ITA_fascism_flag"
+		texturefile = "gfx/flags/medium/ITA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ITA_neutrality_flag"
+		texturefile = "gfx/flags/medium/ITA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JAP_communism_flag"
+		texturefile = "gfx/flags/medium/JAP_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JAP_democratic_flag"
+		texturefile = "gfx/flags/medium/JAP_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JAP_fascism_flag"
+		texturefile = "gfx/flags/medium/JAP_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JAP_neutrality_flag"
+		texturefile = "gfx/flags/medium/JAP_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JOR_communism_flag"
+		texturefile = "gfx/flags/medium/JOR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JOR_democratic_flag"
+		texturefile = "gfx/flags/medium/JOR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JOR_fascism_flag"
+		texturefile = "gfx/flags/medium/JOR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_JOR_neutrality_flag"
+		texturefile = "gfx/flags/medium/JOR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KAZ_communism_flag"
+		texturefile = "gfx/flags/medium/KAZ_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KAZ_democratic_flag"
+		texturefile = "gfx/flags/medium/KAZ.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KAZ_fascism_flag"
+		texturefile = "gfx/flags/medium/KAZ_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KAZ_neutrality_flag"
+		texturefile = "gfx/flags/medium/KAZ_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KEN_communism_flag"
+		texturefile = "gfx/flags/medium/KEN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KEN_democratic_flag"
+		texturefile = "gfx/flags/medium/KEN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KEN_fascism_flag"
+		texturefile = "gfx/flags/medium/KEN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KEN_neutrality_flag"
+		texturefile = "gfx/flags/medium/KEN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KGZ_communism_flag"
+		texturefile = "gfx/flags/medium/KGZ_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KGZ_democratic_flag"
+		texturefile = "gfx/flags/medium/KGZ_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KGZ_fascism_flag"
+		texturefile = "gfx/flags/medium/KGZ_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KGZ_neutrality_flag"
+		texturefile = "gfx/flags/medium/KGZ_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOR_communism_flag"
+		texturefile = "gfx/flags/medium/KOR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOR_democratic_flag"
+		texturefile = "gfx/flags/medium/KOR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOR_fascism_flag"
+		texturefile = "gfx/flags/medium/KOR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOR_neutrality_flag"
+		texturefile = "gfx/flags/medium/KOR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOS_communism_flag"
+		texturefile = "gfx/flags/medium/KOS_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOS_democratic_flag"
+		texturefile = "gfx/flags/medium/KOS_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOS_fascism_flag"
+		texturefile = "gfx/flags/medium/KOS_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_KOS_neutrality_flag"
+		texturefile = "gfx/flags/medium/KOS_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAO_communism_flag"
+		texturefile = "gfx/flags/medium/LAO_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAO_democratic_flag"
+		texturefile = "gfx/flags/medium/LAO.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAO_fascism_flag"
+		texturefile = "gfx/flags/medium/LAO_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAO_neutrality_flag"
+		texturefile = "gfx/flags/medium/LAO_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAT_communism_flag"
+		texturefile = "gfx/flags/medium/LAT_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAT_democratic_flag"
+		texturefile = "gfx/flags/medium/LAT_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAT_fascism_flag"
+		texturefile = "gfx/flags/medium/LAT_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LAT_neutrality_flag"
+		texturefile = "gfx/flags/medium/LAT_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LBA_communism_flag"
+		texturefile = "gfx/flags/medium/LBA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LBA_democratic_flag"
+		texturefile = "gfx/flags/medium/LBA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LBA_fascism_flag"
+		texturefile = "gfx/flags/medium/LBA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LBA_neutrality_flag"
+		texturefile = "gfx/flags/medium/LBA.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEB_communism_flag"
+		texturefile = "gfx/flags/medium/LEB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEB_democratic_flag"
+		texturefile = "gfx/flags/medium/LEB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEB_fascism_flag"
+		texturefile = "gfx/flags/medium/LEB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEB_neutrality_flag"
+		texturefile = "gfx/flags/medium/LEB.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIB_communism_flag"
+		texturefile = "gfx/flags/medium/LIB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIB_democratic_flag"
+		texturefile = "gfx/flags/medium/LIB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIB_fascism_flag"
+		texturefile = "gfx/flags/medium/LIB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIB_neutrality_flag"
+		texturefile = "gfx/flags/medium/LIB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIT_communism_flag"
+		texturefile = "gfx/flags/medium/LIT_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIT_democratic_flag"
+		texturefile = "gfx/flags/medium/LIT_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIT_fascism_flag"
+		texturefile = "gfx/flags/medium/LIT_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LIT_neutrality_flag"
+		texturefile = "gfx/flags/medium/LIT_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LKA_communism_flag"
+		texturefile = "gfx/flags/medium/LKA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LKA_democratic_flag"
+		texturefile = "gfx/flags/medium/LKA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LKA_fascism_flag"
+		texturefile = "gfx/flags/medium/LKA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LKA_neutrality_flag"
+		texturefile = "gfx/flags/medium/LKA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LUX_communism_flag"
+		texturefile = "gfx/flags/medium/LUX_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LUX_democratic_flag"
+		texturefile = "gfx/flags/medium/LUX_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LUX_fascism_flag"
+		texturefile = "gfx/flags/medium/LUX_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LUX_neutrality_flag"
+		texturefile = "gfx/flags/medium/LUX_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAL_communism_flag"
+		texturefile = "gfx/flags/medium/MAL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAL_democratic_flag"
+		texturefile = "gfx/flags/medium/MAL.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAL_fascism_flag"
+		texturefile = "gfx/flags/medium/MAL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAL_neutrality_flag"
+		texturefile = "gfx/flags/medium/MAL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAN_communism_flag"
+		texturefile = "gfx/flags/medium/MAN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAN_democratic_flag"
+		texturefile = "gfx/flags/medium/MAN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAN_fascism_flag"
+		texturefile = "gfx/flags/medium/MAN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAN_neutrality_flag"
+		texturefile = "gfx/flags/medium/MAN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAR_communism_flag"
+		texturefile = "gfx/flags/medium/MAR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAR_democratic_flag"
+		texturefile = "gfx/flags/medium/MAR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAR_fascism_flag"
+		texturefile = "gfx/flags/medium/MAR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MAR_neutrality_flag"
+		texturefile = "gfx/flags/medium/MAR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MDA_communism_flag"
+		texturefile = "gfx/flags/medium/MDA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MDA_democratic_flag"
+		texturefile = "gfx/flags/medium/MDA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MDA_fascism_flag"
+		texturefile = "gfx/flags/medium/MDA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MDA_neutrality_flag"
+		texturefile = "gfx/flags/medium/MDA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MEN_flag"
+		texturefile = "gfx/flags/medium/MEN.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MEX_communism_flag"
+		texturefile = "gfx/flags/medium/MEX_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MEX_democratic_flag"
+		texturefile = "gfx/flags/medium/MEX_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MEX_fascism_flag"
+		texturefile = "gfx/flags/medium/MEX_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MEX_neutrality_flag"
+		texturefile = "gfx/flags/medium/MEX_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MKD_communism_flag"
+		texturefile = "gfx/flags/medium/MKD_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MKD_democratic_flag"
+		texturefile = "gfx/flags/medium/MKD_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MKD_fascism_flag"
+		texturefile = "gfx/flags/medium/MKD_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MKD_neutrality_flag"
+		texturefile = "gfx/flags/medium/MKD_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MNT_communism_flag"
+		texturefile = "gfx/flags/medium/MNT_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MNT_democratic_flag"
+		texturefile = "gfx/flags/medium/MNT.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MNT_fascism_flag"
+		texturefile = "gfx/flags/medium/MNT_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MNT_neutrality_flag"
+		texturefile = "gfx/flags/medium/MNT_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MON_communism_flag"
+		texturefile = "gfx/flags/medium/MON_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MON_democratic_flag"
+		texturefile = "gfx/flags/medium/MON_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MON_fascism_flag"
+		texturefile = "gfx/flags/medium/MON_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MON_neutrality_flag"
+		texturefile = "gfx/flags/medium/MON_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MZB_communism_flag"
+		texturefile = "gfx/flags/medium/MZB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MZB_democratic_flag"
+		texturefile = "gfx/flags/medium/MZB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MZB_fascism_flag"
+		texturefile = "gfx/flags/medium/MZB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_MZB_neutrality_flag"
+		texturefile = "gfx/flags/medium/MZB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NEP_communism_flag"
+		texturefile = "gfx/flags/medium/NEP_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NEP_democratic_flag"
+		texturefile = "gfx/flags/medium/NEP_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NEP_fascism_flag"
+		texturefile = "gfx/flags/medium/NEP_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NEP_neutrality_flag"
+		texturefile = "gfx/flags/medium/NEP_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NIC_communism_flag"
+		texturefile = "gfx/flags/medium/NIC_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NIC_democratic_flag"
+		texturefile = "gfx/flags/medium/NIC_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NIC_fascism_flag"
+		texturefile = "gfx/flags/medium/NIC_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NIC_neutrality_flag"
+		texturefile = "gfx/flags/medium/NIC_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NOR_communism_flag"
+		texturefile = "gfx/flags/medium/NOR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NOR_democratic_flag"
+		texturefile = "gfx/flags/medium/NOR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NOR_fascism_flag"
+		texturefile = "gfx/flags/medium/NOR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NOR_neutrality_flag"
+		texturefile = "gfx/flags/medium/NOR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NZL_communism_flag"
+		texturefile = "gfx/flags/medium/NZL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NZL_democratic_flag"
+		texturefile = "gfx/flags/medium/NZL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NZL_fascism_flag"
+		texturefile = "gfx/flags/medium/NZL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_NZL_neutrality_flag"
+		texturefile = "gfx/flags/medium/NZL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OMA_communism_flag"
+		texturefile = "gfx/flags/medium/OMA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OMA_democratic_flag"
+		texturefile = "gfx/flags/medium/OMA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OMA_fascism_flag"
+		texturefile = "gfx/flags/medium/OMA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_OMA_neutrality_flag"
+		texturefile = "gfx/flags/medium/OMA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAK_flag"
+		texturefile = "gfx/flags/medium/PAK.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAL_communism_flag"
+		texturefile = "gfx/flags/medium/PAL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAL_democratic_flag"
+		texturefile = "gfx/flags/medium/PAL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAL_fascism_flag"
+		texturefile = "gfx/flags/medium/PAL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAL_neutrality_flag"
+		texturefile = "gfx/flags/medium/PAL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAN_communism_flag"
+		texturefile = "gfx/flags/medium/PAN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAN_democratic_flag"
+		texturefile = "gfx/flags/medium/PAN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAN_fascism_flag"
+		texturefile = "gfx/flags/medium/PAN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAN_neutrality_flag"
+		texturefile = "gfx/flags/medium/PAN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAR_communism_flag"
+		texturefile = "gfx/flags/medium/PAR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAR_democratic_flag"
+		texturefile = "gfx/flags/medium/PAR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAR_fascism_flag"
+		texturefile = "gfx/flags/medium/PAR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PAR_neutrality_flag"
+		texturefile = "gfx/flags/medium/PAR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_communism_flag"
+		texturefile = "gfx/flags/medium/PER_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_democratic_flag"
+		texturefile = "gfx/flags/medium/PER_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_fascism_flag"
+		texturefile = "gfx/flags/medium/PER_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PER_neutrality_flag"
+		texturefile = "gfx/flags/medium/PER_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PHI_communism_flag"
+		texturefile = "gfx/flags/medium/PHI_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PHI_democratic_flag"
+		texturefile = "gfx/flags/medium/PHI_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PHI_fascism_flag"
+		texturefile = "gfx/flags/medium/PHI_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PHI_neutrality_flag"
+		texturefile = "gfx/flags/medium/PHI_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PNG_communism_flag"
+		texturefile = "gfx/flags/medium/PNG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PNG_democratic_flag"
+		texturefile = "gfx/flags/medium/PNG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PNG_fascism_flag"
+		texturefile = "gfx/flags/medium/PNG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PNG_neutrality_flag"
+		texturefile = "gfx/flags/medium/PNG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POL_communism_flag"
+		texturefile = "gfx/flags/medium/POL_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POL_democratic_flag"
+		texturefile = "gfx/flags/medium/POL_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POL_fascism_flag"
+		texturefile = "gfx/flags/medium/POL_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POL_neutrality_flag"
+		texturefile = "gfx/flags/medium/POL_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POR_communism_flag"
+		texturefile = "gfx/flags/medium/POR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POR_democratic_flag"
+		texturefile = "gfx/flags/medium/POR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POR_fascism_flag"
+		texturefile = "gfx/flags/medium/POR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_POR_neutrality_flag"
+		texturefile = "gfx/flags/medium/POR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRC_communism_flag"
+		texturefile = "gfx/flags/medium/PRC_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRC_democratic_flag"
+		texturefile = "gfx/flags/medium/PRC_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRC_fascism_flag"
+		texturefile = "gfx/flags/medium/PRC_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRC_neutrality_flag"
+		texturefile = "gfx/flags/medium/PRC_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRU_communism_flag"
+		texturefile = "gfx/flags/medium/PRU_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRU_democratic_flag"
+		texturefile = "gfx/flags/medium/PRU_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRU_fascism_flag"
+		texturefile = "gfx/flags/medium/PRU_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_PRU_neutrality_flag"
+		texturefile = "gfx/flags/medium/PRU_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAJ_communism_flag"
+		texturefile = "gfx/flags/medium/RAJ_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAJ_democratic_flag"
+		texturefile = "gfx/flags/medium/RAJ_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAJ_fascism_flag"
+		texturefile = "gfx/flags/medium/RAJ_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_RAJ_neutrality_flag"
+		texturefile = "gfx/flags/medium/RAJ_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ROM_communism_flag"
+		texturefile = "gfx/flags/medium/ROM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ROM_democratic_flag"
+		texturefile = "gfx/flags/medium/ROM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ROM_fascism_flag"
+		texturefile = "gfx/flags/medium/ROM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ROM_neutrality_flag"
+		texturefile = "gfx/flags/medium/ROM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAF_communism_flag"
+		texturefile = "gfx/flags/medium/SAF_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAF_democratic_flag"
+		texturefile = "gfx/flags/medium/SAF_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAF_fascism_flag"
+		texturefile = "gfx/flags/medium/SAF_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAF_neutrality_flag"
+		texturefile = "gfx/flags/medium/SAF_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAU_communism_flag"
+		texturefile = "gfx/flags/medium/SAU_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAU_democratic_flag"
+		texturefile = "gfx/flags/medium/SAU_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAU_fascism_flag"
+		texturefile = "gfx/flags/medium/SAU_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SAU_neutrality_flag"
+		texturefile = "gfx/flags/medium/SAU_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SER_communism_flag"
+		texturefile = "gfx/flags/medium/SER_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SER_democratic_flag"
+		texturefile = "gfx/flags/medium/SER.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SER_fascism_flag"
+		texturefile = "gfx/flags/medium/SER_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SER_neutrality_flag"
+		texturefile = "gfx/flags/medium/SER_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SHX_communism_flag"
+		texturefile = "gfx/flags/medium/SHX_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SHX_democratic_flag"
+		texturefile = "gfx/flags/medium/SHX_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SHX_fascism_flag"
+		texturefile = "gfx/flags/medium/SHX_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SHX_neutrality_flag"
+		texturefile = "gfx/flags/medium/SHX_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIA_communism_flag"
+		texturefile = "gfx/flags/medium/SIA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIA_democratic_flag"
+		texturefile = "gfx/flags/medium/SIA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIA_fascism_flag"
+		texturefile = "gfx/flags/medium/SIA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIA_neutrality_flag"
+		texturefile = "gfx/flags/medium/SIA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIK_communism_flag"
+		texturefile = "gfx/flags/medium/SIK_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIK_democratic_flag"
+		texturefile = "gfx/flags/medium/SIK_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIK_fascism_flag"
+		texturefile = "gfx/flags/medium/SIK_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SIK_neutrality_flag"
+		texturefile = "gfx/flags/medium/SIK_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SLO_communism_flag"
+		texturefile = "gfx/flags/medium/SLO_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SLO_democratic_flag"
+		texturefile = "gfx/flags/medium/SLO_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SLO_fascism_flag"
+		texturefile = "gfx/flags/medium/SLO_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SLO_neutrality_flag"
+		texturefile = "gfx/flags/medium/SLO_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SOV_communism_flag"
+		texturefile = "gfx/flags/medium/SOV_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SOV_democratic_flag"
+		texturefile = "gfx/flags/medium/SOV_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SOV_fascism_flag"
+		texturefile = "gfx/flags/medium/SOV_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SOV_neutrality_flag"
+		texturefile = "gfx/flags/medium/SOV_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPR_communism_flag"
+		texturefile = "gfx/flags/medium/SPR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPR_democratic_flag"
+		texturefile = "gfx/flags/medium/SPR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPR_fascism_flag"
+		texturefile = "gfx/flags/medium/SPR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SPR_neutrality_flag"
+		texturefile = "gfx/flags/medium/SPR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SVN_communism_flag"
+		texturefile = "gfx/flags/medium/SVN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SVN_democratic_flag"
+		texturefile = "gfx/flags/medium/SVN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SVN_fascism_flag"
+		texturefile = "gfx/flags/medium/SVN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SVN_neutrality_flag"
+		texturefile = "gfx/flags/medium/SVN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWE_communism_flag"
+		texturefile = "gfx/flags/medium/SWE_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWE_democratic_flag"
+		texturefile = "gfx/flags/medium/SWE_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWE_fascism_flag"
+		texturefile = "gfx/flags/medium/SWE_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWE_neutrality_flag"
+		texturefile = "gfx/flags/medium/SWE_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWI_communism_flag"
+		texturefile = "gfx/flags/medium/SWI_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWI_democratic_flag"
+		texturefile = "gfx/flags/medium/SWI_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWI_fascism_flag"
+		texturefile = "gfx/flags/medium/SWI_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SWI_neutrality_flag"
+		texturefile = "gfx/flags/medium/SWI_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SYR_communism_flag"
+		texturefile = "gfx/flags/medium/SYR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SYR_democratic_flag"
+		texturefile = "gfx/flags/medium/SYR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SYR_fascism_flag"
+		texturefile = "gfx/flags/medium/SYR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_SYR_neutrality_flag"
+		texturefile = "gfx/flags/medium/SYR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TAN_communism_flag"
+		texturefile = "gfx/flags/medium/TAN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TAN_democratic_flag"
+		texturefile = "gfx/flags/medium/TAN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TAN_fascism_flag"
+		texturefile = "gfx/flags/medium/TAN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TAN_neutrality_flag"
+		texturefile = "gfx/flags/medium/TAN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TIB_communism_flag"
+		texturefile = "gfx/flags/medium/TIB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TIB_democratic_flag"
+		texturefile = "gfx/flags/medium/TIB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TIB_fascism_flag"
+		texturefile = "gfx/flags/medium/TIB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TIB_neutrality_flag"
+		texturefile = "gfx/flags/medium/TIB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TJK_communism_flag"
+		texturefile = "gfx/flags/medium/TJK_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TJK_democratic_flag"
+		texturefile = "gfx/flags/medium/TJK_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TJK_fascism_flag"
+		texturefile = "gfx/flags/medium/TJK_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TJK_neutrality_flag"
+		texturefile = "gfx/flags/medium/TJK_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TKM_communism_flag"
+		texturefile = "gfx/flags/medium/TKM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TKM_democratic_flag"
+		texturefile = "gfx/flags/medium/TKM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TKM_fascism_flag"
+		texturefile = "gfx/flags/medium/TKM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TKM_neutrality_flag"
+		texturefile = "gfx/flags/medium/TKM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUN_communism_flag"
+		texturefile = "gfx/flags/medium/TUN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUN_democratic_flag"
+		texturefile = "gfx/flags/medium/TUN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUN_fascism_flag"
+		texturefile = "gfx/flags/medium/TUN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUN_neutrality_flag"
+		texturefile = "gfx/flags/medium/TUN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUR_communism_flag"
+		texturefile = "gfx/flags/medium/TUR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUR_democratic_flag"
+		texturefile = "gfx/flags/medium/TUR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUR_fascism_flag"
+		texturefile = "gfx/flags/medium/TUR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_TUR_neutrality_flag"
+		texturefile = "gfx/flags/medium/TUR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_communism_flag"
+		texturefile = "gfx/flags/medium/UKR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_democratic_flag"
+		texturefile = "gfx/flags/medium/UKR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_fascism_flag"
+		texturefile = "gfx/flags/medium/UKR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UKR_neutrality_flag"
+		texturefile = "gfx/flags/medium/UKR_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_URG_communism_flag"
+		texturefile = "gfx/flags/medium/URG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_URG_democratic_flag"
+		texturefile = "gfx/flags/medium/URG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_URG_fascism_flag"
+		texturefile = "gfx/flags/medium/URG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_URG_neutrality_flag"
+		texturefile = "gfx/flags/medium/URG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USA_communism_flag"
+		texturefile = "gfx/flags/medium/USA_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USA_democratic_flag"
+		texturefile = "gfx/flags/medium/USA_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USA_fascism_flag"
+		texturefile = "gfx/flags/medium/USA_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_USA_neutrality_flag"
+		texturefile = "gfx/flags/medium/USA_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UZB_communism_flag"
+		texturefile = "gfx/flags/medium/UZB_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UZB_democratic_flag"
+		texturefile = "gfx/flags/medium/UZB_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UZB_fascism_flag"
+		texturefile = "gfx/flags/medium/UZB_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_UZB_neutrality_flag"
+		texturefile = "gfx/flags/medium/UZB_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VEN_communism_flag"
+		texturefile = "gfx/flags/medium/VEN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VEN_democratic_flag"
+		texturefile = "gfx/flags/medium/VEN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VEN_fascism_flag"
+		texturefile = "gfx/flags/medium/VEN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VEN_neutrality_flag"
+		texturefile = "gfx/flags/medium/VEN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VIN_communism_flag"
+		texturefile = "gfx/flags/medium/VIN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VIN_democratic_flag"
+		texturefile = "gfx/flags/medium/VIN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VIN_fascism_flag"
+		texturefile = "gfx/flags/medium/VIN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_VIN_neutrality_flag"
+		texturefile = "gfx/flags/medium/VIN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_WGR_communism_flag"
+		texturefile = "gfx/flags/medium/WGR_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_WGR_democratic_flag"
+		texturefile = "gfx/flags/medium/WGR_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_WGR_fascism_flag"
+		texturefile = "gfx/flags/medium/WGR_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_WGR_neutrality_flag"
+		texturefile = "gfx/flags/medium/WGR.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_XSM_communism_flag"
+		texturefile = "gfx/flags/medium/XSM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_XSM_democratic_flag"
+		texturefile = "gfx/flags/medium/XSM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_XSM_fascism_flag"
+		texturefile = "gfx/flags/medium/XSM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_XSM_neutrality_flag"
+		texturefile = "gfx/flags/medium/XSM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YEM_communism_flag"
+		texturefile = "gfx/flags/medium/YEM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YEM_democratic_flag"
+		texturefile = "gfx/flags/medium/YEM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YEM_fascism_flag"
+		texturefile = "gfx/flags/medium/YEM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YEM_neutrality_flag"
+		texturefile = "gfx/flags/medium/YEM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUG_communism_flag"
+		texturefile = "gfx/flags/medium/YUG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUG_democratic_flag"
+		texturefile = "gfx/flags/medium/YUG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUG_fascism_flag"
+		texturefile = "gfx/flags/medium/YUG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUG_neutrality_flag"
+		texturefile = "gfx/flags/medium/YUG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUN_communism_flag"
+		texturefile = "gfx/flags/medium/YUN_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUN_democratic_flag"
+		texturefile = "gfx/flags/medium/YUN_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUN_fascism_flag"
+		texturefile = "gfx/flags/medium/YUN_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_YUN_neutrality_flag"
+		texturefile = "gfx/flags/medium/YUN_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ZIM_communism_flag"
+		texturefile = "gfx/flags/medium/ZIM_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ZIM_democratic_flag"
+		texturefile = "gfx/flags/medium/ZIM_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ZIM_fascism_flag"
+		texturefile = "gfx/flags/medium/ZIM_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ZIM_neutrality_flag"
+		texturefile = "gfx/flags/medium/ZIM_neutrality.tga"
+		legacy_lazy_load = no
+	}
+	
+	# League of Nation Cosmetic Tag(s):
+	spriteType = {
+		name = "GFX_LEAGUE_OF_NATIONS_COSMETIC_TAG_communism_flag"
+		texturefile = "gfx/flags/medium/LEAGUE_OF_NATIONS_COSMETIC_TAG_communism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEAGUE_OF_NATIONS_COSMETIC_TAG_democratic_flag"
+		texturefile = "gfx/flags/medium/LEAGUE_OF_NATIONS_COSMETIC_TAG_democratic.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEAGUE_OF_NATIONS_COSMETIC_TAG_fascism_flag"
+		texturefile = "gfx/flags/medium/LEAGUE_OF_NATIONS_COSMETIC_TAG_fascism.tga"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_LEAGUE_OF_NATIONS_COSMETIC_TAG_neutrality_flag"
+		texturefile = "gfx/flags/medium/LEAGUE_OF_NATIONS_COSMETIC_TAG_neutrality.tga"
+		legacy_lazy_load = no
+	}
+}

@@ -1,0 +1,509 @@
+﻿add_namespace = league_of_nations_threat_list_events
+
+# Refresh League of Nations threat list
+country_event = {
+	id = league_of_nations_threat_list_events.1
+	title = league_of_nations_threat_list_events.EVTNAME1
+	desc = league_of_nations_threat_list_events.EVTDESC1
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_1
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_1
+					}
+					clr_country_flag = league_of_nations_threat_country_1
+					clear_global_event_target = league_of_nations_threat_country_1
+					clear_variable = global.league_of_nations_threat_country_1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_2
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_2
+					}
+					clr_country_flag = league_of_nations_threat_country_2
+					clear_global_event_target = league_of_nations_threat_country_2
+					clear_variable = global.league_of_nations_threat_country_2
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_3
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_3
+					}
+					clr_country_flag = league_of_nations_threat_country_3
+					clear_global_event_target = league_of_nations_threat_country_3
+					clear_variable = global.league_of_nations_threat_country_3
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_4
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_4
+					}
+					clr_country_flag = league_of_nations_threat_country_4
+					clear_global_event_target = league_of_nations_threat_country_4
+					clear_variable = global.league_of_nations_threat_country_4
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_5
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_5
+					}
+					clr_country_flag = league_of_nations_threat_country_5
+					clear_global_event_target = league_of_nations_threat_country_5
+					clear_variable = global.league_of_nations_threat_country_5
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_6
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_6
+					}
+					clr_country_flag = league_of_nations_threat_country_6
+					clear_global_event_target = league_of_nations_threat_country_6
+					clear_variable = global.league_of_nations_threat_country_6
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_7
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_7
+					}
+					clr_country_flag = league_of_nations_threat_country_7
+					clear_global_event_target = league_of_nations_threat_country_7
+					clear_variable = global.league_of_nations_threat_country_7
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_8
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_8
+					}
+					clr_country_flag = league_of_nations_threat_country_8
+					clear_global_event_target = league_of_nations_threat_country_8
+					clear_variable = global.league_of_nations_threat_country_8
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_9
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_9
+					}
+					clr_country_flag = league_of_nations_threat_country_9
+					clear_global_event_target = league_of_nations_threat_country_9
+					clear_variable = global.league_of_nations_threat_country_9
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = league_of_nations_threat_country_10
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = league_of_nations_threat_country_10
+					}
+					clr_country_flag = league_of_nations_threat_country_10
+					clear_global_event_target = league_of_nations_threat_country_10
+					clear_variable = global.league_of_nations_threat_country_10
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						check_variable = { league_of_nations_generated_threat > 0 }
+					}
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_1
+					save_global_event_target_as = league_of_nations_threat_country_1
+					set_variable = { global.league_of_nations_threat_country_1 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_2
+					save_global_event_target_as = league_of_nations_threat_country_2
+					set_variable = { global.league_of_nations_threat_country_2 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_3
+					save_global_event_target_as = league_of_nations_threat_country_3
+					set_variable = { global.league_of_nations_threat_country_3 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_4
+					save_global_event_target_as = league_of_nations_threat_country_4
+					set_variable = { global.league_of_nations_threat_country_4 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_5
+					save_global_event_target_as = league_of_nations_threat_country_5
+					set_variable = { global.league_of_nations_threat_country_5 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_6
+					save_global_event_target_as = league_of_nations_threat_country_6
+					set_variable = { global.league_of_nations_threat_country_6 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_7
+					save_global_event_target_as = league_of_nations_threat_country_7
+					set_variable = { global.league_of_nations_threat_country_7 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_8
+					save_global_event_target_as = league_of_nations_threat_country_8
+					set_variable = { global.league_of_nations_threat_country_8 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_9
+					save_global_event_target_as = league_of_nations_threat_country_9
+					set_variable = { global.league_of_nations_threat_country_9 = THIS.id }
+				}
+				random_country = {
+					limit = {
+						NOT = { has_country_flag = league_of_nations_threat_country_1 }
+						NOT = { has_country_flag = league_of_nations_threat_country_2 }
+						NOT = { has_country_flag = league_of_nations_threat_country_3 }
+						NOT = { has_country_flag = league_of_nations_threat_country_4 }
+						NOT = { has_country_flag = league_of_nations_threat_country_5 }
+						NOT = { has_country_flag = league_of_nations_threat_country_6 }
+						NOT = { has_country_flag = league_of_nations_threat_country_7 }
+						NOT = { has_country_flag = league_of_nations_threat_country_8 }
+						NOT = { has_country_flag = league_of_nations_threat_country_9 }
+						NOT = { has_country_flag = league_of_nations_threat_country_10 }
+						check_variable = { league_of_nations_generated_threat > 0 }
+						NOT = {
+							any_other_country = {
+								NOT = { has_country_flag = league_of_nations_threat_country_1 }
+								NOT = { has_country_flag = league_of_nations_threat_country_2 }
+								NOT = { has_country_flag = league_of_nations_threat_country_3 }
+								NOT = { has_country_flag = league_of_nations_threat_country_4 }
+								NOT = { has_country_flag = league_of_nations_threat_country_5 }
+								NOT = { has_country_flag = league_of_nations_threat_country_6 }
+								NOT = { has_country_flag = league_of_nations_threat_country_7 }
+								NOT = { has_country_flag = league_of_nations_threat_country_8 }
+								NOT = { has_country_flag = league_of_nations_threat_country_9 }
+								NOT = { has_country_flag = league_of_nations_threat_country_10 }
+								check_variable = { league_of_nations_generated_threat > PREV.league_of_nations_generated_threat }
+							}
+						}
+					}
+					set_country_flag = league_of_nations_threat_country_10
+					save_global_event_target_as = league_of_nations_threat_country_10
+					set_variable = { global.league_of_nations_threat_country_10 = THIS.id }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = league_of_nations_threat_list_events1.EVTOPT1
+		
+		ai_chance = { factor = 100 }
+	}
+}
