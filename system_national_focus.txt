@@ -9,56 +9,56 @@
 アイコンの座標は、国家方針ウィンドウの絶対座標か、各方針アイコンに対する相対座標であらわされていいる。
 X座標は左端のアイコンの絶対座標がX=0になるように考えて、最初のアイコンの位置を決めるといい。
 
-#focus_tree = {
-#	id = china_communist_focus
-#	country = {
-#		factor = 0
-#		modifier = {
-#			add = 10
-#			tag = PRC
-#			has_dlc = "Waking the Tiger"
-#		}
-#		default = yes / no
-#	}
-#	default = no
-#	continuous_focus_position = { x = 20 y = 1000 }
-#	shared_focus = CHI_invite_foreign_investors
-#	focus = {
-#		id = PRC_
-#		icon = GFX_ ###通常はgoals.gfxに指定されている。
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#		cost = 10 #ここがコストとなる。コスト1につき7日、小数は無理。さらに1日1政治力を消費する。これを詳しく変更することはできない。
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		available = {
-#		}
-#		bypass = {
-#		}
-#    	cancel = {
-#		}
-#		will_lead_to_war_with = <tag>
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#		complete_tooltip = {
-#		}
-#		completion_reward = {
-#		}
-#		historical_ai = {
-#		}    
-#		ai_will_do = {
-#		factor = <float>
-#       modifier = {
-#           factor = <float>
-#           <triggers>
-#       }
-#	}
-#}
+focus_tree = {
+	id = china_communist_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PRC
+			has_dlc = "Waking the Tiger"
+		}
+		default = yes / no
+	}
+	default = no
+	continuous_focus_position = { x = 20 y = 1000 }
+	shared_focus = CHI_invite_foreign_investors
+	focus = {
+		id = PRC_
+		icon = GFX_ ###通常はgoals.gfxに指定されている。
+		prerequisite = { focus = }
+		mutually_exclusive = { focus =  }
+		x = -3
+		y = 0
+		relative_position_id = 
+		cost = 10 #ここがコストとなる。コスト1につき7日、小数は無理。さらに1日1政治力を消費する。これを詳しく変更することはできない。
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		bypass = {
+		}
+    	cancel = {
+		}
+		will_lead_to_war_with = <tag>
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		complete_tooltip = {
+		}
+		completion_reward = {
+		}
+		historical_ai = {
+		}    
+		ai_will_do = {
+		factor = <float>
+       modifier = {
+           factor = <float>
+           <triggers>
+       }
+	}
+}
 
 共通フォーカス
 基本の国家方針に追加する形で機能する国家方針。意外にシンプル。
@@ -66,6 +66,8 @@ X座標は左端のアイコンの絶対座標がX=0になるように考えて�
 共通フォーカスの最初のものの座標は、国家方針ウィンドウの絶対座標で指定される。
 つながってないツリーを同時に導入することはできず、ツリーの最初の方針は基本国家方針の中に別々に明記する必要がある。
 しかし、相対位置は共通方針どうしの関係で指定することができる。
+この位置関係は、指定した共通方針が実際にはロードされなくても保存される。
+おそらく、絶対位置指定されているなにかの方針に合わせてあれば位置は決定できると思われる。
 中国を基にした定義は以下の通り。効果などの書き方は国家方針と変わらず、方針ツリーというよりも、追加可能な方針として機能している。
 
 shared_focus = {
