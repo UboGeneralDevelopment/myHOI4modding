@@ -13,7 +13,7 @@ struct Params
 
 	int voxels_x, voxels_y, voxels_z;//入力ボリュームのボクセルサイズ
 
-	float projection_phi, projection_theta;//最初の投影方向
+	float projection_phi, projection_theta;//投影方向ベクトル
 	
 	//ここまでがテキストファイルによる入力
 	//int step;//レイマーチングのステップ長。ボクセル長さを1とする相対値
