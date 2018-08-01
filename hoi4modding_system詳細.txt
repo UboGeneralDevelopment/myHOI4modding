@@ -1,0 +1,50 @@
+﻿
+使えそうな豆情報まとめ
+
+
+#########commands
+
+#########tigger
+
+#########modifier
+
+production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
+consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
+production_oil_factor　石油のみに適用される生産ボーナス。
+min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
+
+日本語wikiには英語wikiにないmodiferの情報も多いが、使えるか怪しい情報もある、
+
+#########variables
+
+ゲーム内変数のうち、細かいところ。
+
+
+resource@...　現在保持している余剰の資源量を示す。採掘量+輸入-輸出枠-消費量。反映は少し遅れる
+resource@steel
+resource@alminium　という風に用いる。
+
+resource_consumed 消費量。
+resource_exported 輸出枠。実際の輸出量ではなく、法律による輸出枠分
+resource_imported 輸入量
+resource_produced 採掘量
+ここからわかるとおり、実際の輸出量は変数からは分からない。すべての国の輸入量を足せば世界の総輸入量は計算可能。
+
+num_of_available_civilian_factories　仕事してない民間工場
+num_of_available_military_factories　仕事してない軍事工場
+num_of_available_naval_factories　仕事してない海軍工廠
+num_of_civilian_factories　輸出と従属国による増加含む全民間工場から、輸入用工場数を引いた数。
+num_of_civilian_factories_available_for_projects　全工場数から消費財工場数と輸入用工場数を引いた民間工場数。建設に使用可能な工場数。
+num_of_controlled_states
+num_of_factories　保有している軍事、民間などの全工場数。輸出と従属国増加を含む。
+num_of_military_factories
+num_of_naval_factories
+<buildings> arms factory,industrial complex, などで、国内の建築物の総量がわかるかもしれない？
+
+
+modifier@...でモディファー内容を参照可能。
+
+
+
+
+
