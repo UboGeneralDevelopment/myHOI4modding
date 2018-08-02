@@ -1,6 +1,8 @@
 ﻿
 使えそうな豆情報まとめ
-
+debugモードにて
+trigger_docs
+で色々見れる
 
 #########commands
 
