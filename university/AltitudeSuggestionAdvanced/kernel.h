@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 
 #include<string>
 
@@ -25,6 +25,5 @@ struct Params
 	float projection_radius; //投影像の一片の長さ内部で計算する
 	int projection_sides;//投影像の一片の長さを整数に丸めたもの　内部で計算する
 	
-	//再構成範囲
-	//光軸中心の横ずれ、縦ずれ
+
 };
