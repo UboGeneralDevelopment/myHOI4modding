@@ -1,0 +1,8 @@
+﻿
+
+
+加筆中
+
+
+DefinesとAutonomious_states
+の両方を書き直す必要がある。
