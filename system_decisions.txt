@@ -27,6 +27,7 @@ availableは実際に実行可能な条件を制限する。
 ディシジョン実行期間中の修正をmodifierで設定
 ディシジョン終了時のコマンドをremove_effectで設定。
 できる。modifer、commandなど色々使えてなかなかに便利。
+remove_trigger = { has_war = no }で実行を強制終了できる。この場合はおそらくremove_effectも発動する。
 
 そして
 
