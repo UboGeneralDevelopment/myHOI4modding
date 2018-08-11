@@ -1,0 +1,284 @@
+﻿capital = 64
+
+add_named_threat = { threat = 5 name = 1920_bookmark_threat }
+
+oob = "VAT_1920"
+
+set_research_slots = 4
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	gwtank = 1
+	basic_light_tank = 1
+	improved_light_tank = 1
+	basic_heavy_tank = 1
+	early_fighter = 1
+	fighter1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	strategic_bomber1 = 1
+	CAS1 = 1
+	naval_bomber1 = 1
+	early_submarine = 1
+	basic_submarine = 1
+	early_destroyer = 1
+	basic_destroyer = 1
+	early_light_cruiser = 1
+	basic_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	early_battlecruiser = 1
+	mobile_warfare = 1
+	trade_interdiction = 1
+	formation_flying = 1
+	synth_oil_experiments = 1
+	transport = 1
+	mage_orb = 1
+	tech_magic_recon = 1
+}
+
+1923.6.1 = {
+	add_named_threat = { threat = 5 name = 1923_bookmark_threat }
+
+	add_political_power = 1197
+	
+	oob = "GER_1939"
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	create_wargoal = {
+		type = puppet_wargoal_focus
+		target = REG
+	}
+
+	set_technology = {
+		improved_light_tank = 1 
+		basic_medium_tank = 1 
+		CAS2 = 1
+		heavy_fighter1 = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		improved_infantry_weapons = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		paratroopers = 1
+		basic_heavy_cruiser = 1
+		improved_heavy_cruiser = 1
+		basic_battleship = 1
+		improved_battleship = 1
+
+		#doctrines
+		delay = 1
+		elastic_defence = 1
+		armored_spearhead = 1
+		schwerpunk = 1
+		blitzkrieg = 1
+		convoy_interdiction_ti = 1
+		unrestricted_submarine_warfare = 1
+		raider_patrols = 1
+		#air
+		formation_flying = 1		
+		dive_bombing = 1
+		direct_ground_support = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		decimetric_radar = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		construction4 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+		dispersed_industry4 = 1
+
+	}
+}
+
+add_ideas = {
+	hegemony_country
+	plan315
+}
+# DIPLOMACY
+if = {
+	limit = {
+		has_dlc = "Death or Dishoner"
+	}
+	set_autonomy = {
+		target = HIL
+		autonomous_state = autonomy_satellite
+	}
+
+	else = {
+		puppet = HIL
+	}
+}
+set_politics = {
+
+	parties = {
+		neutrality = { 
+			popularity = 55
+		}
+
+		fascism = {
+			popularity = 10
+		}
+
+		democratic = {
+			popularity = 21
+		}
+		
+		communism = {
+			popularity = 14
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1914.11.9"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_convoys = 200
+set_stability = 0.50
+
+create_faction = Empire
+add_to_faction = VAT
+
+create_country_leader = {
+	name = "Kurt Schuschnigg"
+	desc = "POLITICS_KURT_SCHUSCHNIGG_DESC"
+	picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Karl Renner"
+	desc = "POLITICS_KARL_RENNER_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Emperor"
+	desc = "POLITICS_EMPEROR_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Alfred Klahr"
+	desc = "POLITICS_ALFRED_KLAHR_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Tanya von Degurechaff"
+	picture = "Portrait_Vaterland_Tanya_Degurechaff.dds"
+	traits = { trickster panzer_leader commando }
+	skill = 4
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Erich von Rerugen"
+	picture = "Portrait_Vaterland_Erich_von_Rerugen.dds"
+	traits = { trickster }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_field_marshal = {
+	name = "Hans von Zettour"
+	picture = "Portrait_Vaterland_Hans_von_Zettour.dds"
+	traits = { defensive_doctrine thorough_planner }
+	skill = 4
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_field_marshal = {
+	name = "Kurt von Rudersdorf"
+	picture = "Portrait_Vaterland_Kurt_von_Rudersdorf.dds"
+	traits = { offensive_doctrine fast_planner }
+	skill = 4
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_field_marshal = {
+	name = "Heinrich Schreise"
+	picture = "Portrait_Vaterland_Heinrich_Schreise.dds"
+	traits = { logistics_wizard }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_field_marshal = {
+	name = "Moritz Pohl von Hans"
+	picture = "Portrait_Vaterland_Moritz_Pohl_von_Hans.dds"
+	traits = { defensive_doctrine }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
