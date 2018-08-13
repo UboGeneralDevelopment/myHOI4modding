@@ -27,3 +27,13 @@ create_field_marshal
 create_corps_commander
 create_navy_leader
 ってなかんじ。
+
+
+statesではstatesの初期設定を行う。
+所有権については、
+owner　本来の所有者
+controller　現在の所有者
+core　コアがある
+claim　主張されている
+がある。
+初期設定では首都と地続きのステートにownerが設定されていればそこはコアつきになる。
