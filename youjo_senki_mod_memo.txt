@@ -1,4 +1,29 @@
 ﻿
+error
+[12:52:33][idea.cpp:579]: Idea DAC_pzinz_rom_0 equipment_bonus. No valid type of equipment: light_tank
+[12:52:33][idea.cpp:579]: Idea REG_bofors equipment_bonus. No valid type of equipment: category_artillery
+[12:52:34][triggerimplementation.cpp:3913]: Invalid focus scripted in trigger. has_completed_focus = { (Error in trigger:has_completed_focus)
+[12:52:34][triggerimplementation.cpp:3799]: Wrong ideology: Error in trigger:has_government
+[12:52:34][triggerimplementation.cpp:3799]: Wrong ideology: Error in trigger:has_government
+[12:52:48][id.cpp:85]: Failed to create id 410 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 402 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 407 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 411 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 406 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 409 55. Already exists in game.
+[12:52:48][id.cpp:85]: Failed to create id 403 55. Already exists in game.
+[12:52:58][gamestate.cpp:4683]: 10 -  Warszawa has too many buildings : -4
+[12:52:58][gamestate.cpp:4683]: 37 -  Sjaelland has too many buildings : -4
+[12:52:58][gamestate.cpp:4683]: 43 -  Northern Hungary has too many buildings : -4
+[12:52:58][gamestate.cpp:4683]: 99 -  Jutland has too many buildings : -1
+[12:52:58][gamestate.cpp:4683]: 154 -  Alföld has too many buildings : -1
+[12:52:58][gamestate.cpp:4683]: 155 -  Transdanubia has too many buildings : -1
+[12:52:58][gamestate.cpp:4683]: 271 -  Ethiopia has too many buildings : -2
+[12:52:58][gamestate.cpp:4683]: 318 -  Haiti has too many buildings : -1
+[12:52:58][gamestate.cpp:4683]: 319 -  Dominican Republic has too many buildings : -2
+
+
+
 ###直近の作業###
 
 常に考慮すべき
@@ -12,6 +37,7 @@ Historyの国家ステータス(技術、ナショナルフォーカス)の再�
 
 #優先順位1
 国家配置関連
+帝国非中核州。従属集扱いはやめてマネジメントシステムを導入する。
 帝国従属国レベル
 １統合区域　ほぼ本国扱い。
 ２傀儡地域　
