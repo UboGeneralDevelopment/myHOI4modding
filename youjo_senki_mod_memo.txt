@@ -12,15 +12,6 @@ error
 [12:52:48][id.cpp:85]: Failed to create id 406 55. Already exists in game.
 [12:52:48][id.cpp:85]: Failed to create id 409 55. Already exists in game.
 [12:52:48][id.cpp:85]: Failed to create id 403 55. Already exists in game.
-[12:52:58][gamestate.cpp:4683]: 10 -  Warszawa has too many buildings : -4
-[12:52:58][gamestate.cpp:4683]: 37 -  Sjaelland has too many buildings : -4
-[12:52:58][gamestate.cpp:4683]: 43 -  Northern Hungary has too many buildings : -4
-[12:52:58][gamestate.cpp:4683]: 99 -  Jutland has too many buildings : -1
-[12:52:58][gamestate.cpp:4683]: 154 -  Alföld has too many buildings : -1
-[12:52:58][gamestate.cpp:4683]: 155 -  Transdanubia has too many buildings : -1
-[12:52:58][gamestate.cpp:4683]: 271 -  Ethiopia has too many buildings : -2
-[12:52:58][gamestate.cpp:4683]: 318 -  Haiti has too many buildings : -1
-[12:52:58][gamestate.cpp:4683]: 319 -  Dominican Republic has too many buildings : -2
 
 
 
