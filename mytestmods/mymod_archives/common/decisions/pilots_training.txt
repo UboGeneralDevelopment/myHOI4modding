@@ -28,7 +28,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	expand_air_school_2 = {
@@ -59,7 +59,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	expand_air_school_3 = {
@@ -90,7 +90,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	expand_air_school_4 = {
@@ -121,7 +121,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	expand_air_school_5 = {
@@ -152,7 +152,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -179,7 +179,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -206,7 +206,7 @@ pilots_training_division = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 

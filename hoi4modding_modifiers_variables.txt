@@ -4,18 +4,34 @@ debugモードにて
 trigger_docs
 で色々見れる
 
-#########commands
 
-#########tigger
 
 #########modifier
+
+modifierは基本的には定数表記である。変数で変化させることはできない。modifierの変化は段階的に、離散的に行う必要がある。
+
+modifierには作用対象によって使用可能なものと実装方式が決まっている。
+国家へのmodifierはアイデアやディシジョンにほとんど紐づく
+特定の研究のmodifierは研究に紐づき、コマンドで呼び出す
+stateへのmodifierはステートそのものにくっついており、modifierそのものをステートにコマンドでひっつけることができる
+
 
 production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
 consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
 production_oil_factor　石油のみに適用される生産ボーナス。
 min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
 
-日本語wikiには英語wikiにないmodiferの情報も多いが、使えるか怪しい情報もある、
+modiferの情報はあちこち散逸しており、調べるのが大変。
+
+コマンドで付けられるステート修正についてはここで一応まとめとく。
+local_resources_factor
+local_non_core_manpower
+local_building_slots_factor(稼働しているか不明)
+
+できそうなことについて
+レジスタンス成長
+建設速度
+state categoryによるmodifierの設定。
 
 #########variables
 

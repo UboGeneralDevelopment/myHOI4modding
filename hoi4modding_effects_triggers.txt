@@ -1,10 +1,7 @@
-[15:13:10][defines.cpp:135]: 2071 defines loaded
-[15:14:15][gamestate.cpp:1816]: Loaded 13206 provinces.
-[15:14:17][gameapplication.cpp:1942]: Resetting game
-[15:20:26][gameapplication.cpp:1942]: Resetting game
-[15:20:27][history.cpp:184]: Executing History from -1.1.1.1 to  2.1.1.1
-[15:20:27][history.cpp:184]: Executing History from 2.1.1.1 to  1920.1.1.12
-[15:20:35][frontend.cpp:651]: 
+
+
+
+effectsÇ∆triggersÇÃàÍóó
 
 		[[ Launching SINGLEPLAYER-game ]]
 	Start-date: 1920.1.1.12
@@ -1448,12 +1445,12 @@ Supported scopes: country
 
 Supported targets:
 
-has_attache - Has attachÈ from any other country
+has_attache - Has attachÅEfrom any other country
 Supported scopes: country
 
 Supported targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL
 
-has_attache_from - Has attachÈ from specified country
+has_attache_from - Has attachÅEfrom specified country
 Supported scopes: country
 
 Supported targets: THIS ROOT PREV FROM OWNER CONTROLLER CAPITAL
