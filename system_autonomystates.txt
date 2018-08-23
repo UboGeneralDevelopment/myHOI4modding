@@ -6,3 +6,31 @@
 
 DefinesとAutonomious_states
 の両方を書き直す必要がある。
+
+主なrule
+can_not_declare_war　宣戦布告の可否
+can_decline_call_to_war　戦争協力拒否の可否
+units_deployed_to_overload　部隊の宗主国への移転
+
+主なmodifier
+
+cic_to_target_factor　民需工場を献上
+mic_to_target_factor　軍需工場を献上
+extra_trade_to_target_factor　対象国への輸出量が増える
+trade_cost_for_target_factor　対象国への輸出コストが変わる
+
+targetはoverloadとかでできる。
+
+can_master_build_for_us 宗主国による建設
+
+autonomy_manpower_share　植民地兵力割合
+
+conscription_factor　徴兵減少割合
+
+research_sharing_per_cuntry_modifier　技術グループへの貢献度
+
+license_subject_master_purchase_cost ライセンス料金変化
+
+autonomy_gain_global_factor 自治ポイント獲得減少量
+
+
