@@ -83,7 +83,8 @@ decision のテンプレート
 
 ##########targeted_decisions
 
-別国家に対して効果を発動できる。triggerで条件指定するか、直接TAG指定する。
+特定の条件を満たす国家をFROMでターゲットに指定して効果を発動できる。triggerで条件指定できる。
+
 trigger指定のtarget_decisionだとしてもコマンドでTAG指定で発動させられる。
 activate_targeted_decision = {
 	target = <TAG>
@@ -96,12 +97,16 @@ activate_targeted_decision = {
 		
 		allowed = { <triggers> }
 		visible = { <triggers> }
-		available = { <triggers> }
 		
 		target_trigger ={
 			FROM = { <triggers> } #FROMがターゲット国であり、triggerを満たす国がターゲットになる。直接TAG指定してもよい。
 		}
-
+		
+		available = {
+			FROM = { <triggers> }#実行条件にターゲット国の条件が付く場合、ここで指定する
+			<triggers>
+		}　
+		
 		custom_cost_trigger = { <triggers>　} #政治力以外をコストにしたいとき。ぶっちゃけcomplete_effectでいい。
 		
 		cost = <int>
