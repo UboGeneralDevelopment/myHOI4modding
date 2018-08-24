@@ -1,0 +1,6 @@
+﻿l_english:
+  trade_war_category:0 "Trade War"
+  trade_war_category_desc:0 "We should raise prices of our important raw resources"
+  democratic_neutral_trade_war_against:0 "Trade War Against [From.GetName]"
+  fascism_communism_trade_war_against:0 "Trade War Against [From.GetName]"
+  cancel_trade_war_against:0 " Cease Trade War against [From.GetName]"

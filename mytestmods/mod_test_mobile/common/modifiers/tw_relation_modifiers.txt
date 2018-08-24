@@ -1,0 +1,39 @@
+
+###references###
+#
+# All global modifiers are here. They are applied from certain game-features.
+# Effects are fully scriptable here.
+# These names can NOT be removed or changes, as the code uses them....
+#
+#
+# On States
+#non_core = {
+#	local_building_slots_factor = -0.5
+#}
+#lacking_consumer_goods = {
+#}
+#
+# license production
+#free_license = {
+#	valid_relation_trigger = {
+#		FROM = {
+#			NOT = { has_war_with = ROOT }
+#		}
+#	}
+#	license_purchase_cost = 0 #no base cost
+#	license_production_speed = 0.25 #speed  increase for being a license
+#	license_tech_difference_speed = 0.25 #less cost increase for each tech level between the license and own tech level 
+#}
+#
+#attache_sent = {
+#	war_support_factor = 0.1
+#}
+#
+######
+
+###added_relation_modifiers###
+
+trade_war_against = {
+	trade_cost_for_target_factor = 7.0
+	#extra_trade_to_target_factor = -0.8 #seems does not have intended effect
+}

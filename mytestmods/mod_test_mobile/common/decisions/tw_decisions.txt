@@ -1,0 +1,104 @@
+trade_war_category = {
+
+	democratic_neutral_trade_war_against = {
+		icon = trade_war_against
+		
+		visible = {
+			OR = { 
+				has_government = neutrality
+				has_government = democratic
+			}
+		}
+		available = {}
+		
+		target_trigger = {
+			has_opinion = {
+				target = FROM
+				value < -15
+			}
+			FROM = {
+				has_added_tension_amount > 5
+			}
+		}
+
+		complete_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+		}
+	}
+
+	fascism_communism_trade_war_against = {
+		icon = trade_war_against
+		
+		visible = {
+			OR = { 
+				has_government = fascism
+				has_government = communism
+			}
+		}
+
+		available = {}
+		
+		target_trigger = {
+			has_opinion = {
+				target = FROM
+				value < -15
+			}
+		}
+
+		complete_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+		}
+	}
+
+	cancel_trade_war_against = {
+
+		icon = cancel_trade_war_against
+		
+		target_trigger = {
+			has_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+		}
+		
+		available = {}
+		
+		complete_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+		}
+	}
+	
+}
+
+
+trade_war_test_category = {
+	nearly_unlimited_trade_war_against = { ###test_decision###
+		icon = trade_war_against
+		
+		allowed = { always = no }
+		visible = { always = no }
+		
+		target_trigger = {
+			has_opinion = {
+				target = FROM
+				value < -10
+			}
+		}
+
+		complete_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+		}
+	}
+}
