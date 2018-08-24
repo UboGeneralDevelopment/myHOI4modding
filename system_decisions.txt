@@ -49,6 +49,11 @@ remove_trigger = { has_war = no }で実行を強制終了できる。この場�
 
 decision のテンプレート
 
+<icon_name>は、gfxファイルにおいては
+GFX_decision_categories_<icon_name>
+GFX_decision_<icon_name>
+となっている。iconのサイズはちがい、互換性はない。
+
 ##########categories
 
 <decision_category_name> = {
