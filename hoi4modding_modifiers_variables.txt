@@ -23,6 +23,10 @@ min_export　Modifies the % of goods that need to be exported　多分輸出枠�
 
 modiferの情報はあちこち散逸しており、調べるのが大変。
 
+targeted_modifier
+めちゃクソ便利そうなのに地味に使いづらい。基本的にはideaで機能し、decisionでは機能しない。
+targetはidea内で固定的に指定する必要があるため、ダイナミックにできない。くそ。
+
 コマンドで付けられるステート修正についてはここで一応まとめとく。
 local_resources_factor
 local_non_core_manpower
