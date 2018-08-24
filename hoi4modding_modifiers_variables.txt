@@ -11,7 +11,7 @@ trigger_docs
 modifierは基本的には定数表記である。変数で変化させることはできない。modifierの変化は段階的に、離散的に行う必要がある。
 
 modifierには作用対象によって使用可能なものと実装方式が決まっている。
-国家へのmodifierはアイデアやディシジョンにほとんど紐づく
+国家へのmodifierはアイデアやディシジョンにほとんど紐づいているため、ダイナミックに作り出すことも難しい。
 特定の研究のmodifierは研究に紐づき、コマンドで呼び出す
 stateへのmodifierはステートそのものにくっついており、modifierそのものをステートにコマンドでひっつけることができる
 
@@ -21,7 +21,7 @@ consumer_goods_factor　消費財の割合。モディファーの合計が最�
 production_oil_factor　石油のみに適用される生産ボーナス。
 min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
 
-modiferの情報はあちこち散逸しており、調べるのが大変。
+modiferの情報はcommandやtriggerのようにまとまっておらずあちこち散逸しており、調べるのが大変。
 
 targeted_modifier
 めちゃクソ便利そうなのに地味に使いづらい。基本的にはideaで機能し、decisionでは機能しない。
@@ -36,6 +36,13 @@ local_building_slots_factor(稼働しているか不明)
 レジスタンス成長
 建設速度
 state categoryによるmodifierの設定。
+
+特殊なmodifier
+
+targeted_modifier
+
+relation_modifier
+おそらく唯一ダイナミックにmodifierを作ることができるもの
 
 #########variables
 
