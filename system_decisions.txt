@@ -44,3 +44,177 @@ remove_trigger = { has_war = no }で実行を強制終了できる。この場�
 目標維持の場合は、基本的に目標が達成された状態でミッションが発動され、cancel_triggerでミッションを終了する。
 この場合、成功報酬はtimeout_effectでえられる。
 
+decision のテンプレート
+
+##########categories
+
+<decision_category_name> = {
+	icon = <icon_name>
+	allowed = { <triggers> }
+	visible = { <triggers> }
+	available = { <triggers> }
+}
+
+##########decisions
+
+<decision_category_name> = {
+	<decision_name> = {
+		icon = <icon_name>
+		
+		allowed = { <triggers> }
+		visible = { <triggers> }
+		available = { <triggers> } #この辺で入手条件を規定
+		
+		cost = <int>
+
+		days_remove = <int> #decision実行後、消えるまでの時間
+		fire_only_once = <yes/no> #一回のみかどうか
+		days_re_enable = <int> #decision再実行までの時間
+		
+		complete_effect = { <effects> }　#decision実行時の効果
+		modifier = { <modifiers> }　#decision実行後、きえるまでつづくmodifier
+		remove_effect = { <effects> } #decisionが消えた時の効果
+		
+		remove_trigger = <triggers> #decisionが問答無用で消える条件
+	}
+}
+
+個々のものは基本的な一例で、ほかにもいろいろ書き方はあると思うので調べとけ。
+
+##########targeted_decisions
+
+別国家に対して効果を発動できる。triggerで条件指定するか、直接TAG指定する。
+trigger指定のtarget_decisionだとしてもコマンドでTAG指定で発動させられる。
+activate_targeted_decision = {
+	target = <TAG>
+	decision = <decision_name>
+}
+
+<decision_category_name> = {
+	<decision_name> = {
+		icon = <icon_name>
+		
+		allowed = { <triggers> }
+		visible = { <triggers> }
+		available = { <triggers> }
+		
+		target_trigger ={
+			FROM = { <triggers> } #FROMがターゲット国であり、triggerを満たす国がターゲットになる。直接TAG指定してもよい。
+		}
+
+		custom_cost_trigger = { <triggers>　} #政治力以外をコストにしたいとき。ぶっちゃけcomplete_effectでいい。
+		
+		cost = <int>
+		days_remove = <int>
+		fire_only_once = <yes/no>
+		days_re_enable = <int>
+		
+		complete_effect = { 
+			FROM = { <effects> } #targetにされたFROMの国がeffectsを発動。modifer,remove_effectも同様。
+		}
+		modifier = { <modifiers> }
+		remove_effect = {<effects> }
+		
+		remove_trigger = <triggers>
+	}
+}
+
+##########missions
+decisionシステムを用いた亜種。以下が基本形
+
+<decision_category_name> = {
+	<mission_name> = {
+		icon = <icon_name>
+		
+		allowed = { <triggers> }
+		visible = { <triggers> }
+		
+		highlight_states　= { state = <state_id> } #stateをハイライト
+
+		fire_only_once = <yes/no>
+		is_good = <yes/no> #noだとミッション失敗の時に悲惨な結果になりそうな見た目になる
+		
+		activation = { <triggers> }	#ミッション発動の条件。ここではtriggerを満たすと自動発動。		
+		available = { <triggers> } #ミッション達成条件。selectableでなければtriggersをみたせば自動達成				
+		days_mission_timeout = <int> #ミッション制限時間
+		selectable_mission <yes/no> #yesだとミッション達成を実行するかしないか選べる		
+
+		complete_effect = { <effects> }
+		timeout_effect = {<effects> }	
+
+	}
+}
+
+
+満州の馬賊討伐missionやmeffobillはdecisionも組み合わせた複雑怪奇なもので、
+decisionとmissionをくみあわせるといろいろできるという例になる。
+以下はディシジョンで発動し、期間中目標を達成し続けるミッションの例。
+
+<decision_category_name> = {
+	<mission_activation_decision> = {#missionを発動するためのディシジョン
+		icon = <icon_name>
+		
+		allowed = { <triggers> }
+		visible = { <triggers> }
+		available = { <triggers> }
+		
+		cost = <int>
+		days_remove = <int>
+		fire_only_once = <yes/no>
+		days_re_enable = <int>
+		
+		complete_effect = {
+			activate_mission = <mission_name>
+			<effects>
+		}　#これでmissionを発動する。
+
+	}
+	
+	<mission_name> = {
+		icon = <icon_name>
+		
+		allowed = { always = no } #ディシジョンで発動するので基本的に禁じる
+		visible = { }
+
+		fire_only_once = <yes/no>
+		is_good = <yes/no>
+		
+		activation = { always = no } #ディシジョンで発動するので基本的に禁じる			
+		available = { always = no } #ミッションは途中で達成されることはない。				
+		days_mission_timeout = <int> #ミッション制限時間
+		cancel_trigger = { <triggers> }	#ミッション実行解除の条件。これを満たすとミッション中断
+		timeout_effect = {<effects> }　#ミッション達成時の効果
+		
+	}
+}
+
+以下はミッションの達成未達成にかかわらず、期間が切れてから効果が発動するタイプのミッションの例。加筆中
+
+<decision_category_name> = {
+	<mission_name> = {
+		icon = <icon_name>
+		
+		allowed = { <triggers> }
+		visible = { <triggers> }
+		
+		highlight_states　= { state = <state_id> } #stateをハイライト
+
+		fire_only_once = <yes/no>
+		is_good = <yes/no> #noだとミッション失敗の時に悲惨な結果になりそうな見た目になる
+		
+		activation = { <triggers> }	#ミッション発動の条件。ここではtriggerを満たすと自動発動。		
+		
+		available = { <triggers> } #ミッション達成条件。selectableでなければtriggersをみたせば自動達成						
+		selectable_mission <yes/no> #yesだとミッション達成を実行するかしないか選べる		
+
+		days_mission_timeout = <int> #ミッション制限時間
+		days_remove = <int> #ミッション達成時に効果を発動したい時間を指定
+
+		remove_effect = { <effects> } #ミッション達成時に制限時間を達成した後の効果
+		complete_effect = { <effects> }　#ミッション達成時の効果
+		timeout_effect = { <effects> }	#ミッション失敗時の効果
+
+	}
+}
+
+
