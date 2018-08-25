@@ -1,23 +1,40 @@
 trade_war_category = {
 
+
+
 	democratic_neutral_trade_war_against = {
 		icon = trade_war_against
-		
-		visible = {
+		allowed = {
 			OR = { 
 				has_government = neutrality
 				has_government = democratic
 			}
 		}
-		available = {}
+		
+		available = {
+			NOT = {
+				has_relation_modifier = {
+					target = FROM
+					modifier = trade_war_against
+				}
+			}
+		}
 		
 		target_trigger = {
-			has_opinion = {
-				target = FROM
-				value < -15
-			}
-			FROM = {
-				has_added_tension_amount > 5
+			OR = {
+				AND = {
+					has_opinion = {
+						target = FROM
+						value < -15
+					}
+					FROM = { has_added_tension_amount > 5 }
+				}
+				FROM = {
+					has_relation_modifier = {
+						target = ROOT
+						modifier = trade_war_against
+					}
+				}
 			}
 		}
 
@@ -26,25 +43,76 @@ trade_war_category = {
 				target = FROM
 				modifier = trade_war_against
 			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+			#every_country = {
+			#	limit = { is_subject_of = ROOT }
+			#	activate_targeted_decision = { 
+			#		target = FROM
+			#		decision = subject_trade_war_cooperation
+			#	}
+			#}
+			all_allied_country = {
+				activate_targeted_decision = { 
+					target = FROM
+					decision = allies_trade_war_cooperation
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+			#AI embargo when player did
+			modifier = {
+				factor = 200
+				has_opinion_modifier = {
+					target = FROM
+					modifier = trade_war_opinion
+				}
+			}
 		}
 	}
 
+	
+	
+	
+	
 	fascism_communism_trade_war_against = {
 		icon = trade_war_against
 		
-		visible = {
+		allowed = {
 			OR = { 
 				has_government = fascism
 				has_government = communism
 			}
 		}
 
-		available = {}
+		available = {
+			NOT = {
+				has_relation_modifier = {
+					target = FROM
+					modifier = trade_war_against
+				}
+			}
+		}
 		
 		target_trigger = {
-			has_opinion = {
-				target = FROM
-				value < -15
+			OR = {
+				has_opinion = {
+					target = FROM
+					value < -10
+				}
+				FROM = {
+					has_relation_modifier = {
+						target = ROOT
+						modifier = trade_war_against
+					}
+				}
 			}
 		}
 
@@ -53,8 +121,87 @@ trade_war_category = {
 				target = FROM
 				modifier = trade_war_against
 			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+			all_allied_country = {
+				activate_targeted_decision = { 
+					target = FROM
+					decision = allies_trade_war_cooperation
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+			
+			#AI embargo when player did
+			modifier = {
+				factor = 200	
+				has_opinion_modifier = {
+					target = FROM
+					modifier = trade_war_opinion
+				}
+			}
 		}
 	}
+
+	
+	
+	
+
+	allies_trade_war_cooperation = { #mission
+
+		icon = trade_war_against
+
+		allowed = { always = no	}
+		#only triggered by allies trade war decision 
+		
+		available = {
+			NOT = {
+				has_relation_modifier = {
+					target = FROM
+					modifier = trade_war_against
+				}
+			}
+		}
+		
+		activation = { always = no }
+		
+		selectable_mission = yes
+		
+		fire_only_once = yes
+		
+		days_mission_timeout = 10
+		
+		timeout_effect = { }
+
+		complete_effect = {
+			add_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+		
+	}
+
+
+
+
 
 	cancel_trade_war_against = {
 
@@ -74,23 +221,94 @@ trade_war_category = {
 				target = FROM
 				modifier = trade_war_against
 			}
+			FROM = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+			all_allied_country = {
+				activate_targeted_decision = { 
+					target = FROM
+					decision = cancel_allies_trade_war_cooperation
+				}
+			}
+		}
+		
+		#ai cease trade war when player stop
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 200
+				NOT = {
+					has_opinion_modifier = {
+						target = FROM
+						modifier = trade_war_opinion
+					}
+				}
+			}
+		}
+	}
+
+
+	
+	cancel_allies_trade_war_cooperation = {
+	
+		icon = generic_industry
+		
+		allowed = { always = no } 
+		#only triggerd by allies cease trade war decision
+		
+		available = { always = yes }
+		
+		activation = { always = no }
+		
+		selectable_mission = yes
+		
+		fire_only_once = yes
+		
+		days_mission_timeout = 10
+		
+		timeout_effect = { }
+		
+		complete_effect = {
+			remove_relation_modifier = {
+				target = FROM
+				modifier = trade_war_against
+			}
+			FROM = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+		}
+		
+		#AI always stop embergo when trade war is over 
+		ai_will_do = {
+			factor = 200
 		}
 	}
 	
 }
 
 
+
+
+
 trade_war_test_category = {
-	nearly_unlimited_trade_war_against = { ###test_decision###
+	###test_decision###
+	nearly_unlimited_trade_war_against = { 
 		icon = trade_war_against
 		
-		allowed = { always = no }
-		visible = { always = no }
+		allowed = { }
+		visible = { }
+		available = { }
 		
 		target_trigger = {
 			has_opinion = {
 				target = FROM
-				value < -10
+				value < -0
 			}
 		}
 
@@ -99,6 +317,22 @@ trade_war_test_category = {
 				target = FROM
 				modifier = trade_war_against
 			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = trade_war_opinion
+				}
+			}
+			all_allied_country = {
+				activate_targeted_decision = { 
+					target = FROM
+					decision = allies_trade_war_cooperation
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }
