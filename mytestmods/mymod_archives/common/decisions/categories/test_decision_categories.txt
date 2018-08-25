@@ -1,0 +1,17 @@
+civilian_industry_decisions = {
+
+	icon = generic_political_actions
+	
+	allowed = {
+		always = yes
+	}
+	
+}
+
+test_decisions = {
+
+	icon = generic_political_actions
+	visible = {
+
+	}
+}

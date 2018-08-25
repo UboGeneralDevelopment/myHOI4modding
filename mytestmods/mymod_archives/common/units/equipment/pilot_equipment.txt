@@ -7,15 +7,17 @@ equipments = {
 		picture = archetype_support_equipment
 		is_buildable = no
 		active = yes
-		type = { fighter interceptor }
+		type = {
+			infantry
+		}
 		group_by = archetype
 		
-		interface_category = interface_category_air
+		interface_category = interface_category_land
 		
 		reliability = 0.8
 
 		#Space taken in convoy
-		lend_lease_cost = 0.1
+		lend_lease_cost = 1
 
 		build_cost_ic = 4
 		resources = {
@@ -23,15 +25,16 @@ equipments = {
 			steel = 2
 			oil = 2
 		}
-		manpower = 1
+		#manpower = 1
 		#this equiment cannot build, so pilots manpower consumption is expressed by mod effects of on_action system
 	}
 
 	pilot_equipment_1 = {
 		year = 1918
 		archetype = pilot_equipment
-		is_buildable = no
-		active = yes
-		priority = 20	
+		#is_buildable = yes
+		#active = yes
+		priority = 20
+		#visual_level = 0	
 	}
 }

@@ -1,0 +1,14 @@
+on_actions = {
+
+	on_daily = {
+		effect = {
+			
+			ROOT = {
+			
+				add_to_variable = { test_variable = 1 }
+			
+			
+			}
+		}
+	}
+}

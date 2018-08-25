@@ -1,24 +1,35 @@
 on_actions = {
 
-	###pilot training
+	###pilot training###チベットあたりにぶち込んで、減らす。
 	on_daily = {
-		ROOT = {
 		effect = {
-			if = { limit = {check_variables = { active_air_school > 0 } }
-				set_temp_variables = { temp_daily_pilots_trained = active_air_school }
-				set_temp_variables = { temp_training_speed_modifier = 1 }
+		ROOT = {
+			if = { limit = {check_variable = { active_air_school > 0 } }
+			
+				set_temp_variable = { temp_daily_pilots_trained = active_air_school }
+				set_temp_variable = { temp_training_speed_modifier = 1 }
 				multiply_temp_variable = {temp_daily_pilots_trained = temp_training_speed_modifier }
 				set_variable = { daily_pilots_trained = temp_daily_pilots_trained }
 				round_variable = daily_pilots_trained
+				
 				if = { limit = { has_manpower > daily_pilots_trained }
-					add_equipment_to_stockpile = {
-						type = pilot_equipment
-						amount = daily_pilots_trained
-					}
-					multoply_temp_variable = { temp_daily_pilots_trained = -1 }
+					#TIB = {
+						#add_equipment_to_stockpile = {
+					#		type = support_equipment
+					#		amount = 1000
+					#	}
+					#	send_equipment = {
+					#		equipment = support_equipment
+					#		amount = daily_pilots_trained
+					#		target = PREV
+					#	}
+					#	set_equipment_fraction = 1
+					#}
+					multiply_temp_variable = { temp_daily_pilots_trained = -1 }
 					set_variable = { daily_pilots_manpower = temp_daily_pilots_trained }
 					round_variable = daily_pilots_manpower
-					add_manpower = daily_pilots_manpower
+					#add_manpower = daily_pilots_manpower
+					
 				}
 			}
 		}

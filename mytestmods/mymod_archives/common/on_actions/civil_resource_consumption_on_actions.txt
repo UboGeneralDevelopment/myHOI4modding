@@ -1,0 +1,31 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			
+			set_variable = { global.test_variable = 0.8 }
+			
+			
+			every_country = {
+			
+			set_variable = { resource_sufficiency = 0 }
+			set_variable = { final_civilian_resource_impact = 0}
+			clamp_variable = { var = resource_sufficiency min = 0 max = 1 }
+			clamp_variable = { var = final_civilian_resource_impact min = 0 max = 1}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			
+			every_country = {
+			
+				set_temp_variable = { var = pre_fin_civ_res_impact = final_civilian_resource_impact }
+					#set_temp_variable = { var = pre_total_civ_effciency = modifier@production_speed_buildings_factor }
+				set_temp_variable = { var = other_mod_factor = modifier@production_speed_buildings_factor }
+				subtract_from_temp_variable = {other_mod_factor = pre_fin_civ_res_impact }
+			
+			
+			}
+		}
+	}
+}

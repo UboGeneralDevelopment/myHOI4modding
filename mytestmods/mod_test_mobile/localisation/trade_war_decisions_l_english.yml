@@ -1,8 +1,0 @@
-﻿l_english:
-  trade_war_category:0 "Trade War"
-  trade_war_category_desc:0 "Resources are increasingly essential for countries in this industrial age. We should raise tariffs and protect our precious resources from rivals"
-  democratic_neutral_trade_war_against:0 "Trade War Against [From.GetName]"
-  fascism_communism_trade_war_against:0 "Trade War Against [From.GetName]"
-  allies_trade_war_cooperation:0 "Our ally is requesting us to participate trade war against [From.GetName]"
-  cancel_trade_war_against:0 " Cease Trade War against [From.GetName]"
-  cancel_allies_trade_war_cooperation:0 " Our ally ceased Trade War against [From.GetName], we should cease too."
