@@ -15,6 +15,12 @@ modifierには作用対象によって使用可能なものと実装方式が決
 特定の研究のmodifierは研究に紐づき、コマンドで呼び出す
 stateへのmodifierはステートそのものにくっついており、modifierそのものをステートにコマンドでひっつけることができる
 
+modifierの実装方法
+idea：static_modifierはすべて付けられる。 
+decision ：targeted_modifierはうまくつけられない。
+technology：target_modifierについては不明。
+relation_modifier（modifiersフォルダで定義）：要検証。国家スコープ間でのtargeted_modifierはつけられる模様。
+
 
 production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
 consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。

@@ -1,0 +1,22 @@
+﻿
+加筆中
+
+ai_will_doなどの仕組み。
+
+大きく分けると、
+ai_will_do：実装済みメカニクスにおいて、実行順位の優先づけ
+ai(scripted gui)：scripted GUIでもちいられるaiの優先付け
+AI Areas：AIが戦域を分けるときの判断基準
+AI focuses：状況に応じて行動の優先度を決定
+AI peace：講和会議の志向を決定
+AI strategies：triggerに応じて行動の優先度を決定
+AI strategy plans：triggerに応じてより詳細に行動の優先度を決定
+AI templates：師団テンプレートの決定方法を決定
+などに分かれる。
+
+
+
+
+
+
+

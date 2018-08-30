@@ -8,6 +8,17 @@ effects ={}
 を発生させることができる。それぞれ文字通り特定のイベントもしくはエフェクトを発生させられる。エフェクトについてはもちろん条件分岐可能。
 on_dailyなどは継続的にコマンドを実行するため、modiferの代わりとしても使える可能性がある。
 
+effects = {
+	ROOT = {
+		if = {
+			limit = { triggers }
+			effects
+		}
+	}
+}
+てな感じだとtriggerを満たす国のみ効果が発動する。
+ROOTはもちろんいろんなスコープに変更可能。国家タグ指定でもなんでも。
+
 actionリストと主な使われ方は以下の通り
 
 on_new_term_election # country 
