@@ -4,34 +4,29 @@ debugモードにて
 trigger_docs
 で色々見れる
 
-
-
 #########modifier
 
 modifierは基本的には定数表記である。変数で変化させることはできない。modifierの変化は段階的に、離散的に行う必要がある。
 
 modifierには作用対象によって使用可能なものと実装方式が決まっている。
-国家へのmodifierはアイデアやディシジョンにほとんど紐づいているため、ダイナミックに作り出すことも難しい。
-特定の研究のmodifierは研究に紐づき、コマンドで呼び出す
+国家へのmodifierはアイデアやディシジョンにほとんど紐づいており、ダイナミックに作り出すことも難しい。
+特定の研究のmodifierは研究に紐づき、コマンドで呼び出す。
 stateへのmodifierはステートそのものにくっついており、modifierそのものをステートにコマンドでひっつけることができる
+modiferの情報はcommandやtriggerのようにまとまっておらずあちこち散逸しており、調べるのが大変。
 
 modifierの実装方法
-idea：static_modifierはすべて付けられる。 
+idea：wikiに記載されたstatic_modifierはすべて付けられる。 
 decision ：targeted_modifierはうまくつけられない。
 technology：target_modifierについては不明。
-relation_modifier（modifiersフォルダで定義）：要検証。国家スコープ間でのtargeted_modifierはつけられる模様。
+コマンド実装
+add_relation_modifier（modifiersフォルダで定義）：要検証。国家スコープ間でtargeted_modifierをつけられる。おそらく唯一ダイナミックmodifierを作ることができる
+add_state_modifier:要検証。stateレベルでmodifierをつける。
 
+そのほか、ability, unit, equipmentなどにもある。
 
-production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
-consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
-production_oil_factor　石油のみに適用される生産ボーナス。
-min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
-
-modiferの情報はcommandやtriggerのようにまとまっておらずあちこち散逸しており、調べるのが大変。
 
 targeted_modifier
 めちゃクソ便利そうなのに地味に使いづらい。基本的にはideaで機能し、decisionでは機能しない。
-targetはidea内で固定的に指定する必要があるため、ダイナミックにできない。くそ。
 
 コマンドで付けられるステート修正についてはここで一応まとめとく。
 local_resources_factor
@@ -43,12 +38,10 @@ local_building_slots_factor(稼働しているか不明)
 建設速度
 state categoryによるmodifierの設定。
 
-特殊なmodifier
-
-targeted_modifier
-
-relation_modifier
-おそらく唯一ダイナミックにmodifierを作ることができるもの
+production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
+consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
+production_oil_factor　石油のみに適用される生産ボーナス。
+min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
 
 #########variables
 
