@@ -18,9 +18,10 @@
 /*
 方針
 
-とりあえず、縦と横の分割数を決定して分割数だけ画像を生成させる。方向検討は分割方向とは依存する必要性はないが、とりあえずは検討方向は分割方向と一致させる。
-また、取ってくるのは透過率の合計ではなく、その最大値のみを利用。より透過像"らしく"なる
+縦と横の分割数については、最大分割数設定後、格緯度ごとに自動生成する。方向検討は分割方向とは依存しない。
+取ってくるのは透過率の合計ではなく、その最大値のみを利用。より透過像"らしく"なる
 
+評価値の計算の案については以下の通り
 とりあえず、画像一枚につき輝度を合計した評価値を算定し、それを各姿勢に対して画像評価値ごとに内積をとって合計したものをその姿勢の最終評価値とする。
 画像一枚の評価値は、輝度値の合計とする。
 
@@ -65,9 +66,9 @@ __global__ void forward_marching_GPU(unsigned short *d_input_volume, float *d_pr
 }
 
 
-void ray_start_setting(Params params, float *ray_position) {
+void ray_start_setting(Params params, float *ray_position, float ray_phi, float ray_theta) {
 	int i, j;
-	//初期化。座標中心上においてレイのスタート位置を設定。iがキャンバス上でのy座標,jがキャンバス上でのx座標に対応
+	//初期化。座標中心上においてレイのスタート位置を設定。iがキャンバス上でのy座標,jがキャンバス上でのx座標に対応。
 	for (i = 0; i < params.projection_sides; i++) {
 		for (j = 0; j < params.projection_sides; j++) {
 			ray_position[(i*params.projection_sides + j) * 3] = j - params.projection_radius / 2;
@@ -83,15 +84,15 @@ void ray_start_setting(Params params, float *ray_position) {
 		a = ray_position[i * 3];
 		b = ray_position[i * 3 + 1];
 		c = ray_position[i * 3 + 2];
-		ray_position[i * 3] = cos(params.projection_phi)*a + sin(params.projection_phi)*c;
+		ray_position[i * 3] = cos(ray_phi)*a + sin(ray_phi)*c;
 		ray_position[i * 3 + 1] = b;
-		ray_position[i * 3 + 2] = -sin(params.projection_phi)*a + cos(params.projection_phi)*c;
+		ray_position[i * 3 + 2] = -sin(ray_phi)*a + cos(ray_phi)*c;
 	 //次にz軸にそって回転
 		a = ray_position[i * 3];
 		b = ray_position[i * 3 + 1];
 		c = ray_position[i * 3 + 2];
-		ray_position[i * 3] = cos(params.projection_theta)*a - sin(params.projection_theta)*b;
-		ray_position[i * 3 + 1] = sin(params.projection_theta)*a + cos(params.projection_theta)*b;
+		ray_position[i * 3] = cos(ray_theta)*a - sin(ray_theta)*b;
+		ray_position[i * 3 + 1] = sin(ray_theta)*a + cos(ray_theta)*b;
 		ray_position[i * 3 + 2] = c;
 		//ボリュームの中心座標に平行移動
 
@@ -125,19 +126,19 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	fscanf(para, "%d", &params.in_offset);
 	fscanf(para, "%f %f", &params.source_object_distance, &params.source_detector_distance);//多分使わない
 	fscanf(para, "%d %d %d", &params.voxels_x, &params.voxels_y, &params.voxels_z);
-	fscanf(para, "%f %f", &params.projection_phi, &params.projection_theta);//あまりつかわない
+	fscanf(para, "%f %f", &params.projection_phi, &params.projection_theta);//方向の初期設定。あまりつかわない
 	fclose(para);
 
-	printf("projection angle division number in form of phi theta\n");//投影角度の設定。ここで読み込む内容はよく変更する。
-	scanf_s("%f %f", &params.projection_phi, &params.projection_theta);
+	params.projection_div_phi = 4;//とりあえず定義。したのscanでよみこませてもよい。
+	params.projection_div_theta = 4;
 
-	params.projection_div_phi = 8;//とりあえず定義。うえのscanでよみこませてもよい。
-	params.projection_div_theta = 8;
+	printf("projection angle division number in form of phi theta\n");//投影角度の枚数の設定。ここで読み込む内容はよく変更する。
+	scanf_s("%d %d", &params.projection_div_phi, &params.projection_div_theta);
 
 	params.projection_radius = sqrt(params.voxels_x * params.voxels_x + params.voxels_y *params.voxels_y + params.voxels_z * params.voxels_z);//投影像の一片の長さ
 	params.projection_sides = (int)params.projection_radius;//ボクセル長さ、つまり整数に丸めた場合。
 
-	printf(" input %s\n output %s\n distance %f %f\n voxels %d %d %d\n angle phi %f theta %f\n angle division phi %d theta %d\n projection radius %f projection sides %d",
+	printf(" input %s\n output %s\n distance %f %f\n voxels %d %d %d\n start angle phi %f theta %f\n angle division phi %d theta %d\n projection radius %f projection sides %d",
 		params.in_path_name, params.out_name,
 		params.source_object_distance, params.source_detector_distance,
 		params.voxels_x, params.voxels_y, params.voxels_z,
@@ -149,7 +150,7 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	//////////////////////読み込みと各種メモリ確保//////////////////////////
 	if ((in = fopen(params.in_path_name, "rb")) == NULL) {
 		printf("FILE do not exist_1\n");
-		exit(0);//コマンドラインからの実行ではフルのパスを指定しなければ見つからない。しかも\は2回かく。あるいは設定テキストを直接プログラムに放り投げてもよい。
+		exit(0);//コマンドラインからの実行ではフルのパスを指定しなければ見つからない。しかも\は2回かく。あるいは設定テキストを直接プログラムに放てもよい。
 	}
 	printf("load_success\n");
 	
@@ -168,11 +169,16 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	//キャンバスサイズの3倍の投影レイのスタート位置を格納するメモリ。xyz座標で設定
 	float ray_step[3];
 	//レイの格納容器作成
+	float ray_phi = params.projection_phi;
+	float ray_theta = params.projection_theta;
+	//レイの方向
 	char name[1000];
 	//書き出し用の名前
 	float *temp = new float[params.projection_div_phi*params.projection_div_theta*3];
+	float *valuemap = new float[params.projection_div_phi*params.projection_div_theta];
 	//評価値と投影角度のメモリ
 
+	printf("projection_setting_start\n");
 	//////////////////////以下GPUでのメモリ確保
 	float* d_proj1;
 	float* d_ray_position;
@@ -184,32 +190,30 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 
 	/////////////////////読み込みと各種メモリ確保終了//////////////////////////
 
-	//////////////////////繰り返し対象////////////////////////
-	
-	for (i = 0; i < params.projection_div_phi; i++) {//繰り返し回数の設定とりあえず適当
 
-		//////////////////////投影メモリ初期化、投影スタート位置設定、レイ方向設定、作成//////////////////////////
-		printf("projection_setting_start\n");
+	for (i = 0; i < params.projection_div_phi*params.projection_div_theta; i++) {//繰り返し回数の設定。phi方向,theta方向回転で二重ループになっている。。
 
-		for (j = 0; j < params.projection_sides*params.projection_sides; j++) {
-			proj1[j] = 0;
+		//////////////////////投影メモリ、投影スタート位置設定、レイ方向設定の初期化//////////////////////////
+
+		for (k = 0; k < params.projection_sides*params.projection_sides; k++) {
+			proj1[k] = 0;
 		}//投影メモリ初期化
 
-		ray_start_setting(params, ray_position);
+		ray_step[0] = sin(ray_phi)*cos(ray_theta)*STEP;
+		ray_step[1] = sin(ray_phi)*sin(ray_theta)*STEP;
+		ray_step[2] = cos(ray_phi)*STEP;
+		//レイの方向を決定。角度theta0phi0で(0,0,1)。両方向に伸びてく。ボクセル長さがそのまま座標系の長さに対応しているため、そのままステップとして用いれる。
+	
+		ray_start_setting(params, ray_position,ray_phi,ray_theta);
 		//スタート位置設定、スタート位置と、パラメータを投げ込んで回転させる。
 
-		ray_step[0] = sin(params.projection_phi)*cos(params.projection_theta)*STEP;
-		ray_step[1] = sin(params.projection_phi)*sin(params.projection_theta)*STEP;
-		ray_step[2] = cos(params.projection_phi)*STEP;
-		//レイの方向をパラメータにしたがって更新。ボクセル長さがそのまま座標系の長さに対応しているため、そのままステップとして用いれる。
-	
-		printf("ray,ray_canvas,ray_start_positions are successfully_created\n");
-		printf("ray,%f,%f,%f\n",ray_step[0],ray_step[1],ray_step[2]);
-		printf("picture pixel %f\n", proj1[params.projection_sides*params.projection_sides / 4]);
-		//////////////////////投影キャンバス作成終了//////////////////////////
+		//printf("ray,ray_canvas,ray_start_positions are successfully_created\n");
+		//printf("ray,%f,%f,%f\n",ray_step[0],ray_step[1],ray_step[2]);
+
+		//////////////////////投影初期化終了//////////////////////////
 
 
-		//////////////////GPU転送およびレイマーチング計算///////////////////////
+		//////////////////GPU転送および計算///////////////////////
 
 		//GPUにデータ転送
 		cudaMemcpy(d_proj1, proj1, sizeof(float)*params.projection_sides*params.projection_sides, cudaMemcpyHostToDevice);
@@ -227,51 +231,53 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	
 		printf("ray_marching_end\n");
 
-		//////////////////////GPU転送おわり//////////////////////////
+		//////////////////////GPU転送計算おわり//////////////////////////
 
 
-		//////////////////////評価値の計算////////////////////
+		//////////////////////評価値の計算////////////////////角度ごとに輝度を積算している値。このデータの扱い方は少し変えたい。白黒画像で表せるようにしたい。
 		temp[3*i+1] = params.projection_phi;
 		temp[3*i+2] = params.projection_theta;
 		for (j = 0; j < params.projection_sides*params.projection_sides; j++) {
 			temp[3*i] += proj1[j];
+			valuemap[i] += proj1[j];//これが各角度の評価値を収納する画像になる。
 		}
 		//////////////////////評価値の計算終了/////////////////////////
 
 
 		//////////////////////書き出し(オプション)//////////////////////////
+		/*
 		printf("picture pixel %f\n",proj1[params.projection_sides*params.projection_sides/4]);
-
 		printf("Writing\n");//ここから先は書き出し。書き出しファイルに形式の指定などはない。
-
 		sprintf(name, "%s-float-%dx%d-(%f_%f).raw", params.out_name, params.projection_sides, params.projection_sides,params.projection_phi, params.projection_theta);
 		printf("%s", name);
-	
 		FILE *out;
 		out = fopen(name, "wb");
 		if (out == NULL) {
 			printf("\nFILE cannot open\n");
 			exit(0);
 		};
-	
 		//outに投影キャンバスをぶち込む。とりあえずはフロートで
 		fwrite(proj1, sizeof(float), params.projection_sides*params.projection_sides, out);
-	
 		fclose(out);
 		printf("\nwriting_end\n\n");
 
-	//コマンドラインからの実行では出力ファイルはプログラムのフォルダ内にできる。直接テキストを投げ込むとテキストのあるフォルダにできる。
-
+		//コマンドラインからの実行では出力ファイルはプログラムのフォルダ内にできる。直接テキストを投げ込むとテキストのあるフォルダにできる。
+		*/
 		//////////////////////書き出し終了//////////////////////////
 
 
 		//////////////////////繰り返しの時の姿勢更新//////////////////////////
-		params.projection_phi = params.projection_phi + PI / params.projection_div_phi;
-		//params.projection_theta = params.projection_theta + PI / params.projection_div_theta;
+		if ( ( i + 1 ) % params.projection_div_theta == 0 ) {
+			ray_phi = ray_phi + PI / params.projection_div_phi / 2;
+			ray_theta = 0;
+		}
+		else {
+			ray_theta = ray_theta + PI / params.projection_div_theta / 2;
+		}
 		//////////////////////姿勢更新終了//////////////////////////
 
 	}
-	//////////////////////繰り返し対象終了////////////////////////
+
 
 
 	////////////////メモリ開放///////////////
@@ -284,6 +290,7 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	////////////////メモリ開放///////////////
 
 	//////////////////////評価値の比較検討////////////////////
+	/**/
 	float vphi, vtheta;
 	float *value = new float[angle_div*angle_div];
 	float max_value[3];
@@ -313,10 +320,37 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 	}
 
 	printf("max_value %f phi %f theta %f\n", max_value[0], max_value[1], max_value[2]);
+	for (i = 0; i < params.projection_div_phi*params.projection_div_theta;i++) {
+		printf("value %f \n", valuemap[i]);
 
+	}
 	//////////////////////評価値の比較検討終了////////////////
-	
+
+	///評価値の比較二つ目。
+	printf("Writing value map\n");
+	sprintf(name, "valuemap-%s-float-(%d_%d).raw", params.out_name, params.projection_div_theta, params.projection_div_phi);
+	printf("%s", name);
+	FILE *out;
+	out = fopen(name, "wb");
+	if (out == NULL) {
+		printf("\nFILE cannot open\n");
+		exit(0);
+	};
+	fwrite(valuemap , sizeof(float), params.projection_div_phi*params.projection_div_theta, out);
+	fclose(out);
+	printf("\nwriting_end\n\n");
+	double v_a_phi = 0, v_a_theta = 0;
+	double v_phi = 0, v_theta = 0;
+	double t = 0;
+	for (t = 0; t < PI; t += 0.01) {//軸上で一回転
+		v_a_phi = acos(-sin(v_a_phi)*cos(t));
+		v_a_theta = atan((-sin(v_a_phi)*cos(v_a_theta)*cos(t) + cos(v_a_phi)*sin(t)) / (cos(v_a_phi)*cos(v_a_theta)*cos(t) - sin(v_a_phi)*sin(t)));
+	}
+
+
+
 	////////////////メモリ開放///////////////
+	delete[] valuemap;
 	delete[] temp;
 	delete[] value;
 	////////////////メモリ開放///////////////
