@@ -5,38 +5,80 @@ trigger_docs
 で色々見れる
 
 #########modifier
-
-modifierは基本的には定数表記である。変数で変化させることはできない。modifierの変化は段階的に、離散的に行う必要がある。
-
-modifierには作用対象によって使用可能なものと実装方式が決まっている。
-国家へのmodifierはアイデアやディシジョンにほとんど紐づいており、ダイナミックに作り出すことも難しい。
-特定の研究のmodifierは研究に紐づき、コマンドで呼び出す。
-stateへのmodifierはステートそのものにくっついており、modifierそのものをステートにコマンドでひっつけることができる
+modifierはeffectやtriggerとはだいぶ異なるものとなっている。書式の一種のはずだが、その書式はシステムに相当依存しており、多様。
 modiferの情報はcommandやtriggerのようにまとまっておらずあちこち散逸しており、調べるのが大変。
+そのため、ここではmodifierの種類ごとにその実装方法を解説する。
 
-modifierの実装方法
-idea：wikiに記載されたstatic_modifierはすべて付けられる。 
-decision ：targeted_modifierはうまくつけられない。
-technology：target_modifierについては不明。
-コマンド実装
-add_relation_modifier（modifiersフォルダで定義）：要検証。国家スコープ間でtargeted_modifierをつけられる。おそらく唯一ダイナミックmodifierを作ることができる
-add_state_modifier:要検証。stateレベルでmodifierをつける。
-
-そのほか、ability, unit, equipmentなどにもある。
+static_modifiers
+wikiのmodifierに書いてある、書式のようなmodifierである。modifierが使えるmodシステムならば基本どこでも使えるが、その分制約が多い。
+主に使えるところを表記すると以下の通り。
+idea
+decision 
+technology
 
 
-targeted_modifier
-めちゃクソ便利そうなのに地味に使いづらい。基本的にはideaで機能し、decisionでは機能しない。
-
-コマンドで付けられるステート修正についてはここで一応まとめとく。
-local_resources_factor
+state_modifiers
+add_state_modifierコマンド、occupation_policyなどによって実装する。ちなみに、occupation_policyはたぶん自国のcoreには不適用される。
+state categoryによるmodifierの設定は未検証。
+ほぼ確実に使える効果
+local_resources
+local_manpower
 local_non_core_manpower
-local_building_slots_factor(稼働しているか不明)
+多分使える効果
+local_factories
+local_building_slots_factor
+resistance_tick
+使えるかもしれない効果
+local_supplies
+local_intel_to_enemies
+local_factory_sabotage
+attrition
 
-できそうなことについて
-レジスタンス成長
-建設速度
-state categoryによるmodifierの設定。
+
+
+targeted_modifiers
+national_spirit、autonomius_states、add_relation_modifierなどによって実装する。
+
+
+
+dynamic_modifiers
+MtGで予告されている。add_relation_modifierをほぼ代替できる
+
+
+軍事系modifiers
+軍事系のmodifierは関連項目が増え、さらにややこしい。思いつき次第システムと概要を列挙すべし。
+ideasのstatic_modifier：通常のstatic_modifiersと同じ。wikiのmodifiersに記載。
+ideasのequipment_bonus：equipmentのstatsやmodifiersをinternal_typeごとに変更できる。wikiのideasに記載。
+abilitiesのunit_modifiers：通常のstatic_modifiersをunit_leaderスコープ上で実行可能。おそらくはここ専用の特殊なmodifierもつかえる。
+unitとequipment：それぞれに使えるmodifersが決まっており、wikiのequipmentsとunitに記載。unitごと、equipmentごとに使えるものも異なる。
+technologies：internal_type、あるいは記述したunit_categoryごとにstatやmodifiersを変更する。通常のstatic_modifiersも使える。
+
+
+
+そのほかお役立ち情報
+ウィキにないもの
+
+1.4での気になる点。
+ Added support for relation modifiers and valid_relation_trigger in the static modifiers file. Modifiers are removed if the trigger becomes false.
+- Added add_relation_modifier effect that adds a static modifier from current scope to target.
+- Added remove_relation_modifier effect.
+- Added trigger has_relation_modifier.
+- Added dynamic cost_factor modifier for idea groups. Example political_advisor_cost_factor.つまりアイデアのコストはアイデアグループのスロットの名前ごとにダイナミックに変えられる、
+- Added on_state_control_changed to on action.
+- Added non_core_manpower modifier that can be used on country level to control manpower from non-core territory
+- States can now be marked as impassable and can then not be traversed by troops, they get special border graphics to signify this. Province view will indicate with an icon+tooltip, as will on-map tooltip
+- Borders between provinces can now be set up in adjacencies as impassable and can then not be passed
+
+１．５での気になる点
+- Added generate_wargoal_tension_against targeted modifier.　特定国家に対しての正当化緊張度制限のことか？
+- Added variable support for effects: send_equipment add_manpower.
+- Added variable support for triggers: has_equipment has_manpower has_army_experience has_air_experience has_navy_experience
+- Added attack modifier vs specific countries
+- Added on action for creating unit leaders
+- New Modifiers cic_to_target_factor, mic_to_target_factor, extra_trade_to_target_factor, trade_cost_for_target_factor
+
+- Added modifier army_org_regain
+
 
 production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
 consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
