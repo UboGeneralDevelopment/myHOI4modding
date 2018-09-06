@@ -8,50 +8,81 @@ unitを導入するとなるとこれに加えてunitを書いて、あとunit_i
 装備と人的補給速度については現状一律変化のみ可能で、在庫があればあっという間に補給されていく。
 
 ユニットの基本的なステータスは装備とユニットの組み合わせによって決まる。
-ユニットと装備のstatsは実に多彩であり、通常はそれぞれのファイルに必要なものだけ記載する。
+ユニットと装備のstatsは多彩であり、通常はそれぞれのファイルに必要なものだけ記載する。
 最終的にはユニットのstatsおよびユニット補正のかけられた装備のstatsの合計がユニットの最終statsになる。
 この最終statsのうち、装備に由来するものは充足率に比例する。ユニットに由来するstatsは充足率関係ない。
 つまり充足がくそだろうと士気の高いユニットは意外に粘れるということである。
 
+
+
 陸軍ユニット
+陸軍ユニットはstatsがequipmentとunitによって決まる。
+まず、battalionのstatsがequipmentとunitによって決まり、その後divisionのstatsがbattalionのstatによって決まる。
+battalionは普通は１種類のequipmentしか持たないが、2種類以上のequipmentを持つ場合は合計値が適用される。
+ただし、transportが設定すると速度はtransportのequipmentによって決まる。
 
-主に装備によって決まるステータス
-build_cost_ic = <float> #生産コスト
-lend_lease_cost = <float> #設計図レンドリースコスト
-reliability = <float> #信頼性
-maximum_speed = <float> #最高速度
+equipment stats
+基本値がequipmentで決まるもの。unitのmodifiersによっても補正される。
+師団statは大隊のstatの合計、最大値、最低値、平均、重みづけ平均などになる。
 
-#以下の値は装備充足率がダイレクトにユニットステータスに影響する
-defense = <float> #防御値
-breakthrough = <float> #突破値
-soft_attack = <float> #対人攻撃
-hard_attack = <float> #対装甲攻撃
-armor_value = <float> #装甲値
-ap_attack = <float> #貫通
-air_attack = <float> #対空
-hardness = <float> #装甲化率、充足の影響を受けるか不明
+#コスト等
+build_cost_ic = <float> #生産コスト　合計
+resources = { ~~~ } #必要資源　合計
+lend_lease_cost = <float> #レンドリース時必要輸送船
+
+#以下の値は充足率に依存しない
+reliability = <float> #信頼性　平均
+maximum_speed = <float> #最高速度　最低値
+
+armor_value = <float> #装甲値　重みづけ平均
+ap_attack = <float> #貫通　重みづけ平均
+
+#以下の値は装備充足率依存
+defense = <float> #防御値　合計
+breakthrough = <float> #突破値　合計
+soft_attack = <float> #対人攻撃　合計
+hard_attack = <float> #対装甲攻撃　合計
+air_attack = <float> #対空　合計
+hardness = <float> #装甲化率　平均？
 
 
-主にユニットによって決まるステータス。最終的な師団statの決め方はモノによる。充足の影響を受けるstatもある。
-default_morale = <float> #基本組織率回復率　平均
-max_organisation = <int> #最大組織率　平均
+unit stats, unit modifiers
+主にユニットによって決まるステータス。また、ユニットごとにequipmentにmodifiersを与えることもある。
+師団statは大隊のstatの合計、最大値、最低値、平均、重みづけ平均などになる。
+
+#基本stat
+max_organisation = <float> #最大組織率　平均
+default_morale = <float> #組織率回復率　平均
+max_strength = <float> #最大耐久値　合計
 combat_width = <int> #戦闘幅　合計
-max_strength = <int> #最大耐久値　合計
+
+#維持関係
+weight = <float> #船で運ぶときの重量　合計
+supply_consumption = <float> #補給消費　合計　
 manpower = <int> #必要人的資源　合計
 training_time = <int> #訓練時間　最大値
-weight = <float> #重量　合計
-supply_consumption = <float> #補給消費　合計　
-suppression = <float> #レジスタンス制圧力　合計
-entrenchment　＃塹壕　最大値
-recon = 1                       # 偵察値　最大値
 
-師団statに直接乗る補正
-movement = 0.1                  # 速度補正
-experience_loss_factor = 0.1    # 経験値消耗
-casualty_trickleback = 0.2      # 負傷者復活
-suppression_factor = 0.1        # レジスタンス制圧力補正
-reliability_factor = 0.05       # 装備品信頼性補正
-initiative = 0.2                # 増援確率及び立案速度
+#師団に直接影響する補助能力
+entrenchment = <float> ＃塹壕　多分合計
+recon = <float> # 偵察値　多分合計
+initiative = <float> # 増援確率及び立案速度　多分合計
+suppression = <float> # レジスタンス制圧力　多分合計
+
+movement = <float> # 速度補正
+experience_loss_factor = <float> # 経験値消耗
+casualty_trickleback = <float> # 負傷者復活
+reliability_factor = <float> # 装備品信頼性補正
+equipment_capture_factor = <float> # 装備鹵獲率
+
+
+#equipment modifier
+battalionごとに装備equipmentに乗算でのるmodifier。この辺りはよく使われる。
+attack
+soft_attack
+hard_attack
+defence
+breackthrough
+
 
 ユニットによる装備補正
 装備のstatに掛け算で適用可能。補正は掛け算でかかる。特殊なものとしてattackやdefenceはsoft,hard,defence,breakthroughの両方にかかる

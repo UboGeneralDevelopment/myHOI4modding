@@ -69,7 +69,7 @@ technologies：internal_type、あるいは記述したunit_categoryごとにsta
 - States can now be marked as impassable and can then not be traversed by troops, they get special border graphics to signify this. Province view will indicate with an icon+tooltip, as will on-map tooltip
 - Borders between provinces can now be set up in adjacencies as impassable and can then not be passed
 
-１．５での気になる点
+1.5での気になる点
 - Added generate_wargoal_tension_against targeted modifier.　特定国家に対しての正当化緊張度制限のことか？
 - Added variable support for effects: send_equipment add_manpower.
 - Added variable support for triggers: has_equipment has_manpower has_army_experience has_air_experience has_navy_experience
