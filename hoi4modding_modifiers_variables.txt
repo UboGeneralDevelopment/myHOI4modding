@@ -164,7 +164,7 @@ consumer_goods_factor　消費財の割合。モディファーの合計が最�
 production_oil_factor　石油のみに適用される生産ボーナス。
 min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
 
-#########variables
+#########variables&arrays
 
 ゲーム内変数のうち、細かいところ。
 
