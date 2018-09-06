@@ -26,23 +26,24 @@ autonomous_states：modifiers内に記載する。通常のmodifierのほか、�
 
 #state_modifiers
 add_state_modifierコマンド、occupation_policyなどによって実装する。ちなみに、occupation_policyはたぶん自国のcoreには適用されない。
-state categoryによるmodifierの設定は未検証だが、wikiにはできると書いてある。
+state categoryによるmodifierの設定が可能。
 
-ほぼ確実に使える効果
+確実に使える効果
 local_resources
 local_manpower
 local_non_core_manpower
-
-多分使える効果
-local_factories
+local_factories：dockyardとfactoryの数を増減する。増減は最終的な工場数にのみ反映され、スロットには現れない。
 local_building_slots_factor
-resistance_tick
 
 使えるかもしれない効果
+resistance_tick
 local_supplies
 local_intel_to_enemies
 local_factory_sabotage
 attrition
+local_building_slots(多分無理か？)
+
+non_coreにはlocal_building_slots_factor=-0.5とlocal_non_core_manpower=-0.98がかかっている。
 
 #autonomous_states
 システムになってしまうが、modifiers内で国家レベルのmodifierとoverloadとの関係を示すmodifiersを加えられる。
@@ -62,6 +63,7 @@ targeted_modifierはoverloadに限定されている。ここ限定のmodifier�
 relation_modifier
 modifiersフォルダ内にmodifierを記載したのち、add_relation_modifierで実行する。
 add_relation_modifierにおいてtargetを指定するが、ここはROOTなどを用いたダイナミック指定が可能。
+でもevery_countryなどはできない。逆は可能。
 
 targeted_modifiersの一覧。
 attack_bonus_against
