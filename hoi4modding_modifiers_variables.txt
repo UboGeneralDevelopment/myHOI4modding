@@ -45,6 +45,8 @@ local_building_slots(多分無理か？)
 
 non_coreにはlocal_building_slots_factor=-0.5とlocal_non_core_manpower=-0.98がかかっている。
 
+
+
 #autonomous_states
 システムになってしまうが、modifiers内で国家レベルのmodifierとoverloadとの関係を示すmodifiersを加えられる。
 以下、ここでしか使えない特殊modifiersのリスト（加筆中）
@@ -81,7 +83,7 @@ ai_license_acceptance
 
 
 #dynamic_modifiers
-MtGで予告されている。relation_modifierの値がdynamicになったものと考えてよい。一日ごとにアップデート
+MtGで予告されている。一日ごとにアップデート
 dynamic_modifiersフォルダ内で宣言したのち、エフェクトで実装する。
 書式は以下の通り、
 
@@ -108,7 +110,8 @@ has_dynamic_modifier = {
     scope = GER #ターゲットが指定されていれば。
 }
 
-dynamic_modifierにおけるSCOPEは、variableで用いる。
+dynamic_modifierにおけるSCOPEは、参照するvariableの位置のことであり、targeted_modifierのtargetではない。
+
 
 
 軍事系特殊modifiers
@@ -138,7 +141,6 @@ unitのstats、unitが装備するequipmentのstats双方に対してmodifierを
 
 
 そのほかお役立ち情報
-ウィキにないもの
 
 1.4での気になる点。
  Added support for relation modifiers and valid_relation_trigger in the static modifiers file. Modifiers are removed if the trigger becomes false.
@@ -190,7 +192,6 @@ num_of_controlled_states
 num_of_factories　保有している軍事、民間などの全工場数。輸出と従属国増加を含む。
 num_of_military_factories
 num_of_naval_factories
-<buildings> arms factory,industrial complex, などで、国内の建築物の総量がわかるかもしれない？
 
 
 modifier@...でモディファー内容を参照可能。
