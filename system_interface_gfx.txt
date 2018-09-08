@@ -3,6 +3,42 @@
 新しいinterfaceを追加するならば必須の要素。
 interfaceのgfxとguiを書き換える必要がある
 
+
+###################GUI#############################
+
+GFXをつかってinterfaceを設計するファイル
+containerとelementに分かれる。
+
+あたらしいcontainerはTechtreeもしくはScripted_GUIでのみ追加することができる。
+つまりあたらしいGUIを導入するには必ずScriptedGUIを書く必要がある。
+
+基本的にinterfaceはcontainerでグループ化されている。
+
+containerWindowType
+name　container名前
+background
+size
+moveable
+fullscreen
+orientation
+clipping
+
+
+containerWindowTypeは階層構造を持つことができる。一例をcountry_state_viewを基にして説明すると
+containerWindowTypeは以下の通りに並ぶ
+
+claim_entry{}
+country_states_view{
+	state_info_window{}
+	state_resources{}
+}
+provinse_info_window{}
+state_building_entry{}
+state_shared_building_entry{}
+province_building_entry{}
+state_resource_entry{}
+
+
 ###################GFX########################
 
 gfxは2dの画像を表示するためのファイルで、実際のファイル名(ddsなど)とプログラム内での呼び方を結びつける。
@@ -59,19 +95,3 @@ spriteTypes = {
         }
     }
 }
-
-###################GUI#############################
-
-GFXをつかってinterfaceを設計するファイル
-
-基本的にinterfaceはcontainerでグループ化されている。
-
-containerWindowType
-
-scripted_guiは、guiとgfxと組み合わせることで、自分の好きなGUIを設計して実装することができる。
-基本的には、条件が満たされると、GUIのあるボタンの実行が解除され、それを押すと何か効果が発揮される。というものになる。
-
-GUIのボタンの位置や画像をいろいろと指定し、ELEMENT名をつける。ELEMENTはここでしか使われないID
-それで、ELEMENTをクリックできる条件とその効果を書く。
-
-EVENT_TARGETはつかえない。これが何なのかそもそもあんまり知らない。

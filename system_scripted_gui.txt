@@ -1,12 +1,52 @@
-﻿
-
-
-加筆中
-
-
-
+﻿加筆中
 scripted_guiは、guiとgfxと組み合わせることで、自分の好きなGUIを設計して実装することができる。
 基本的には、条件が満たされると、GUIのあるボタンの実行が解除され、それを押すと何か効果が発揮される。というものになる。
+
+まず、aiを除く書式から
+scripted_gui = {
+	<name> = { #このScripted_GUIシステムの名前。
+	window_name = <string>
+	context_type = <type>
+	parent_window_token = <string>
+	visible = { <triggers> }
+	triggers = {
+		<element>_click_enabled = { <triggers> }
+		<element>_<modifier>_click_enabled = { <triggers> }
+		<element>_visible = { <triggers> }
+		<element>_<modifier>_visible = { <triggers> }
+	}
+	effects = {
+		<element>_click = { <effects> }
+		<element>_<modifier>_click = { <effects> }
+	}
+	properties = {
+		<element> = {
+			image = <string>
+			frame = <var>
+			x = <var>
+			y = <var>
+		}
+	}
+}
+
+#window_name
+containerの名前をここで決める。このcontainerの設計はguiファイルにて行う
+#context_type
+GUIが作用する基本スコープを決める。player_context, selected_country_context, selected_state_contextの3つがある
+#parent_window_token
+親ウィンドウを決めると親ウィンドウに引っ付いて現れる。デフォルトではどこにでも現れる。
+#visible
+containerがどういうときに見えるかを決める。aiが使うためにはaiにも見えている必要がある。
+
+#triggers
+container内部の<element>それぞれのクリック可能条件、可視化条件を決める
+#effects
+<element>をクリックしたときの効果を記述する。
+<modifiers>にはクリック方法のバリエーションを書く。right, alt, control, shiftがある。
+連続させることで、test_button_shit_right_clickも可能。
+
+#properties
+まだよくわからん。
 
 GUIのボタンの位置や画像をいろいろと指定し、ELEMENT名をつける。ELEMENTはここでしか使われないID
 それで、ELEMENTをクリックできる条件とその効果を書く。
