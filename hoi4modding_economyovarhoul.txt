@@ -41,6 +41,14 @@ coreそのものはstate資源の利用に影響は与えず、そのほかが�
 各statesは各国に対するstate_integration_levelを持ち、これが資源利用に影響する。
 とりあえずはシンプルにintegration_levelにスロットと人的が比例するシステムに
 
+state_integration_level@TAG
+next_integration_level_progress@TAG
+next_integration_level_estimated_time
+integration_progress_cost
+integration_progress_cost_factor population&consumergoods
+
+startup_integration_level
+
 integration_levelは共通スロット数を変化させる
 1 50%　非中核
 2 65%
@@ -63,7 +71,7 @@ core
 9 100%
 
 請求権があればレベル1からスタート
-coreがある場合、最低のintegration_levelは5から。
+coreがある場合、最低のintegration_levelは4から。
 
 スタート時にはインフラ、建造物、ステートカテゴリーと人口を加味したlevelに設定する。
 インフラとスロット数を足した数/人口(M)が進行度に設定される。非中核州ならさらに/2する。
@@ -88,6 +96,11 @@ integration_progress_modifier pop数に比例
 daily_integration_progress インフラ、建造物に比例
 instant_integration_progress　政治力をぶち込む。民需工場をぶち込む
 
+
+############ステート管理advaced#################
+
+popなどを基にしたstateの経済システムを構築する。
+stateのeconomyと政府がどれだけそれを吸い上げられるかを重視する
 
 stateのステータス
 
