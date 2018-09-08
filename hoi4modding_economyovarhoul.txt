@@ -8,26 +8,110 @@ POPやJOBにもとづく経済出力と資源算出。
 ############ステート管理#################
 非中核ステートの段階的統合
 
-統合国と統合度の識別方法。
-targeted_variablesを使う。stateレベルでtargetごとに統合度を格納する
+バニラ版の扱い。占領状態はいくつかに分かれる。
 
-THIS = {
-	add_to_variable = { integration_progress@ROOT= 1 }
-}
+自国の中核州　完全コントロール
+自国の植民地　人的=pop*徴兵率*徴兵可能要因*0.02(植民地ペナ)、共有スロット半分
+占領した他国の中核州　工場数、人的、資源は占領政策によって減少
+占領した他国の植民地　工場数、人的、資源の占領政策の減少に加え、共有スロット半分。
 
-integration_progressはGUIで表示したい。
+占領変化は以下に分かれる
+平時：所有中核→他国の植民地　ペナ変化：なし→人的、スロット、
+平時：所有中核→他国の中核　ペナ変化：なし→なし
+平時：所有植民地→他国の植民地　ペナ変化：人的、スロット→人的、スロット
+平時：所有植民地→他国の中核　ペナ変化：人的、スロット→なし
+戦時：所有中核→他国の植民地　ペナ変化：なし→人的
+戦時：所有中核→他国の中核　ペナ変化：なし→なし
+戦時：所有植民地→他国の植民地　ペナ変化：人的、スロット→人的、スロット
+戦時：所有植民地→他国の中核　ペナ変化：人的、スロット→なし
 
-みたいな感じ。
-さまざまな行動によって統合度を上昇させることができ、統合度が十分に上昇すればコア化することができる。
 
-統合度をいくつかに分解する
+非中核、中核の共有スロット半分の扱い。
+自国の中核州でなければ、占領した土地のスロットはすべて半減する。
+on_state_control_changed
+FROMが中核州を持ち、ROOTが中核州を持たないかつ所有者でなければ、
+スロットを減らし、不当な占領FLAGを立てる。
+on_state_control_changedで、不当な占領FLAGがあり、ROOTが所有者か中核州持ちなら
+スロットを増やし、FLAGをはずす。
 
-あとは統合度に応じてdynamic_modifiersをくっつけておく。
-on_state_control_changedで、統合度と統合国、所有国を参照して補正を変化させる。
+
+統合システム
+まず、non_coreのスロット制限は撤廃
+coreそのものはstate資源の利用に影響は与えず、そのほかが影響する。
+各statesは各国に対するstate_integration_levelを持ち、これが資源利用に影響する。
+とりあえずはシンプルにintegration_levelにスロットと人的が比例するシステムに
+
+integration_levelは共通スロット数を変化させる
+1 50%　非中核
+2 65%
+3 80%　
+4 95%　コア化可能
+5 100% コア：常に100%
+
+local_mobilization_level
+non_core
+0 2%
+1 5%
+2 10%
+3 20%
+core
+4 30%
+5 45%
+6 60%
+7 75%
+8 90%
+9 100%
+
+請求権があればレベル1からスタート
+coreがある場合、最低のintegration_levelは5から。
+
+スタート時にはインフラ、建造物、ステートカテゴリーと人口を加味したlevelに設定する。
+インフラとスロット数を足した数/人口(M)が進行度に設定される。非中核州ならさらに/2する。
+
+0
+wasteland 最大　仏アフリカ2M
+tiny_island
+enclave
+1
+small_island　okinawa 0.6M
+pastoral ベルギーコンゴ6M
+
+2 rural　最大インドBihar36.61M
+4 town　山東３８M
+5 large_town　3.5Mアルゼンチン
+6 city 最大53M四川
+8 large_city　上海１７M
+10 metropolis　関西11M
+12 megalopolis　１３M関東
+
+integration_progress_modifier pop数に比例
+daily_integration_progress インフラ、建造物に比例
+instant_integration_progress　政治力をぶち込む。民需工場をぶち込む
 
 
+stateのステータス
 
-人的統合度
+core,non_core
+resource　資源
+population　人口
+state_category　スロット数基本値
+buiding_level　建築物のかず
+vp
+
+国の資源
+工場
+人的資源
+天然資源
+
+coreとnon_coreの違い。
+stateのcoreは、
+そのstateの人々が、core国の一部であるという自認と、
+そのstateがcore国の一部であるという国際的評価を示す。
+non_core_stateは、stateの人々も国際社会も保有国の一部だとは認識してない。
+
+目標。stateの潜在的な価値と利用可能価値を区別する。
+
+
 
 人的統合度（中核でなければ非中核ペナルティがかかり、占領なら加えて占領ペナがかかる）
 スロット統合度（植民地ではスロットが半分になるが、工場は100%機能する）
@@ -36,18 +120,19 @@ on_state_control_changedで、統合度と統合国、所有国を参照して�
 スロット数を増やす
 人的を増やす
 
-統合方法
-請求権をつける。
-政治力を費やす。
-民需工場を費やす。
-
-
 
 中核ステートの段階的開発
 
+統合国と統合度の識別方法。
+targeted_variablesを使う。stateレベルでtargetごとに統合度を格納する
+THIS = {
+	add_to_variable = { integration_progress@ROOT= 1 }
+}
+integration_progressはGUIで表示したい。
+さまざまな行動によって統合度を上昇させることができ、統合度が十分に上昇すればコア化することができる。
 
-
-
+あとは統合度に応じてdynamic_modifiersをくっつけておく。
+on_state_control_changedで、統合度と統合国、所有国を参照して補正を変化させる。
 
 
 #############資源、貿易、経済################
