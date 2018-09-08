@@ -1,0 +1,77 @@
+﻿加筆中
+
+新しいinterfaceを追加するならば必須の要素。
+interfaceのgfxとguiを書き換える必要がある
+
+###################GFX########################
+
+gfxは2dの画像を表示するためのファイルで、実際のファイル名(ddsなど)とプログラム内での呼び方を結びつける。
+以下のような種類がある。
+#spriteTypes
+spriteType
+textSpriteType
+frameAnimatedSpriteType
+progressbaartype
+cornerdTileSpriteType
+(maskedShieldType)
+
+#objectTypes
+animatedmaptext
+
+#bitmapfonts
+textcolors
+bitmapfont
+bitmapfont_override
+
+
+#spriteTypes : spriteType
+もっともよく出てくるgfx。
+spriteTypes = {
+    spriteType = {
+        name = "GFX_<name>"
+        texturefile = <path>
+        noOfFrames = <int>
+        effectFile = <path>
+        
+        allwaystransparent = <bool>
+        legacy_lazy_load = <bool>
+        
+        animation = {
+            animationmaskfile = <path>
+            animationtexturefile = <path>
+            animationrotation = <float>
+            animationlooping = <bool>
+            animationtime = <float>
+            animationdelay = <float>
+            animationblendmode = <mode>
+            animationtype = <type>
+            animationrotationoffset = { 
+                x = <float>
+                y = <float>
+            }
+            animationtexturescale = {
+                x = <float>
+                y = <float>
+            }
+            animationframes = {
+                <int> <int> # etc
+            }
+        }
+    }
+}
+
+###################GUI#############################
+
+GFXをつかってinterfaceを設計するファイル
+
+基本的にinterfaceはcontainerでグループ化されている。
+
+containerWindowType
+
+scripted_guiは、guiとgfxと組み合わせることで、自分の好きなGUIを設計して実装することができる。
+基本的には、条件が満たされると、GUIのあるボタンの実行が解除され、それを押すと何か効果が発揮される。というものになる。
+
+GUIのボタンの位置や画像をいろいろと指定し、ELEMENT名をつける。ELEMENTはここでしか使われないID
+それで、ELEMENTをクリックできる条件とその効果を書く。
+
+EVENT_TARGETはつかえない。これが何なのかそもそもあんまり知らない。
