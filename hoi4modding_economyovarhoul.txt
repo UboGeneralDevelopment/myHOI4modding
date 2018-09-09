@@ -25,7 +25,6 @@ POPやJOBにもとづく経済出力と資源算出。
 戦時：所有植民地→他国の植民地　ペナ変化：人的、スロット→人的、スロット
 戦時：所有植民地→他国の中核　ペナ変化：人的、スロット→なし
 
-
 非中核、中核の共有スロット半分の扱い。
 自国の中核州でなければ、占領した土地のスロットはすべて半減する。
 on_state_control_changed
@@ -42,7 +41,7 @@ coreそのものはstate資源の利用に影響は与えず、そのほかが�
 とりあえずはシンプルにintegration_levelにスロットと人的が比例するシステムに
 
 state_integration_level@TAG
-next_integration_level_progress@TAG
+next_integration_level_progress@TAG　支配権を持つとき、consumergoodsとstate_infraとstate_categoryに比例する。
 next_integration_level_estimated_time
 integration_progress_cost
 integration_progress_cost_factor population&consumergoods
@@ -71,10 +70,16 @@ core
 9 100%
 
 請求権があればレベル1からスタート
-coreがある場合、最低のintegration_levelは4から。
+coreがある場合、最低のintegration_levelは4に設定される。
 
 スタート時にはインフラ、建造物、ステートカテゴリーと人口を加味したlevelに設定する。
 インフラとスロット数を足した数/人口(M)が進行度に設定される。非中核州ならさらに/2する。
+
+支配権が移った時点で、まず中核、請求権の有り無しを確認する。
+次に統合レベルを確認し、中核、請求権最低値と現在の統合レベルを見てより高い統合レベルを持っているほうを採用する。
+前の支配者のmodifierを削除し、新しい支配者のmodifierを付け加える。
+
+レベルの手動の上下は完全支配下でレジスタンスレベルが低いときのみ可能
 
 0
 wasteland 最大　仏アフリカ2M

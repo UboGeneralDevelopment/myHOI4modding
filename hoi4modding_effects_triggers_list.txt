@@ -1,7 +1,7 @@
 
 
 
-effectsとtriggersの一覧
+effectsとtriggersの一覧 1500行あたりからEffect。Trigger,Effectで使用できるSCOPEの説明もある。
 
 		[[ Launching SINGLEPLAYER-game ]]
 	Start-date: 1920.1.1.12
