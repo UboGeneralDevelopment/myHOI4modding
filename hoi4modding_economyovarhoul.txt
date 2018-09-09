@@ -40,40 +40,37 @@ coreそのものはstate資源の利用に影響は与えず、そのほかが�
 各statesは各国に対するstate_integration_levelを持ち、これが資源利用に影響する。
 とりあえずはシンプルにintegration_levelにスロットと人的が比例するシステムに
 
-state_integration_level@TAG
-next_integration_level_progress@TAG　支配権を持つとき、consumergoodsとstate_infraとstate_categoryに比例する。
-next_integration_level_estimated_time
-integration_progress_cost
-integration_progress_cost_factor population&consumergoods
+state_integration_level@TAG　統合レベル　1~9
+daily_integration_point@TAG　一日当たりの進行度：消費財、インフラ、建造物、ステートカテゴリーによる
+daily_integration_progress@TAG　一日当たりの進行度パーセント表記
+current_integration_point@TAG　現在の進行度
+current_integration_progress@TAG　現在の進行度パーセント表記
+state_integration_point_cost　統合コスト　人口比例
 
 startup_integration_level
 
 integration_levelは共通スロット数を変化させる
-1 50%　非中核
-2 65%
-3 80%　
-4 95%　コア化可能
-5 100% コア：常に100%
 
 local_mobilization_level
-non_core
-0 2%
-1 5%
-2 10%
-3 20%
-core
-4 30%
-5 45%
-6 60%
-7 75%
-8 90%
-9 100%
+non_core	core	shared_slots
+0 2%		50%
+1 5%		65%
+2 10%		80%
+3 20%		95%
 
-請求権があればレベル1からスタート
-coreがある場合、最低のintegration_levelは4に設定される。
+4	30%	100%
+5	45%
+6	60%
+7	75%
+8	90%
+9	100%
 
-スタート時にはインフラ、建造物、ステートカテゴリーと人口を加味したlevelに設定する。
-インフラとスロット数を足した数/人口(M)が進行度に設定される。非中核州ならさらに/2する。
+claimがあればレベル1からスタート
+coreがあればレベル4からスタート
+
+スタートアップ時のポイントはコアはステートカテゴリーの基本値+1、最低レベルは4
+植民地はステートカテゴリーの基本値の半分、最大レベルは3
+
 
 支配権が移った時点で、まず中核、請求権の有り無しを確認する。
 次に統合レベルを確認し、中核、請求権最低値と現在の統合レベルを見てより高い統合レベルを持っているほうを採用する。
@@ -97,60 +94,71 @@ pastoral ベルギーコンゴ6M
 10 metropolis　関西11M
 12 megalopolis　１３M関東
 
-integration_progress_modifier pop数に比例
-daily_integration_progress インフラ、建造物に比例
-instant_integration_progress　政治力をぶち込む。民需工場をぶち込む
 
 
-############ステート管理advaced#################
 
-popなどを基にしたstateの経済システムを構築する。
-stateのeconomyと政府がどれだけそれを吸い上げられるかを重視する
+############ステート管理advaced＋POP＋Civilian_Economy+Trade#################
+
+popなどを基にしたstate経済システムを構築する。
+stateのeconomyと、そこから政府がどれだけそれを吸い上げられるかを重視する
 
 stateのステータス
 
-core,non_core
-resource　資源
+vp　勝利点。（provinceベース。政治的価値）
+core, claim, non_core　保有の正当性
+natural_resources　わいてくる資源
 population　人口
-state_category　スロット数基本値
-buiding_level　建築物のかず
-vp
+state_category　スロット数基本値などを決める。これを現地の経済的価値の根本的基本値にするといい。
+buiding_level　建築物のかず。政府が把握している工業力ベース。
+　インフラ
+　民需
+　軍需
+　造船
+
+
 
 国の資源
 工場
 人的資源
 天然資源
 
-coreとnon_coreの違い。
-stateのcoreは、
+
+コンセプト再構成
+
+＃coreとnon_coreの違い。
 そのstateの人々が、core国の一部であるという自認と、
 そのstateがcore国の一部であるという国際的評価を示す。
 non_core_stateは、stateの人々も国際社会も保有国の一部だとは認識してない。
 
-目標。stateの潜在的な価値と利用可能価値を区別する。
+＃state_category
+スロット数基本値、開発可能限界を決める。これを現地の経済的価値の根本的基本値とみなす。
+
+#building
+実際のICを提供する。政府の把握している工業力ベースと考えられる。
+
+＃Population
+人口
 
 
+導入コンセプトブレインストーム
 
-人的統合度（中核でなければ非中核ペナルティがかかり、占領なら加えて占領ペナがかかる）
-スロット統合度（植民地ではスロットが半分になるが、工場は100%機能する）
-工場統合度（占領では利用可能量が減る）
+POPシステム
+POPステータスの分別
+職業：生産物、政治的影響を決定。自給農民、商業農民、工場労働者、知能労働者、資本家、政治家、
+優遇度：扱いの差などを決める。
+国家統合度：国家への帰属度合い
+家計：そのPOPの経済的豊かさ
+能力：POPの能力
 
-スロット数を増やす
-人的を増やす
 
+経済拘束
 
-中核ステートの段階的開発
-
-統合国と統合度の識別方法。
-targeted_variablesを使う。stateレベルでtargetごとに統合度を格納する
-THIS = {
-	add_to_variable = { integration_progress@ROOT= 1 }
-}
-integration_progressはGUIで表示したい。
-さまざまな行動によって統合度を上昇させることができ、統合度が十分に上昇すればコア化することができる。
-
-あとは統合度に応じてdynamic_modifiersをくっつけておく。
-on_state_control_changedで、統合度と統合国、所有国を参照して補正を変化させる。
+デフォでは建設が進めば進むほど工業力強化が加速する。毎年～～％という感じになる。
+このペースを落としたい。
+建設は政府による上からの投資と解釈。
+建築物はそれを動かすPOPが必要であり、POPには維持費がかかる。
+軍事工場は、すべて国家管理のものと仮定し、コストはすべて国が支払う。
+民需工場は、民間が勝手に使う分と国家の維持費に使う分と国家が自由に使える分に分かれる。
 
 
 #############資源、貿易、経済################
