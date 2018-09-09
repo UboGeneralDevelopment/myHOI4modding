@@ -29,12 +29,24 @@ scripted_gui = {
 	}
 }
 
+GUI要素
 #window_name
 containerの名前をここで決める。このcontainerの設計はguiファイルにて行う
+
 #context_type
-GUIが作用する基本スコープを決める。player_context, selected_country_context, selected_state_contextの3つがある
+GUIが作用する基本スコープを決める。
+player_context, selected_country_context, selected_state_contextの3つがあり、それぞれプレイ国家、選択相手国家、選択ステートとなる。
+
 #parent_window_token
-親ウィンドウを決めると親ウィンドウに引っ付いて現れる。デフォルトではどこにでも現れる。
+親ウィンドウを決めると親ウィンドウのcontainerに引っ付いてこのcontainerが現れる。
+GUIのスクリプトとしては、親containerの中の一番下にこのcontainerが追加される形となる
+GUIでの設計する際の位置の基準(0,0)が親ウィンドウになり、重なり順番は親container基準となる。
+これを決めない場合のデフォルトではどこにでも現れる。
+また、親ウィンドウを自分で作ったものにしたければ、そのcontainerのnameを書けばよい。
+selected_country_viewとdiplomacy_tab、national_focus、各technology_tabでは
+親containerのウィンドウ基準位置がウィンドウトップバーの下にあるので注意。
+national_focusとtechnologyを使うときは、moveableに注意。また、national_focusでは他国のnational_focusでも当然見えるので注意
+
 #visible
 containerがどういうときに見えるかを決める。aiが使うためにはaiにも見えている必要がある。
 
