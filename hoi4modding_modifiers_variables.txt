@@ -41,7 +41,10 @@ local_supplies
 local_intel_to_enemies
 local_factory_sabotage
 attrition
-local_building_slots(多分無理か？)
+local_building_slots
+
+つかえたらいいなあ
+local_monthly_population
 
 non_coreにはlocal_building_slots_factor=-0.5とlocal_non_core_manpower=-0.98がかかっている。
 
