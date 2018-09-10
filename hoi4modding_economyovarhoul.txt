@@ -78,27 +78,23 @@ coreがあればレベル4からスタート
 
 レベルの手動の上下は完全支配下でレジスタンスレベルが低いときのみ可能
 
-0
-wasteland 最大　仏アフリカ2M
-tiny_island
-enclave
-1
-small_island　okinawa 0.6M
-pastoral ベルギーコンゴ6M
-
-2 rural　最大インドBihar36.61M
-4 town　山東３８M
-5 large_town　3.5Mアルゼンチン
-6 city 最大53M四川
-8 large_city　上海１７M
-10 metropolis　関西11M
-12 megalopolis　１３M関東
+0	wasteland 最大　仏アフリカ2M
+0	tiny_island
+0	enclave
+1	small_island　okinawa 0.6M
+1	pastoral ベルギーコンゴ6M
+2	rural　最大インドBihar36.61M
+4	town　山東３８M
+5	large_town　3.5Mアルゼンチン
+6	city 最大53M四川
+8	large_city 上海17M
+10	metropolis 関西11M
+12	megalopolis 13M関東
 
 
 
 
 ############ステート管理advaced＋POP＋Civilian_Economy+Trade#################
-
 popなどを基にしたstate経済システムを構築する。
 stateのeconomyと、そこから政府がどれだけそれを吸い上げられるかを重視する
 
@@ -116,37 +112,43 @@ buiding_level　建築物のかず。政府が把握している工業力ベー�
 　造船
 
 
-
-国の資源
-工場
-人的資源
-天然資源
-
-
 コンセプト再構成
 
 ＃coreとnon_coreの違い。
-そのstateの人々が、core国の一部であるという自認と、
-そのstateがcore国の一部であるという国際的評価を示す。
+そのstateの住民がcore国に属するという自認と、そのstateがcore国に属するという国際的評価を示す。
 non_core_stateは、stateの人々も国際社会も保有国の一部だとは認識してない。
 
 ＃state_category
 スロット数基本値、開発可能限界を決める。現地の民間経済価値の基本値の一つをなす。
-ステートの発展具合を示す指標の一つ。レベルごとに経済価値最大値が存在し、POPによって利用される。
-
+ステートの発展具合を示す指標の一つだが、スロット数はあくまでスロット数。
 
 #building
 実際のICを提供する。政府の把握している工業力ベースと考えられる。
-バランスとしては、factoryが増えるごとに維持費的なペナルティをかけていき、実質的な稼働限界値を設ける。
-100工場まで増やすのはたやすいが、十分なバックグラウンドがなければ２００には増えない。
+バランスとしては、stateごとに稼働可能なfactoryの限界値があり、それを超えるとlocaL_factoryが低下していく。
 十分なバックグラウンドというのは、民間の経済力に依存し、国の経済力にはあまり依存しない。
 高い消費財と多くの発展した土地が民間経済力の基礎となる。
 
-
-
-
 ＃Population
 人口
+
+#modifier
+確実に使える効果
+local_resources
+local_manpower
+local_non_core_manpower
+local_factories：dockyardとfactoryの数を増減する。増減は最終的な工場数にのみ反映され、スロットには現れない。
+local_building_slots_factor
+
+使えるかもしれない効果
+resistance_tick
+local_supplies
+local_intel_to_enemies
+local_factory_sabotage
+attrition
+local_building_slots
+
+つかえたらいいなあ
+local_monthly_population
 
 
 導入コンセプトブレインストーム
@@ -163,17 +165,47 @@ POPステータスの分別
 多すぎるPOPはまったくもって経済的価値に影響を与えない。
 
 チャートは使えないのでパーセントのリストでがんばる。
-
-
-
-経済拘束
-
-デフォでは建設が進めば進むほど工業力強化が加速する。毎年～～％という感じになる。
-このペースを落としたい。
-建設は政府による上からの投資と解釈。
-建築物はそれを動かすPOPが必要であり、POPには維持費がかかる。
-軍事工場は、すべて国家管理のものと仮定し、コストはすべて国が支払う。
+デフォでは建設が進めば進むほど工業力強化が加速する。毎年～～％という感じになる。このペースを落としたい。
+建設は政府による上からの投資と解釈。建築物はそれを動かすPOPが必要であり、維持費がかかる。
+軍事工場は、すべて国家管理のものと仮定、コストはすべて国が支払う。
 民需工場は、民間が勝手に使う分と国家の維持費に使う分と国家が自由に使える分に分かれる。
+工場の量はステートごとに効率が変わる。建設数が少なくとも、local_factoryのmodifierで工場数を増やせる。
+国家レベルではfactory_outputが役に立つ。
+
+新規state_stats
+civilian_economy
+factory_efficiency
+core_conscription
+non_core_conscription
+integration_level
+state_category
+など
+
+popsの影響範囲。徴兵、州経済、政治
+
+第一義に職業で分類
+農民（経済にあまり貢献しない）　二次生産物労働者（生産経済に貢献）　公務員（経済、政府効率に貢献）　投資家（経済効率に貢献）
+各職業ごとでnationalityに分類
+nationalityごとに以下のstatsを持つ
+citizenship 市民権。
+government_control　政府のコントロールがどれだけきかせられるか。強制労働や徴兵に影響
+裕福度　裕福度。職業変更の可能性や現状満足度に影響
+生産性　生産性。州経済に影響
+反逆度　反逆度。
+
+
+
+###########ステート管理画面設計方針###############
+ステート基本画面
+基本の画面、いくつかの新機能が見れる
+ステートPOP詳細画面
+詳細画面、POP管理はここで行う。
+ステートPOP一括管理画面
+ステートのリストでステートの新プロパティーを一覧でき、そのステートへと移動できる。ハイライト機能はディシジョン限定か？
+このインターフェイスを早期試作したい。
+league of nationsのリストはダイナミックではないので、MtGを待つ。
+ここでは基本的に情報を確認できるのみで、実際の作業は行えなくてもよい。
+実際の作業はステートに移動するか、建設画面でボタンポチポチする
 
 
 #############資源、貿易、経済################
