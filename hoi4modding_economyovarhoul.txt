@@ -102,7 +102,7 @@ stateのステータス
 
 vp　勝利点。（provinceベース。政治的価値）
 core, claim, non_core　保有の正当性
-natural_resources　わいてくる資源
+natural_resources　問答無用でわいてくる資源
 population　人口
 state_category　スロット数基本値などを決める。これを現地の経済的価値の根本的基本値にするといい。
 buiding_level　建築物のかず。政府が把握している工業力ベース。
@@ -124,7 +124,7 @@ non_core_stateは、stateの人々も国際社会も保有国の一部だとは�
 
 #building
 実際のICを提供する。政府の把握している工業力ベースと考えられる。
-バランスとしては、stateごとに稼働可能なfactoryの限界値があり、それを超えるとlocaL_factoryが低下していく。
+バランスとしては、stateごとに稼働可能なfactoryの限界値があり、それを超えるとlocal_factoryやlocal_resourcesが低下していく。
 十分なバックグラウンドというのは、民間の経済力に依存し、国の経済力にはあまり依存しない。
 高い消費財と多くの発展した土地が民間経済力の基礎となる。
 
@@ -188,11 +188,12 @@ popsの影響範囲。徴兵、州経済、政治
 各職業ごとでnationalityに分類
 nationalityごとに以下のstatsを持つ
 citizenship 市民権。
-government_control　政府のコントロールがどれだけきかせられるか。強制労働や徴兵に影響
 裕福度　裕福度。職業変更の可能性や現状満足度に影響
 生産性　生産性。州経済に影響
-反逆度　反逆度。
+government_control　政府のコントロールがどれだけきかせられるか。強制労働や徴兵に影響
+忠誠、反逆度　反逆度。
 
+coreは1st citizenshipの国民の数に依存する。
 
 
 ###########ステート管理画面設計方針###############
