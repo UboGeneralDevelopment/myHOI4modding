@@ -184,7 +184,7 @@ state_category
 popsの影響範囲。徴兵、州経済、政治
 
 第一義に職業で分類
-農民（経済にあまり貢献しない）　二次生産物労働者（生産経済に貢献）　公務員（経済、政府効率に貢献）　投資家（経済効率に貢献）
+農民（経済にあまり貢献しない）　労働者（生産経済に貢献）　公務員（経済、政府効率に貢献）　投資家（経済効率に貢献）
 各職業ごとでnationalityに分類
 nationalityごとに以下のstatsを持つ
 citizenship 市民権。
@@ -195,6 +195,14 @@ government_control　政府のコントロールがどれだけきかせられ�
 
 coreは1st citizenshipの国民の数に依存する。
 
+これによって何ができる？
+人は多いが生産性はくそ
+二流市民が三流市民を抑圧
+政府にコントロールされているが反逆度は高い
+裕福だが生産性は低い
+生産性はくそだが政府コントロールはしっかり
+
+
 state stats
 既存のstate_stats
 #state_category
@@ -204,11 +212,19 @@ state stats
 #province_buildings #province_terrain #province_vp
 
 新規state_stats
-#factory_efficiency(civ_fac, mil_fac, dockyards)
-#manpower_efficiency
-#resource_efficiency
-#civilian_economic_activity
-#government_control
+#optimum_factories
+#factory_efficiency (industrial_complex, arms_factory, dockyards)　
+#manpower_efficiency　
+#resource_efficiency　
+#civilian_economic_activity　
+#government_control　
+工場の扱い
+適切に動くためには労働者POPがいる。必要POP数は状況によって変動する。
+工場のわりにPOPが少なければ稼働率が低下する。POPがおおければ稼働率がある程度は上昇する。
+このあたり、building_levelのvariablesがどのように動作するか見る必要がある。
+工場があればPOPは自動的に工場に配属され、なければlocal_industryに配属される。
+local_industryは独自のメカニクスを持ち、勝手に工場を建設することもある。
+
 
 ###########ステート管理画面設計方針###############
 ステート基本画面
