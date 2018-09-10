@@ -195,12 +195,28 @@ government_control　政府のコントロールがどれだけきかせられ�
 
 coreは1st citizenshipの国民の数に依存する。
 
+state stats
+既存のstate_stats
+#state_category
+#core, claim, control, own
+#population #resistance #natural_resources 
+#state_buildings #state_shared_buildings
+#province_buildings #province_terrain #province_vp
+
+新規state_stats
+#factory_efficiency(civ_fac, mil_fac, dockyards)
+#manpower_efficiency
+#resource_efficiency
+#civilian_economic_activity
+#government_control
 
 ###########ステート管理画面設計方針###############
 ステート基本画面
 基本の画面、いくつかの新機能が見れる
+
 ステートPOP詳細画面
-詳細画面、POP管理はここで行う。
+詳細画面、POP管理などはここで行う。
+
 ステートPOP一括管理画面
 ステートのリストでステートの新プロパティーを一覧でき、そのステートへと移動できる。ハイライト機能はディシジョン限定か？
 このインターフェイスを早期試作したい。
