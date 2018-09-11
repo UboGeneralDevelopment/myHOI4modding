@@ -340,6 +340,99 @@ POPメカニクス
 富裕度　投資家がどれだけ金持ちかを示す。
 
 
+＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃経済そうまとめ
+
+国家基礎出力　８種類の入手方法
+軍需工業力　工場＆労働POP、工業流入より
+造船工業力　工場＆労働POPより
+民需工業力　工場＆労働POP、農民POP、資源輸出代金、工業流入より
+資源産出力　資源採掘、資源輸入より
+投資家能力　投資家POP、自営業POPより
+
+国家支出　10種類の支出
+軍需工業力　装備生産、工業流出
+造船工業力　装備生産
+民需工業力　労働者：公務員；投資家；POP維持費、資源輸入代金、政府活動、建設
+資源産出力　装備生産、資源輸出
+投資家能力　投資能力消費
+
+出力詳細
+
+＃工業流入
+＃資源輸出代金
+＃資源輸入
+＃資源採掘
+バニラゲームに存在。POPステータスに応じて多少の補正をかけることが可能。
+
+＃工場＆労働POP →軍需、造船、民需、資源
+民需、軍需、造船所がそれぞれが最大雇用数を持ち、各工場の最大雇用数を合算、労働者分だけ埋まる。
+最大雇用人数＝軍（工場数＊最大雇用数）＋船（工場数＊最大雇用数）＋民（工場数＊雇用数）+資源(資源数＊雇用数)
+雇用人数　＝　総労働者POP or 最大雇用人数
+実出力＝　雇用者数＊労働POP生産性*modifiers(いろいろ)
+max_?_worker 工場最大雇用数　worker_pops労働者POP数　worker_productivity労働者生産性として
+max_workers = industrial_complex_level * max_i_worker + arms_factory_level * max_a_worker + docyards_level * max_d_worker+
+if = { limit = {worker_pops<max_workers)
+actual_workers = worker_pops
+}else{
+actual_workers = worker_pops
+}
+local_factories = (productivity * actual_workers / max_workers)*modifiers - 1
+のstate_modifierを与える。
+
+＃農民POP
+農民の数と農民の生産性、国家統合度、税率そのほか補正の合計によって工業力をわずかに出力し、マップ外工場として提供する。
+farmer_factories = farmer_pops*farmer_productivity*modifiers
+farmer_factories_change = farmer_factories - last_days_farmer_factories
+add_offsite_building　= { type = industrial_complex level = farmer_factories_change } #ただし、現在はこのeffectsはvariablesをサポートしない
+
+＃自営業POP
+富裕度(満足度)と人口、生産性に応じて国家投資ポイントを生産する。
+daily_investment_points = satisfaction*citizen_pop*productivity*modifiers
+
+＃投資家POP
+POP総収入の一部と生産性から国家投資ポイントを生産し、自動配分する。
+daily_investment_points = capitalist_income*productivity*modifiers
+
+
+支出詳細
+
+＃装備生産
+＃資源輸出
+＃工業流出
+＃資源輸入代金
+＃建設
+＃政府活動
+バニラゲームに存在。POPステータスによって多少の補正はかけられる
+
+＃労働者POP維持費
+雇用労働者POPへの給料と労働者収支への追加資金に依存する。消費財必要量へと追加。
+労働者収支　＝　総労働者POPー雇用労働者POP
+雇用労働者賃金　＝　雇用労働者POP＊生産性
+労働者収支コスト　＝　労働者収支＊生産性＊追加コスト（失業手当or過剰賃金）　
+労働POP総コスト　＝　労働者収支コスト＋雇用労働者賃金
+追加コストをそれぞれunemployment_fee, worker_shortage_feeとすると、
+total_workers_cost = modifiers* [
+actual_workers*productivity*worker_fee + 
+(max_workers - actual_workers)*productivity*{(unemployment_fee) or (worker_shortage_fee)}
+]
+
+＃公務員POP維持費
+公務員予算に完全依存。公務員予算は50%から100%まで取れる。消費財必要量へと追加。
+total_admin_pop_cost = productivity*admin_pops*modifiers*(1-government_payment_level)
+
+＃投資家POP維持費
+経済影響力に応じて消費財必要割合へと追加される。
+total_cap_pop_cost = industrial_influence
+
+最終消費財量の計算
+total_consumer_goods = total_workers_cost+total_admin_pop_cost
+consumer_goods_factor = total_consumer_goods / total_factories + total_cap_pop_cost
+
+＃投資能力消費
+投資ポイントを用いて何か効果をもたらす。
+投資ポイントの使い道には、効果のわかっているものと、効果とコストがばくちのものがある。
+investment_level
+
 3333333333333生産性変化333333333333333333333333333333333
 労働者、自営業、公務員
 富裕状態で生産性が上昇する
@@ -356,14 +449,59 @@ POPメカニクス
 高い富裕度は増殖を高めるが、高い生産性は増殖を弱める
 ただし、そこまで影響がなく、イベントや基本値の影響が大きい。
 
-職業移転は全５種の仕事の間で自由に可能。
+職業移転は
 各職業ごとに各職業に対する移転率が計算される。おもに富裕度と生産性が考慮される。
 
-農民		↑労働者	↑自営業	↑公務員	↑投資家
+農民		↑労働者	↑自営業	↑公務員
 労働者	↓農民		→自営業	→公務員	↑投資家
 自営業	↓農民	→労働者		→公務員	↑投資家
 公務員	↓農民	→労働者	→自営業		↑投資家
-投資家	↓農民	↓労働者	↓自営業	↓公務員
+投資家		↓労働者	↓自営業	↓公務員
+
+という形。上矢印はpromotion、下矢印はdemotion、横矢印はただの移動。
+
+職業移転圧力　ほぼ貧困率に比例する
+各職業誘因力　
+移転コスト　　生産性の差。
+
+移住について、
+基本的に移住においては職業は変化しない。
+
+自ステートと、自国と、世界各国の職業魅力値を比較し、行先を決定。
+移動しない。職業移転判定へ。
+国内移動。国内移住者プールへ。移住先決定。職業移転判定へ
+国外移動。受け入れ国家国籍別移住者プールへ。移住先決定。職業移転判定へ。
+
+移住国家判定
+
+国内移住先判定
+
+職業移転判定
+
+移動コスト。国内では一定。技術や各種補正に左右される。
+
+各POPは自分の状態を把握しており、移住先の外面は見えている。
+
+ステート魅力値と生産性の差で判断。
+誘引要因
+行先の各POP人口＊各POP富裕度
+
+行先の生産性との差、移動コストが阻止要因
+
+国内ステートごとにステート魅力が設定されている。
+国内ステートの魅力を合算して国家魅力が設定される。
+国家魅力と互いの関係によって、国ごとに、国ごとに対する魅力値が設定される。
+
+各地のPOPが何の職業に配属されるかはまた別の計算。
+
+各地域魅力を総合して各職業ごとの国家魅力が設定。
+移動コスト、文化差コスト
+国内移動コストは完全距離比例。安い
+
+国内移住
+国外移住
+
+
 
 各移転率の計算には、ステータス差が最大限考慮される。
 
