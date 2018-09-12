@@ -1,5 +1,5 @@
 ﻿
-modガイド
+#################modガイド######################
 
 modガイドライン10か条+1
 １。ゲームファイルはいじくるな　２．よいエディタを使おう　３．バニラファイルの上書きは最小限に
@@ -12,7 +12,7 @@ modガイドライン10か条+1
 マイナーMODとメジャーMOD
 メジャーMODにおいては、ロードするデータのフォルダパスを変更してしまい、バニラのフォルダを無視してMODフォルダのデータのみロードしてしまうこともある。
 
-MODの構造
+##################MODの構造########################
 HOI4のMODでは、基本的にバニラのEXEの置いてあるフォルダの中にあるEXE以外のデータをMODでおきかえることができる。
 HOI４のMODで可能なことは大別すると、個人的には主に３種類あると考えている。
 １　動的メカニクス
@@ -28,7 +28,7 @@ NF、アイデア、ディシジョン、技術の追加などゲーム内の既
 さて、ではMODにはいったい何が用意されているかをリスト化すると、主には以下のようになる。分類は主観的なものなので注意。
 modでは基本的にはここに用意されているシステムしか作れない。システム名は対応するフォルダ名をあて、複数フォルダにまたがる場合もまとめた。
 
-動的メカニクス
+#################動的メカニクス
 events コマンドによる実行あるいは自分自身の条件付けで自動的に発生 コマンドを実行できる
 abilities 将軍の能力 コマンドを実行できる 時間制限付きモディファーをつけられる。
 decisions 条件によって出現し、手動かコマンドで実行 コマンドを実行できる 時間制限付きモディファーをつけられる
@@ -40,7 +40,7 @@ scripted_gui 自分でいろいろ作れる。基本的にはコマンドを実�
 ideasおよびidea_tags コマンドによって呼び出されるか、政治力を払う。 コマンドのほか、モディファーを実装できる
 technologiesとtechnology_tags 手動研究か、コマンド実行。研究、コマンドとモディファーを実装できる。
 
-静的データ
+################静的データ
 aces エース
 autonomous_states　従属国の種類
 buildings 建物の種類と効果
@@ -64,7 +64,7 @@ Localizationは、ID識別されたものにそれの表示する名を割り当
 
 これらのシステムの実装の詳細についてはそれぞれの説明を参照。もちろんこれですべてではない。順次説明を追加。
 
-
+###################書式####################################
 さて、ここまで紹介したMODは共通の書式(documentation)によって記述される。
 書式には以下のような要素がある。
 スコープ　コマンド（エフェクト）　トリガー（条件）　モディファー　オペレーター
@@ -75,7 +75,7 @@ Localizationは、ID識別されたものにそれの表示する名を割り当
 
 まず重要な書式、スコープ、コマンド、トリガー、モディファー、について
 
-スコープ
+#################スコープ
 なんらかの操作を行う対象、あるいは範囲を指定する。
 スコープは基本的にはゲーム中で選択されている対象であり、スコープ種類は大別すると4種、どこでも(グローバル)、国家、ステート、指揮官である。
 MODで行われる操作は基本的には選択されたスコープ中で実行され、効果を及ぼす対象もスコープで指定される。
@@ -87,7 +87,7 @@ MOD中のどこにスコープを記載するかは、MODシステムに依存�
 基本的な記法は、システム上でスコープ参照が定義されているならば SCOPE = {}　で、かっこの中でいろいろ操作が行われる。
 
 
-コマンド（エフェクト）
+#################コマンド（エフェクト）
 何らかの効果を実行させる。あるスコープにおいて条件が満たされたりアクションがおきると実行され、指定されたスコープに対して影響を与える。
 指定したスコープにおいて、なにかを変化させる。その効果は一度きりで記録に残らない。コマンドをMOD中のどこに記載するかはMODシステムに依存する。
 何らかの数値を変化させる場合、変化量は基本的に定数だが、コマンドによっては変数を指定することもできる。
@@ -98,7 +98,7 @@ decisions, ideas, national_focuses, technologies, events, abilities, scripted GU
 などである。
 
 
-トリガー（条件）
+###############トリガー（条件）
 MODシステムの実行の可否を決める条件、あるいはMODシステムの実行可能条件を指定するほか、条件分岐などに使用する。
 トリガーの記載場所はMODシステムによって異なり、スコープによって利用可能なトリガーも異なる。一つの条件指定にトリガーを複数用いることも可能。
 MODシステム内での条件指定で使われる場合と、コマンドの条件分岐で用いられる場合では少々表記法が異なる。
@@ -110,7 +110,7 @@ decisions,ideas,national_focuses,technologies,events,abilities,
 scripted GUI,on action　などである。
 
 
-モディファー
+#############モディファー
 あるスコープの中のある変数に対して効果を及ぼす点ではエフェクトに似るが、アイデアなどの実体に紐づけられる。変化量は基本的に固定で、動的変化はシステムに依存する。
 モディファーをMOD中のどこに記載するかは、MODシステムに依存する。また、MODシステムによって使用可能なモディファーも異なる。
 モディファーはディシジョン、国家精神、国家方針などに結びついており、コマンドで直接いじることは基本的にできない。
@@ -148,7 +148,7 @@ FROMは、主にターゲットの指定に使われる。Decisionではター�
 
 そして、これまで説明した要素をサポートするために、以下の要素が用意されている。
 
-変数
+###############変数
 各スコープ内に保存される変数で、２つの重要な変数がある。ゲーム内変数とMOD定義変数だ。
 ゲーム内変数は参照することのみができるものだが、自分で新たな変数設定してそこへ代入することは可能。各スコープごとに多くの種類が設定されている。
 ゲーム内変数の種類はwikiのvariablesに書かれている。triggerもゲーム内変数として参照できるときもあるが、トリガーとしてしか使えない場合も多い。
@@ -158,10 +158,10 @@ MOD定義の変数操作はコマンドの一種であり、スコープや条�
 変数操作をMODのどこに記載するかはコマンドにほぼ準じており、MODシステムに依存する。
 各国に一斉に変数設定がしたければROOTとかevery_countryなどを使う。
 
-定義
+###################定義
 定義された数字を格納している。国に共通することなど、繰り返し用いられる数字などが定義づけられている。書き換えることもあるが、書き換えは恒久的になるので注意。
 
-ローカライズ
+##############ローカライズ
 ゲーム内の実体の多くはIDであらわされており、言語を変えて表示したいときに、置き換えるIDをこれで置き換える。
 
 などと色々書いたが、プログラミング感覚とはMODDINGは少しちがうといえる。
@@ -172,5 +172,32 @@ MOD定義の変数操作はコマンドの一種であり、スコープや条�
 また、ウィキの内容もすべてではなく、一番いいのは役に立ちそうなMODをダウンロードし、バニラファイルと比べて調べることである。
 
 以上がMOD編集の概観である。AIやグラフィックについてはほとんどカバーしてないため、そこは今後加筆していく。
+
+
+#####################################################################
+
+そのほかお役立ち情報
+
+1.4での気になる点。
+ Added support for relation modifiers and valid_relation_trigger in the static modifiers file. Modifiers are removed if the trigger becomes false.
+- Added add_relation_modifier effect that adds a static modifier from current scope to target.
+- Added remove_relation_modifier effect.
+- Added trigger has_relation_modifier.
+- Added dynamic cost_factor modifier for idea groups. Example political_advisor_cost_factor.つまりアイデアのコストはアイデアグループのスロットの名前ごとにダイナミックに変えられる、
+- Added on_state_control_changed to on action.
+- Added non_core_manpower modifier that can be used on country level to control manpower from non-core territory
+- States can now be marked as impassable and can then not be traversed by troops, they get special border graphics to signify this. Province view will indicate with an icon+tooltip, as will on-map tooltip
+- Borders between provinces can now be set up in adjacencies as impassable and can then not be passed
+
+1.5での気になる点
+- Added generate_wargoal_tension_against targeted modifier.　特定国家に対しての正当化緊張度制限のことか？
+- Added variable support for effects: send_equipment add_manpower.
+- Added variable support for triggers: has_equipment has_manpower has_army_experience has_air_experience has_navy_experience
+- Added attack modifier vs specific countries
+- Added on action for creating unit leaders
+- New Modifiers cic_to_target_factor, mic_to_target_factor, extra_trade_to_target_factor, trade_cost_for_target_factor
+- Added modifier army_org_regain
+
+
 
 
