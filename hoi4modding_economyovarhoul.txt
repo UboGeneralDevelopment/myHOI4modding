@@ -335,6 +335,8 @@ citizenship 市民権ランク
 満足度　投資家がどれだけ金持ちかを示す。
 
 ############経済総まとめ#############################
+consumer_goods_factorにおいては、国家の軍需＋民需の計算には輸入分も含まれている。
+よって、補正値は　欲しい消費財量　/ （軍＋民）（輸入込み）＝　消費財ファクター　となる。
 
 国家基礎出力　８種類の入手方法
 軍需工業力　工場＆労働POP、工業流入より
@@ -395,8 +397,10 @@ daily_investment_points = capitalist_income*productivity*modifiers
 ＃工業流出
 ＃資源輸入代金
 ＃建設
-＃政府活動
 バニラゲームに存在。POPステータスによって多少の補正はかけられる
+
+＃政府活動
+バニラゲームに存在。ただし、地元経済の振興など、多くの特別用途に用いられる。
 
 ＃労働者POP維持費
 雇用労働者POPへの給料と労働者収支への追加資金に依存する。消費財必要量へと追加。
@@ -420,7 +424,7 @@ total_cap_pop_cost = industrial_influence
 
 最終消費財量の計算
 total_consumer_goods = total_workers_cost+total_admin_pop_cost
-consumer_goods_factor = total_consumer_goods / total_factories + total_cap_pop_cost
+consumer_goods_factor = total_consumer_goods / (civilian_factories + military_factories) + total_cap_pop_cost
 
 ＃投資能力消費
 投資ポイントを用いて何か効果をもたらす。
