@@ -4,3 +4,17 @@
 
 帝国、王国、公領、伯領、
 国家、従属、第二従属
+
+従属国が強大だと自治度増加スピードアップ
+分散させるために従属国に従属国を持たせる。
+num_subjects
+ic_ratio
+strength_ratio
+基本
+
+county
+duchy
+
+特殊
+grand duke
+march
