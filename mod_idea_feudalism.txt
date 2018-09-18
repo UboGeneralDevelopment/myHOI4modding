@@ -47,6 +47,9 @@ puppet, colony, dominion,reichsprotectorate, satellite, imperial_associate, impe
 integrated_puppet, reicheskomissariat, imperial_protectrate
 30% of CIC
 
+all subjects
+daily_autonomy_gain +1.5
+
 add_ideas
 CIC MIC autonomy gain
 
