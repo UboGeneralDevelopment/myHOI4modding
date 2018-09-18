@@ -48,20 +48,22 @@ integrated_puppet, reicheskomissariat, imperial_protectrate
 30% of CIC
 
 add_ideas
-CIC MIC autonomy gain cancel trigger swap ideas
+CIC MIC autonomy gain
 
-add_opinion_modifier
-opinion
-cancel trigger  no_levies
+
+decisionで国民精神を付与。
+on_subject_level_changeでアイデア交換、
+on_subject_freeで撤去
+decisionで国民精神を撤去
+
+on_subject_free #ROOT is subject FROM is previous overlord
+on_subject_autonomy_level_change #ROOT is subject FROM is overlord
 
 
 帝国、王国、公領、伯領、
 国家、従属、第二従属
 
 従属国から搾り取ると自治度増加スピードアップ
-
-on_subject_free #ROOT is subject FROM is previous overlord
-on_subject_autonomy_level_change #ROOT is subject FROM is overlord
 
 分散させるために従属国に従属国を持たせる。
 num_subjects
