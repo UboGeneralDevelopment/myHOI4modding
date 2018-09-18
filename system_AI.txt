@@ -5,6 +5,12 @@ ai_will_doなどの仕組み。
 
 大きく分けると、
 ai_will_do：実装済みメカニクスにおいて、実行順位の優先づけ
+
+factor ベースファクター
+modifier{
+add　ファクターに加える
+factor　ファクターにかける
+}
 ai(scripted gui)：scripted GUIでもちいられるaiの優先付け
 AI Areas：AIが戦域を分けるときの判断基準
 AI focuses：状況に応じて行動の優先度を決定
