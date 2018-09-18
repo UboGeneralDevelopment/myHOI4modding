@@ -1,20 +1,81 @@
-﻿加筆中
-
+﻿
 封建制MOD
+
+Feudalism!
+
+interact with vassals!
+
+Levies !
+
+###################バニラ資料########################
+
+Democracy_Communism_Neutrality 4LEVEL
+0000~1000 integrated_puppets
+ 100%MPshare -90%price 25%CIC 75%MIC
+1000~2000 puppets
+ 90%MPshare -90%price
+2000~3000 colony
+ 70%MPshare -50%price
+3000~4000 dominion
+ nonMPshare -25%price
+
+
+Fascism 3LEVEL
+0000~1600 reicheskomissariat
+ 90%MPshare -90%price 25%CIC 65%MIC -50%MP
+1600~3200 reichsprotectrate
+ 70%MPshare -60%price 25%CIC -25%MP
+3200~4000 satellite
+ 40%MPshare -40%price
+
+
+Fascism&Japan 3LEVEL
+0000~2400 imperial_protectorate
+ 90%MPshare -90%price 35%CIC 75%MIC
+2400~4000 imperial_associate
+ 70%MPshare -60%price 25%CIC
+3000~4000(imperial_subject)
+ 50%MPshare -25%price 10%CIC 25%MIC
+
+####################################################
+
+Raise Levies!!!
+
+puppet, colony, dominion,reichsprotectorate, satellite, imperial_associate, imperial_subject
+30% of MIC CIC given to overload
+
+integrated_puppet, reicheskomissariat, imperial_protectrate
+30% of CIC
+
+add_ideas
+CIC MIC autonomy gain cancel trigger swap ideas
+
+add_opinion_modifier
+opinion
+cancel trigger  no_levies
+
 
 帝国、王国、公領、伯領、
 国家、従属、第二従属
 
-従属国が強大だと自治度増加スピードアップ
+従属国から搾り取ると自治度増加スピードアップ
+
+on_subject_free #ROOT is subject FROM is previous overlord
+on_subject_autonomy_level_change #ROOT is subject FROM is overlord
+
 分散させるために従属国に従属国を持たせる。
 num_subjects
 ic_ratio
 strength_ratio
 基本
 
+
 county
 duchy
+
 
 特殊
 grand duke
 march
+
+
