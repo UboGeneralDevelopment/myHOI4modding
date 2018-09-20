@@ -39,6 +39,12 @@ Fascism&Japan 3LEVEL
 
 ####################################################
 
+意外とtargeted_decisionの制御が難しいので、scripted_guiとイベントのほうがいいかもしれぬ。
+
+country windowから操作。
+管轄移動させる国家をマークしていき、移動先国家で実行。
+
+####################################################
 Raise Levies!!!
 
 puppet, colony, dominion,reichsprotectorate, satellite, imperial_associate, imperial_subject

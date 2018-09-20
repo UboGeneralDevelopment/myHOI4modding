@@ -96,6 +96,11 @@ GFX_decision_<icon_name>
 特定の条件を満たす国家をFROMでターゲットに指定して効果を発動できる。triggerで条件指定できる。
 
 trigger指定のtarget_decisionだとしてもコマンドでTAG指定で発動させられる。
+
+注意点として、targeted_decisionは前提条件が満たされると生成され、その後条件が満たされなくなっても消えることはない。
+動的にdecisionを生成するシステム。よって、条件によって消したりするためにはvisibleやavailableで調整する必要がある。
+複数国に対して、複数の挙動を行痛い場合は混乱のもとになるのでカテゴリーを分けたり、scripted_guisを作ったほうがよい。
+
 activate_targeted_decision = {
 	target = <TAG>
 	decision = <decision_name>
