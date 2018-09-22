@@ -84,7 +84,7 @@ release foreign territory
 
 搾取による自治度増加
 搾取コマンドで起こる。
-軍事工場を徴収、４０％まで
+軍事工場を徴収、３０％まで
 民需工場を徴収、３０％まで
 それぞれ徴収量増加。それぞれ毎日３の自治度コストがかかる
 
@@ -102,9 +102,9 @@ Union states０～４００
 レベル０　宣戦布告なし、参戦拒否不能、建造可能、人的共有９０％、工場６０、３５％、人的資源－３５％、特殊タイプ（基本はスクリプトのみで追加）
 
 integrated prince states,0~1200
-レベル１　宣戦布告なし、参戦拒否不能、建造可能、人的共有７０％、工場４０、２５％、人的資源ー２５％
+レベル１　宣戦布告なし、参戦拒否不能、建造可能、人的共有８０％、工場４０、２５％、人的資源ー２５％
 territorial prince states, 1200~2400
-レベル２　宣戦布告なし、参戦拒否可能、建造可能、人的共有５０％、工場２０、１５％
+レベル２　宣戦布告なし、参戦拒否可能、建造可能、人的共有６０％、工場２０、１５％
 Sovereign prince states , furst,2400~4000
 レベル３　宣戦布告あり、参戦拒否可能、建造不能、人的共有４０％、工場１０、１０％
 
@@ -128,7 +128,7 @@ grant duke title 公爵の称号を付与　自治度UP
 grant county title　伯爵の称号を付与　自治度UP
 mark county 伯爵領をマーク
 relocate county to duke　伯爵を大公へ譲渡
-relocate county to overlord 伯爵を回収　自治度UP
+relocate county to overlord 伯爵を回収
 raise lavies　工業力を収集する　自治度上昇UP
 raise conscription law 徴兵法を変更させる。無際限徴兵まで、宗主国と同じレベルまで可能。　自治度UP
 

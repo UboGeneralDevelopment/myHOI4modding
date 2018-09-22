@@ -52,13 +52,22 @@ containerがどういうときに見えるかを決める。aiが使うために
 
 #triggers
 container内部の<element>それぞれのクリック可能条件、可視化条件を決める
+enabledで押せるかどうか、
+visibleで見えるかどうかを判別する
+
 #effects
 <element>をクリックしたときの効果を記述する。
 <modifiers>にはクリック方法のバリエーションを書く。right, alt, control, shiftがある。
 連続させることで、test_button_shit_right_clickも可能。
 
 #properties
-まだよくわからん。
+guiのelementsのグラフィックを追加で定義する。
+通常、guiのelementはguiファイルにおいて直接gfxが設定されており動的に変更されることはない。
+しかし、propertiesにおいてはimage＝のあとを動的翻訳キーにして、scripted_localizationに記載することで動的に変更させることができる。
+
+これはMtGで予告済みのMeta_Effectsも同様の機能となっている。
+
+
 
 GUIのボタンの位置や画像をいろいろと指定し、ELEMENT名をつける。ELEMENTはここでしか使われないID
 それで、ELEMENTをクリックできる条件とその効果を書く。

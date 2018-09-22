@@ -36,4 +36,8 @@ research_sharing_per_cuntry_modifier　技術グループへの貢献度
 license_subject_master_purchase_cost ライセンス料金変化
 autonomy_gain_global_factor 自治ポイント獲得減少量
 
+can_take_level
+can_lose_level
+ここには自治レベル変更が可能かどうかの条件を描く。
+例えば満州は基本的に特定のNFを取らない限り、いくら自治度を稼いだとしても自治レベルの変更は許されていない。
 
