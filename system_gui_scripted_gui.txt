@@ -48,17 +48,29 @@ selected_country_viewとdiplomacy_tab、national_focus、各technology_tabでは
 national_focusとtechnologyを使うときは、moveableに注意。また、national_focusでは他国のnational_focusでも当然見えるので注意
 
 #visible
-containerがどういうときに見えるかを決める。aiが使うためにはaiにも見えている必要がある。
+container全体がどういうときに見えるかを決める。aiが使うためにはaiにも見えている必要がある。
+container内部の各elementの配置はguiファイルに依存する。基本的には下に書いてあるほど表面に見える。
 
 #triggers
 container内部の<element>それぞれのクリック可能条件、可視化条件を決める
 enabledで押せるかどうか、
-visibleで見えるかどうかを判別する
+visibleで見えるかどうかを判別する。
+順番としては、
+<element>_visible、
+<element>_<modifier>_click_enableの順番で書く。
+さきにenableを書くと普通に見える。
 
 #effects
 <element>をクリックしたときの効果を記述する。
 <modifiers>にはクリック方法のバリエーションを書く。right, alt, control, shiftがある。
 連続させることで、test_button_shit_right_clickも可能。
+
+ツールチップ
+基本的にguiのツールチップはguiファイル側で定義する。
+custom_effect_tooltip
+effect_tooltip
+custom_trigger_tooltip
+などは多分使えないので、localisationで頑張って記述してね。
 
 #properties
 guiのelementsのグラフィックを追加で定義する。
