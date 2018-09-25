@@ -1,141 +1,46 @@
 ﻿
-使えそうな豆情報まとめ
-debugモードにて
-trigger_docs
-で色々見れる
+-#########variables
 
-#########modifier
-modifierはeffectやtriggerとはだいぶ異なるものとなっている。書式の一種のはずだが、その書式はシステムに相当依存しており、多様。
-modiferの情報はcommandやtriggerのようにまとまっておらずあちこち散逸しており、調べるのが大変。
-そのため、ここではmodifierの種類ごとにその実装方法を解説する。
-
-
-#static_modifiers
-wikiのmodifierに書いてある、書式のようなmodifierである。modifierが使えるmodシステムならば基本どこでも使えるが、その分制約が多い。
-主に使えるところを表記すると以下の通り。
-
-idea：modifiersにて記述する。基本的に国家レベルのmodifierを与える。
-decision：days_removeの間効果を与えるmodifiersを与える。基本は国家レベル
-technology：普通にmodifiersを加えられる。特別な書式はなく、羅列する。
-autonomous_states：modifiers内に記載する。通常のmodifierのほか、宗主国専用のtargeted_modifierも記載できる。
-
-example
-production_speed_buildings_factor　建設速度全体へのボーナス。全ての修正の合計が最終的な値。
-consumer_goods_factor　消費財の割合。モディファーの合計が最終的な値。
-production_oil_factor　石油のみに適用される生産ボーナス。
-min_export　Modifies the % of goods that need to be exported　多分輸出枠の％のこと。
-
-
-#state_modifiers
-add_state_modifierコマンド、occupation_policyなどによって実装する。ちなみに、occupation_policyはたぶん自国のcoreには適用されない。
-state categoryによるmodifierの設定が可能。
-
-確実に使える効果
-local_resources
-local_manpower
-local_non_core_manpower
-local_factories：dockyardとfactoryの数を増減する。増減は最終的な工場数にのみ反映され、スロットには現れない。
-local_building_slots_factor
-使えるかもしれない効果
-resistance_tick
-local_supplies
-local_intel_to_enemies
-local_factory_sabotage
-attrition
-local_building_slots
-つかえたらいいなあ
-local_monthly_population
-
-non_coreにはlocal_building_slots_factor=-0.5とlocal_non_core_manpower=-0.98がかかっている。
+ゲーム内変数のうち、細かいところ。
 
 
 
-#targeted_modifiers
-national_spirit、autonomous_states、add_relation_modifierなどによって実装する。実装方法は以下の通り
 
-national_spirit中のtargeted_modifier
-targeted_modifier = {} において記述するが、tag指定が静的でダイナミックにはできない。
+resource@...　現在保持している余剰の資源量を示す。採掘量+輸入-輸出枠-消費量。反映は少し遅れる
 
-autonomous_states
-targeted_modifierはoverloadに限定されている。ここ限定のmodifierが何種類かある。
+resource@steel
 
-relation_modifier
-modifiersフォルダ内にmodifierを記載したのち、add_relation_modifierで実行する。
-add_relation_modifierにおいてtargetを指定するが、ここはROOTなどを用いたダイナミック指定が可能。
-でもevery_countryなどはできない。逆は可能。
-
-targeted_modifiersの一覧。
-attack_bonus_against
-defense_bonus_against
-cic_to_target_factor
-mic_to_target_factor
-trade_cost_for_target_factor
-extra_trade_to_target_factor
-license_purchase_cost
-license_production_speed
-license_tech_difference_speed
-ai_license_acceptance
-他にも使えるかもしれないので適宜追記
+resource@alminium　という風に用いる。
 
 
+resource_consumed 消費量。
 
-#autonomous_states
-システムになってしまうが、modifiers内で国家レベルのmodifierとoverloadとの関係を示すmodifiersを加えられる。
-以下、ここでしか使えない特殊modifiersのリスト（加筆中）
+resource_exported 輸出枠。実際の輸出量ではなく、法律による輸出枠分
+
+resource_imported 輸入量
+
+resource_produced 採掘量
+ここからわかるとおり、実際の輸出量は変数からは分からない。すべての国の輸入量を足せば世界の総輸入量は計算可能。
 
 
+num_of_available_civilian_factories　仕事してない民間工場
 
-#dynamic_modifiers
-MtGで予告されている。一日ごとにアップデート
-dynamic_modifiersフォルダ内で宣言したのち、エフェクトで実装する。
-書式は以下の通り、
+num_of_available_military_factories　仕事してない軍事工場
 
-モディファー宣言
-dynamic_modifier_example = {
-    political_power_factor = pp_factor_variable　#使いたいmodifierを書いて数値をvariableにする。名前も付けられる。
-}
-エフェクト
-add_dynamic_modifier = { 
-    modifier = dynamic_modifier_name #定義されたdynamic modifier
-    scope = GER #目標となるスコープ。動的指定可能。国、リーダー、ステートどれでも可能
-    days = 7 #期間
-} 
-remove_dynamic_modifier = {
-    modifier = dynamic_modifier_name
-    scope = GER #このスコープが設定されているmodifierのみを除去する。
-}
-force_update_dynamic_modifier = yes　#現在のスコープ内のdynamic_modifierを即時アップデート
-トリガー
-has_dynamic_modifier = {
-    modifier = dynamic_modifier_name
-    scope = GER #ターゲットが指定されていれば。
-}
-dynamic_modifierにおけるSCOPEは、参照するvariableの位置のことであり、targeted_modifierのtargetではない。
+num_of_available_naval_factories　仕事してない海軍工廠
+
+num_of_civilian_factories　輸出と従属国による増加含む全民間工場から、輸入用工場数を引いた数。
+
+num_of_civilian_factories_available_for_projects　全工場数から消費財工場数と輸入用工場数を引いた民間工場数。建設に使用可能な工場数。
+
+num_of_controlled_states
+num_of_factories　保有している軍事、民間などの全工場数。輸出と従属国増加を含む。
+
+num_of_military_factories
+
+num_of_naval_factories
 
 
 
-軍事系特殊modifiers
-軍事系のmodifierは関連項目がおおく、ややこしい。こちらにはシステムと概要を思いつき次第列挙。
 
-ideasやdicisionのstatic_modifier
-通常のstatic_modifiersと同じ。modifiers内に記載。wikiのmodifiersに詳細が記載。
-
-ideasのequipment_bonus
-equipmentのstatsやmodifiersをinternal_typeごとに変更できる。wikiのideasに記載。
-使用可能なmodifierはおそらくunitで使われているequipment_modifierに準拠
-
-unitのequipment_modifier
-unitごとにequipmentのstatsにmodifierを与える。支援中隊、騎馬隊、機械化歩兵等で使われている。
-特別な書式がなしに羅列するため、unitの基本statsとequipment_modifierが混ざりやすく、要注意。
-
-abilitiesのunit_modifiers
-通常のstatic_modifiersをunit_leaderスコープ上で実行可能。add_temporaly_buff_to_unitsエフェクトを用いることもある。
-unitで使われているequipment_modifiersは多分使えないが、よくわからない。
-おそらくはここ専用の特殊なmodifierもつかえる。
-
-technologies
-internal_type、あるいは記述したunit_categoryごとにstatやmodifiersを変更する。
-unitのstats、unitが装備するequipmentのstats双方に対してmodifierを与える事が可能。
-通常のstatic_modifiersも使える。
-
-
+modifier@...でモディファー内容を参照可能。
