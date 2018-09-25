@@ -37,6 +37,9 @@ containerの名前をここで決める。このcontainerの設計はguiファ�
 GUIが作用する基本スコープを決める。
 player_context, selected_country_context, selected_state_contextの3つがあり、それぞれプレイ国家、選択相手国家、選択ステートとなる。
 
+ROOTは常にplayerであり、selected_countryやselected_stateはFROMとなる。
+
+
 #parent_window_token
 親ウィンドウを決めると親ウィンドウのcontainerに引っ付いてこのcontainerが現れる。
 GUIのスクリプトとしては、親containerの中の一番下にこのcontainerが追加される形となる
