@@ -4,7 +4,8 @@
 DefinesとAutonomious_states
 の両方を書き直す必要がある。
 
-autonomy_pointsはデフォでは0~4000あり、各従属国レベルがとりうる最低値の割合が0~1であらわされる。
+autonomy_pointsはデフォでは0~4000あり、これは0~1のfreedom_levelによって定められている。
+各従属国タイプは、それがとりうる最低freedoom_levelが0~1であらわされる。
 min_freedom_level = 0.25
 と書けば、その従属国の取りうる最低ポイントは1000で、それ以下になるとさらに下のレベルの従属国となる。
 何ポイントで上の従属国になるかどうかは上の従属国のmin_freedom_levelによる。
