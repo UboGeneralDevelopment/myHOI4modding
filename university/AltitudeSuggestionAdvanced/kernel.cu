@@ -23,6 +23,7 @@
 
 取ってくるのは透過率の合計ではなく、その最大値のみを利用。より透過像"らしく"なる。
 最大値のみをとるので、当映像はuint16,unsigne intファイル。仮に投下率の合計を出したければ平均する。
+投影像の出力をするならばuint16
 
 書き出す透過率と角度のマップはdoubleで出力。
 
@@ -219,7 +220,8 @@ int main(int argc, char** argv) {//argcとかには起動時に渡す変数がはいる。
 				proj1[k] = 0;
 			}//投影メモリ初期化
 
-			//レイの方向を決定。角度theta0phi0で(0,0,1)。両方向に伸びてく。ボクセル長さがそのまま座標系の長さに対応しているため、そのままステップとして用いれる。			ray_step[0] = sin(ray_phi)*cos(ray_theta)*STEP;
+			//レイの方向を決定。角度theta0phi0で(0,0,1)。両方向に伸びてく。ボクセル長さがそのまま座標系の長さに対応しているため、そのままステップとして用いれる。
+			ray_step[0] = sin(ray_phi)*cos(ray_theta)*STEP;
 			ray_step[1] = sin(ray_phi)*sin(ray_theta)*STEP;
 			ray_step[2] = cos(ray_phi)*STEP;
 
