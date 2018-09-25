@@ -1,0 +1,88 @@
+﻿
+##############Localisation############################
+
+ローカリゼーションではゲーム内での文字表記が定義する。
+
+ゲーム内の文字表示は２種の記述法によってきめられている。GUI記述とローカリゼーションキー記述だ。
+
+GUI記述はそのままの意味であり、ゲーム内インターフェイスファイルにかかれたテキスト記述がそのまま表示される。
+これはinterfaceのguiファイルの各elementのtextに表記されている。
+
+ローカリゼーションキー記述は（以後キーと呼称）、ゲーム内ファイルの各種テキストをキーとして、別途キーファイルにおいてその表示を記述する。
+
+ゲーム内テキストのほとんどはキー記述だが、GUI記述のテキストはキー扱いではないので注意。
+
+そもそもGUI記述はインターフェイスファイルに書かれているため、インターフェイスファイルにない各ゲーム内システムのテキストを書くことはできない。
+また、表記したものはguiファイル内にばらばらに存在することになるため、基本的に変化しないテキストの表記にのみ用いられる。
+
+キー記述は基本的にすべてに適用することが可能で、GUIファイルのテキストを含む、あらゆるゲームシステムのIDがキーで判別されている。
+このキーに対応するテキストをローカリゼーションファイルに書くことでテキスト表示が完成する。
+
+＃静的キー
+基本はまず静的なキー表示で、固定のキーに対して固定のテキストが対応する。
+
+＃動的キー関数
+動的キー関数は、キーに対応するテキストで使うことの可能な関数で、テキストを必要に応じて動的に変更する事ができる。
+基本的に、特定のスコープに対してそのスコープの特定のキーを取得し、そのテキストを対応させる働きをする。一覧はこちら。
+GetName　スコープのキーを取得　[ROOT.GetName]でROOTの国名のキーを取得する。
+GetNameDef
+GetAdjective
+GetAdjectiveCap
+GetLeader
+GetRulingParty
+GetRulingIdeology
+GetRulingIdeologyNoun
+GetPartySupport
+GetLastElection
+GetManpower
+GetFactionName
+GetFlag
+GetNameWithFlag
+GetCommunistParty
+GetDemocraticParty
+GetFascistParty
+GetNeutralParty
+GetDateText
+GetYear
+GetHerselfHimself
+GetHerHis
+GetSheHe
+GetSheHeCap
+GetRank
+GetManchuriaPuppet
+
+よくわからんものも多い。
+variableを用いることも可能であり、そのときは
+[?variable_name]となる。variableがスコープを保存しているならばもちろん上記の関数も使える。
+scripted_guiでは[!~~~]で効果が取得できる？
+
+
+＃動的キー
+状況に応じてキーそのものを変更する。順番としては、scripted_localisationにて
+
+defined_text = {
+	name = SCRIPTED_LOCAISATION_KEY
+	text = {
+		trigger = { }
+		localisation_key = KEY
+	}
+	text = {
+		trigger = { }
+		localisation_key = KEY
+	}
+}
+
+をまず書く。
+こののち、ローカリゼーションファイルにて、対応させたいキーのテキストに[SCRIPTED_LOCALISATION_KEY]を書けば、
+キーがその通りの別のキーへと変換される。
+
+現在のところ、システム的には
+scripted_GUIのpropertiesとMtGのmeta_effectsとmeta_triggerにおいてこれを使うことが可能であり。だいぶcommandの自由度が増す。
+
+
+
+
+
+
+
+
