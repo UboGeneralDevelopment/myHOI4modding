@@ -63,13 +63,14 @@ CTボリュームおよび位置情報取得
 #simple_reconstruction_reliability_analysis
 FBPに対して、SBPによる信頼度ファイルと対応ボリューム位置情報ファイルの作成。
 基礎進捗：8割完了
-課題：単純逆投影ファイルをunsignedshort形式にはしない。floatのままで。位置情報のみ新しく作る。
+課題：単純逆投影ファイルはunsignedshort形式にできるように仕組みは理解する。
+一応はfloatのままで。位置情報のみ新しく作る。
 
 
 #Volume_Registration_and_Transformation
 ボリュームの位置合わせと、ボリュームと信頼度ファイルの位置合わせ後変換ファイルの作成
 基礎進捗：１０％、暫定手法を選定
-課題：最適な手法の選定
+課題：tomlファイルとrawファイルを用いて一気にblendまで作る既存プログラムを改造。txt設定ファイルと3つのrawから変換ファイルまで作って出力する。
 
 
 #Volume_Fusion
