@@ -9,6 +9,9 @@ POPは消去。industrial_efficiancy、resource_efficiancy、manpower_efficiancy
 0~100%まででmanpower変動。基本値はcore、もしくはカテゴリーと人口比による。non_coreペナルティーは基本値にかかる。
 0~~~%まででfactoriesは変動。基本値はcore、もしくはカテゴリーと人口比による。non_coreペナルティーは基本値にかかる。
 
+
+
+
 バニラでのState補正
 非中核のスロット制限は解除。敵の中核を占領するのと植民地を占領するのでスロットが変わるのは意味不明。併合でスロット減るのもよくわからん。
 
