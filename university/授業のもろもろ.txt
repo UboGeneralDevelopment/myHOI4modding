@@ -23,3 +23,7 @@ http://www.susdesign.t.u-tokyo.ac.jp/kishitalab/teaching/sdt2018.html
 susdesign_146
 
 サステナビリティ
+製品ライフサイクル
+Beginning　通常の会社が頑張る
+Middle　消費者が気にする
+End　通常の会社、消費者がまったく気にしない。
