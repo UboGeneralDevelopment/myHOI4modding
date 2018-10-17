@@ -1,7 +1,0 @@
-pilots_training_division = { 
-	icon = military_operation
-
-	visible = {
-
-	}
-}

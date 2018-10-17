@@ -1,7 +1,0 @@
-spriteTypes = {
-	
-	SpriteType = {
-		name = "GFX_pilot_equipment_tech_medium"
-		texturefile = "gfx/interface/technologies/support_equipment_1.dds"
-	}
-}
