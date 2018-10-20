@@ -5,13 +5,69 @@ ai_will_doなどの仕組み。
 
 大きく分けると、
 ai_will_do：実装済みメカニクスにおいて、実行順位の優先づけ
-
-factor ベースファクター
-modifier{
-add　ファクターに加える
-factor　ファクターにかける
+ai_will_do = {
+	factor = <int>ベースファクター
+	modifier = {
+		add = <int>　ファクターに加える
+		factor = <int>　ファクターにかける
+	}
 }
-ai(scripted gui)：scripted GUIでもちいられるaiの優先付け
+
+AI(scripted gui)：scripted GUIでもちいられるaiの優先付け
+
+scripted_guiにおけるaiは非常に細かく設定が行える。要素を分けると以下の通り、
+
+ai許可設定　GUIをaiに使わせるかどうかをtriggersで決める。
+ai_enabled = {
+	<triggers>
+}
+
+aiチェック周期設定　GUIをaiがチェックする周期を決める
+ai_test_intervel = <int> aiのチェック周期
+ai_test_variance = <float>aiのチェック周期のランダムか
+
+ai_check = {　GUIをaiがチェックするかをきめる。triggerが満たされなければチェックしない。
+	<triggers>
+}
+
+ai_test_scopes = <type>
+各国aiがどのスコープに属するGUIを操作するのかという指定を行う。
+selected_country_contextとselected_state_contextでのみ必要。
+countryでは、
+self, enemy, ally, neighbouring, neighbouring_ally, neighbouring_enemy
+stateでは
+self,enemy,allyに対してowned,controlled,neighbouring,our_neighbouring,があり、contestedもある。
+さらにtest_if_only_major、test_if_only_coastalを追加できる。
+
+ai_check_scope = {　aiの操作を行うGUIの属するスコープをここでさらに限定することができる。
+	<triggers>
+}
+
+aiが操作するGUIの属するスコープが決まったら、ここで各elementに対して判断を行う。
+ai_weights = {
+	<element>_<modifiers>_click = {
+		ai_wil_do = {
+		weight = <int>
+		modifier = {
+			factor = <float>
+			add = <float>
+			<triggers>
+		}
+		ignore_lower_weights = {
+			factor = <float>
+		}
+	}
+		ignore_lower_weights = {
+			factor = <float>
+		}
+	ai_max_weight_taken_per_test = <int>
+}
+ai_weightsに書かれた各操作にたいして条件に書かれた通りで重みづけを行って優先順位を決め、実際の操作を行う。
+
+
+
+
+
 AI Areas：AIが戦域を分けるときの判断基準
 AI focuses：状況に応じて行動の優先度を決定
 AI peace：講和会議の志向を決定
