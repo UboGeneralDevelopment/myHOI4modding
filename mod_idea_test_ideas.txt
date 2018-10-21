@@ -17,6 +17,27 @@ num_artillery などは師団の数を数える。重複して数えることも
 ##########
 
 
+#####2国間取引MOD#####
+支払い資源
+自分操作
+相手操作
+
+政治力
+自分操作　add_political_power = <variable>
+相手操作　add_political_power = <variable>
+
+工業力
+自分操作　add_offsite_building = <variable>
+相手操作　add_offsite_building = <variable>
+
+州
+
+
+######################
+
+
+
+
 
 #####貿易価格変化MOD#####
 
