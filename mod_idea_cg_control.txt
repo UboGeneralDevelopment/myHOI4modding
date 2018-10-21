@@ -1,0 +1,27 @@
+﻿
+消費財を完全手動操作が可能となる。
+でも安定度が下がる。
+
+
+スクリプトロードマップ
+
+GUIシステム
+scripted_guis：基礎完了
+interface：進行中（consumer_goods_needs,modifier@consumer_goods_factor,stability_changeを表示する。）
+
+動作システム
+ideas：基礎完了
+　gfx：未着手（消費財消費のアイデアマーク）
+
+on_actions：基礎完了
+　ideas：基礎完了
+　country_leader：完了
+
+decisions：基礎完了
+
+ユーティリティー
+scripted_guis：基礎完了
+
+ツールチップ
+consumer goods needをどう表現するか。
+基本的にはcustom_effect_tooltipで頑張る。ideas, decisionからのみなので。
