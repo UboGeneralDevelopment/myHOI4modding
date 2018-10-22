@@ -10,59 +10,56 @@ ai_will_do = {
 	modifier = {
 		add = <int>　ファクターに加える
 		factor = <int>　ファクターにかける
+		<triggers>
 	}
 }
 
-AI(scripted gui)：scripted GUIでもちいられるaiの優先付け
 
-scripted_guiにおけるaiは非常に細かく設定が行える。要素を分けると以下の通り、
 
-ai許可設定　GUIをaiに使わせるかどうかをtriggersで決める。
-ai_enabled = {
-	<triggers>
+AI(scripted gui)：scripted GUIでもちいられるaiの仕組み。
+
+scripted_guiにおけるaiは非常に細かく設定が行える。要素を分けると以下の通り。wikiがちょっと間違っているので注意。
+
+ai_enabled = { <triggers> }　aiチェック第一段階。aiが使用許可の初期設定で、一度はじかれればaiは二度とつかわない。
+
+ai_test_interval = <int>　aiチェックを行うインターバル。時間単位
+ai_test_variance = <float>　aiチェックを行うインターバル時間の平均分散時間を示す。
+
+ai_check = { <triggers> }　インターバル時間ごとに行われるaiチェック第２段階。ここではじかれればこれ以降の操作はaiは行わない。
+
+ai_test_scopes = <type>　aiチェック第3段階。aiが操作を行うGUIのスコープを指定する。contextが自国では使わない。詳しくは後述。
+
+ai_check_scope ={ <triggers> }　aiチェック第3段階の続き。操作を行うと決まった各スコープのGUIにさらに条件指定を行い、合わなければ実際の操作は行わない。
+
+ai_max_weight_token_per_test = { <triggers> }　ai実操作の際、aiが操作可能な総回数を指定する。
+
+ai_weights = {　aiが操作するときの各操作のウェイトを条件に従って指定する。
+	<element>_<modifier>_click = {
+		weight = <int>
+		ai_will_do = {
+			factor = <float>
+			modifier = {
+				add =  <float> or factor = <float>
+				<triggers>
+			}
+		}
+		ignore_lower_weights = {
+			factor = <float>
+		}
+	}
 }
 
-aiチェック周期設定　GUIをaiがチェックする周期を決める
-ai_test_intervel = <int> aiのチェック周期
-ai_test_variance = <float>aiのチェック周期のランダムか
-
-ai_check = {　GUIをaiがチェックするかをきめる。triggerが満たされなければチェックしない。
-	<triggers>
-}
 
 ai_test_scopes = <type>
-各国aiがどのスコープに属するGUIを操作するのかという指定を行う。
-selected_country_contextとselected_state_contextでのみ必要。
+についての補足。
+これは各国aiがどのスコープに属するGUIをチェックするのかという指定を行う。
+selected_country_contextとselected_state_contextで必要。いろんな国やステートを見る必要があるからね。
 countryでは、
 self, enemy, ally, neighbouring, neighbouring_ally, neighbouring_enemy
 stateでは
 self,enemy,allyに対してowned,controlled,neighbouring,our_neighbouring,があり、contestedもある。
 さらにtest_if_only_major、test_if_only_coastalを追加できる。
 
-ai_check_scope = {　aiの操作を行うGUIの属するスコープをここでさらに限定することができる。
-	<triggers>
-}
-
-aiが操作するGUIの属するスコープが決まったら、ここで各elementに対して判断を行う。
-ai_weights = {
-	<element>_<modifiers>_click = {
-		ai_wil_do = {
-		weight = <int>
-		modifier = {
-			factor = <float>
-			add = <float>
-			<triggers>
-		}
-		ignore_lower_weights = {
-			factor = <float>
-		}
-	}
-		ignore_lower_weights = {
-			factor = <float>
-		}
-	ai_max_weight_taken_per_test = <int>
-}
-ai_weightsに書かれた各操作にたいして条件に書かれた通りで重みづけを行って優先順位を決め、実際の操作を行う。
 
 
 
