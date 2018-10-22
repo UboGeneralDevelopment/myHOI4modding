@@ -5,23 +5,48 @@
 
 スクリプトロードマップ
 
-GUIシステム
-scripted_guis：基礎完了
-interface：進行中（consumer_goods_needs,modifier@consumer_goods_factor,stability_changeを表示する。）
+##################システム実装#######################
 
-動作システム
-ideas：基礎完了
-　gfx：未着手（消費財消費のアイデアマーク）
+#scripted_guis
+プレイヤーによるシステム動作確認：すべて完了
+aiによる動作確認：すべて完了
 
-on_actions：基礎完了
-　ideas：基礎完了
-　country_leader：完了
+#ideas
+スクリプト内容の記述ミスの確認：ほぼすべて完了
 
-decisions：基礎完了
+#on_actions
+消費財需給及び安定度変化システムの動作確認：完了
+初期設定イベントの発動確認；完了
 
-ユーティリティー
-scripted_guis：基礎完了
+#events
+初期設定イベントの動作確認：完了
 
-ツールチップ
-consumer goods needをどう表現するか。
-基本的にはcustom_effect_tooltipで頑張る。ideas, decisionからのみなので。
+#そのほか特記事項
+初期設定イベントの途中動作は未検証
+
+システム作業終了
+
+###############################################
+
+
+#############インターフェイス作業####################
+
+#scripted_gui
+アクセスボタンの再構築。
+
+UIデザイン：
+　基礎需要、基礎供給、消費財バランス、安定度効果、安定度効果の説明、実消費財供給、
+UIスクリプト：
+グラフィック実装：
+固定文字表記：
+数字の色変え表記：
+ボタンのツールチップ、コストと効果の表記：
+
+#ツールチップ
+consumer_goods_supplyの国家方針において、custom_effect_tooltipでのstability_effectの効果を表記したい。
+economy_lawでの需要変化もツールチップに表記
+
+
+
+
+###########システム実装完了##################
