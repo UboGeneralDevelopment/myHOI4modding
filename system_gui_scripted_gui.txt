@@ -68,11 +68,10 @@ visibleで見えるかどうかを判別する。
 #effects
 <element>をクリックしたときの効果を記述する。
 <modifiers>にはクリック方法のバリエーションを書く。right, alt, control, shiftがある。
-連続させることで、test_button_shit_right_clickも可能。
+連続させることで、test_button_shift_right_click等という操作も可能。理論上、right,leftの２種類に対してなし、３種、３種、１種で計１６種つくれる
 
 
-
-ツールチップ
+＃ツールチップ
 基本的にscripted_guiのツールチップは、ツールチップを表示したいエレメントごとにguiファイル側で定義される。
 effectにcustom_effect_tooltipを書いても表示されない。
 effectにeffect_tooltipを書いても表示されない。
