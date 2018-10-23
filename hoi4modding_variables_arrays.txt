@@ -1,19 +1,129 @@
 ﻿
 #########variables##################################
 
-#storing
-
-#manipulation
-
-#targeted_variable
-
-#storing scopes
 
 
+＃変数操作
+
+変数は、名前と値を持つ。名前で呼び出し、値を参照、操作することができる。
+変数はeffectによって呼び出され、スコープに保存される。
+変数の設定コマンドは以下の通り
+
+set_variable = { name<string> = value<int>/<float>/<string> }
+add_to_variable = { name<string> = value<int>/<string> }
+
+この二つのコマンドによってname<string>の名前を持つ変数と、value<float>/<int>/<string>の値を持つ変数値が設定される。
+さらに、上記のコマンドは既存の変数値に対しての操作を行うことも可能。操作コマンドは上記二つに加えて以下の二つがある。
+
+round_variable = <variable>　<variable>の値を近くの整数値に丸める。
+clamp_varialble = {
+	var = name<variable>　
+	min = <variable>/<float>/<int>
+	max = <variable>/<float>/<int>
+}　name<variable>の名を持つvariableの最大値と最小値を指定し、その範囲内に収める。
 
 
 
+＃変数参照
 
+このようにコマンドで操作された変数は、その他のコマンドやトリガーで参照されることができる。
+参照の仕方は単に
+
+<variable>
+
+という形で変数名をかけば、そのスコープにおいて保存されているその名を持つ変数の値が参照される。
+参照する変数が保存されているスコープを直接指定したければ、以下のように書く。
+
+<scope>.<variable>
+
+具体的な例をいかに挙げると、
+
+ENG.var_name　イギリスに保存されているvar_nameの値を参照
+42.var_name　ステート42に保存されているvar_nameの値を参照
+global.var_name　グローバルスコープに保存されているvar_nameの値を参照。
+ROOT.var_name　ROOT国家（通常はプレイヤー操作国）に保存されているvar_nameの値を参照
+FROM.FROM.var_name　FROM.FROMに当てはまる(イベントやディシジョンなどで連結させる場合)のスコープの変数値を参照
+event_target:event_target_name.var_name　指定されたイベントターゲット名のスコープに保存されている変数値を参照。詳しくは後述
+global_event_target:event_target_name.var_name
+
+
+
+＃変数トリガー
+
+変数を条件に用いることができる。変数同士を比べる場合は
+
+check_variable = { var_1 = var_2 }
+check_variable = { var_1 > var_2 }
+check_variable = { var_1 < var_2 }
+
+である。varが<string>の場合は=のみ使える。
+
+has_variable = var_name
+
+もある。
+
+
+
+＃イベントターゲットとvariable
+
+イベントターゲットはコマンドで特定のスコープに対して<string>名を名付け、その名前をスコープの代用として用いることができるようになるシステム。
+ただし、どうもパラド社的にはあまり好ましくないシステムらしく、variableを用いることが推奨されている。
+このvariableのことをvariable_scopeと呼ぶ。
+
+variableにスコープを記録し、参照する方法を少し詳述する。
+
+まず保存可能なスコープは国家タグかステートIDのみであり、以下のように記述する。
+
+set_variable = { var_target_0 = <SCOPE> }
+set_variable = { var_target_1 = <TAG>.id }　国家タグをvar_target_1に保存
+set_variable = { var_target_2 = <state_id> }　ステートIDをvar_target_2に保存
+
+そして、参照だが、つまりこの変数をスコープ名の代用として用いることができる。
+スコープとして用いるときは、単に変数名を書くのではなく、var:を先頭に付与する必要がある。つまり
+var:var_target_1 = {
+	<effects>/<triggers>
+}
+var:var_target_2 = {
+	<effects>/<triggers>
+}
+というようにして、スコープを参照できる。具体的な例として、イギリスとイタリアでドイツのマンパワーを増やすコマンドを
+ENG = {
+	set_variable = { variable_target_1 = GER.id }
+	var:variable_target_1 = { 
+		add_manpower = 1000
+	}
+}
+ITA = {
+	var:ENG.variable_target_1 = {
+		add_manpowwer = 1000
+	}
+}
+というように書ける。
+保存するスコープについてはROOT,FROM,PREV,THISなどもたぶん使える。
+
+
+＃targeted_variable
+
+<variable>@<SCOPE>
+変数名の後ろに@とスコープを書くことで、あるスコープ上の変数に別の各スコープに対する値を別々に保存できる。
+これの強みは、ステートと国家に対しては、動的に必要なだけ新しい変数を生成させていくことができるという点である。
+
+
+
+＃temp_variable
+
+細かい計算をしていくときの一時的な変数。
+
+set_temp_variable = { temp_var = <variable>/<int>/<float> }
+add_to_temp_variable = { temp_var = <variable>/<int>/<float> }
+subtract_from_temp_variable = { temp_var = <variable>/<int>/<float> }
+multiply_temp_variable = {temp_var = <variable>/<int>/<float> }
+divide_temp_variable = {temp_var = <variable>/<int>/<float> }
+clamp_temp_variable = {
+	var = <temp_variable>
+	min = <variable>/<int>/<float>
+	max = <variable>/<int>/<float>
+}
 
 
 
