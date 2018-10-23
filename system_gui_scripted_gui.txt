@@ -70,13 +70,26 @@ visibleで見えるかどうかを判別する。
 <modifiers>にはクリック方法のバリエーションを書く。right, alt, control, shiftがある。
 連続させることで、test_button_shit_right_clickも可能。
 
+
+
 ツールチップ
-基本的にguiのツールチップはguiファイル側で定義する。
-custom_effect_tooltip
-effect_tooltip
-custom_trigger_tooltip
-などは多分使えないので、localisationで頑張って記述してね。
+基本的にscripted_guiのツールチップは、ツールチップを表示したいエレメントごとにguiファイル側で定義される。
+effectにcustom_effect_tooltipを書いても表示されない。
+effectにeffect_tooltipを書いても表示されない。
+
+さらにcustom_trigger_tooltipを書いても表示されない。
+
+そこで、localisationで頑張って記述する。
 scripted_guiでは[!~~~]で効果のツールチップが取得できるかもしれない？
+
+There is a special localization command that allows a scripted GUI element to display its effect within a tooltip.
+[!<element>_<modifier>_<action>]
+For example:
+MY_TOOLTIP: "[!test_button_click]"
+この記述に従えば、GUIファイルでツールチップキーを定義したのち、ローカリゼーションファイルでキー内容において !<element> とかけば効果が見える。
+らしい。
+MY_TOOLTIP: "[!test_button_click_enabled]"
+等のトリガーでもできるかどうかは不明。
 
 
 

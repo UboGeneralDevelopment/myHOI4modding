@@ -35,7 +35,8 @@ aiによる動作確認：すべて完了
 アクセスボタンの再構築。
 
 UIデザイン：
-　基礎需要、基礎供給、消費財バランス、安定度効果、安定度効果の説明、実消費財供給、
+ base goods needs, base goods supply, goods balance, daily stability change, effective consumer goods
+　基礎需要(ツールチップで原因説明)、基礎供給、消費財バランス、安定度効果（ツールチップで増減値決定の説明）実消費財供給、
 UIスクリプト：
 グラフィック実装：
 固定文字表記：
@@ -46,7 +47,8 @@ UIスクリプト：
 consumer_goods_supplyの国家方針において、custom_effect_tooltipでのstability_effectの効果を表記したい。
 economy_lawでの需要変化もツールチップに表記
 
+まずは十分な情報を書く。つまりツールチップを完成させる。
+その後、形の成型に入る。
 
 
-
-###########システム実装完了##################
+#############

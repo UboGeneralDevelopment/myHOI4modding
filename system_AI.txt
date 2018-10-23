@@ -29,11 +29,11 @@ ai_check = { <triggers> }　インターバル時間ごとに行われるaiチ�
 
 ai_test_scopes = <type>　aiチェック第3段階。aiが操作を行うGUIのスコープを指定する。contextが自国では使わない。詳しくは後述。
 
-ai_check_scope ={ <triggers> }　aiチェック第3段階の続き。操作を行うと決まった各スコープのGUIにさらに条件指定を行い、合わなければ実際の操作は行わない。
+ai_check_scope ={ <triggers> }　aiチェック第3段階の続き。操作を行うと決まった各スコープにさらに条件指定を行い、合わなければ実際の操作は行わない。
 
 ai_max_weight_token_per_test = { <triggers> }　ai実操作の際、aiが操作可能な総回数を指定する。
 
-ai_weights = {　aiが操作するときの各操作のウェイトを条件に従って指定する。
+ai_weights = {　aiが操作するときの各操作のウェイトを条件に従って指定する。各操作ごとに基本ウェイトがあり、ai_will_do内のfactorやaddで修正される。
 	<element>_<modifier>_click = {
 		weight = <int>
 		ai_will_do = {
