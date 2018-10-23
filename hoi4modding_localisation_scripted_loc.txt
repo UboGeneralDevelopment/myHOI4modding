@@ -96,37 +96,42 @@ scripted_guiでは[!~~~]で効果が取得できる？
 []で囲んだキーを動的に変更する。
 順番としては、scripted_localisationにてまず変動させたいキーを定義し、変動する条件とそれぞれの変動後のキーを指定する。
 まず、ローカリゼーションにおいて
- localisation_key_1:0 "this is key 1"
-にたいして
- localisation_key_2:0 "this is key 2"
-を
+ localisation_key_1:0 "key 1"
+ localisation_key_2:0 "key 2"
+を定義する。
 
- localisation_key_1:0  "key will display this sentences [ROOT.SCRIPTED_LOCAISATION_KEY]."
-という形で挿入できる。これの何がうれしいかというと、localisation_key_2をdefined_textにすれば
-scripted_localisationにおいて別のlocalisation_keyで置き換えることができる。
+そしてこの二つのキーを用いて、
+scripted_localisationにおいてDefined_textを次のように条件によって置き換える指定を行う。
 
 defined_text = {
-	name = SCRIPTED_LOCAISATION_KEY
+	name = DefinedText
 	text = {
-		trigger = { }
-		localisation_key = KEY
+		trigger = { <triggers> }
+		localisation_key = localisation_key_1
 	}
 	text = {
-		trigger = { }
-		localisation_key = KEY
+		trigger = { <triggers> }
+		localisation_key = localisation_key_2
 	}
 }
 
-をまず書く。
-こののち、ローカリゼーションファイルにて、対応させたいキーのテキストに[SCRIPTED_LOCALISATION_KEY]を書けば、
-キーがその通りの別のキーへと変換され、結果別の文章へとおきかわる。
+そして最後に、置き換えたいテキストをDefinedTextを用いて記述する。
 
-基本的にはlocalisationにおいて書かれる文章を状況によって変えたいときに用いる。特殊記号などもこれで書き換えられる。
-ツールチップで条件を満たす、満たさないで表記を変えたいときなどに使える。
+localisation_key_3:0 "this is key 3 that displays key 1 or key 2, currently [ROOT.DefinedText]"
 
+これによって、localisation_key_3は
+this is key 3 that displays key1 or key2, currently key1
+this is key 3 that displays key1 or key2, currently key2
+に条件によって置き換えられる。
 
-現在のところ、システム的には
-scripted_GUIのpropertiesとMtGのmeta_effectsとmeta_triggerにおいてこれを使うことが可能であり。だいぶcommandの自由度が増す。
+ローカリゼーション以外、interfaceのguiフォルダのtext記述を直接置き換えることも可能。
+text = "this sentence is dynamic [ROOT.DefinedText] "
+
+さらに、一部のシステムにおいて、システムの記述をダイナミックに書き換えることも可能。
+今のところ
+scripted_GUIのproperties
+でのみ実装されている。
+将来的にはMtGのmeta_effectsとmeta_triggerにおいても実装が予告されている。
 
 
 
