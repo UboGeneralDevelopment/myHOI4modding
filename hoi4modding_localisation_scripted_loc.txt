@@ -35,21 +35,29 @@ l_english:
 #特殊文字：アイコン表記　￡のあとは対応するテクスチャーを張り付ける。
 
 
-＃キーの文章組み込み。
-キーは使用が許可されている場所ではどこでも表示がそのキー内容に置き換えられるので、他のキー内容の中にも当然組み込める。
-キーを組み込む際はそのキーは[]で囲まれる注意。
 
 ＃キーの番号切り替え
 
 l_<language>:
  <key>:<number> "Text here"
-このnumberの切り替えも可能。
+このnumberの切り替えも可能。何に使うのか今のところよくわからない。
 
 
-＃動的キー関数
-動的キー関数は、キーに対応するテキストで使うことの可能な関数で、テキストを必要に応じて動的に変更する事ができる。
+
+＃動的キー
+
+動的キーは、キーに対応するテキスト状において使用可能な関数で、テキストを必要に応じて動的に変更する事ができる。
 基本的に、特定のスコープに対してそのスコープの特定のキーを取得し、そのテキストを対応させる働きをする。
-一覧はこちら。
+備え付けの関数と、scripted_localisationが存在する。
+基本形は
+
+[SCOPE.Defined_text]
+
+であり、関数内で指定されたスコープに対して、関数に見合うキーをみつけてきて、[]をキーで置き換える働きをする。
+つまり、キー内において[localisation_key]を書くことでキー記述に別のキーを組み込むことが可能になる。
+もちろん静的では意味がないので、備え付けられている関数か、scripted_localisationを用いる。
+
+備え付け関数一覧はこちら。
 
 GetName　スコープのキーを取得　[ROOT.GetName]でROOTの国名のキーを取得する。
 GetNameDef
@@ -84,14 +92,18 @@ variableを用いることも可能であり、そのときは
 scripted_guiでは[!~~~]で効果が取得できる？
 
 
-
-
-
-##########################scripted_Localisation############################
-＃動的キー
-状況に応じてキーそのものを変更する。
+#scripted_Localisation
+[]で囲んだキーを動的に変更する。
 順番としては、scripted_localisationにてまず変動させたいキーを定義し、変動する条件とそれぞれの変動後のキーを指定する。
+まず、ローカリゼーションにおいて
+ localisation_key_1:0 "this is key 1"
+にたいして
+ localisation_key_2:0 "this is key 2"
+を
 
+ localisation_key_1:0  "key will display this sentences [ROOT.SCRIPTED_LOCAISATION_KEY]."
+という形で挿入できる。これの何がうれしいかというと、localisation_key_2をdefined_textにすれば
+scripted_localisationにおいて別のlocalisation_keyで置き換えることができる。
 
 defined_text = {
 	name = SCRIPTED_LOCAISATION_KEY
