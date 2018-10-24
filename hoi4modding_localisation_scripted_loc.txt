@@ -51,11 +51,10 @@ l_<language>:
 備え付けの関数と、scripted_localisationが存在する。
 基本形は
 
-[SCOPE.Defined_text]
+[SCOPE.Function/Defined_text]
 
-であり、関数内で指定されたスコープに対して、関数に見合うキーをみつけてきて、[]をキーで置き換える働きをする。
-つまり、キー内において[localisation_key]を書くことでキー記述に別のキーを組み込むことが可能になる。
-もちろん静的では意味がないので、備え付けられている関数か、scripted_localisationを用いる。
+であり、[]関数内で指定されたスコープに対して、関数に見合うキーをみつけてきて、[]内を置き換える働きをする。
+[]内には備え付けられている関数か、scripted_localisationでDefined_textを書いて用いる。
 
 備え付け関数一覧はこちら。
 
@@ -87,14 +86,17 @@ GetRank
 GetManchuriaPuppet
 
 よくわからんものも多い。
+
 variableを用いることも可能であり、そのときは
 [?variable_name]となる。variableがスコープを保存しているならばもちろん上記の関数も使える。
 scripted_guiでは[!~~~]で効果が取得できる？
 
 
+
 #scripted_Localisation
+
 []で囲んだキーを動的に変更する。
-順番としては、scripted_localisationにてまず変動させたいキーを定義し、変動する条件とそれぞれの変動後のキーを指定する。
+順番としては、scripted_localisationにてまず変動させたい部分をDefined_textで定義し、変動する条件とそれぞれの変動後のキーを指定する。
 まず、ローカリゼーションにおいて
  localisation_key_1:0 "key 1"
  localisation_key_2:0 "key 2"
@@ -115,7 +117,7 @@ defined_text = {
 	}
 }
 
-そして最後に、置き換えたいテキストをDefinedTextを用いて記述する。
+そして最後に、置き換えたいテキストを[SCOPE.DefinedText]と書いて記述する。SCOPEが書かれていないと多分デフォルトではROOTをとる。
 
 localisation_key_3:0 "this is key 3 that displays key 1 or key 2, currently [ROOT.DefinedText]"
 
@@ -124,10 +126,10 @@ this is key 3 that displays key1 or key2, currently key1
 this is key 3 that displays key1 or key2, currently key2
 に条件によって置き換えられる。
 
-ローカリゼーション以外、interfaceのguiフォルダのtext記述を直接置き換えることも可能。
+ローカリゼーションキーを用いずに、interfaceのguiフォルダのtext記述を直接置き換えることも可能。
 text = "this sentence is dynamic [ROOT.DefinedText] "
 
-さらに、一部のシステムにおいて、システムの記述をダイナミックに書き換えることも可能。
+さらに、一部のシステムにおいてはscripted_localisationを用いてスクリプトそのものをダイナミックに書き換えることも可能。
 今のところ
 scripted_GUIのproperties
 でのみ実装されている。
