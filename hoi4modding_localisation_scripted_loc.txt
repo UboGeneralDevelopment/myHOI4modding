@@ -135,6 +135,16 @@ scripted_GUIのproperties
 
 
 
+#############よく使いそうなローカリゼーション################
+
+ディシジョン選択の条件と効果は以下の通り。なんでこれをここに持ってきているのかというと、
+これをそのままつかえば、日本語化MODへの互換性がデフォルトで備わるため。
+
+ディシジョンの前提条件
+DECISION_PREREQUISITES_HEADER:0 "§HPrerequisites:§!"
+
+ディシジョン選択時の効果
+DECISION_SELECT_HEADER:0 ""
 
 
 
