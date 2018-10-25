@@ -126,8 +126,13 @@ this is key 3 that displays key1 or key2, currently key1
 this is key 3 that displays key1 or key2, currently key2
 に条件によって置き換えられる。
 
+scripted_localisationは記号にも用いれるため、条件によって文字の色を変えるなども可能。
+
+
 ローカリゼーションキーを用いずに、interfaceのguiフォルダのtext記述を直接置き換えることも可能。
 text = "this sentence is dynamic [ROOT.DefinedText] "
+
+
 
 さらに、一部のシステムにおいてはscripted_localisationを用いてスクリプトそのものをダイナミックに書き換えることも可能。
 今のところ
