@@ -1,0 +1,53 @@
+﻿
+add_namespace = modtest
+
+news_event = {
+	id = modtest.1
+	title = modtest.1.t
+	desc = modtest.1.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	is_triggered_only = no
+	
+	trigger = {
+		date > 1936.1.3
+		NOT = { has_global_flag = modtest1_occured }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = { set_global_flag = modtest1_occured }
+
+	option = {
+		name = modtest.1.a
+	}
+}
+
+country_event = {
+	id = modtest.2
+	title = modtest.2.t
+	desc = modtest.2.d
+	picture = GFX_news_event_001
+	
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1936.1.3
+		has_global_flag = modtest1_occured
+		NOT = { has_global_flag = modtest2_occured }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = { set_global_flag = modtest2_occured }
+
+	option = {
+		every_country = {
+			news_event = { modtest.3 }
+		}
+		name = modtest.1.a
+	}
+}
