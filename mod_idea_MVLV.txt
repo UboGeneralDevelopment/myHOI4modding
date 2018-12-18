@@ -35,6 +35,10 @@ interfacefileのなかで
 container_windowの中にscripted_localizationと画像の(アイコンとか)elementを設定する。
 画像のelementは表示する数だけ用意する。
 
+scripted_triggerでは数字によってkeyを変更することはできない。変化させる分だけif分岐が必要。
+変数や国家名などの備え付きの関数は使えるが、scripted_triggerではあくまで条件ごとにキーを置き換えるのみ。
+置き換える対象のキーに変数が入っていれば、それは動的にチェックされずにただ表示される。
+
 ウィンドウ表示変数
 
 文章と画像の条件付け切り替え
