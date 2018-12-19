@@ -55,9 +55,173 @@ scripted_triggerでは数字によってkeyを変更することはできない�
 同時にそのシナリオ変数を設定することのできるディシジョンをアンロックする。
 
 
+必要なUI
+
+novel_window　container
+	novel_text text_element "[NovelText]"本文を表示する
+	icon_1 icon_element
+	icon_2 icon_element
+	icon_3 icon_element
+	icon_4 icon_element
+	icon_5 icon_element
+	icon_6 icon_element 以下必要なだけ
+	progress_button button_element 進行ボタン
+
+アイコンの変化
+properties = {
+	icon_1 = {
+		image = "GFX_icon_1"
+		frame = icon_1_frame #変数
+		x = icon_1_x #変数
+		y = icon_1_y #変数
+	}
+}
+進行ボタンのeffect:シーンが進むか終わるかチェックし、シーンを進ませるか終わらせる。
+if = {
+	limit = { scene_end_button_trigger =yes }
+	scene_end =yes
+}
+else = { add_to_variable = { scene_progress = 1 } image_set=yes}
+
+進行ボタンの変化
+properties = {
+	progress_button = {
+		image = "GFX_progress_button" #scripted_localisationでボタンを切り替える
+	}
+}
 
 
 
+choice_window container
+	choice_1 button_element
+	choice_2
+	choice_3
+	choice_4
+	choice_5必要なだけ
+
+choice_windowおよびchoice_buttonはそれぞれがもつappear_trigger = yes（シーン番号とシーン進行を参照する）のときだけvisibleになる
+choice_buttonの効果は、シーン番号、シーン進行、どの選択肢かによってchoice_effectで分岐する
+あとは自動で選択するタイマーミッションでもつけておけばよい。
+
+必要なシステム
+
+変数
+シーン番号とシーン進行変数
+scene_num シーン番号の認識。シーン番号は選択肢表示まで。分岐先のシーンは別シーンとして扱う。
+scene_progress　シーンの進捗の認識
+choice_num 選択肢がどれか
+
+scripted_localisation
+NovelText
+本文の表示をシナリオ番号によって切り替える。以下のような感じ
+defined_text = {
+	name = NovelText
+	text = {
+		trigger = { check_variable = { scene_num = 1 scene_progress = 1 } }
+		localisation_key = scene_1_1
+	}
+	text = {
+		trigger = { check_variable = { scene_num = 1 scene_progress = 2 } }
+		localisation_key = scene_1_2
+	}
+}
+defined_text = {
+	name = NovelText
+	text = {
+		trigger = { check_variable = { scene_num = 2 scene_progress = 1 } }
+		localisation_key = scene_2_1
+	}
+	text = {
+		trigger = { check_variable = { scene_num = 2 scene_progress = 2 } }
+		localisation_key = scene_2_2
+	}
+}
+
+defined_text = {
+	name = GFX_progress_button
+	text = {
+		trigger = { scene_end_button_trigger = no }
+		localisation_key = GFX_progress_button:1
+	}
+	text = {
+		trigger = { scene_end_button_trigger = yes }
+		localisation_key = GFX_progress_button:2
+	}
+}
+
+defined_text = {
+	name = ChoiceText1
+	text = {
+		trigger = { check_variable = { scene_num = 1 scene_progress = 1 }
+		localisation_key = choice_1_1_1
+	}
+	text = {
+		trigger = { check_variable = { scene_num = 2 scene_progress = 1 }
+		localisation_key = choice_1_1_2
+	}
+}
+
+
+scripted_effects
+
+image_set = {}
+画像のXYとフレームを制御する
+
+choice_effect = {
+	if = {
+		limit = { check_variable = { scene_num = 1 scene_progress = 2 choice_num = 1}}	
+		set_variable = { scene_num = 5 }
+		set_variable = { scene_progress = 1 }
+	}
+	if = {
+		limit = { check_variable = { scene_num = 1 scene_progress = 2 choice_num = 2}}	
+		set_variable = { scene_num = 6 }
+		set_variable = { scene_progress = 1 }
+	}
+}
+
+scene_end = {
+	set_variable = { novel_window_open = 0}#ウィンドウ閉じる
+	set_variable = { scene_num = 0 }#シーン初期化
+	set_variable = { scene_progress = 0 }#シーン初期化
+}
+
+
+scripted_triggers
+
+scene_end_button_trigger = {
+	OR = {
+		check_variable = { scene_num = 1 scene_progress = 2 }
+		check_variable = { scene_num = 2 scene_progress = 2 }
+	}
+}
+
+choice_window_appear = {
+	OR = {
+		check_variable = { scene_num = 1 scene_progress = 2 }
+		check_variable = { scene_num = 2 scene_progress = 2 }
+	}
+}
+choice_1_appear = {
+	OR = {
+		check_variable = { scene_num = 1 scene_progress = 2 }
+		check_variable = { scene_num = 2 scene_progress = 2 }
+	}
+}
+choice_2_appear = {
+	OR = {
+		check_variable = { scene_num = 1 scene_progress = 2 }
+		check_variable = { scene_num = 2 scene_progress = 2 }
+	}
+}
+
+
+リプレイ機能
+選択肢、効果発生に問題がある。
+選択肢制限はいらない。
+効果があればそれを無効化する。
+リプレイ時にリプレイ変数をオンにしておき、リプレイがオフの時にだけ効果が発生するようにする。
+リプレイはディシジョンなどからしかできないようにする。
 
 
 
