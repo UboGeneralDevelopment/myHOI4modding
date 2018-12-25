@@ -4,12 +4,27 @@
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
 
 
 #define PI 3.1415926535897932384626433832795f
 
 #define threadN 512 //現在の CUDA では 512 が MAX
 #define sinoBlock 200 //GPUメモリが足りなければ減らす。shared メモリの関係で threadN 以下の値を設定
+
+/*
+これで32bit-realのボリュームが作れる。CTボリュームとの座標のずれを何かの形で表現して位置合わせに利用する。
+入力ファイル詳細
+
+サイノグラムのパス
+デテクタまで距離　回転軸まで距離
+画像サイズX　画像サイズY　画像枚数　デテクター実サイズ
+ボリュームのｘｙのボクセル数、横と縦の再構成範囲、（設定しても意味がない。）
+回転軸横ずれX　回転軸横ずれY 光軸縦ずれ　reco.dllのsourcelocation on detector とデテクター中心(512,512または1024,1024)の差がそれぞれ回転軸ずれと光軸ずれに対応する
+
+*/
+
+
 
 //shepp-logan の CUDA Kernel
 __global__ void convolution_GPU(int W, int H, float *S, float d, float D, //float *q){
@@ -281,7 +296,7 @@ int main(int argc, char** argv) {
 	float sizeR, sizeH;
 	int zN;
 	float **ct, **sino;
-	FILE *in, *out, *para;//, *out1;
+	FILE *in, *out, *out1, *out2, *para;//, *out1;
 	float delta;
 
 	char name[1000];
@@ -292,39 +307,55 @@ int main(int argc, char** argv) {
 
 	time(&timeS);
 
-	//パラメータをファイルから読込
+	//パラメータをファイルから読込。出力ボリュームの大きさは自動的に決定するために入力しないでね。
+	/*
+	読み込みパス
+	出力ファイル名
+	線源-検出器距離 線源-物体距離
+	入力画像ピクセル数X ピクセル数Y 枚数Z 検出器ピクセル実サイズ
+	ボリュームXYボクセル数 縦再構成範囲 横再構成範囲（そのままでは全体をとる。）ボリュームボクセル数は自動的に計算されるので個々の入力は意味ない。
+	回転軸横ずれX　回転軸横ずれY 光軸縦ずれ　reco.dllのsourcelocation on detector とデテクター中心(512,512または1024,1024)の差がそれぞれ回転軸ずれと光軸ずれに対応する
+	*/
+
+	float Vsize;
+
 	para = fopen(argv[1], "r");
 	fscanf(para, "%s", in_path);
 	fscanf(para, "%s", out_name);
 	fscanf(para, "%f %f", &s2d, &s2o);
-	fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);
+	fscanf(para, "%d %d %d %f", &W, &H, &P, &detP);//検出器縦ピクセル、横ピクセル、枚数、検出器一つのサイズ
 	fscanf(para, "%d %f %f", &N, &scaleW, &scaleH);//ボリュームのｘｙのボクセル数、横と縦の再構成範囲（使用する投影像の範囲？）
 	fscanf(para, "%f %f %f", &shiftA, &shiftU, &shiftV);
+	//fscanf(para, "%f %f %f", &startshiftX, &startshiftY, &startshiftZ);//ボリュームのスタート位置。reco.dllから得られる。
+	//fscanf(para, "%f %f %f", &outvoxelX, &outvoxelY, &outvoxelZ);//ボリュームのボクセルサイズ。reco.dllから得られる。
 	fclose(para);
 
-	//detector size
+	//detector size検出器の実サイズ
 	dW = detP*W;
 	dH = detP*H;
 
-	//image size (cylinder)
-	sizeR = (float)(0.5f*s2o*dW / sqrt(s2d*s2d + 0.25f*dW*dW)); //radius
-	sizeH = 0.5f*(s2o/*-sizeR*/) / s2d*dH; //height/2
+	//image size (cylinder)ボリューム中の再構成範囲の実サイズ
+	sizeR = (float)(0.5f*dW*s2o / sqrt(s2d*s2d + 0.25f*dW*dW)); //半径radius
+	sizeH = 0.5f* dH * s2o / s2d; //height/2
 	sizeR *= scaleW;
-	sizeH *= scaleH;
+	sizeH *= scaleH;//スケーリングは後でやる。start位置に合わせてXYそれぞれのサイズを変更する
 
+	//voxelサイズ計算
 
-	//#volxels in z-axis
-	zN = (int)(sizeH*N / sizeR);
+	Vsize = detP*s2o / s2d;
+	N = (int)(2 * sizeR / Vsize);
+	zN = (int)(2 * sizeH / Vsize);
+	//ボリュームボクセル数計算
 
 	printf("Volume Size = %f x %f x %f\n", 2 * sizeR, 2 * sizeR, 2 * sizeH);
 	printf("Origin = (%f, %f %f)\n", -sizeR, -sizeR, -sizeH);
 	printf("#voxels = %d x %d x %d\n", N, N, zN);
-	printf("Voxel size = %f\n", 2 * sizeR / N);
+	printf("Voxel size = %f\n", Vsize);
 
 	//tomogram
 	ct = (float**)malloc(zN * sizeof(float*));
 	for (i = 0; i<zN; i++)
-		ct[i] = (float*)malloc(N*N * sizeof(float));
+		ct[i] = (float*)malloc(N*N * sizeof(float));//ctは二次元配列。Z方向と平面方向をもつ。
 
 	//sinogram
 	sino = (float**)malloc(P * sizeof(float*));
@@ -345,9 +376,24 @@ int main(int argc, char** argv) {
 
 	delta = (float)(detP*s2o / s2d); //scaled detector pitch
 
+	//printf("Convolution\n");
+//	convolution(W, H, P, sino, delta, s2o, shiftU, -shiftV);
+
+	printf("Backprojection\n");
+	backprojection(N, zN, ct, sizeR, sizeH,
+		W, H, P, sino, delta, s2o, (shiftA - shiftU)*detP, shiftU, -shiftV);
+
+	printf("Writing\n");
+
+	sprintf(name, "%s-float-reliability-volume(%.6g,%.6g,%.6g)-%dx%dx%d-%.6gx%.6gx%.6g.raw",
+		out_name, -sizeR, -sizeR, -sizeH, N, N, zN, 2 * sizeR / N, 2 * sizeR / N, 2 * sizeR / N);
+	out = fopen(name, "wb");
+	for (i = 0; i<zN; i++)
+		fwrite(ct[i], 4, N*N, out);
+	fclose(out);
+
 	printf("Convolution\n");
 	convolution(W, H, P, sino, delta, s2o, shiftU, -shiftV);
-
 	printf("Backprojection\n");
 	backprojection(N, zN, ct, sizeR, sizeH,
 		W, H, P, sino, delta, s2o, (shiftA - shiftU)*detP, shiftU, -shiftV);
@@ -355,9 +401,7 @@ int main(int argc, char** argv) {
 		free(sino[i]);
 	free(sino);
 
-	printf("Writing\n");
-
-	sprintf(name, "%s-float-O(%.6g,%.6g,%.6g)-%dx%dx%d-%.6gx%.6gx%.6g.raw",
+	sprintf(name, "%s-float-volume(%.6g,%.6g,%.6g)-%dx%dx%d-%.6gx%.6gx%.6g.raw",
 		out_name, -sizeR, -sizeR, -sizeH, N, N, zN, 2 * sizeR / N, 2 * sizeR / N, 2 * sizeR / N);
 	out = fopen(name, "wb");
 	for (i = 0; i<zN; i++)
