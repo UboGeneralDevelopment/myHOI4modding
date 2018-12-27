@@ -1,4 +1,4 @@
-﻿tests
+﻿mobiletests2
 
 
 remote tests
