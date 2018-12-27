@@ -1,4 +1,5 @@
-﻿
+﻿tests
+
 add_namespace = modtest
 
 news_event = {
