@@ -1,0 +1,12 @@
+﻿
+高速化のアイデア
+
+if分岐を減らす。以上。
+
+方向1
+レイの進行距離
+x_length = voxels_x - ray_start_position_x
+レイの進行距離（ステップ数かんさん）
+stepnum = x_length / ray_x
+
+これをx,y,zでおこなって一番短いstepnumを採用する。ifは2回で済むはず。
