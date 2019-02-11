@@ -1,4 +1,6 @@
 ﻿
+２月以前
+
 高速化のアイデア
 
 if分岐を減らす。以上。
@@ -10,3 +12,8 @@ x_length = voxels_x - ray_start_position_x
 stepnum = x_length / ray_x
 
 これをx,y,zでおこなって一番短いstepnumを採用する。ifは2回で済むはず。
+
+
+
+
+２月１１日
